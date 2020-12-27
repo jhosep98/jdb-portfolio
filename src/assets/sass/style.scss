@@ -1,16 +1,5 @@
+@import "_colors";
+@import "_global";
+@import "_header";
 @import "_normalize";
-
-$body-color: #333;
-$text-color: #fff;
-
-body {
-  color: $text-color;
-  background-color: $body-color;
-  text-align: center;
-  font: {
-    family: "Comic Sans MS";
-    size: 2rem;
-    weight: bold;
-  }
-  padding: 2rem;
-}
+@import "_variables";
