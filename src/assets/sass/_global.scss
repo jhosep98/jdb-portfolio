@@ -32,3 +32,10 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
+
+@mixin flexProp($flex, $align, $justify, $direction) {
+  display: $flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}

@@ -1,8 +1,27 @@
 import React, { useRef } from "react";
 import jhosep from "../assets/img/jhosep.jpg";
 
-export const NavBar = () => {
+type NavProps = {
+  title: string;
+  list: {
+    home: string;
+    about: string;
+    skills: string;
+    projects: string;
+    contact: string;
+  };
+  subtitle: string;
+  paragraph: string;
+  textButton: string;
+};
 
+export const NavBar = ({
+  title,
+  list: { home, about, skills, projects, contact },
+  subtitle,
+  paragraph,
+  textButton,
+}: NavProps) => {
   const menuRef = useRef<HTMLUListElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -18,23 +37,23 @@ export const NavBar = () => {
       <nav className="header__navbar">
         <div className="header__container">
           <img src={jhosep} alt="jhosep davila" className="header__profile" />
-          <h1 className="header__title">Jhosep Davila</h1>
+          <h1 className="header__title">{title}</h1>
         </div>
         <ul id="menu" ref={menuRef}>
           <li>
-            <a href="#">Home</a>
+            <a href="#">{home}</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">{about}</a>
           </li>
           <li>
-            <a href="#">Skills</a>
+            <a href="#">{skills}</a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#">{projects}</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#">{contact}</a>
           </li>
         </ul>
         <div
@@ -48,10 +67,10 @@ export const NavBar = () => {
         </div>
       </nav>
       <div className="header__hero">
-        <div>
-          <h2 className="header__subtitle"> Jhosep Davila </h2>
-          <p className="header__parrafo">Front-end Developer</p>
-          <button className="header__button">Know me</button>
+        <div className="header__containerText">
+          <h2 className="header__subtitle"> {subtitle} </h2>
+          <p className="header__paragraph">{paragraph}</p>
+          <button className="header__button">{textButton}</button>
         </div>
       </div>
     </header>

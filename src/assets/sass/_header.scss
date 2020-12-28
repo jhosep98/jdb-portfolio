@@ -1,21 +1,16 @@
 /* --- Navigation Bar ---*/
 .header__navbar {
+  @include flexProp(flex, center, space-between, row);
   background: $primary;
   color: $text-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   position: relative;
 
   .header__responsive {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexProp(none, center, center, column);
     padding: 0.5em 1em;
-    display: none;
-    @media (max-width: 480px) {
+    @media (max-width: 680px) {
       display: flex;
       cursor: pointer;
     }
@@ -32,17 +27,16 @@
     margin: 0;
     padding: 0;
     transition: ease 0.7s all;
-    @media (max-width: 480px) {
+    @media (max-width: 680px) {
       opacity: 0;
       max-height: 0px;
       overflow: hidden;
       visibility: none;
-      display: flex;
       position: absolute;
       left: 0;
       right: 0;
       top: 100%;
-      flex-direction: column;
+      @include flexProp(flex, flex-start, flex-start, column);
       background-color: $primary;
       margin-left: -100%;
       &.active {
@@ -76,9 +70,7 @@
     }
   }
   .header__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexProp(flex, center, center, row);
     .header__profile {
       width: 80px;
       border-radius: 50%;
@@ -95,10 +87,7 @@
 
 /* --- Hero Section ---*/
 .header__hero {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  @include flexProp(flex, center, center, column);
   height: 50vh;
   color: $text-color;
   font-weight: bold;
@@ -117,7 +106,7 @@
     font-size: 40px;
   }
 
-  .header__parrafo {
+  .header__paragraph {
     text-transform: capitalize;
     font-size: 25px;
   }
