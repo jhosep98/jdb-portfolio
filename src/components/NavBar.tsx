@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { fadeInDown } from "react-animations";
+import styled, { keyframes } from "styled-components";
+
 import jhosep from "../assets/img/jhosep.jpg";
 
 type NavProps = {
@@ -14,6 +17,12 @@ type NavProps = {
   paragraph: string;
   textButton: string;
 };
+
+const bounceAnimation = keyframes`${fadeInDown}`;
+
+const BouncyDiv = styled.div`
+  animation: 1.4s ${bounceAnimation};
+`;
 
 export const NavBar = ({
   title,
@@ -67,11 +76,11 @@ export const NavBar = ({
         </div>
       </nav>
       <div className="header__hero">
-        <div className="header__containerText">
+        <BouncyDiv className="header__containerText">
           <h2 className="header__subtitle"> {subtitle} </h2>
           <p className="header__paragraph">{paragraph}</p>
           <button className="header__button">{textButton}</button>
-        </div>
+        </BouncyDiv>
       </div>
     </header>
   );

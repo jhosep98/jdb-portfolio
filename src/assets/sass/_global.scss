@@ -39,3 +39,20 @@ img {
   justify-content: $justify;
   flex-direction: $direction;
 }
+
+@mixin textBold($font-weight, $text-trasform) {
+  font-weight: $font-weight;
+  text-transform: $text-trasform;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}

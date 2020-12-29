@@ -10,10 +10,12 @@
   .header__responsive {
     @include flexProp(none, center, center, column);
     padding: 0.5em 1em;
-    @media (max-width: 680px) {
+
+    @include tablet {
       display: flex;
       cursor: pointer;
     }
+
     span {
       display: block;
       height: 2px;
@@ -22,12 +24,32 @@
       background: $text-color;
     }
   }
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     transition: ease 0.7s all;
-    @media (max-width: 680px) {
+
+    li {
+      display: inline-block;
+      font-size: 15px;
+
+      a {
+        display: inline-block;
+        color: $text-color;
+        text-decoration: none;
+        padding: 5px 15px;
+        @include textBold(700, uppercase);
+
+        &:hover {
+          background: $secondary;
+          border-radius: 13px;
+        }
+      }
+    }
+
+    @include tablet {
       opacity: 0;
       max-height: 0px;
       overflow: hidden;
@@ -39,48 +61,65 @@
       @include flexProp(flex, flex-start, flex-start, column);
       background-color: $primary;
       margin-left: -100%;
+
       &.active {
         opacity: 1;
         max-height: 500px;
         right: 0;
         margin-left: 0%;
         background-color: $backgroundColor;
+
         li {
           display: block;
-          padding: 0.2rem;
+          padding: 0.1rem;
           font-weight: bold;
-          text-transform: uppercase;
+          font-size: 15px;
+
           a {
             display: block;
           }
         }
       }
     }
-    li {
-      display: inline-block;
-      a {
-        display: inline-block;
-        color: $text-color;
-        text-decoration: none;
-        padding: 0.5em 1em;
-        &:hover {
-          background: $secondary;
+
+    @include mobile {
+      &.active {
+        li {
+          display: block;
+          padding: 0.1rem;
+          font-weight: bold;
+          font-size: 14px;
         }
       }
     }
   }
+
   .header__container {
     @include flexProp(flex, center, center, row);
+
     .header__profile {
-      width: 80px;
+      width: 75px;
       border-radius: 50%;
-      padding: 0.7rem;
+      border: 4px solid $backgroundColor;
+      margin: 0.5rem;
+      @include tablet {
+        width: 70px;
+      }
+      @include mobile {
+        width: 60px;
+      }
     }
+
     .header__title {
-      font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-size: 22px;
+      @include textBold(bold, uppercase);
       font-family: "Permanent Marker", cursive;
+      @include tablet {
+        font-size: 20px;
+      }
+      @include mobile {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -88,37 +127,57 @@
 /* --- Hero Section ---*/
 .header__hero {
   @include flexProp(flex, center, center, column);
+  @include textBold(bold, uppercase);
   height: 50vh;
   color: $text-color;
-  font-weight: bold;
-  text-transform: uppercase;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top center;
+  @include tablet {
+    height: 55vh;
+  }
+  @include mobile {
+    height: 60vh;
+  }
   div {
     text-align: center;
   }
-
   .header__subtitle {
     margin: 0;
     font-family: "Permanent Marker", cursive;
     font-size: 40px;
+    @include tablet {
+      font-size: 35px;
+    }
+    @include mobile {
+      font-size: 30px;
+    }
   }
-
   .header__paragraph {
     text-transform: capitalize;
     font-size: 25px;
+    @include tablet {
+      font-size: 20px;
+    }
+    @include mobile {
+      font-size: 17px;
+    }
   }
-
   .header__button {
     @include button;
+    @include textBold(bold, uppercase);
     background-color: transparent;
     color: $text-color;
     border: 2px solid $secondary;
     border-radius: 7px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 16px;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include mobile {
+      font-size: 12px;
+    }
     &:hover {
       background-color: $secondary;
       color: white;
