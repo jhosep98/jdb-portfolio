@@ -1,4 +1,5 @@
 import React from "react";
+import { Main } from "./Main";
 import { NavBar } from "./NavBar";
 
 export const App = () => {
@@ -17,6 +18,7 @@ export const App = () => {
         paragraph="Front-end Developer"
         textButton="Know me"
       />
+      <Main />
     </>
   );
 };

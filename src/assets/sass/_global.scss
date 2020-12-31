@@ -6,6 +6,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  background-color: $backgroundBodyColor;
 }
 
 img {
@@ -15,7 +16,7 @@ img {
 @mixin button {
   border: none;
   color: white;
-  padding: 12px 25px;
+  padding: 12px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -31,6 +32,37 @@ img {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@mixin sectionContainer {
+  @include container;
+  padding: 30px;
+  max-width: 1140px;
+  color: $primary;
+}
+
+@mixin titleSection {
+  @include textBold(600, uppercase);
+  font-size: 14px;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+  color: $textColorSecondary;
+  &::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: $secondary;
+    margin: 4px 10px;
+  }
+}
+
+@mixin paragraphSection {
+  @include textBold(800, uppercase);
+  margin: -15px 0 15px 0;
+  font-size: 30px;
 }
 
 @mixin flexProp($flex, $align, $justify, $direction) {

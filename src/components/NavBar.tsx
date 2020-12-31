@@ -79,7 +79,21 @@ export const NavBar = ({
         <BouncyDiv className="header__containerText">
           <h2 className="header__subtitle"> {subtitle} </h2>
           <p className="header__paragraph">{paragraph}</p>
-          <button className="header__button">{textButton}</button>
+          <div>
+            <div>
+              <a href="https://github.com/jhosep98" target="_blank">
+                <i className="fa fa-github-alt"></i>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.linkedin.com/in/jhosep-davila/"
+                target="_blank"
+              >
+                <i className="fa fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
         </BouncyDiv>
       </div>
     </header>
