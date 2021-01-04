@@ -3,4 +3,9 @@ footer {
   color: #fff;
   padding: 25px 0;
   background: $primary;
+  div {
+    .footer__author {
+      color: $secondary;
+    }
+  }
 }

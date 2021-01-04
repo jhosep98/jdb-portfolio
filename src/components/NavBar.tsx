@@ -82,7 +82,7 @@ export const NavBar = ({
           <div>
             <div>
               <a href="https://github.com/jhosep98" target="_blank">
-                <i className="fa fa-github-alt"></i>
+                <i className="fa fa-github"></i>
               </a>
             </div>
             <div>

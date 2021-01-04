@@ -16,7 +16,7 @@ export const Main = () => {
         data={{
           email: "jhosepdb149@gmail.com",
           city: "Buenos Aires, Argentina",
-          age: "29 April 1998",
+          age: "April, 29, 1998",
           name: "Jhosep Davila Bustamante",
         }}
       />

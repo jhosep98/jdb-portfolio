@@ -8,20 +8,29 @@ export const Contact = () => {
       <div className="contact__container">
         <div className="contact__containerInfo">
           <div className="contact__info">
-            <div className="contact__github">
-              <i className="fa fa-github-alt"></i>
+            <div>
+              <i className="fa fa-github"></i>
               <h4>Github:</h4>
-              <p className="github">@jhosep98</p>
+              <a href="https://github.com/jhosep98" target="_blank">
+                <p className="github">@jhosep98</p>
+              </a>
             </div>
-            <div className="contact__github">
-              <i className="fa fa-github-alt"></i>
-              <h4>Github:</h4>
-              <p className="github">@jhosep98</p>
+            <div>
+              <i className="fa fa-linkedin"></i>
+              <h4>Linkedin:</h4>
+              <a
+                href="https://www.linkedin.com/in/jhosep-davila/"
+                target="_blank"
+              >
+                <p className="github">@jhosep-davila</p>
+              </a>
             </div>
-            <div className="contact__github">
-              <i className="fa fa-github-alt"></i>
-              <h4>Github:</h4>
-              <p className="github">@jhosep98</p>
+            <div>
+              <i className="fa fa-instagram"></i>
+              <h4>Instagram:</h4>
+              <a href="https://www.instagram.com/jhosepdb/" target="_blank">
+                <p className="github">@jhosepdb</p>
+              </a>
             </div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.26495778574!2d-58.503509784803484!3d-34.61580363807845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1609606681545!5m2!1ses-419!2sar"
@@ -51,7 +60,10 @@ export const Contact = () => {
               <textarea id="email"></textarea>
             </div>
             <div className="text-center">
-              <button type="submit">send message</button>
+              <button type="submit">
+                send message
+                <i className="fa fa-send"></i>
+              </button>
             </div>
           </form>
         </div>

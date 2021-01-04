@@ -13,7 +13,7 @@ export const Skills = () => {
     <section className="skills">
       <div className="skills__title">
         <h2>Skills</h2>
-        <p>Skills technologys</p>
+        <p>Technological skills</p>
       </div>
       <div className="skills__container">
         <p>

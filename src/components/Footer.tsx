@@ -2,9 +2,11 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer>
-      <p>© Copyright jFolio. All Rights Reserved</p>
-      <div>Designed by Jhosep Davila</div>
+    <footer className="footer">
+      <p>&#169; Copyright jdbFolio. All Rights Reserved 2020</p>
+      <div>
+        Designed by <span className="footer__author">Jhosep Davila</span>
+      </div>
     </footer>
   );
 };
