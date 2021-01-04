@@ -1,5 +1,8 @@
 import React from "react";
 import { About } from "./About";
+import { Contact } from "./Contact";
+import { Projects } from "./Projects";
+import { Skills } from "./Skills";
 
 export const Main = () => {
   return (
@@ -13,10 +16,13 @@ export const Main = () => {
         data={{
           email: "jhosepdb149@gmail.com",
           city: "Buenos Aires, Argentina",
-          age: 22,
-          freelance: "Available",
+          age: "29 April 1998",
+          name: "Jhosep Davila Bustamante",
         }}
       />
+      <Skills />
+      <Projects />
+      <Contact />
     </main>
   );
 };

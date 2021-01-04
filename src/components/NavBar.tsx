@@ -42,7 +42,7 @@ export const NavBar = ({
   };
 
   return (
-    <header className="header">
+    <header className="header" id="home">
       <nav className="header__navbar">
         <div className="header__container">
           <img src={jhosep} alt="jhosep davila" className="header__profile" />
@@ -50,10 +50,10 @@ export const NavBar = ({
         </div>
         <ul id="menu" ref={menuRef}>
           <li>
-            <a href="#">{home}</a>
+            <a href="#home">{home}</a>
           </li>
           <li>
-            <a href="#">{about}</a>
+            <a href="#about">{about}</a>
           </li>
           <li>
             <a href="#">{skills}</a>

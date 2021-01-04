@@ -24,8 +24,8 @@ type NavProps = {
   data: {
     email: string;
     city: string;
-    age: number;
-    freelance: string;
+    age: string;
+    name: string;
   };
 };
 
@@ -35,10 +35,10 @@ export const About = ({
   subtitle,
   paragraphSubtitle,
   textButton,
-  data: { email, city, age, freelance },
+  data: { email, city, age, name },
 }: NavProps) => {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="about__title">
         <h2>{title}</h2>
         <p>{paragraph}</p>
@@ -56,7 +56,7 @@ export const About = ({
                 <li>
                   <p>
                     <i className="fa fa-user-circle-o"></i>
-                    <span>{freelance}</span>
+                    <span>{name}</span>
                   </p>
                 </li>
                 <li>

@@ -1,0 +1,62 @@
+section.skills {
+  @include sectionContainer;
+  div.skills__title {
+    h2 {
+      @include titleSection;
+      @include tablet {
+        font-size: 12px;
+      }
+      @include mobile {
+        font-size: 10px;
+      }
+    }
+    p {
+      @include paragraphSection;
+      @include tablet {
+        font-size: 25px;
+      }
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+  div.skills__container {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 1.9rem;
+      li {
+        padding-right: 5px;
+        margin: 5px;
+        text-align: center;
+        height: 94px;
+        display: flex;
+        flex-direction: column;
+
+        img {
+          height: 56px;
+          width: auto;
+          margin-bottom: 6px;
+          transition: all 350ms ease;
+          opacity: 0.3;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideSkills {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Footer } from "./Footer";
 import { Main } from "./Main";
 import { NavBar } from "./NavBar";
 
@@ -19,6 +20,7 @@ export const App = () => {
         textButton="Know me"
       />
       <Main />
+      <Footer />
     </>
   );
 };
