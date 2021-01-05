@@ -21,11 +21,25 @@ section.contact {
   .contact__container {
     display: flex;
     flex-wrap: wrap;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
     .contact__containerInfo {
       display: flex;
       align-items: stretch;
       flex: 0 0 41.666667%;
       max-width: 41.666667%;
+      @include tablet {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      @include mobile {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
       .contact__info {
         padding: 30px;
         background: #fff;
@@ -85,6 +99,18 @@ section.contact {
       padding-right: 15px;
       padding-left: 15px;
       width: 100%;
+      @include tablet {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-top: 2rem;
+      }
+      @include mobile {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-top: 2rem;
+      }
       form {
         width: 100%;
         padding: 30px;

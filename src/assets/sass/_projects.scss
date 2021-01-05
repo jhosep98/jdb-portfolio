@@ -24,10 +24,24 @@ section.projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
     .container {
       position: relative;
       width: 30%;
       padding: 0.4rem;
+      @include tablet {
+        width: 80%;
+      }
+      @include mobile {
+        width: 80%;
+      }
     }
     .image {
       display: block;
