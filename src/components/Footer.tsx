@@ -7,7 +7,7 @@ export const Footer = () => {
       <div>
         Designed by <span className="footer__author">Jhosep Davila</span>
         <span className="footer__github">
-          <a href="">
+          <a href="https://github.com/jhosep98/jdb-portfolio" target="_blank">
             <i className="fa fa-github"></i>
           </a>
         </span>
