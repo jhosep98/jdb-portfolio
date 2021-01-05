@@ -34,16 +34,22 @@ section.contact {
         div {
           i {
             font-size: 20px;
-            color: $text-color;
+            color: $secondary;
+            background: $text-color;
+            border: 1px solid $secondary;
             float: left;
             width: 44px;
             height: 44px;
-            background: $secondary;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50px;
             transition: all 0.3s ease-in-out;
+            &:hover {
+              color: $text-color;
+              background: $secondary;
+              border: 2px solid $secondary;
+            }
           }
           h4 {
             padding: 0 0 0 60px;
@@ -143,8 +149,8 @@ section.contact {
           button {
             @include button;
             @include textBold(bold, uppercase);
-            background-color: $secondary;
-            color: $text-color;
+            background-color: transparent;
+            color: $secondary;
             border: 2px solid $secondary;
             border-radius: 7px;
             font-size: 16px;
@@ -157,9 +163,9 @@ section.contact {
               font-size: 14px;
             }
             &:hover {
-              background-color: transparent;
+              background-color: $secondary;
               border: 2px solid $secondary;
-              color: $secondary;
+              color: $text-color;
             }
             &:active {
               transform: scale(0.9);

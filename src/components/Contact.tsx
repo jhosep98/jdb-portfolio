@@ -1,39 +1,40 @@
 import React from "react";
+import { ContactForm } from "./ContactForm";
 
-export const Contact = () => {
+type ContactProps = {
+  title: string;
+  subtitle: string;
+  map: string;
+};
+
+export const Contact = ({ title, subtitle, map }: ContactProps) => {
   return (
-    <section className="contact">
-      <h2>contact</h2>
-      <p>Contact me</p>
+    <section className="contact" id="contact">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
       <div className="contact__container">
         <div className="contact__containerInfo">
           <div className="contact__info">
-            <div>
-              <i className="fa fa-github"></i>
-              <h4>Github:</h4>
-              <a href="https://github.com/jhosep98" target="_blank">
-                <p className="github">@jhosep98</p>
-              </a>
-            </div>
-            <div>
-              <i className="fa fa-linkedin"></i>
-              <h4>Linkedin:</h4>
-              <a
-                href="https://www.linkedin.com/in/jhosep-davila/"
-                target="_blank"
-              >
-                <p className="github">@jhosep-davila</p>
-              </a>
-            </div>
-            <div>
-              <i className="fa fa-instagram"></i>
-              <h4>Instagram:</h4>
-              <a href="https://www.instagram.com/jhosepdb/" target="_blank">
-                <p className="github">@jhosepdb</p>
-              </a>
-            </div>
+            <ContactInfo
+              social="Github:"
+              link="https://github.com/jhosep98"
+              name="@jhosep98"
+              icon="fa fa-github"
+            />
+            <ContactInfo
+              social="Linkedin:"
+              link="https://www.linkedin.com/in/jhosep-davila/"
+              name="@jhosep-davila"
+              icon="fa fa-linkedin"
+            />
+            <ContactInfo
+              social="Instagram:"
+              link="https://www.instagram.com/jhosepdb/"
+              name="@jhosepdb"
+              icon="fa fa-instagram"
+            />
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.26495778574!2d-58.503509784803484!3d-34.61580363807845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1609606681545!5m2!1ses-419!2sar"
+              src={map}
               width="100%"
               height="290"
               frameBorder="0"
@@ -45,29 +46,33 @@ export const Contact = () => {
           </div>
         </div>
         <div className="contact__form">
-          <form>
-            <div className="form-group">
-              <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Your Email</label>
-              <input type="text" id="email" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Your Email</label>
-              <textarea id="email"></textarea>
-            </div>
-            <div className="text-center">
-              <button type="submit">
-                send message
-                <i className="fa fa-send"></i>
-              </button>
-            </div>
-          </form>
+          <ContactForm
+            name="Your Name"
+            email="Your Email"
+            message="Your Message"
+            button="send message"
+          />
         </div>
       </div>
     </section>
+  );
+};
+
+type ContactInfoProps = {
+  social: string;
+  link: string;
+  name: string;
+  icon: string;
+};
+
+const ContactInfo = ({ social, link, name, icon }: ContactInfoProps) => {
+  return (
+    <div>
+      <i className={icon}></i>
+      <h4>{social}</h4>
+      <a href={link} target="_blank">
+        <p className="github">{name}</p>
+      </a>
+    </div>
   );
 };

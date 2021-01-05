@@ -15,3 +15,5 @@ declare module "*.pdf" {
   export default value;
 }
 declare module "react-animations";
+declare module "emailjs-com";
+declare module "formik";

@@ -1,44 +1,39 @@
 section.projects {
   @include sectionContainer;
-  h2 {
-    @include titleSection;
-    @include tablet {
-      font-size: 12px;
+  .projects__title {
+    h2 {
+      @include titleSection;
+      @include tablet {
+        font-size: 12px;
+      }
+      @include mobile {
+        font-size: 10px;
+      }
     }
-    @include mobile {
-      font-size: 10px;
-    }
-  }
-  p {
-    @include paragraphSection;
-    @include tablet {
-      font-size: 25px;
-    }
-    @include mobile {
-      font-size: 20px;
+    p {
+      @include paragraphSection;
+      @include tablet {
+        font-size: 25px;
+      }
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
   .projects__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    p {
-      font-size: 15px;
-      font-weight: normal;
-      text-transform: none;
-    }
     .container {
       position: relative;
       width: 30%;
       padding: 0.4rem;
     }
-
     .image {
       display: block;
       width: 100%;
       height: auto;
     }
-
     .overlay {
       position: absolute;
       bottom: 0;
@@ -50,11 +45,9 @@ section.projects {
       height: 0;
       transition: 0.5s ease;
     }
-
     .container:hover .overlay {
       height: 100%;
     }
-
     .text {
       white-space: nowrap;
       text-decoration: underline;

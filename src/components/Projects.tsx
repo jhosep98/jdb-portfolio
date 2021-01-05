@@ -13,18 +13,21 @@ type ProjectItemProps = {
   code: string;
 };
 
-export const Projects = () => {
+type ProjectsProps = {
+  title: string;
+  subtitle: string;
+  description: string;
+};
+
+export const Projects = ({ title, subtitle, description }: ProjectsProps) => {
   return (
-    <section className="projects">
-      <h2>Portfolio</h2>
-      <p>My works</p>
+    <section className="projects" id="projects">
+      <div className="projects__title">
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
+      <p>{description}</p>
       <div className="projects__container">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-          accusamus necessitatibus odit autem dicta recusandae? Delectus, quod
-          accusantium doloremque dignissimos minus quo voluptas reprehenderit
-          fuga! Rem minima aperiam sit dignissimos?
-        </p>
         <ProjectItem
           image={board}
           title="Drawing Board"

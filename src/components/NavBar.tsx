@@ -15,7 +15,6 @@ type NavProps = {
   };
   subtitle: string;
   paragraph: string;
-  textButton: string;
 };
 
 const bounceAnimation = keyframes`${fadeInDown}`;
@@ -29,7 +28,6 @@ export const NavBar = ({
   list: { home, about, skills, projects, contact },
   subtitle,
   paragraph,
-  textButton,
 }: NavProps) => {
   const menuRef = useRef<HTMLUListElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
@@ -56,13 +54,13 @@ export const NavBar = ({
             <a href="#about">{about}</a>
           </li>
           <li>
-            <a href="#">{skills}</a>
+            <a href="#skills">{skills}</a>
           </li>
           <li>
-            <a href="#">{projects}</a>
+            <a href="#projects">{projects}</a>
           </li>
           <li>
-            <a href="#">{contact}</a>
+            <a href="#contact">{contact}</a>
           </li>
         </ul>
         <div

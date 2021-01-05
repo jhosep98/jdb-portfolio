@@ -7,5 +7,14 @@ footer {
     .footer__author {
       color: $secondary;
     }
+    .footer__github {
+      margin: 0.4rem;
+      a {
+        color: $secondary;
+        i {
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 }

@@ -8,51 +8,44 @@ import nodeSvg from "../assets/img/svg/skills/nodejs.svg";
 import typescriptSvg from "../assets/img/svg/skills/typescript.svg";
 import sassSvg from "../assets/img/svg/skills/sass.svg";
 
-export const Skills = () => {
+type skillsProps = {
+  title: string;
+  subtitle: string;
+  description: string;
+};
+
+export const Skills = ({ title, subtitle, description }: skillsProps) => {
   return (
-    <section className="skills">
+    <section className="skills" id="skills">
       <div className="skills__title">
-        <h2>Skills</h2>
-        <p>Technological skills</p>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
       </div>
       <div className="skills__container">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iure
-          officia excepturi sint. Cum qui velit modi, exercitationem iste alias,
-          placeat dolorum, voluptas nulla itaque corporis? Ipsa quaerat nesciunt
-          magnam?
-        </p>
+        <p>{description}</p>
         <ul>
-          <li>
-            <img src={htmlSvg} alt="html" />
-            <span>Hmtl</span>
-          </li>
-          <li>
-            <img src={cssSvg} alt="linkedin" />
-            <span>Css</span>
-          </li>
-          <li>
-            <img src={javascriptSvg} alt="linkedin" />
-            <span>Javascript</span>
-          </li>
-          <li>
-            <img src={reactSvg} alt="linkedin" />
-            <span>Reactjs</span>
-          </li>
-          <li>
-            <img src={nodeSvg} alt="linkedin" />
-            <span>Nodejs</span>
-          </li>
-          <li>
-            <img src={typescriptSvg} alt="linkedin" />
-            <span>Typescript</span>
-          </li>
-          <li>
-            <img src={sassSvg} alt="linkedin" />
-            <span>Sass</span>
-          </li>
+          <ItemSkill image={htmlSvg} description="html" />
+          <ItemSkill image={cssSvg} description="css" />
+          <ItemSkill image={javascriptSvg} description="javascript" />
+          <ItemSkill image={reactSvg} description="reactjs" />
+          <ItemSkill image={nodeSvg} description="nodejs" />
+          <ItemSkill image={typescriptSvg} description="typescript" />
+          <ItemSkill image={sassSvg} description="sass" />
         </ul>
       </div>
     </section>
+  );
+};
+
+type ItemProps = {
+  image: string;
+  description: string;
+};
+
+const ItemSkill = ({ image, description }: ItemProps) => {
+  return (
+    <li>
+      <img src={image} alt={description} />
+    </li>
   );
 };
