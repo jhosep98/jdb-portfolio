@@ -1,4 +1,4 @@
-# JDB TO-DO
+# JDB PORTFOLIO
 
 Web portfolio showing my self-taught projects and my contact details.📝💻
 
