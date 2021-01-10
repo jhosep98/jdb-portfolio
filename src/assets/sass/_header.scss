@@ -99,10 +99,13 @@
     @include flexProp(flex, center, center, row);
 
     .header__profile {
-      width: 75px;
+      vertical-align: middle;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       border: 4px solid $backgroundColor;
       margin: 0.5rem;
+
       @include tablet {
         width: 70px;
       }

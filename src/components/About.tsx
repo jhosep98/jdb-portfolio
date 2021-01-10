@@ -1,6 +1,5 @@
 import React from "react";
 import jhosep from "../assets/img/jhosep.jpg";
-import PdfFile from "../assets/docs/jhoset-davila-cv.pdf";
 import { fadeInLeft } from "react-animations";
 import { fadeInRight } from "react-animations";
 import styled, { keyframes } from "styled-components";
@@ -86,7 +85,11 @@ export const About = ({
           </div>
 
           <div className="about__social">
-            <a className="btn" href={PdfFile} target="_blank">
+            <a
+              className="btn"
+              href="https://jhosep98.github.io/jhosep-cv/"
+              target="_blank"
+            >
               <i className="fa fa-user"></i>
               {textButton}
             </a>

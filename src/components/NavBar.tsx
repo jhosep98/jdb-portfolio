@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { fadeInDown } from "react-animations";
 import styled, { keyframes } from "styled-components";
 
-import jhosep from "../assets/img/jhosep.jpg";
+import jhosep from "../assets/img/jhosep (2).png";
 
 type NavProps = {
   title: string;
