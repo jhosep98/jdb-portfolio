@@ -7,6 +7,9 @@ import reactSvg from "../assets/img/svg/skills/react.svg";
 import nodeSvg from "../assets/img/svg/skills/nodejs.svg";
 import typescriptSvg from "../assets/img/svg/skills/typescript.svg";
 import sassSvg from "../assets/img/svg/skills/sass.svg";
+import expressSvg from "../assets/img/svg/skills/express.svg";
+import nestSvg from "../assets/img/svg/skills/nestjs.svg";
+import webpackSvg from "../assets/img/svg/skills/webpack.svg";
 
 type skillsProps = {
   title: string;
@@ -31,6 +34,9 @@ export const Skills = ({ title, subtitle, description }: skillsProps) => {
           <ItemSkill image={nodeSvg} description="nodejs" />
           <ItemSkill image={typescriptSvg} description="typescript" />
           <ItemSkill image={sassSvg} description="sass" />
+          <ItemSkill image={expressSvg} description="express" />
+          <ItemSkill image={nestSvg} description="nestjs" />
+          <ItemSkill image={webpackSvg} description="nestjs" />
         </ul>
       </div>
     </section>

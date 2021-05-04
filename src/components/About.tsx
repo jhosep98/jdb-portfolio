@@ -1,5 +1,6 @@
 import React from "react";
-import jhosep from "../assets/img/jhosep.jpg";
+// import jhosep from "../assets/img/jhosep.jpg";
+import jhosep from "../assets/img/jhosep-profile.jpg";
 import { fadeInLeft } from "react-animations";
 import { fadeInRight } from "react-animations";
 import styled, { keyframes } from "styled-components";

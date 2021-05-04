@@ -116,6 +116,7 @@
 
     .header__title {
       font-size: 22px;
+      margin-left: 2rem;
       @include textBold(bold, uppercase);
       font-family: "Permanent Marker", cursive;
       @include tablet {

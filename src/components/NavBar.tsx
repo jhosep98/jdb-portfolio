@@ -43,7 +43,6 @@ export const NavBar = ({
     <header className="header" id="home">
       <nav className="header__navbar">
         <div className="header__container">
-          <img src={jhosep} alt="jhosep davila" className="header__profile" />
           <h1 className="header__title">{title}</h1>
         </div>
         <ul id="menu" ref={menuRef}>
