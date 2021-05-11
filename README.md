@@ -1,6 +1,6 @@
 # JDB PORTFOLIO
 
-Web portfolio showing my self-taught projects and my contact details.📝💻
+Web portfolio showing my self-taught projects and my contact details. 📝💻
 
 ## Table of contents
 
