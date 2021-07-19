@@ -17,7 +17,6 @@ export const App = () => {
         }}
         subtitle="Jhosep Davila"
         paragraph="Front-end Developer"
-        textButton="Know me"
       />
       <Main />
       <Footer />

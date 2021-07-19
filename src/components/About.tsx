@@ -1,16 +1,9 @@
 import React from "react";
-// import jhosep from "../assets/img/jhosep.jpg";
-import jhosep from "../assets/img/jhosep-profile.jpg";
-import { fadeInLeft } from "react-animations";
 import { fadeInRight } from "react-animations";
 import styled, { keyframes } from "styled-components";
 
-const FadeInLeftDiv = keyframes`${fadeInLeft}`;
 const FadeInRightDiv = keyframes`${fadeInRight}`;
 
-const FadeInLeft = styled.div`
-  animation: 1.1s ${FadeInLeftDiv};
-`;
 const FadeInRight = styled.div`
   animation: 1.1s ${FadeInRightDiv};
 `;
@@ -18,7 +11,6 @@ const FadeInRight = styled.div`
 type NavProps = {
   title: string;
   paragraph: string;
-  subtitle: string;
   paragraphSubtitle: string;
   textButton: string;
   data: {
@@ -32,7 +24,6 @@ type NavProps = {
 export const About = ({
   title,
   paragraph,
-  subtitle,
   paragraphSubtitle,
   textButton,
   data: { email, city, age, name },
@@ -44,11 +35,7 @@ export const About = ({
         <p>{paragraph}</p>
       </div>
       <div className="about__row">
-        <FadeInLeft className="about__image">
-          <img src={jhosep} alt="jhosep" />
-        </FadeInLeft>
         <FadeInRight className="about__description">
-          <h3>{subtitle}</h3>
           <p>{paragraphSubtitle}</p>
           <div className="about__data">
             <div className="about__left">
