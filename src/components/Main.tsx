@@ -10,7 +10,7 @@ export const Main = () => {
       <About
         title="About"
         paragraph="Learn more about me"
-        paragraphSubtitle="My name is Joseph Davila and I am a front-end developer,self-taught, passionate about the web and I have experience in freelance web development."
+        paragraphSubtitle="My name is Joseph Davila and I am a front-end developer, self-taught, passionate about the web and I have experience in freelance web development."
         textButton="Donwload cv"
         data={{
           email: "jhosepdb149@gmail.com",

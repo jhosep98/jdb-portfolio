@@ -26,7 +26,7 @@ export const Skills = ({ title, subtitle, description }: skillsProps) => {
       </div>
       <div className="skills__container">
         <p>{description}</p>
-        <ul>
+        <div className="grid">
           <ItemSkill image={htmlSvg} description="html" />
           <ItemSkill image={cssSvg} description="css" />
           <ItemSkill image={javascriptSvg} description="javascript" />
@@ -36,8 +36,8 @@ export const Skills = ({ title, subtitle, description }: skillsProps) => {
           <ItemSkill image={sassSvg} description="sass" />
           <ItemSkill image={expressSvg} description="express" />
           <ItemSkill image={nestSvg} description="nestjs" />
-          <ItemSkill image={webpackSvg} description="nestjs" />
-        </ul>
+          <ItemSkill image={webpackSvg} description="webpack" />
+        </div>
       </div>
     </section>
   );
@@ -50,8 +50,8 @@ type ItemProps = {
 
 const ItemSkill = ({ image, description }: ItemProps) => {
   return (
-    <li>
+    <div>
       <img src={image} alt={description} />
-    </li>
+    </div>
   );
 };
