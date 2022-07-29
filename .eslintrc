@@ -1,0 +1,79 @@
+{
+  "extends": ["airbnb", "plugin:react/recommended", "eslint:recommended"],
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".d.ts", ".ts", ".tsx"],
+        "paths": ["src", "node_modules"]
+      }
+    }
+  },
+  "rules": {
+    "react/function-component-definition": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-no-useless-fragment": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "react/display-name": "off",
+    "react/require-default-props": "off",
+    "no-undef": "off",
+    "no-shadow": "off",
+    "object-curly-spacing": "off",
+    "object-curly-newline": "off",
+    "import/extensions": [
+      "error",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": [2, { "commonjs": false }],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreStrings": true,
+        "ignoreUrls": true,
+        "ignoreComments": true
+      }
+    ],
+    "no-bitwise": "off",
+    "no-use-before-define": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "camelcase": "off",
+    "no-plusplus": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "[A-Za-z0-9]Model",
+          "match": true
+        }
+      }
+    ],
+    "linebreak-style": "off"
+  }
+}
