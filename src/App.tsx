@@ -1,16 +1,16 @@
+import React from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
+import { AppRouter } from 'routes/AppRouter';
 import { setTheme } from 'theme/defaultTheme';
 
-function App() {
+export const App: React.FC = () => {
   const { theme } = setTheme({});
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <h1>Hello JDB!</h1>
+      <AppRouter />
     </ThemeProvider>
   );
-}
-
-export default App;
+};
