@@ -1,26 +1,27 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
 import { LayoutMenuContent } from '@wulperstudio/cms';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Menu } from 'components';
-import { ICONS_NAME } from 'helpers/icons';
+import { generateRoutes } from 'helpers/generateRoutes';
 import { MainLayout } from './styled';
 
-export const HomePage: React.FC = () => (
-  <MainLayout>
-    <LayoutMenuContent
-      columnGap={15}
-      menu={(
-        <Menu
-          menuList={[
-            {
-              text: 'Home',
-              icon: <Icon icon={ICONS_NAME.home} width="24" height="24" />,
-            },
-          ]}
-        />
-      )}
-      content={<div>Home Page</div>}
-    />
-  </MainLayout>
-);
+export const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const routes = React.useMemo(
+    () => generateRoutes(navigate, location),
+    [location, navigate],
+  );
+
+  return (
+    <MainLayout>
+      <LayoutMenuContent
+        columnGap={15}
+        menu={<Menu menuList={routes} />}
+        content={<div>Home Page</div>}
+      />
+    </MainLayout>
+  );
+};
