@@ -97,4 +97,5 @@ export const ICONS_NAME = {
   appleIcon: 'ant-design:apple-outlined',
   windowIcon: 'ant-design:windows-outlined',
   checkIcon: 'bi:check-lg',
+  person: 'akar-icons:person',
 };
