@@ -2,7 +2,7 @@ import React from 'react';
 import { LayoutMenuContent } from '@wulperstudio/cms';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
-import { Menu } from 'components';
+import { BoxContent, Menu } from 'components';
 import { generateRoutes } from 'helpers/generateRoutes';
 import { MainLayout } from './styled';
 
@@ -20,7 +20,11 @@ export const AppLayout: React.FC = () => {
       <LayoutMenuContent
         columnGap={15}
         menu={<Menu menuList={routes} />}
-        content={<Outlet />}
+        content={(
+          <BoxContent>
+            <Outlet />
+          </BoxContent>
+        )}
       />
     </MainLayout>
   );
