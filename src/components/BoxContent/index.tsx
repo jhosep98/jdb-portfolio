@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box, Container, useTheme } from '@mui/material';
 
 interface BoxContentModel {
   children?: React.ReactNode | React.ReactNode[];
@@ -17,10 +17,10 @@ export const BoxContent: React.FC<BoxContentModel> = ({ children }) => {
         height: '100%',
         borderRadius: '10px',
         boxShadow: theme.shadows[1],
-        padding: '1rem',
+        padding: '10px',
       }}
     >
-      {children}
+      <Container sx={{ height: '100%' }}>{children}</Container>
     </Box>
   );
 };
