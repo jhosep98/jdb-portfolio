@@ -113,7 +113,7 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
         sm: 600,
         md: 900,
         lg: 1200,
-        xl: 1536,
+        xl: 1500,
         xxl: 1920,
       },
     },

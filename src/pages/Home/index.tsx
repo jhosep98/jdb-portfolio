@@ -37,8 +37,9 @@ export const HomePage: React.FC = () => (
         )}
         variant="h1"
         fontSize="50px"
-        fontWeight={500}
+        fontWeight={600}
         textAlign="left"
+        lineHeight="67px"
         sx={{ p: '10px' }}
       />
     </Box>

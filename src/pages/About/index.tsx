@@ -1,4 +1,8 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
-export const AboutPage: React.FC = () => <Typography>About Page</Typography>;
+export const AboutPage: React.FC = () => (
+  <Box component="article" sx={{ height: '100%' }}>
+    About Page
+  </Box>
+);

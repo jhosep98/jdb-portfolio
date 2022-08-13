@@ -17,10 +17,10 @@ export const BoxContent: React.FC<BoxContentModel> = ({ children }) => {
         height: '100%',
         borderRadius: '10px',
         boxShadow: theme.shadows[1],
-        padding: '10px',
+        py: '15px',
       }}
     >
-      <Container sx={{ height: '100%' }}>{children}</Container>
+      <Container maxWidth="xl" sx={{ height: '100%' }}>{children}</Container>
     </Box>
   );
 };
