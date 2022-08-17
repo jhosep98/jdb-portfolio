@@ -1,14 +1,17 @@
 import React from 'react';
-import { LayoutMenuContent } from '@wulperstudio/cms';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import { LayoutMenuContent, MenuResponsive } from '@wulperstudio/cms';
 
 import { BoxContent, Menu } from 'components';
 import { generateRoutes } from 'helpers/generateRoutes';
-import { MainLayout } from './styled';
+import { MainLayout, BoxHeader } from './styled';
 
 export const AppLayout: React.FC = () => {
+  const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
 
   const routes = React.useMemo(
     () => generateRoutes(navigate, location),
@@ -19,7 +22,16 @@ export const AppLayout: React.FC = () => {
     <MainLayout>
       <LayoutMenuContent
         columnGap={15}
-        menu={<Menu menuList={routes} />}
+        rowGap={isMqMd ? 0 : 10}
+        menu={
+          isMqMd ? (
+            <BoxHeader>
+              <MenuResponsive options={routes} />
+            </BoxHeader>
+          ) : (
+            <Menu menuList={routes} />
+          )
+        }
         content={(
           <BoxContent>
             <Outlet />
