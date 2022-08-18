@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 interface PropsModel {
   mode?: 'light' | 'dark';
@@ -19,7 +19,7 @@ declare module '@mui/material/styles' {
 }
 
 export const setTheme = ({ mode = 'light' }: PropsModel) => {
-  const theme = createTheme({
+  let theme = createTheme({
     components: {
       MuiCssBaseline: {
         styleOverrides: {
@@ -88,15 +88,15 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
     },
     typography: {
       fontFamily: ['Poppins'].join(','),
-      h1: {
-        fontSize: '2rem',
-      },
-      h2: {
-        fontSize: '1.5rem',
-      },
-      h3: {
-        fontSize: '1.25rem',
-      },
+      // h1: {
+      //   fontSize: '2rem',
+      // },
+      // h2: {
+      //   fontSize: '1.5rem',
+      // },
+      // h3: {
+      //   fontSize: '1.25rem',
+      // },
       h4: {
         fontSize: '1rem',
       },
@@ -145,6 +145,8 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
       'rgb(0 0 0 / 9%) 0px 3px 12px',
     ],
   });
+
+  theme = responsiveFontSizes(theme);
 
   return { theme };
 };
