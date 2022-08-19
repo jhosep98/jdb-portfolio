@@ -30,12 +30,13 @@ export const WrapperButton: React.FC<WrapperButtonModel> = ({
       color={color}
       disableElevation
       variant={variant}
+      fullWidth
       sx={{
         minWidth: 140,
-        borderRadius: '5px',
+        borderRadius: '100px',
         minHeight: sizeButton[sizeVariant],
         fontSize: '16px',
-        fontWeight: 700,
+        fontWeight: 500,
         ...sx,
       }}
       {...rest}

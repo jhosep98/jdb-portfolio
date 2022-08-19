@@ -11,7 +11,7 @@ export const Menu: React.FC<MenuPropsModel> = ({ menuList }) => (
     display="flex"
     icons={menuList}
     logoUrl="https://source.unsplash.com/random"
-    order={3}
+    order={2}
     spacing={3}
     spacingIcons={2}
     customHeader={{

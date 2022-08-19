@@ -23,6 +23,12 @@ export const generateRoutes = (
       toRoute: () => navigate(AUTH_ROUTES.about),
       active: location.pathname === `/${AUTH_ROUTES.about}`,
     },
+    {
+      icon: <Icon icon={ICONS_NAME.settings} width="24" height="24" />,
+      text: 'About',
+      toRoute: () => navigate(AUTH_ROUTES.settings),
+      active: location.pathname === `/${AUTH_ROUTES.settings}`,
+    },
   ];
   return ITEMS;
 };
