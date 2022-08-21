@@ -26,7 +26,9 @@ export const BoxContent: React.FC<BoxContentModel> = ({ children }) => {
     >
       <Container
         maxWidth="xl"
-        sx={{ height: '100%', display: 'flex', alignItems: 'center' }}
+        sx={{
+          height: '100%',
+        }}
       >
         {children}
       </Container>
