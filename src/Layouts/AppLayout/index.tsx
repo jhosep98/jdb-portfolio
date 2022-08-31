@@ -3,7 +3,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { LayoutMenuContent, MenuResponsive } from '@wulperstudio/cms';
 
-import { BoxContent, Menu } from 'components';
+import { Menu } from 'components';
 import { generateRoutes } from 'helpers/generateRoutes';
 import { MainLayout, BoxHeader } from './styled';
 
@@ -32,11 +32,7 @@ export const AppLayout: React.FC = () => {
             <Menu menuList={routes} />
           )
         }
-        content={(
-          <BoxContent>
-            <Outlet />
-          </BoxContent>
-        )}
+        content={<Outlet />}
       />
     </MainLayout>
   );

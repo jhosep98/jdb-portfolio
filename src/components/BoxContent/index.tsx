@@ -3,9 +3,13 @@ import { Box, Container, useTheme } from '@mui/material';
 
 interface BoxContentModel {
   children?: React.ReactNode | React.ReactNode[];
+  isContainer?: boolean;
 }
 
-export const BoxContent: React.FC<BoxContentModel> = ({ children }) => {
+export const BoxContent: React.FC<BoxContentModel> = ({
+  children,
+  isContainer,
+}) => {
   const theme = useTheme();
 
   return (
@@ -17,21 +21,24 @@ export const BoxContent: React.FC<BoxContentModel> = ({ children }) => {
         height: '100%',
         borderRadius: '10px',
         boxShadow: theme.shadows[1],
-        py: '15px',
         [theme.breakpoints.down('md')]: {
           borderRadius: 0,
           boxShadow: 'none',
         },
       }}
     >
-      <Container
-        maxWidth="xl"
-        sx={{
-          height: '100%',
-        }}
-      >
-        {children}
-      </Container>
+      {isContainer ? (
+        children
+      ) : (
+        <Container
+          maxWidth="xl"
+          sx={{
+            height: '100%',
+          }}
+        >
+          {children}
+        </Container>
+      )}
     </Box>
   );
 };
