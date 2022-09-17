@@ -2590,10 +2590,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wulperstudio/cms@^0.0.653-beta":
-  version "0.0.653-beta"
-  resolved "https://registry.yarnpkg.com/@wulperstudio/cms/-/cms-0.0.653-beta.tgz#8e56b7e1d97ae340f8790f3eb0ae565f5412c86b"
-  integrity sha512-bwA7g211y5FfZ112n/yP3KJiK788//KUom0j+wHAlnaY7gNTkJ7Xv479QPh+onvstUJ/qsTaBMfcyIU5Wi49mw==
+"@wulperstudio/cms@^0.0.664-beta":
+  version "0.0.664-beta"
+  resolved "https://registry.yarnpkg.com/@wulperstudio/cms/-/cms-0.0.664-beta.tgz#c96dcfda69a85a3dd3791dbcf49160bef61eb897"
+  integrity sha512-Q8uhwpT8AJ3AbY9AGvWVOdImt3N3Pdk+rR5PsTUUdKLd8SM2jqzr5+jj3E4Vtg+deBr6OjwjNPx80J/qkjxvUA==
   dependencies:
     "@date-io/date-fns" "^2.14.0"
     "@emotion/react" "^11.9.3"
