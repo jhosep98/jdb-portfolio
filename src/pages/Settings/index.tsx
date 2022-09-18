@@ -1,5 +1,4 @@
 import React from 'react';
-import { v4 } from 'uuid';
 import { Icon } from '@iconify/react';
 import { InputBoxGroup } from '@wulperstudio/cms';
 import { Box, useTheme, Stack } from '@mui/material';
@@ -35,7 +34,6 @@ export const SettingsPage: React.FC = () => {
             />
 
             <WrapperText
-              clines={2}
               fontWeight="400"
               color={theme.palette.text.secondary}
               variant="body1"
@@ -55,12 +53,14 @@ export const SettingsPage: React.FC = () => {
 
           <Box>
             <InputBoxGroup
-              label="Mode"
+              label="Mode test"
               sizeElement="large"
               variant="outlined"
+              defaultValue="light"
+              onChange={() => {}}
               values={[
                 {
-                  id: v4(),
+                  id: 'light',
                   name: 'light',
                   icon: (
                     <Icon
@@ -71,7 +71,7 @@ export const SettingsPage: React.FC = () => {
                   ),
                 },
                 {
-                  id: v4(),
+                  id: 'dark',
                   name: 'dark',
                   icon: (
                     <Icon
@@ -82,7 +82,6 @@ export const SettingsPage: React.FC = () => {
                   ),
                 },
               ]}
-              onChange={() => {}}
             >
               {(value) => <>{value.icon}</>}
             </InputBoxGroup>
@@ -92,7 +91,7 @@ export const SettingsPage: React.FC = () => {
             <InputBoxGroup
               values={[
                 {
-                  id: v4(),
+                  id: 'float',
                   name: 'float',
                   icon: (
                     <Icon
@@ -103,7 +102,7 @@ export const SettingsPage: React.FC = () => {
                   ),
                 },
                 {
-                  id: v4(),
+                  id: 'divider',
                   name: 'divider',
                   icon: (
                     <Icon icon="lucide:layout" color="inherit" width="24" />
@@ -114,6 +113,7 @@ export const SettingsPage: React.FC = () => {
               variant="outlined"
               sizeElement="large"
               onChange={() => {}}
+              defaultValue="float"
             >
               {(value) => <>{value.icon}</>}
             </InputBoxGroup>

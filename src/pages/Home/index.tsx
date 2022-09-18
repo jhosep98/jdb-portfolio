@@ -16,6 +16,9 @@ export const HomePage: React.FC = () => {
           height: '100%',
           display: 'grid',
           placeItems: 'center',
+          [theme.breakpoints.down('md')]: {
+            py: '70px',
+          },
         }}
       >
         <ContentRowBlock
@@ -23,8 +26,8 @@ export const HomePage: React.FC = () => {
           secondBox={(
             <Box sx={{ py: '10px' }}>
               <WrapperText
-                clines={isMqMd ? 7 : 5}
                 variant="h1"
+                component="h1"
                 textAlign={isMqMd ? 'center' : 'left'}
                 text={(
                   <>

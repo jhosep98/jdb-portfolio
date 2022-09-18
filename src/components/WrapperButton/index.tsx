@@ -12,9 +12,9 @@ interface WrapperButtonModel extends ButtonModel {
 }
 
 const sizeButton: ISizeButton = {
-  small: '40px',
-  medium: '50px',
-  large: '55px',
+  small: '42px',
+  medium: '48px',
+  large: '58px',
 };
 
 export const WrapperButton: React.FC<WrapperButtonModel> = ({
@@ -33,7 +33,7 @@ export const WrapperButton: React.FC<WrapperButtonModel> = ({
       fullWidth
       sx={{
         minWidth: 140,
-        borderRadius: '100px',
+        borderRadius: '15px',
         minHeight: sizeButton[sizeVariant],
         fontSize: '16px',
         fontWeight: 500,

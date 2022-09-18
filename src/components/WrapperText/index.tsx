@@ -1,17 +1,17 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import { TextForLinesOutput, TextForLinesOutputModel } from '@wulperstudio/cms';
+import { Typography, TypographyProps } from '@mui/material';
 
-interface WrapperTextModel extends Omit<TextForLinesOutputModel, 'clines'> {
-  clines?: number;
+interface WrapperTextModel extends Omit<TypographyProps, 'component'> {
+  text: React.ReactNode;
+  component?: React.ElementType;
 }
 
 export const WrapperText: React.FC<WrapperTextModel> = ({ ...props }) => {
-  const { color = 'text.primary', clines = 1, ...rest } = props;
+  const { color = 'text.primary', text, component = 'p', ...rest } = props;
 
   return (
-    <Box>
-      <TextForLinesOutput clines={clines} color={color} {...rest} />
-    </Box>
+    <Typography component={component} color={color} {...rest}>
+      {text}
+    </Typography>
   );
 };
