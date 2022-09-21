@@ -1,13 +1,17 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
 import { InputBoxGroup } from '@wulperstudio/cms';
-import { Box, useTheme, Stack } from '@mui/material';
+import { Box, useTheme, Stack, Container } from '@mui/material';
 
-import { ICONS_NAME } from 'helpers/icons';
+import { Theme } from 'interfaces';
+import { ThemeContext } from 'context';
+import { values, valuesLayout } from 'data';
 import { WrapperButton, WrapperText } from 'components';
 
 export const SettingsPage: React.FC = () => {
   const theme = useTheme();
+  const { modeTheme, setTheme } = React.useContext(ThemeContext);
+
+  const handleChange = (theme: Theme) => setTheme(theme);
 
   return (
     <Box
@@ -17,13 +21,7 @@ export const SettingsPage: React.FC = () => {
         height: '100%',
       }}
     >
-      <Stack
-        rowGap="25px"
-        sx={{
-          height: '100%',
-          overflow: 'auto',
-        }}
-      >
+      <Container>
         <Stack rowGap="25px">
           <Box>
             <WrapperText
@@ -51,84 +49,38 @@ export const SettingsPage: React.FC = () => {
             }}
           />
 
-          <Box>
-            <InputBoxGroup
-              label="Mode test"
-              sizeElement="large"
-              variant="outlined"
-              defaultValue="light"
-              onChange={() => {}}
-              values={[
-                {
-                  id: 'light',
-                  name: 'light',
-                  icon: (
-                    <Icon
-                      icon={ICONS_NAME.themeLight}
-                      color="inherit"
-                      width="24"
-                    />
-                  ),
-                },
-                {
-                  id: 'dark',
-                  name: 'dark',
-                  icon: (
-                    <Icon
-                      icon={ICONS_NAME.themeDark}
-                      color="inherit"
-                      width="24"
-                    />
-                  ),
-                },
-              ]}
-            >
-              {(value) => <>{value.icon}</>}
-            </InputBoxGroup>
-          </Box>
+          <InputBoxGroup
+            label="Mode test"
+            sizeElement="large"
+            variant="outlined"
+            defaultValue={modeTheme.mode}
+            onChange={(value) => handleChange(value.name)}
+            values={values}
+          >
+            {(value) => <>{value.icon}</>}
+          </InputBoxGroup>
 
-          <Box>
-            <InputBoxGroup
-              values={[
-                {
-                  id: 'float',
-                  name: 'float',
-                  icon: (
-                    <Icon
-                      icon="lucide:layout-template"
-                      color="inherit"
-                      width="24"
-                    />
-                  ),
-                },
-                {
-                  id: 'divider',
-                  name: 'divider',
-                  icon: (
-                    <Icon icon="lucide:layout" color="inherit" width="24" />
-                  ),
-                },
-              ]}
-              label="Layout"
-              variant="outlined"
-              sizeElement="large"
-              onChange={() => {}}
-              defaultValue="float"
-            >
-              {(value) => <>{value.icon}</>}
-            </InputBoxGroup>
-          </Box>
+          <InputBoxGroup
+            values={valuesLayout}
+            label="Layout"
+            variant="outlined"
+            sizeElement="large"
+            onChange={() => {}}
+            defaultValue="float"
+          >
+            {(value) => <>{value.icon}</>}
+          </InputBoxGroup>
+
+          <WrapperButton
+            color="primary"
+            sizeVariant="large"
+            type="submit"
+            variant="contained"
+          >
+            Save changes
+          </WrapperButton>
         </Stack>
-
-        <WrapperButton
-          color="primary"
-          sizeVariant="large"
-          type="button"
-          variant="contained"
-        >
-          Save changes
-        </WrapperButton>
-      </Stack>
+      </Container>
     </Box>
   );
 };

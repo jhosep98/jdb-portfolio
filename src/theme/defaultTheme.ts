@@ -1,7 +1,8 @@
+import { Theme } from 'interfaces';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 interface PropsModel {
-  mode?: 'light' | 'dark';
+  mode: Theme;
   primaryColor?: string;
   secondaryColor?: string;
 }
