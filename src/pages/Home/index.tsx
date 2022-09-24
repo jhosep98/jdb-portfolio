@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ContentRowBlock, Hero } from '@wulperstudio/cms';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -13,6 +14,7 @@ import GroovyWalkAnimation from 'assets/animations/Blogging.json';
 
 export const HomePage: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
@@ -43,17 +45,9 @@ export const HomePage: React.FC = () => {
                     variant="h1"
                     component="h1"
                     textAlign={isMqMd ? 'center' : 'left'}
-                    text={(
-                      <>
-                        Hi, you found me! I&apos;m a
-                        {' '}
-                        <Box component="span" color="primary.main">
-                          Front-end developer
-                        </Box>
-                        {' '}
-                        from Argentina.
-                      </>
-                    )}
+                    text={t('welcome', {
+                      name: 'Front-end',
+                    })}
                   />
                 </Box>
               </FadeInLeftWhenVisible>

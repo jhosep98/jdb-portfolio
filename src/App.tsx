@@ -1,6 +1,7 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
+import './language/index';
 import { AppRouter } from 'routes/AppRouter';
 import { setTheme } from 'theme/defaultTheme';
 import { ThemeContext, ThemeStateProvider } from 'context';
