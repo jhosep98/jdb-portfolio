@@ -34,3 +34,18 @@ export const valuesLayout = [
     icon: <Icon icon={ICONS_NAME.layoutDivider} color="inherit" width="24" />,
   },
 ];
+
+export const valuesLanguage = [
+  {
+    id: 'english',
+    name: 'english',
+    icon: (
+      <Icon icon={ICONS_NAME.unitedKingdomFlag} color="inherit" width="24" />
+    ),
+  },
+  {
+    id: 'spanish',
+    name: 'spanish',
+    icon: <Icon icon={ICONS_NAME.spanishFlag} color="inherit" width="24" />,
+  },
+];

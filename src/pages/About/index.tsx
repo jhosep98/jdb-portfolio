@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box } from '@mui/material';
+
+import { BoxContent } from 'components';
 
 export const AboutPage: React.FC = () => (
-  <Box component="article" sx={{ height: '100%' }}>
+  <BoxContent isContainer>
     About Page
-  </Box>
+  </BoxContent>
 );

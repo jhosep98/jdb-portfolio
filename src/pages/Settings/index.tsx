@@ -1,11 +1,12 @@
 import React from 'react';
 import { InputBoxGroup } from '@wulperstudio/cms';
-import { Box, useTheme, Stack, Container } from '@mui/material';
+import { Box, useTheme, Stack } from '@mui/material';
 
 import { Theme } from 'interfaces';
 import { ThemeContext } from 'context';
-import { values, valuesLayout } from 'data';
-import { WrapperButton, WrapperText } from 'components';
+import { ContainerTemplate } from 'templates';
+import { values, valuesLanguage, valuesLayout } from 'data';
+import { BoxContent, WrapperButton, WrapperText } from 'components';
 
 export const SettingsPage: React.FC = () => {
   const theme = useTheme();
@@ -14,15 +15,13 @@ export const SettingsPage: React.FC = () => {
   const handleChange = (theme: Theme) => setTheme(theme);
 
   return (
-    <Box
-      sx={{
-        maxWidth: 800,
-        margin: '0 auto',
-        height: '100%',
-      }}
-    >
-      <Container>
-        <Stack rowGap="25px">
+    <BoxContent isContainer>
+      <ContainerTemplate>
+        <Stack
+          component="form"
+          rowGap="25px"
+          sx={{ maxWidth: 800, margin: '0 auto', height: '100%' }}
+        >
           <Box>
             <WrapperText
               text="Settings"
@@ -35,7 +34,7 @@ export const SettingsPage: React.FC = () => {
               fontWeight="400"
               color={theme.palette.text.secondary}
               variant="body1"
-              text="We are looking for the document you wre issued when your company was formed in the US."
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit aliquet turpis, ut placerat mauris posuere eu. Vestibulum et leo pellentesque, hendrerit urna in, dignissim nisi."
             />
           </Box>
 
@@ -50,7 +49,7 @@ export const SettingsPage: React.FC = () => {
           />
 
           <InputBoxGroup
-            label="Mode test"
+            label="Theme"
             sizeElement="large"
             variant="outlined"
             defaultValue={modeTheme.mode}
@@ -71,16 +70,28 @@ export const SettingsPage: React.FC = () => {
             {(value) => <>{value.icon}</>}
           </InputBoxGroup>
 
+          <InputBoxGroup
+            values={valuesLanguage}
+            label="Laguage"
+            variant="outlined"
+            sizeElement="large"
+            onChange={() => {}}
+            defaultValue="english"
+          >
+            {(value) => <>{value.icon}</>}
+          </InputBoxGroup>
+
           <WrapperButton
             color="primary"
             sizeVariant="large"
             type="submit"
             variant="contained"
+            aria-label="save changes"
           >
             Save changes
           </WrapperButton>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerTemplate>
+    </BoxContent>
   );
 };

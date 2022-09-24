@@ -14,6 +14,7 @@ export const BoxContent: React.FC<BoxContentModel> = ({
 
   return (
     <Box
+      component="main"
       sx={{
         backgroundColor: theme.palette.background.default,
         width: '100%',
