@@ -4,7 +4,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import './language/index';
 import { AppRouter } from 'routes/AppRouter';
 import { setTheme } from 'theme/defaultTheme';
-import { ThemeContext, ThemeStateProvider } from 'context';
+import { LanguageProvider, ThemeContext, ThemeStateProvider } from 'context';
 
 const AppState = ({
   children,
@@ -16,7 +16,9 @@ const AppState = ({
 
   return (
     <>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <LanguageProvider>{children}</LanguageProvider>
+      </ThemeProvider>
     </>
   );
 };

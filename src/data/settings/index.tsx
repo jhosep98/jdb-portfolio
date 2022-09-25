@@ -1,7 +1,13 @@
 import { Icon } from '@iconify/react';
 
-import { Theme } from 'interfaces';
+import { Language, Theme } from 'interfaces';
 import { ICONS_NAME } from 'helpers/icons';
+
+interface IconLanguageModel {
+  id: string;
+  name: Language;
+  icon: React.ReactNode;
+}
 
 interface IconThemeModel {
   id: string;
@@ -35,17 +41,17 @@ export const valuesLayout = [
   },
 ];
 
-export const valuesLanguage = [
+export const valuesLanguage: Array<IconLanguageModel> = [
   {
-    id: 'english',
-    name: 'english',
+    id: 'en',
+    name: 'en',
     icon: (
       <Icon icon={ICONS_NAME.unitedKingdomFlag} color="inherit" width="24" />
     ),
   },
   {
-    id: 'spanish',
-    name: 'spanish',
+    id: 'es',
+    name: 'es',
     icon: <Icon icon={ICONS_NAME.spanishFlag} color="inherit" width="24" />,
   },
 ];

@@ -11,7 +11,7 @@ const resources = {
   es: {
     translation: es,
   },
-};
+} as const;
 
 i18n.use(initReactI18next).init({
   lng: 'en',

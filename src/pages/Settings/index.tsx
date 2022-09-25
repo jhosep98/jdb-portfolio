@@ -2,17 +2,25 @@ import React from 'react';
 import { InputBoxGroup } from '@wulperstudio/cms';
 import { Box, useTheme, Stack } from '@mui/material';
 
-import { Theme } from 'interfaces';
-import { ThemeContext } from 'context';
+import { Language, Theme } from 'interfaces';
 import { ContainerTemplate } from 'templates';
+import { LanguageContext, ThemeContext } from 'context';
 import { values, valuesLanguage, valuesLayout } from 'data';
 import { BoxContent, WrapperButton, WrapperText } from 'components';
+import { useTranslation } from 'react-i18next';
 
 export const SettingsPage: React.FC = () => {
   const theme = useTheme();
+  const { i18n } = useTranslation();
   const { modeTheme, setTheme } = React.useContext(ThemeContext);
+  const { modeLanguage, setLanguage } = React.useContext(LanguageContext);
 
   const handleChange = (theme: Theme) => setTheme(theme);
+
+  const handleChangeLanguage = (language: Language) => {
+    setLanguage(language);
+    i18n.changeLanguage(language);
+  };
 
   return (
     <BoxContent isContainer>
@@ -72,11 +80,11 @@ export const SettingsPage: React.FC = () => {
 
           <InputBoxGroup
             values={valuesLanguage}
-            label="Laguage"
+            label="Language"
             variant="outlined"
             sizeElement="large"
-            onChange={() => {}}
-            defaultValue="english"
+            defaultValue={modeLanguage.language}
+            onChange={(value) => handleChangeLanguage(value.name)}
           >
             {(value) => <>{value.icon}</>}
           </InputBoxGroup>
