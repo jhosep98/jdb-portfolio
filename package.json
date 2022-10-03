@@ -4,16 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite --host",
     "lint:fix-w": "eslint src\\**\\*.{ts,tsx} --fix",
-    "test": "npm-run-all --parallel test:lint test:tsc",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
+    "preview": "vite preview",
     "test-w": "npm-run-all --parallel test:lint-w test:tsc",
-    "test:lint": "eslint src/**/*.{ts,tsx}",
     "test:lint-w": "eslint src\\**\\*.{ts,tsx}",
-    "test:tsc": "tsc"
+    "test:lint": "eslint src/**/*.{ts,tsx}",
+    "test:tsc": "tsc",
+    "test": "npm-run-all --parallel test:lint test:tsc"
   },
   "dependencies": {
     "@emotion/react": "11.9.3",
@@ -21,11 +22,12 @@
     "@mui/material": "5.9.2",
     "@wulperstudio/cms": "^0.0.666-beta",
     "framer-motion": "7.3.6",
-    "i18next": "^21.9.2",
+    "gh-pages": "4.0.0",
+    "i18next": "21.9.2",
     "lottie-react": "2.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-i18next": "^11.18.6",
+    "react-i18next": "11.18.6",
     "react-intersection-observer": "9.4.0",
     "react-router-dom": "6",
     "uuid": "8.3.2"
