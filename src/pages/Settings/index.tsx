@@ -1,13 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { InputBoxGroup } from '@wulperstudio/cms';
 import { Box, useTheme, Stack } from '@mui/material';
 
 import { Language, Theme } from 'interfaces';
 import { ContainerTemplate } from 'templates';
+import { values, valuesLanguage } from 'data';
 import { LanguageContext, ThemeContext } from 'context';
-import { values, valuesLanguage, valuesLayout } from 'data';
 import { BoxContent, WrapperButton, WrapperText } from 'components';
-import { useTranslation } from 'react-i18next';
 
 export const SettingsPage: React.FC = () => {
   const theme = useTheme();
@@ -67,7 +67,7 @@ export const SettingsPage: React.FC = () => {
             {(value) => <>{value.icon}</>}
           </InputBoxGroup>
 
-          <InputBoxGroup
+          {/* <InputBoxGroup
             values={valuesLayout}
             label="Layout"
             variant="outlined"
@@ -76,7 +76,7 @@ export const SettingsPage: React.FC = () => {
             defaultValue="float"
           >
             {(value) => <>{value.icon}</>}
-          </InputBoxGroup>
+          </InputBoxGroup> */}
 
           <InputBoxGroup
             values={valuesLanguage}

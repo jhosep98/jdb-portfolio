@@ -1,6 +1,8 @@
 import React from 'react';
 import { IconsPropsModel, Menu as WSMenu } from '@wulperstudio/cms';
 
+import { consts } from 'helpers/consts';
+
 export interface MenuPropsModel {
   menuList: IconsPropsModel[];
 }
@@ -10,7 +12,7 @@ export const Menu: React.FC<MenuPropsModel> = ({ menuList }) => (
     menu="float"
     display="flex"
     icons={menuList}
-    logoUrl="https://source.unsplash.com/random"
+    logoUrl={consts.profilePhotoMenu}
     order={2}
     spacing={3}
     spacingIcons={2}

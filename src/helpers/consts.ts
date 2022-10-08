@@ -1,4 +1,6 @@
 import { InputVariantType } from '@wulperstudio/cms';
+import ProfilePhoto from '../assets/jhosep-profile.jpg';
+import ProfilePhotoMenu from '../assets/profile.jpg';
 
 interface DrawerConstsModel {
   paddingContainerDrawer: string;
@@ -11,6 +13,8 @@ export const consts = {
   boxShadowStyle: 'rgb(0 0 0 / 9%) 0px 3px 12px',
   widthLayout: '50vw',
   avatarImg: 'https://mui.com/static/images/avatar/1.jpg',
+  profilePhoto: ProfilePhoto,
+  profilePhotoMenu: ProfilePhotoMenu,
 };
 
 export const DRAWER_CONSTS: DrawerConstsModel = {
