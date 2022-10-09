@@ -1,14 +1,26 @@
 import React from 'react';
-import { Container, ContainerProps } from '@mui/material';
+import { Container, ContainerProps, useTheme } from '@mui/material';
 
 export const ContainerTemplate: React.FC<ContainerProps> = ({
   children,
   ...props
 }) => {
+  const theme = useTheme();
   const { sx, ...rest } = props;
 
   return (
-    <Container component="section" sx={{ py: '70px', height: '100%', ...sx }} {...rest}>
+    <Container
+      component="section"
+      sx={{
+        py: '75px',
+        height: '100%',
+        [theme.breakpoints.down('md')]: {
+          py: '35px',
+        },
+        ...sx,
+      }}
+      {...rest}
+    >
       {children}
     </Container>
   );

@@ -86,6 +86,7 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
       warning: {
         main: '#FFC43A',
       },
+      divider: '#f4f7fd',
     },
     typography: {
       fontFamily: ['Poppins'].join(','),

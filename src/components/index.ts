@@ -3,6 +3,7 @@ export * from './BoxContent';
 export * from './FadeInLeftWhenVisible';
 export * from './FadeInWhenVisible';
 export * from './InputBoxTheme';
+export * from './ListAbout';
 export * from './Menu';
 export * from './WrapperButton';
 export * from './WrapperIcon';
