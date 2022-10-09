@@ -98,4 +98,5 @@ export const ICONS_NAME = {
   windowIcon: 'ant-design:windows-outlined',
   checkIcon: 'bi:check-lg',
   person: 'akar-icons:person',
+  cake: 'fluent:food-cake-16-regular',
 };

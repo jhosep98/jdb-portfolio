@@ -5,5 +5,6 @@ export * from './FadeInWhenVisible';
 export * from './InputBoxTheme';
 export * from './Menu';
 export * from './WrapperButton';
+export * from './WrapperIcon';
 export * from './WrapperText';
 export * from './WrapperTextField';

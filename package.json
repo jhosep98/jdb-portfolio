@@ -21,6 +21,7 @@
     "@emotion/styled": "11.9.3",
     "@mui/material": "5.9.2",
     "@wulperstudio/cms": "^0.0.666-beta",
+    "dayjs": "^1.11.5",
     "framer-motion": "7.3.6",
     "gh-pages": "4.0.0",
     "i18next": "21.9.2",
