@@ -1,13 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Divider, Grid, useTheme } from '@mui/material';
 
 import { consts } from 'helpers/consts';
 import { ContainerTemplate } from 'templates';
-import { BoxContent, FadeInWhenVisible, ListAbout, WrapperText } from 'components';
+import {
+  BoxContent,
+  FadeInWhenVisible,
+  ListAbout,
+  WrapperText,
+} from 'components';
 import { ContainerProfile, Profile } from './styled';
 
 export const AboutPage: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <BoxContent isContainer>
@@ -16,7 +23,7 @@ export const AboutPage: React.FC = () => {
           <Grid item xs={12}>
             <FadeInWhenVisible>
               <WrapperText
-                text="ABOUT"
+                text={t('about.caption')}
                 variant="body2"
                 component="span"
                 fontWeight={600}
@@ -34,7 +41,7 @@ export const AboutPage: React.FC = () => {
               />
 
               <WrapperText
-                text="Learn more about me:"
+                text={t('about.title')}
                 variant="h3"
                 component="h2"
                 fontWeight={600}
@@ -54,7 +61,7 @@ export const AboutPage: React.FC = () => {
           <Grid item xs={12} md={8}>
             <FadeInWhenVisible>
               <WrapperText
-                text="UI/UX & Front-end Developer"
+                text={t('about.titleData')}
                 variant="h3"
                 component="h2"
                 fontWeight={600}
@@ -71,52 +78,35 @@ export const AboutPage: React.FC = () => {
 
           <Grid item xs={12}>
             <FadeInWhenVisible>
-
-              <Divider sx={{pb: 5, color: 'text.primary', borderColor: theme.palette.primary.main}}>My resume</Divider>
+              <Divider
+                sx={{
+                  pb: 5,
+                  color: 'text.primary',
+                  borderColor: theme.palette.primary.main,
+                }}
+              >
+                {t('about.titleMyResume')}
+              </Divider>
 
               <WrapperText
-                text={(
-                  <>
-                    Hi, my name&apos;s Joseph Davila and I&apos;m a front-end
-                    developer, self-taught, passionate about the web, with more
-                    than 1 year of experience, working with technologies such as
-                    {' '}
-                    <b>React</b>
-                    ,
-                    {' '}
-                    <b>Typescript</b>
-                    ,
-                    {' '}
-                    <b>Next Js</b>
-                    ,
-                    {' '}
-                    <b>Storybook</b>
-                    {' '}
-                    and
-                    {' '}
-                    <b>Figma</b>
-                    .
-                  </>
-              )}
+                text={t('about.myResumeParagraph1')}
                 variant="h4"
                 component="p"
               />
               <br />
 
               <WrapperText
-                text="Actually, studying English with Nulinga, a platform online. In October I will start the computer science degree at the University of Palermo, to be able to delve into the fundamentals of computing and continue to grow as a
-              professional in this exciting world of technology."
+                text={t('about.myResumeParagraph2')}
                 variant="h4"
                 component="p"
               />
               <br />
 
               <WrapperText
-                text="I’m from Peruvian, but actually live in Buenos Aires, Argentina since for more than 3 years, I like soccer, anime and computer games."
+                text={t('about.myResumeParagraph3')}
                 variant="h4"
                 component="p"
               />
-
             </FadeInWhenVisible>
           </Grid>
         </Grid>
