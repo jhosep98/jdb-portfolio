@@ -1,10 +1,6 @@
-export type Theme = 'dark' | 'light';
-
-export interface InitialDataModel {
-  mode: Theme;
-}
+import { PaletteMode } from '@mui/material';
 
 export interface ThemeContextModel {
-  modeTheme: InitialDataModel;
-  setTheme: (theme: Theme) => void;
+  modeTheme: PaletteMode;
+  setTheme: (theme: PaletteMode) => void;
 }

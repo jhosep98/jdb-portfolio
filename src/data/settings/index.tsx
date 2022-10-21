@@ -1,7 +1,8 @@
 import { Icon } from '@iconify/react';
 
-import { Language, Theme } from 'interfaces';
+import { Language } from 'interfaces';
 import { ICONS_NAME } from 'helpers/icons';
+import { PaletteMode } from '@mui/material';
 
 interface IconLanguageModel {
   id: string;
@@ -11,7 +12,7 @@ interface IconLanguageModel {
 
 interface IconThemeModel {
   id: string;
-  name: Theme;
+  name: PaletteMode;
   icon: React.ReactNode;
 }
 

@@ -4,9 +4,10 @@ import { Icon, IconifyIcon } from '@iconify/react';
 
 interface WrapperIconModel {
   icon: string | IconifyIcon;
+  color?: string;
 }
 
-export const WrapperIcon: React.FC<WrapperIconModel> = ({ icon }) => {
+export const WrapperIcon: React.FC<WrapperIconModel> = ({ icon, color }) => {
   const theme = useTheme();
 
   return (
@@ -14,7 +15,7 @@ export const WrapperIcon: React.FC<WrapperIconModel> = ({ icon }) => {
       icon={icon}
       width="20"
       height="20"
-      color={theme.palette.primary.main}
+      color={color || theme.palette.primary.main}
     />
   );
 };

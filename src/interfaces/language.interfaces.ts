@@ -5,6 +5,6 @@ export interface InitialLanguageDataModel {
 }
 
 export interface LanguageContextModel {
-  modeLanguage: InitialLanguageDataModel;
+  modeLanguage: Language;
   setLanguage: (theme: Language) => void;
 }

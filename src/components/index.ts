@@ -7,5 +7,6 @@ export * from './ListAbout';
 export * from './Menu';
 export * from './WrapperButton';
 export * from './WrapperIcon';
+export * from './WrapperIconButton';
 export * from './WrapperText';
 export * from './WrapperTextField';

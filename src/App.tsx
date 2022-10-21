@@ -12,14 +12,12 @@ const AppState = ({
   children: React.ReactNode | Array<React.ReactNode>;
 }) => {
   const { modeTheme } = React.useContext(ThemeContext);
-  const { theme } = setTheme({ mode: modeTheme.mode });
+  const { theme } = setTheme({ mode: modeTheme });
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <LanguageProvider>{children}</LanguageProvider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <LanguageProvider>{children}</LanguageProvider>
+    </ThemeProvider>
   );
 };
 

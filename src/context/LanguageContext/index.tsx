@@ -1,12 +1,7 @@
 import React from 'react';
 
-import {
-  InitialLanguageDataModel,
-  Language,
-  LanguageContextModel,
-} from 'interfaces';
-
-const INITIAL_LANGUAGE_DATA: InitialLanguageDataModel = { language: 'en' };
+import { useLocalStorage } from 'hooks';
+import { Language, LanguageContextModel } from 'interfaces';
 
 export const LanguageContext = React.createContext({} as LanguageContextModel);
 
@@ -15,15 +10,19 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [languageState, setLanguageState] = React.useState(
-    INITIAL_LANGUAGE_DATA,
+  const [languageState, setLanguageState] = useLocalStorage<Language>(
+    'language',
+    'en',
   );
 
-  const setThemeValue = (value: Language) => setLanguageState({ language: value });
+  const setThemeValue = React.useMemo(
+    () => (value: Language) => setLanguageState(value),
+    [setLanguageState],
+  );
 
   const languageMemo = React.useMemo(
     () => ({ modeLanguage: languageState, setLanguage: setThemeValue }),
-    [languageState],
+    [languageState, setThemeValue],
   );
 
   return (

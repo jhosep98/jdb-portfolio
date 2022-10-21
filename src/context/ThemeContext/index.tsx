@@ -1,8 +1,8 @@
 import React from 'react';
+import { PaletteMode } from '@mui/material';
 
-import { InitialDataModel, Theme, ThemeContextModel } from 'interfaces';
-
-const INITIAL_THEME_DATA: InitialDataModel = { mode: 'light' };
+import { useLocalStorage } from 'hooks';
+import { ThemeContextModel } from 'interfaces';
 
 export const ThemeContext = React.createContext({} as ThemeContextModel);
 
@@ -11,13 +11,19 @@ export const ThemeStateProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [themeState, setThemeState] = React.useState(INITIAL_THEME_DATA);
+  const [themeState, setThemeState] = useLocalStorage<PaletteMode>(
+    'theme',
+    'light',
+  );
 
-  const setThemeValue = (value: Theme) => setThemeState({ mode: value });
+  const setThemeValue = React.useMemo(
+    () => (value: PaletteMode) => setThemeState(value),
+    [setThemeState],
+  );
 
   const themeMemo = React.useMemo(
     () => ({ modeTheme: themeState, setTheme: setThemeValue }),
-    [themeState],
+    [themeState, setThemeValue],
   );
 
   return (
