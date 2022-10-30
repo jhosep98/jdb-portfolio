@@ -1,5 +1,5 @@
 export const en = {
-  welcome: "Hi, you found me! I'm a {{name}} developer from Argentina.",
+  welcome: "Hi, you found me!, I'm Jhosep, I'm Front-end developer.",
   about: {
     caption: 'About',
     title: 'Learn more about me: ',

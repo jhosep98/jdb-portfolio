@@ -45,9 +45,7 @@ export const HomePage: React.FC = () => {
                     variant="h1"
                     component="h1"
                     textAlign={isMqMd ? 'center' : 'left'}
-                    text={t('welcome', {
-                      name: 'Front-end',
-                    })}
+                    text={t('welcome')}
                   />
                 </Box>
               </FadeInLeftWhenVisible>
