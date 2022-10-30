@@ -1,5 +1,5 @@
 export const es = {
-  welcome: 'Hola, me encontraste! Soy Jhosep y soy un desarrollador Front-end.',
+  welcome: 'Hola, me encontraste! Soy Jhosep y soy un desarrollador <2>Front-end.</2>',
   about: {
     caption: 'Sobre mi',
     title: 'Aprende mas sobre mi: ',

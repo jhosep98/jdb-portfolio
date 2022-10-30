@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { AppLayout } from 'Layouts';
+import { AppLayout } from 'layouts';
 import { AUTH_ROUTES } from 'helpers/routes';
 import { AboutPage, HomePage, SettingsPage } from 'pages';
 

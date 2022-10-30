@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 import { ContentRowBlock, Hero } from '@wulperstudio/cms';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -14,7 +14,7 @@ import GroovyWalkAnimation from 'assets/animations/Blogging.json';
 
 export const HomePage: React.FC = () => {
   const theme = useTheme();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
@@ -45,7 +45,17 @@ export const HomePage: React.FC = () => {
                     variant="h1"
                     component="h1"
                     textAlign={isMqMd ? 'center' : 'left'}
-                    text={t('welcome')}
+                    text={(
+                      <Trans i18nKey="welcome">
+                        Hi, you found me!, I&apos;m Jhosep , I&apos;m
+                        {' '}
+                        <Box component="strong" sx={{ color: 'primary.main' }}>
+                          Front-end.
+                        </Box>
+                        {' '}
+                        developer
+                      </Trans>
+                    )}
                   />
                 </Box>
               </FadeInLeftWhenVisible>
