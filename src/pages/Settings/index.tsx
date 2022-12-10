@@ -14,7 +14,6 @@ import { useDrawer } from 'hooks';
 import { Language } from 'interfaces';
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
-import { values, valuesLanguage } from 'data';
 import { LanguageContext, ThemeContext } from 'context';
 import {
   BoxContent,
@@ -23,12 +22,13 @@ import {
   WrapperIconButton,
   WrapperText,
 } from 'components';
+import { paletteModeArgs, languageModeArgs } from './provider';
 
 export const SettingsPage: React.FC = () => {
   const theme = useTheme();
   const { i18n } = useTranslation();
-  const { modeTheme, setTheme } = React.useContext(ThemeContext);
-  const { modeLanguage, setLanguage } = React.useContext(LanguageContext);
+  const { setTheme } = React.useContext(ThemeContext);
+  const { setLanguage } = React.useContext(LanguageContext);
   const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'snackbar'>(['snackbar']);
 
   const handleChange = (theme: PaletteMode) => setTheme(theme);
@@ -54,10 +54,7 @@ export const SettingsPage: React.FC = () => {
     <>
       <BoxContent isContainer>
         <ContainerTemplate>
-          <Stack
-            component="form"
-            rowGap="25px"
-          >
+          <Stack component="form" rowGap="25px">
             <Box>
               <WrapperText
                 text="Settings"
@@ -85,37 +82,16 @@ export const SettingsPage: React.FC = () => {
             />
 
             <InputBoxGroup
-              label="Theme"
-              sizeElement="large"
-              variant="outlined"
-              defaultValue={modeTheme}
+              {...paletteModeArgs}
               onChange={(value) => handleChange(value.name)}
-              values={values}
-            >
-              {(value) => <>{value.icon}</>}
-            </InputBoxGroup>
-
-            {/* <InputBoxGroup
-            values={valuesLayout}
-            label="Layout"
-            variant="outlined"
-            sizeElement="large"
-            onChange={() => {}}
-            defaultValue="float"
-          >
-            {(value) => <>{value.icon}</>}
-          </InputBoxGroup> */}
+              defaultValue={paletteModeArgs.options[0]}
+            />
 
             <InputBoxGroup
-              values={valuesLanguage}
-              label="Language"
-              variant="outlined"
-              sizeElement="large"
-              defaultValue={modeLanguage}
+              {...languageModeArgs}
               onChange={(value) => handleChangeLanguage(value.name)}
-            >
-              {(value) => <>{value.icon}</>}
-            </InputBoxGroup>
+              defaultValue={languageModeArgs.options[0]}
+            />
 
             <WrapperButton
               color="primary"

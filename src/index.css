@@ -21,3 +21,9 @@ img {
   height: auto;
   display: inline-block;
 }
+
+@media (max-width: 900px) {
+  body {
+    overflow: unset;
+  }
+}

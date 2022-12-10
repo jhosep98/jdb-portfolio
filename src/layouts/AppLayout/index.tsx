@@ -11,29 +11,48 @@ export const AppLayout: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const [openMenu, setOpenMenu] = React.useState(false);
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
 
+  const handleMenuOpen = () => setOpenMenu((prev) => !prev);
+
   const routes = React.useMemo(
-    () => generateRoutes(navigate, location),
+    () => generateRoutes(navigate, location, theme),
     [location, navigate],
   );
 
   return (
     <MainLayout>
       <LayoutMenuContent
-        columnGap={15}
-        rowGap={isMqMd ? 0 : 10}
+        RootProps={{
+          sx: {
+            minHeight: '100vh',
+          },
+        }}
+        MenuSlotProps={{
+          sx: {
+            position: 'sticky',
+            top: 0,
+            overflow: 'unset',
+            zIndex: theme.zIndex.appBar,
+          },
+        }}
         menu={
           isMqMd ? (
             <BoxHeader>
-              <MenuResponsive options={routes} />
+              <MenuResponsive
+                handleMenuOpen={handleMenuOpen}
+                openMenu={openMenu}
+                options={routes}
+              />
             </BoxHeader>
           ) : (
             <Menu menuList={routes} />
           )
         }
-        content={<Outlet />}
-      />
+      >
+        <Outlet />
+      </LayoutMenuContent>
     </MainLayout>
   );
 };
