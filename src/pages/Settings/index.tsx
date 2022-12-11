@@ -10,10 +10,10 @@ import {
   Alert,
 } from '@mui/material';
 
-import { useDrawer } from 'hooks';
 import { Language } from 'interfaces';
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
+import { useDrawer, useLocalStorage } from 'hooks';
 import { LanguageContext, ThemeContext } from 'context';
 import {
   BoxContent,
@@ -29,6 +29,14 @@ export const SettingsPage: React.FC = () => {
   const { i18n } = useTranslation();
   const { setTheme } = React.useContext(ThemeContext);
   const { setLanguage } = React.useContext(LanguageContext);
+  const [themeFromLocalStorage] = useLocalStorage<PaletteMode>(
+    'theme',
+    'light',
+  );
+  const [languageFromLocalStorage] = useLocalStorage<Language>(
+    'language',
+    'en',
+  );
   const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'snackbar'>(['snackbar']);
 
   const handleChange = (theme: PaletteMode) => setTheme(theme);
@@ -84,13 +92,21 @@ export const SettingsPage: React.FC = () => {
             <InputBoxGroup
               {...paletteModeArgs}
               onChange={(value) => handleChange(value.name)}
-              defaultValue={paletteModeArgs.options[0]}
+              defaultValue={
+                themeFromLocalStorage === 'light'
+                  ? paletteModeArgs.options[0]
+                  : paletteModeArgs.options[1]
+              }
             />
 
             <InputBoxGroup
               {...languageModeArgs}
               onChange={(value) => handleChangeLanguage(value.name)}
-              defaultValue={languageModeArgs.options[0]}
+              defaultValue={
+                languageFromLocalStorage === 'en'
+                  ? languageModeArgs.options[0]
+                  : languageModeArgs.options[1]
+              }
             />
 
             <WrapperButton
