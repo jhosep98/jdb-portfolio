@@ -13,8 +13,8 @@ export const WrapperIcon: React.FC<WrapperIconModel> = ({ icon, color }) => {
   return (
     <Icon
       icon={icon}
-      width="20"
-      height="20"
+      height="24"
+      width="24"
       color={color || theme.palette.primary.main}
     />
   );
