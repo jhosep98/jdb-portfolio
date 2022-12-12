@@ -1,5 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
+import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import {
   List,
@@ -11,11 +13,13 @@ import {
 
 import { ICONS_NAME } from 'helpers/icons';
 import { WrapperIcon } from 'components/WrapperIcon';
+import { WrapperButton } from 'components/WrapperButton';
 
 dayjs.extend(localizedFormat);
 
 export const ListAbout: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <List
@@ -71,6 +75,17 @@ export const ListAbout: React.FC = () => {
           primaryTypographyProps={{ color: 'text.primary' }}
           primary="Buenos Aires, Argentina"
         />
+      </ListItem>
+
+      <ListItem alignItems="center">
+        <WrapperButton
+          variant="outlined"
+          sizeVariant="medium"
+          sx={{ maxWidth: 'max-content', display: 'flex', alignItems: 'center' }}
+          endIcon={<Icon icon={ICONS_NAME.download} height="24" width="24" />}
+        >
+          {t('about.buttonCv')}
+        </WrapperButton>
       </ListItem>
     </List>
   );

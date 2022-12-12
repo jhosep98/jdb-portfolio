@@ -1,11 +1,10 @@
 import React from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
-import { LayoutMenuContent, MenuResponsive } from '@wulperstudio/cms';
+import { HeaderFlex, LayoutMenuContent, MenuResponsive } from '@wulperstudio/cms';
 
 import { Menu } from 'components';
 import { generateRoutes } from 'helpers/generateRoutes';
-import { MainLayout, BoxHeader } from './styled';
 
 export const AppLayout: React.FC = () => {
   const theme = useTheme();
@@ -22,11 +21,16 @@ export const AppLayout: React.FC = () => {
   );
 
   return (
-    <MainLayout>
+    <>
       <LayoutMenuContent
         RootProps={{
           sx: {
             minHeight: '100vh',
+            backgroundColor: 'background.paper',
+            padding: '10px',
+            [theme.breakpoints.down('md')]: {
+              padding: 0,
+            },
           },
         }}
         MenuSlotProps={{
@@ -39,13 +43,13 @@ export const AppLayout: React.FC = () => {
         }}
         menu={
           isMqMd ? (
-            <BoxHeader>
+            <HeaderFlex position="sticky" sx={{backgroundImage: 'unset'}}>
               <MenuResponsive
                 handleMenuOpen={handleMenuOpen}
                 openMenu={openMenu}
                 options={routes}
               />
-            </BoxHeader>
+            </HeaderFlex>
           ) : (
             <Menu menuList={routes} />
           )
@@ -53,6 +57,6 @@ export const AppLayout: React.FC = () => {
       >
         <Outlet />
       </LayoutMenuContent>
-    </MainLayout>
+    </>
   );
 };
