@@ -6,10 +6,10 @@ export const es = {
     titleData: 'UI/UX Front-end Developer',
     titleMyResume: 'Mi resumen',
     myResumeParagraph1:
-      'Hola, mi nombre es Joseph Davila y soy un desarrollador frontend, autodidacta, apasionado por la web, y con mas de un año de experiencia, trabajando con tecnologias como React,Typescript,Next Js, Storybook y Figma.',
+      'Hola, mi nombre es Joseph Davila y soy un desarrollador front-end autodidacta con pasión por la web y más de 1 año de experiencia trabajando con tecnologías como React, Typescript, Next Js, Storybook y Figma.',
     myResumeParagraph2:
-      'Actualmente, estudiando ingles con Nulinga, una plataforma online. En Octubre comienzo la carrera de ciencias de la computación en la Universidad de Palermo, para poder profundizar en los fundamentos de la informática y seguir creciendo como profesional en este apasionante mundo de la tecnología.',
+      'Actualmente, estoy estudiando inglés con Nulinga, una plataforma en línea. En octubre, comenzaré a estudiar ciencias de la computación en la Universidad de Palermo para adquirir una comprensión más profunda de los fundamentos de la computación y seguir creciendo como profesional en el emocionante mundo de la tecnología.',
     myResumeParagraph3:
-      'Soy peruano, pero actualmente vivo en Buenos Aires, Argentina ya que desde hace más de 3 años me gusta el fútbol, el anime y los juegos de computadora.',
+      'Soy de Perú, pero he estado viviendo en Buenos Aires, Argentina por más de 3 años. En mi tiempo libre, disfruto jugando al fútbol, viendo anime y jugando videojuegos.',
   },
 };
