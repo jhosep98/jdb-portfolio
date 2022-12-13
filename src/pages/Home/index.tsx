@@ -12,9 +12,8 @@ import {
 } from 'components';
 import GroovyWalkAnimation from 'assets/animations/Blogging.json';
 
-export const HomePage: React.FC = () => {
+export const HomePage: React.FCC = () => {
   const theme = useTheme();
-  // const { t } = useTranslation();
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
 
   return (

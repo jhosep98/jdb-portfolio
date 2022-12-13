@@ -17,7 +17,7 @@ import { WrapperButton } from 'components/WrapperButton';
 
 dayjs.extend(localizedFormat);
 
-export const ListAbout: React.FC = () => {
+export const ListAbout: React.FCC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
 

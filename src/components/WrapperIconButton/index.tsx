@@ -3,7 +3,7 @@ import { IconButtonComponent, IconButtonPropsModel } from '@wulperstudio/cms';
 
 interface WrapperIconButtonModel extends IconButtonPropsModel {}
 
-export const WrapperIconButton: React.FC<WrapperIconButtonModel> = ({
+export const WrapperIconButton: React.FCC<WrapperIconButtonModel> = ({
   children,
   ...props
 }) => (

@@ -6,25 +6,16 @@ import {
   useTheme,
   Stack,
   PaletteMode,
-  Snackbar,
-  Alert,
 } from '@mui/material';
 
 import { Language } from 'interfaces';
-import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
-import { useDrawer, useLocalStorage } from 'hooks';
+import { useLocalStorage } from 'hooks';
 import { LanguageContext, ThemeContext } from 'context';
-import {
-  BoxContent,
-  WrapperButton,
-  WrapperIcon,
-  WrapperIconButton,
-  WrapperText,
-} from 'components';
+import { BoxContent, WrapperText } from 'components';
 import { paletteModeArgs, languageModeArgs } from './provider';
 
-export const SettingsPage: React.FC = () => {
+export const SettingsPage: React.FCC = () => {
   const theme = useTheme();
   const { i18n } = useTranslation();
   const { setTheme } = React.useContext(ThemeContext);
@@ -37,7 +28,6 @@ export const SettingsPage: React.FC = () => {
     'language',
     'en',
   );
-  const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'snackbar'>(['snackbar']);
 
   const handleChange = (theme: PaletteMode) => setTheme(theme);
 
@@ -45,18 +35,6 @@ export const SettingsPage: React.FC = () => {
     setLanguage(language);
     i18n.changeLanguage(language);
   };
-
-  const { snackbar } = showDrawer;
-
-  const handleClose = () => handleCloseDrawer('snackbar');
-
-  const handleClick = () => handleOpenDrawer('snackbar');
-
-  const action = (
-    <WrapperIconButton iconProps={{ onClick: handleClose }}>
-      <WrapperIcon icon={ICONS_NAME.close} color={theme.palette.text.primary} />
-    </WrapperIconButton>
-  );
 
   return (
     <>
@@ -108,30 +86,9 @@ export const SettingsPage: React.FC = () => {
                   : languageModeArgs.options[1]
               }
             />
-
-            <WrapperButton
-              color="primary"
-              sizeVariant="large"
-              variant="contained"
-              aria-label="save changes"
-              onClick={handleClick}
-            >
-              Save changes
-            </WrapperButton>
           </Stack>
         </ContainerTemplate>
       </BoxContent>
-
-      <Snackbar
-        open={snackbar}
-        onClose={handleClose}
-        action={action}
-        color="primary"
-      >
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Preferences Saved
-        </Alert>
-      </Snackbar>
     </>
   );
 };

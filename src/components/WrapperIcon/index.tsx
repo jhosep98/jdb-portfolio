@@ -7,7 +7,7 @@ interface WrapperIconModel {
   color?: string;
 }
 
-export const WrapperIcon: React.FC<WrapperIconModel> = ({ icon, color }) => {
+export const WrapperIcon: React.FCC<WrapperIconModel> = ({ icon, color }) => {
   const theme = useTheme();
 
   return (

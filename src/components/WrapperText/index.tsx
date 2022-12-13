@@ -6,7 +6,7 @@ interface WrapperTextModel extends Omit<TypographyProps, 'component'> {
   component?: React.ElementType;
 }
 
-export const WrapperText: React.FC<WrapperTextModel> = ({ ...props }) => {
+export const WrapperText: React.FCC<WrapperTextModel> = ({ ...props }) => {
   const { color = 'text.primary', text, component = 'p', ...rest } = props;
 
   return (

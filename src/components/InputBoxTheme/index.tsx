@@ -5,14 +5,14 @@ import { InputBox } from '@wulperstudio/cms';
 
 import { ICONS_NAME } from 'helpers/icons';
 
-export const InputBoxTheme: React.FC = () => (
+export const InputBoxTheme: React.FCC = () => (
   <Box>
     <InputBox>
-      <Icon icon={ICONS_NAME.themeLight} color="inherit" width="24" />
+      <Icon icon={ICONS_NAME.light} color="inherit" width="24" height="24" />
     </InputBox>
 
     <InputBox>
-      <Icon icon={ICONS_NAME.themeDark} color="inherit" width="24" />
+      <Icon icon={ICONS_NAME.dark} color="inherit" width="24" height="24" />
     </InputBox>
   </Box>
 );

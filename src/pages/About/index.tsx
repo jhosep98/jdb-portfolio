@@ -12,7 +12,7 @@ import {
 } from 'components';
 import { ContainerProfile, Profile } from './styled';
 
-export const AboutPage: React.FC = () => {
+export const AboutPage: React.FCC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
 

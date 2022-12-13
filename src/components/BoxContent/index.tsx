@@ -2,11 +2,10 @@ import React from 'react';
 import { Box, Container, useTheme } from '@mui/material';
 
 interface BoxContentModel {
-  children?: React.ReactNode | React.ReactNode[];
   isContainer?: boolean;
 }
 
-export const BoxContent: React.FC<BoxContentModel> = ({
+export const BoxContent: React.FCC<BoxContentModel> = ({
   children,
   isContainer,
 }) => {

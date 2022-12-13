@@ -27,6 +27,12 @@ export const generateRoutes = (
       active: location.pathname === `/${AUTH_ROUTES.about}`,
     },
     {
+      icon: <Icon icon={ICONS_NAME.skills} color={theme?.palette.text.primary} width="24" height="24" />,
+      text: 'Skills',
+      toRoute: () => navigate(AUTH_ROUTES.skills),
+      active: location.pathname === `/${AUTH_ROUTES.skills}`,
+    },
+    {
       icon: <Icon icon={ICONS_NAME.settings} color={theme?.palette.text.primary} width="24" height="24" />,
       text: 'Settings',
       toRoute: () => navigate(AUTH_ROUTES.settings),

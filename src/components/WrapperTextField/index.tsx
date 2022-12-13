@@ -1,38 +1,26 @@
 import React from 'react';
-import {
-  TextFieldV5LabelOut,
-  TextFieldV5LabelOutPropsModel,
-} from '@wulperstudio/cms';
+import { TextFieldV5LabelOut } from '@wulperstudio/cms';
 
-export const WrapperTextField = (props: TextFieldV5LabelOutPropsModel) => {
+type TextFieldModel = React.ComponentProps<typeof TextFieldV5LabelOut>;
+
+export const WrapperTextField = (props: TextFieldModel) => {
   const {
-    type = 'text',
+    label,
+    placeholder = '',
     size = 'large',
-    variant = 'labelOut',
-    ...rest
+    type = 'text',
+    variant = 'unfilled',
+    ...res
   } = props;
 
   return (
     <TextFieldV5LabelOut
-      disabledHoverVariantOutAndFlo
-      size={size}
       type={type}
+      label={label}
+      size={size}
       variant={variant}
-      boxProps={{
-        display: 'flex',
-        flexDirection: 'column',
-        rowGap: '5px',
-      }}
-      WrapperProps={{
-        sx: {
-          borderRadius: '6px',
-          borderColor: 'text.secondary',
-          '& div div input': {
-            color: 'primary.main',
-          },
-        },
-      }}
-      {...rest}
+      placeholder={placeholder}
+      {...res}
     />
   );
 };

@@ -7,7 +7,7 @@ export interface MenuPropsModel {
   menuList: IconsPropsModel[];
 }
 
-export const Menu: React.FC<MenuPropsModel> = ({ menuList }) => (
+export const Menu: React.FCC<MenuPropsModel> = ({ menuList }) => (
   <WSMenu
     menu="float"
     display="flex"

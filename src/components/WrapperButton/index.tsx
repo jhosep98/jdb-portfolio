@@ -17,7 +17,7 @@ const sizeButton: ISizeButton = {
   large: '58px',
 };
 
-export const WrapperButton: React.FC<WrapperButtonModel> = ({
+export const WrapperButton: React.FCC<WrapperButtonModel> = ({
   children,
   sizeVariant = 'small',
   sx,
