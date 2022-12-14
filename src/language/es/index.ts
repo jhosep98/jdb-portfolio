@@ -13,4 +13,9 @@ export const es = {
       'Soy de Perú, pero he estado viviendo en Buenos Aires, Argentina por más de 3 años. En mi tiempo libre, disfruto jugando al fútbol, viendo anime y jugando videojuegos.',
     buttonCv: 'Descargar cv',
   },
+  skills: {
+    caption: 'habilidades',
+    title: 'Habilidades tecnologicas',
+    mainContent: 'El área principal de mi experiencia es el desarrollo front-end (lado cliente de la web). HTML, CSS, JS (TypeScript), construcción de aplicaciones web pequeñas y medianas con ReactJS 1+, animaciones y codificación de diseños interactivos.',
+  },
 };

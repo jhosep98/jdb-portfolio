@@ -13,4 +13,9 @@ export const en = {
       'I am from Peru, but I have been living in Buenos Aires, Argentina for over 3 years. In my free time, I enjoy playing soccer, watching anime, and playing computer games.',
     buttonCv: 'Download cv',
   },
+  skills: {
+    caption: 'skills',
+    title: 'Technological Skills',
+    mainContent: 'The main area of my expertise is front end development (client side of the web). HTML, CSS, JS (TypeScript), building small and medium web apps with ReactJS 1+, animations, and coding interactive layouts.',
+  },
 };

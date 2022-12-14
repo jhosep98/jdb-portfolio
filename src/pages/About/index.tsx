@@ -8,6 +8,7 @@ import {
   BoxContent,
   FadeInWhenVisible,
   ListAbout,
+  TitleSection,
   WrapperText,
 } from 'components';
 import { ContainerProfile, Profile } from './styled';
@@ -21,33 +22,7 @@ export const AboutPage: React.FCC = () => {
       <ContainerTemplate>
         <Grid container rowGap={5}>
           <Grid item xs={12}>
-            <FadeInWhenVisible>
-              <WrapperText
-                text={t('about.caption')}
-                variant="body2"
-                component="span"
-                fontWeight={600}
-                textTransform="uppercase"
-                sx={{
-                  '&::after': {
-                    content: '" "',
-                    width: '120px',
-                    height: '1px',
-                    display: 'inline-block',
-                    background: theme.palette.divider,
-                    margin: '4px 10px',
-                  },
-                }}
-              />
-
-              <WrapperText
-                text={t('about.title')}
-                variant="h3"
-                component="h2"
-                fontWeight={600}
-                textTransform="uppercase"
-              />
-            </FadeInWhenVisible>
+            <TitleSection caption={t('about.caption')} title={t('about.title')} />
           </Grid>
 
           <Grid item xs={12} md={4}>
