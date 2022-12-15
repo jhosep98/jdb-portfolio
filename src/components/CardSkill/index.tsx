@@ -1,16 +1,17 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { IconButton, Stack, useTheme } from '@mui/material';
 import { CardFlexible } from '@wulperstudio/cms';
+import { IconButton, Stack, Tooltip, useTheme } from '@mui/material';
 
 import { WrapperText } from 'components';
 
 interface CardSkillModel {
   title: string;
   icon: string;
+  tooltip: React.ReactNode;
 }
 
-export const CardSkill: React.FCC<CardSkillModel> = ({ icon, title }) => {
+export const CardSkill: React.FCC<CardSkillModel> = ({ icon, title, tooltip }) => {
   const theme = useTheme();
 
   return (
@@ -22,9 +23,11 @@ export const CardSkill: React.FCC<CardSkillModel> = ({ icon, title }) => {
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <WrapperText text={title} />
 
-        <IconButton>
-          <Icon icon={icon} />
-        </IconButton>
+        <Tooltip title={tooltip}>
+          <IconButton>
+            <Icon icon={icon} />
+          </IconButton>
+        </Tooltip>
       </Stack>
     </CardFlexible>
   );

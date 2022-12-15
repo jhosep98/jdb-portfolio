@@ -17,16 +17,32 @@ export const SkillsPage: React.FCC = () => {
         <WrapperText text={t('skills.mainContent')} />
 
         <GridCards paddingX="1rem" paddingY="2rem" gap="2rem">
-          <CardSkill title="REACT JS" icon={ICONS_NAME.react} />
-          <CardSkill title="HTML" icon={ICONS_NAME.html} />
-          <CardSkill title="CSS" icon={ICONS_NAME.css} />
-          <CardSkill title="JAVASCRIPT" icon={ICONS_NAME.javascript} />
-          <CardSkill title="TYPESCRIPT" icon={ICONS_NAME.typescript} />
-          <CardSkill title="NODE JS" icon={ICONS_NAME.node} />
-          <CardSkill title="MATERIAL-UI" icon={ICONS_NAME.material} />
-          <CardSkill title="STORYBOOK" icon={ICONS_NAME.storybook} />
+          <CardSkill
+            title="REACT JS"
+            icon={ICONS_NAME.react}
+            tooltip="React is a JavaScript library for building user interfaces."
+          />
+          <CardSkill title="HTML" icon={ICONS_NAME.html} tooltip="HTML is the standard markup language for documents designed to be displayed in a web browser." />
+          <CardSkill title="CSS" icon={ICONS_NAME.css} tooltip="CSS is a style sheet language used for describing the presentation of a document written in a markup language such as HTML." />
+          <CardSkill
+            title="JAVASCRIPT"
+            icon={ICONS_NAME.javascript}
+            tooltip="JavaScript is a scripting or programming language that allows you to implement complex features on web pages"
+          />
+          <CardSkill
+            title="TYPESCRIPT"
+            icon={ICONS_NAME.typescript}
+            tooltip="TypeScript is a superset of JavaScript, and is designed to help make writing JavaScript easier."
+          />
+          <CardSkill title="NODE JS" icon={ICONS_NAME.node} tooltip="Node.js is an open-source, cross-platform JavaScript runtime environment." />
+          <CardSkill
+            title="MATERIAL-UI"
+            icon={ICONS_NAME.material}
+            tooltip="Material UI is an open-source React component library that implements Google's Material Design."
+          />
+          <CardSkill title="STORYBOOK" icon={ICONS_NAME.storybook} tooltip="Storybook is a frontend workshop for building UI components and pages in isolation." />
           {/* <CardSkill title="REACT-QUERY" icon={ICONS_NAME.reactQuery} /> */}
-          <CardSkill title="NEXT JS" icon={ICONS_NAME.next} />
+          <CardSkill title="NEXT JS" icon={ICONS_NAME.next} tooltip="Next.js is a flexible React framework that gives you building blocks to create fast web applications." />
         </GridCards>
       </ContainerTemplate>
     </BoxContent>
