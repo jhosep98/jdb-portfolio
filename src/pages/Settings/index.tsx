@@ -1,12 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { InputBoxGroup } from '@wulperstudio/cms';
-import {
-  Box,
-  useTheme,
-  Stack,
-  PaletteMode,
-} from '@mui/material';
+import { Box, useTheme, Stack, PaletteMode } from '@mui/material';
 
 import { Language } from 'interfaces';
 import { ContainerTemplate } from 'templates';

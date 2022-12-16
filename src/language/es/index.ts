@@ -1,5 +1,6 @@
 export const es = {
-  welcome: 'Hola, me encontraste! Soy Jhosep y soy un desarrollador <2>Front-end.</2>',
+  welcome:
+    'Hola, me encontraste! Soy Jhosep y soy un desarrollador <2>Front-end.</2>',
   about: {
     caption: 'Sobre mi',
     title: 'Aprende mas sobre mi: ',
@@ -16,6 +17,23 @@ export const es = {
   skills: {
     caption: 'habilidades',
     title: 'Habilidades tecnologicas',
-    mainContent: 'El área principal de mi experiencia es el desarrollo front-end (lado cliente de la web). HTML, CSS, JS (TypeScript), construcción de aplicaciones web pequeñas y medianas con ReactJS 1+, animaciones y codificación de diseños interactivos.',
+    mainContent:
+      'El área principal de mi experiencia es el desarrollo front-end (lado cliente de la web). HTML, CSS, JS (TypeScript), construcción de aplicaciones web pequeñas y medianas con ReactJS 1+, animaciones y codificación de diseños interactivos.',
+    cards: {
+      react:
+        'React es una libreria JavaScript para crear interfaces de usuario.',
+      html: 'HTML es el lenguaje de marcado estándar para documentos diseñados para ser visualizados en un navegador web.',
+      css: 'CSS es un lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en un lenguaje de marcado como HTML.',
+      javascript:
+        'JavaScript es un lenguaje de programación que permite implementar funciones complejas en las páginas web.',
+      typescript:
+        'TypeScript es un superconjunto de JavaScript y está diseñado para facilitar la escritura en JavaScript.',
+      node: 'Node.js es un entorno de ejecución de JavaScript multiplataforma y de código abierto.',
+      material:
+        'Material UI es una biblioteca de componentes React de código abierto que implementa el Material Design de Google.',
+      storybook:
+        'Storybook es un taller de frontend para construir componentes de interfaz de usuario y páginas de forma aislada.',
+      next: 'Next.js es un framework flexible de React que te ofrece bloques de construcción para crear aplicaciones web rápidas.',
+    },
   },
 };

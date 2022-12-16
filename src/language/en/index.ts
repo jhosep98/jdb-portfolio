@@ -16,6 +16,22 @@ export const en = {
   skills: {
     caption: 'skills',
     title: 'Technological Skills',
-    mainContent: 'The main area of my expertise is front end development (client side of the web). HTML, CSS, JS (TypeScript), building small and medium web apps with ReactJS 1+, animations, and coding interactive layouts.',
+    mainContent:
+      'The main area of my expertise is front end development (client side of the web). HTML, CSS, JS (TypeScript), building small and medium web apps with ReactJS 1+, animations, and coding interactive layouts.',
+    cards: {
+      react: 'React is a JavaScript library for building user interfaces.',
+      html: 'HTML is the standard markup language for documents designed to be displayed in a web browser.',
+      css: 'CSS is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.',
+      javascript:
+        'JavaScript is a scripting or programming language that allows you to implement complex features on web pages.',
+      typescript:
+        'TypeScript is a superset of JavaScript, and is designed to help make writing JavaScript easier.',
+      node: 'Node.js is an open-source, cross-platform JavaScript runtime environment.',
+      material:
+        "Material UI is an open-source React component library that implements Google's Material Design.",
+      storybook:
+        'Storybook is a frontend workshop for building UI components and pages in isolation.',
+      next: 'Next.js is a flexible React framework that gives you building blocks to create fast web applications.',
+    },
   },
 };

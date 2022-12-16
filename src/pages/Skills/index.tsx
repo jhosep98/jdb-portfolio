@@ -20,29 +20,29 @@ export const SkillsPage: React.FCC = () => {
           <CardSkill
             title="REACT JS"
             icon={ICONS_NAME.react}
-            tooltip="React is a JavaScript library for building user interfaces."
+            tooltip={t('skills.cards.react')}
           />
-          <CardSkill title="HTML" icon={ICONS_NAME.html} tooltip="HTML is the standard markup language for documents designed to be displayed in a web browser." />
-          <CardSkill title="CSS" icon={ICONS_NAME.css} tooltip="CSS is a style sheet language used for describing the presentation of a document written in a markup language such as HTML." />
+          <CardSkill title="HTML" icon={ICONS_NAME.html} tooltip={t('skills.cards.html')} />
+          <CardSkill title="CSS" icon={ICONS_NAME.css} tooltip={t('skills.cards.css')} />
           <CardSkill
             title="JAVASCRIPT"
             icon={ICONS_NAME.javascript}
-            tooltip="JavaScript is a scripting or programming language that allows you to implement complex features on web pages"
+            tooltip={t('skills.cards.javascript')}
           />
           <CardSkill
             title="TYPESCRIPT"
             icon={ICONS_NAME.typescript}
-            tooltip="TypeScript is a superset of JavaScript, and is designed to help make writing JavaScript easier."
+            tooltip={t('skills.cards.typescript')}
           />
-          <CardSkill title="NODE JS" icon={ICONS_NAME.node} tooltip="Node.js is an open-source, cross-platform JavaScript runtime environment." />
+          <CardSkill title="NODE JS" icon={ICONS_NAME.node} tooltip={t('skills.cards.node')} />
           <CardSkill
             title="MATERIAL-UI"
             icon={ICONS_NAME.material}
-            tooltip="Material UI is an open-source React component library that implements Google's Material Design."
+            tooltip={t('skills.cards.material')}
           />
-          <CardSkill title="STORYBOOK" icon={ICONS_NAME.storybook} tooltip="Storybook is a frontend workshop for building UI components and pages in isolation." />
+          <CardSkill title="STORYBOOK" icon={ICONS_NAME.storybook} tooltip={t('skills.cards.storybook')} />
           {/* <CardSkill title="REACT-QUERY" icon={ICONS_NAME.reactQuery} /> */}
-          <CardSkill title="NEXT JS" icon={ICONS_NAME.next} tooltip="Next.js is a flexible React framework that gives you building blocks to create fast web applications." />
+          <CardSkill title="NEXT JS" icon={ICONS_NAME.next} tooltip={t('skills.cards.next')} />
         </GridCards>
       </ContainerTemplate>
     </BoxContent>
