@@ -3,4 +3,5 @@ export enum AUTH_ROUTES {
   about = 'about',
   settings = 'settings',
   skills = 'skills',
+  contact = 'contact',
 }

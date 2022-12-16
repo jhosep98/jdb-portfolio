@@ -33,6 +33,12 @@ export const generateRoutes = (
       active: location.pathname === `/${AUTH_ROUTES.skills}`,
     },
     {
+      icon: <Icon icon={ICONS_NAME.contact} color={theme?.palette.text.primary} width="24" height="24" />,
+      text: 'Contact',
+      toRoute: () => navigate(AUTH_ROUTES.contact),
+      active: location.pathname === `/${AUTH_ROUTES.contact}`,
+    },
+    {
       icon: <Icon icon={ICONS_NAME.settings} color={theme?.palette.text.primary} width="24" height="24" />,
       text: 'Settings',
       toRoute: () => navigate(AUTH_ROUTES.settings),

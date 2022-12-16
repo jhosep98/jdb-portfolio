@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AppLayout } from 'layouts';
 import { AUTH_ROUTES } from 'helpers/routes';
-import { AboutPage, HomePage, SettingsPage, SkillsPage } from 'pages';
+import { AboutPage, ContactPage, HomePage, SettingsPage, SkillsPage } from 'pages';
 
 export const AppRouter: React.FC = () => (
   <Routes>
@@ -12,6 +12,7 @@ export const AppRouter: React.FC = () => (
       <Route path={AUTH_ROUTES.about} element={<AboutPage />} />
       <Route path={AUTH_ROUTES.skills} element={<SkillsPage />} />
       <Route path={AUTH_ROUTES.settings} element={<SettingsPage />} />
+      <Route path={AUTH_ROUTES.contact} element={<ContactPage />} />
     </Route>
   </Routes>
 );
