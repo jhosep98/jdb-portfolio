@@ -1,6 +1,7 @@
 export * from './BlockImageAnimation';
 export * from './BoxContent';
 export * from './CardSkill';
+export * from './Controller';
 export * from './FadeInLeftWhenVisible';
 export * from './FadeInWhenVisible';
 export * from './InputBoxTheme';

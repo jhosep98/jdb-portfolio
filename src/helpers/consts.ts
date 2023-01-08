@@ -27,3 +27,4 @@ export const DEFAULT_ERROR_MESSAGE = 'OCURRIÓ UN ERROR';
 export const DEFAULT_UPDATE_MESSAGE = 'SE ACTUALIZÓ EL REGISTRO';
 export const DEFAULT_CREATE_MESSAGE = 'SE HA CREADO EL REGISTRO';
 export const DEFAULT_DELETE_MESSAGE = 'SE HA ELIMINADO EL REGISTRO';
+export const DEFAULT_EMAIL_MESSAGE = 'El correo no cuenta con un formato correcto';
