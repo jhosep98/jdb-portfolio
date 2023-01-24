@@ -20,6 +20,7 @@ export const BoxContent: React.FCC<BoxContentModel> = ({
         height: '100%',
         borderRadius: '10px',
         boxShadow: theme.shadows[1],
+        position: 'relative',
         [theme.breakpoints.down('md')]: {
           borderRadius: 0,
           boxShadow: 'none',

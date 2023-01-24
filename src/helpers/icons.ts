@@ -37,6 +37,7 @@ export const ICONS_PROJECT = {
   github: 'github',
   linkedin: 'linkedin',
   whatsapp: 'whatsapp',
+  downloadAnimate: 'downloadAnimate',
 };
 
 export const ICONS_NAME = {
@@ -68,6 +69,7 @@ export const ICONS_NAME = {
   github: getIconifyName(ICONS_PROJECT.github),
   linkedin: getIconifyName(ICONS_PROJECT.linkedin),
   whatsapp: getIconifyName(ICONS_PROJECT.whatsapp),
+  downloadAnimate: 'line-md:downloading-loop',
   // reactQuery: getIconifyName(ICONS_PROJECT.reactQuery),
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
