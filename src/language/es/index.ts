@@ -3,7 +3,7 @@ export const es = {
     'Hola, me encontraste! Soy Jhosep y soy un desarrollador <2>Front-end.</2>',
   about: {
     caption: 'Sobre mi',
-    title: 'Aprende mas sobre mi: ',
+    title: 'Aprende mas sobre mi',
     titleData: 'Front-end Developer',
     titleMyResume: 'Mi resumen',
     myResumeParagraph1:
@@ -12,7 +12,7 @@ export const es = {
       'Actualmente, estoy estudiando inglés con Nulinga, una plataforma en línea. En octubre, comenzaré a estudiar ciencias de la computación en la Universidad de Palermo para adquirir una comprensión más profunda de los fundamentos de la computación y seguir creciendo como profesional en el emocionante mundo de la tecnología.',
     myResumeParagraph3:
       'Soy de Perú, pero he estado viviendo en Buenos Aires, Argentina por más de 3 años. En mi tiempo libre, disfruto jugando al fútbol, viendo anime y jugando videojuegos.',
-    buttonCv: 'Descargar cv',
+    fabTooltip: 'Descargar CV',
   },
   skills: {
     caption: 'habilidades',
@@ -35,5 +35,24 @@ export const es = {
         'Storybook es un taller de frontend para construir componentes de interfaz de usuario y páginas de forma aislada.',
       next: 'Next.js es un framework flexible de React que te ofrece bloques de construcción para crear aplicaciones web rápidas.',
     },
+  },
+  contact: {
+    caption: 'Contacto',
+    title: 'Contactame',
+    subtitle: 'Redes Sociales',
+    subtitle2: 'Ó enviame un correo electrónico',
+    name: {
+      label: 'Nombre',
+      placeholder: 'Ingresa tu nombre',
+    },
+    email: {
+      label: 'Correo',
+      placeholder: 'ejemplo@email.com',
+    },
+    message: {
+      label: 'Mensaje',
+      placeholder: 'INgresa tu mensaje',
+    },
+    button: 'Enviar',
   },
 };

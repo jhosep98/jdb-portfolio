@@ -2,7 +2,7 @@ export const en = {
   welcome: "Hi, you found me!, I'm Jhosep, I'm a <2>Front-end</2> developer.",
   about: {
     caption: 'About',
-    title: 'Learn more about me: ',
+    title: 'Learn more about me',
     titleData: 'Front-end Developer',
     titleMyResume: 'My resume',
     myResumeParagraph1:
@@ -11,7 +11,7 @@ export const en = {
       'Currently, I am studying English with Nulinga, an online platform. In October, I will begin studying computer science at the University of Palermo in order to gain a deeper understanding of the fundamentals of computing and continue to grow as a professional in the exciting world of technology.',
     myResumeParagraph3:
       'I am from Peru, but I have been living in Buenos Aires, Argentina for over 3 years. In my free time, I enjoy playing soccer, watching anime, and playing computer games.',
-    buttonCv: 'Download cv',
+    fabTooltip: 'Download CV',
   },
   skills: {
     caption: 'skills',
@@ -33,5 +33,24 @@ export const en = {
         'Storybook is a frontend workshop for building UI components and pages in isolation.',
       next: 'Next.js is a flexible React framework that gives you building blocks to create fast web applications.',
     },
+  },
+  contact: {
+    caption: 'Contact',
+    title: 'Contact me',
+    subtitle: 'Social Links',
+    subtitle2: 'Or send an email',
+    name: {
+      label: 'Name',
+      placeholder: 'Enter your name',
+    },
+    email: {
+      label: 'Email',
+      placeholder: 'example@email.com',
+    },
+    message: {
+      label: 'Message',
+      placeholder: 'Enter your message',
+    },
+    button: 'Send',
   },
 };
