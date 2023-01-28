@@ -25,7 +25,7 @@ export const CardSkill: React.FCC<CardSkillModel> = ({ icon, title, tooltip }) =
 
         <Tooltip title={tooltip}>
           <IconButton>
-            <Icon icon={icon} />
+            <Icon icon={icon} height="24" width="24" />
           </IconButton>
         </Tooltip>
       </Stack>

@@ -34,6 +34,8 @@ export const es = {
       storybook:
         'Storybook es un taller de frontend para construir componentes de interfaz de usuario y páginas de forma aislada.',
       next: 'Next.js es un framework flexible de React que te ofrece bloques de construcción para crear aplicaciones web rápidas.',
+      reactQuery: 'Potente gestión de estados asíncrona para TS/JS, React, Solid, Vue y Svelte.',
+      reactRouterDom: 'React Router permite el "enrutamiento del lado del cliente".',
     },
   },
   contact: {
