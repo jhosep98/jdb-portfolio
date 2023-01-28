@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import { Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Tooltip, useTheme } from '@mui/material';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
@@ -14,7 +14,6 @@ import {
 import { DownloadFab } from './styled';
 
 export const AboutPage: React.FCC = () => {
-  const theme = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -40,7 +39,7 @@ export const AboutPage: React.FCC = () => {
           <DownloadFab color="primary" size="medium">
             <Icon
               icon={ICONS_NAME.downloadAnimate}
-              color={theme.palette.background.default}
+              color="#fff"
               height="24"
               width="24"
             />
