@@ -17,6 +17,7 @@ import {
   WrapperText,
   WrapperButton,
 } from 'components';
+import { notificationOnSuccess } from 'services';
 
 export type InputSendEmail = {
   name: string;
@@ -40,6 +41,7 @@ export const ContactPage: React.FCC = () => {
 
   const onSubmit = (data: InputSendEmail) => {
     console.log('!!FORM_DATA: ', data);
+    notificationOnSuccess(t('contact.messageSendEmail'));
     reset();
   };
 
@@ -67,7 +69,7 @@ export const ContactPage: React.FCC = () => {
             justifyContent="center"
             gap="1rem"
           >
-            <IconButton aria-label="github">
+            <IconButton aria-label="github" href="https://github.com/jhosep98" target="_blank">
               <Icon
                 icon={ICONS_NAME.github}
                 width="34"
@@ -76,7 +78,7 @@ export const ContactPage: React.FCC = () => {
               />
             </IconButton>
 
-            <IconButton aria-label="linkedin">
+            <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/jhosep-davila/" target="_blank">
               <Icon
                 icon={ICONS_NAME.linkedin}
                 width="34"
@@ -85,7 +87,7 @@ export const ContactPage: React.FCC = () => {
               />
             </IconButton>
 
-            <IconButton aria-label="email">
+            <IconButton aria-label="email" href="mailto:jhosepdb149@gmail.com">
               <Icon
                 icon={ICONS_NAME.email}
                 width="34"
@@ -94,7 +96,7 @@ export const ContactPage: React.FCC = () => {
               />
             </IconButton>
 
-            <IconButton aria-label="whatsapp">
+            <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=541124004135" target="_blank">
               <Icon
                 icon={ICONS_NAME.whatsapp}
                 width="34"

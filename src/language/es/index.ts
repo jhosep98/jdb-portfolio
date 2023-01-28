@@ -54,5 +54,6 @@ export const es = {
       placeholder: 'INgresa tu mensaje',
     },
     button: 'Enviar',
+    messageSendEmail: 'Correo electrónico enviado correctamente',
   },
 };

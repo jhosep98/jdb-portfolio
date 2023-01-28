@@ -8,6 +8,7 @@ import { useLocalStorage } from 'hooks';
 import { AppRouter } from 'routes/AppRouter';
 import { setTheme } from 'theme/defaultTheme';
 import { InitializerIcons } from 'helpers/icons';
+import { SnackbarProvider, SnackbarUtilsConfigurator } from 'helpers';
 import { LanguageProvider, ThemeContext, ThemeStateProvider } from 'context';
 
 InitializerIcons();
@@ -40,9 +41,12 @@ const AppState = ({
 
 export const App: React.FC = () => (
   <ThemeStateProvider>
-    <CssBaseline />
-    <AppState>
-      <AppRouter />
-    </AppState>
+    <SnackbarProvider maxSnack={3}>
+      <SnackbarUtilsConfigurator />
+      <CssBaseline />
+      <AppState>
+        <AppRouter />
+      </AppState>
+    </SnackbarProvider>
   </ThemeStateProvider>
 );
