@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { Tooltip } from '@mui/material';
+import { Fab, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import { ICONS_NAME } from 'helpers/icons';
@@ -11,7 +11,6 @@ import {
   TitleSection,
   WrapperText,
 } from 'components';
-import { DownloadFab } from './styled';
 
 export const AboutPage: React.FCC = () => {
   const { t } = useTranslation();
@@ -36,14 +35,25 @@ export const AboutPage: React.FCC = () => {
           </Grid> */}
 
         <Tooltip title={t('about.fabTooltip')} placement="top">
-          <DownloadFab color="primary" size="medium">
+          <Fab
+            color="primary"
+            size="medium"
+            href="../../assets/cv/jhosep-davila-cv.pdf"
+            download
+            sx={(theme) => ({
+              position: 'absolute',
+              zIndex: theme.zIndex.fab,
+              right: 40,
+              bottom: 40,
+            })}
+          >
             <Icon
               icon={ICONS_NAME.downloadAnimate}
               color="#fff"
               height="24"
               width="24"
             />
-          </DownloadFab>
+          </Fab>
         </Tooltip>
       </ContainerTemplate>
     </BoxContent>
