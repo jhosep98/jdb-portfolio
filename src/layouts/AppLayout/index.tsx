@@ -1,9 +1,15 @@
 import React from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
-import { HeaderFlex, LayoutMenuContent, MenuResponsive } from '@wulperstudio/cms';
+import {
+  DrawerV2,
+  HeaderFlex,
+  LayoutMenuContent,
+  MenuResponsive,
+} from '@wulperstudio/cms';
 
 import { Menu } from 'components';
+import { DrawerStateContext } from 'context';
 import { generateRoutes } from 'helpers/generateRoutes';
 
 export const AppLayout: React.FC = () => {
@@ -12,11 +18,12 @@ export const AppLayout: React.FC = () => {
   const location = useLocation();
   const [openMenu, setOpenMenu] = React.useState(false);
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
+  const { comments, handleDrawerComments } = React.useContext(DrawerStateContext);
 
   const handleMenuOpen = () => setOpenMenu((prev) => !prev);
 
   const routes = React.useMemo(
-    () => generateRoutes(navigate, location, theme),
+    () => generateRoutes(navigate, location, theme, handleDrawerComments),
     [location, navigate],
   );
 
@@ -43,7 +50,7 @@ export const AppLayout: React.FC = () => {
         }}
         menu={
           isMqMd ? (
-            <HeaderFlex position="sticky" sx={{backgroundImage: 'unset'}}>
+            <HeaderFlex position="sticky" sx={{ backgroundImage: 'unset' }}>
               <MenuResponsive
                 handleMenuOpen={handleMenuOpen}
                 openMenu={openMenu}
@@ -57,6 +64,25 @@ export const AppLayout: React.FC = () => {
       >
         <Outlet />
       </LayoutMenuContent>
+
+      {comments && (
+        <DrawerV2
+          open={comments}
+          variant="temporary"
+          onClose={() => handleDrawerComments()}
+          direction="left"
+          animation
+          width={390}
+          contentProps={{
+            sx: {
+              borderRadius: 0,
+              p: 0,
+            },
+          }}
+        >
+          Comments
+        </DrawerV2>
+      )}
     </>
   );
 };

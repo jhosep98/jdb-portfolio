@@ -9,7 +9,12 @@ import { AppRouter } from 'routes/AppRouter';
 import { setTheme } from 'theme/defaultTheme';
 import { InitializerIcons } from 'helpers/icons';
 import { SnackbarProvider, SnackbarUtilsConfigurator } from 'helpers';
-import { LanguageProvider, ThemeContext, ThemeStateProvider } from 'context';
+import {
+  DrawerStateProvider,
+  LanguageProvider,
+  ThemeContext,
+  ThemeStateProvider,
+} from 'context';
 
 InitializerIcons();
 
@@ -34,7 +39,9 @@ const AppState = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <LanguageProvider>{children}</LanguageProvider>
+      <DrawerStateProvider>
+        <LanguageProvider>{children}</LanguageProvider>
+      </DrawerStateProvider>
     </ThemeProvider>
   );
 };

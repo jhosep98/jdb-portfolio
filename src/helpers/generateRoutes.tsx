@@ -12,6 +12,7 @@ export const generateRoutes = (
   navigate: NavigateFunction,
   location: Location,
   theme: Theme,
+  handleDrawerComments: () => void,
 ): Array<IconsPropsModel> => {
   const ITEMS: Array<IconsPropsModel> = [
     {
@@ -36,9 +37,9 @@ export const generateRoutes = (
         <Icon
           icon={ICONS_NAME.person}
           color={
-           location.pathname === `/${AUTH_ROUTES.about}`
-             ? theme.palette.primary.main
-             : theme.palette.text.secondary
+            location.pathname === `/${AUTH_ROUTES.about}`
+              ? theme.palette.primary.main
+              : theme.palette.text.secondary
           }
           width="24"
           height="24"
@@ -98,6 +99,18 @@ export const generateRoutes = (
       text: 'Settings',
       toRoute: () => navigate(AUTH_ROUTES.settings),
       active: location.pathname === `/${AUTH_ROUTES.settings}`,
+    },
+    {
+      icon: (
+        <Icon
+          icon={ICONS_NAME.comments}
+          color={theme.palette.text.secondary}
+          width="24"
+          height="24"
+        />
+      ),
+      text: 'Comments',
+      toRoute: () => handleDrawerComments(),
     },
   ];
   return ITEMS;
