@@ -1,14 +1,18 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import {
-  DrawerV2,
+  CardFlexible,
   HeaderFlex,
+  IconButtonComponent,
   LayoutMenuContent,
   MenuResponsive,
 } from '@wulperstudio/cms';
 
 import { Menu } from 'components';
+import { DrawerTemplate } from 'templates';
+import { ICONS_NAME } from 'helpers/icons';
 import { DrawerStateContext } from 'context';
 import { generateRoutes } from 'helpers/generateRoutes';
 
@@ -66,22 +70,32 @@ export const AppLayout: React.FC = () => {
       </LayoutMenuContent>
 
       {comments && (
-        <DrawerV2
+        <DrawerTemplate
           open={comments}
-          variant="temporary"
-          onClose={() => handleDrawerComments()}
-          direction="left"
-          animation
-          width={390}
-          contentProps={{
-            sx: {
-              borderRadius: 0,
-              p: 0,
-            },
+          handleClose={() => handleDrawerComments()}
+          contentHeader={{
+            title: 'Comments',
+            icons: (
+              <IconButtonComponent
+                iconProps={{
+                  onClick: () => handleDrawerComments(),
+                }}
+              >
+                <Icon
+                  icon={ICONS_NAME.close}
+                  color={theme.palette.text.primary}
+                />
+              </IconButtonComponent>
+            ),
           }}
-        >
-          Comments
-        </DrawerV2>
+          body={(
+            <>
+              <CardFlexible>A</CardFlexible>
+
+              <CardFlexible>B</CardFlexible>
+            </>
+          )}
+        />
       )}
     </>
   );
