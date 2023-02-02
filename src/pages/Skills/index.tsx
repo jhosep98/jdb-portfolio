@@ -16,7 +16,7 @@ export const SkillsPage: React.FCC = () => {
 
         <WrapperText text={t('skills.mainContent')} />
 
-        <GridCards paddingX="1rem" paddingY="2rem" gap="2rem">
+        <GridCards paddingX="1rem" paddingY="2rem" gap="2rem" sx={{height: 'auto'}}>
           <CardSkill
             title="REACT JS"
             icon={ICONS_NAME.react}

@@ -78,10 +78,11 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              rowGap: '10px',
+              rowGap: '1rem',
               height: '100%',
               width: '100%',
               px: '1rem',
+              pt: '1rem',
             }}
           >
             {body}

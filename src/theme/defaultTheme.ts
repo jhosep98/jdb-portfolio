@@ -83,26 +83,26 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
     },
     typography: {
       fontFamily: ['Poppins'].join(','),
-      h1: {
-        fontSize: '3.75rem',
-        fontWeight: 600,
-        lineHeight: 1.27,
-      },
-      h2: {
-        fontSize: '3rem',
-      },
-      h3: {
-        fontSize: '2.25rem',
-      },
-      h4: {
-        fontSize: '1rem',
-      },
-      h5: {
-        fontSize: '0.85rem',
-      },
-      h6: {
-        fontSize: '0.7rem',
-      },
+      // h1: {
+      //   fontSize: '3.75rem',
+      //   fontWeight: 600,
+      //   lineHeight: 1.27,
+      // },
+      // h2: {
+      //   fontSize: '3rem',
+      // },
+      // h3: {
+      //   fontSize: '2.25rem',
+      // },
+      // h4: {
+      //   fontSize: '1rem',
+      // },
+      // h5: {
+      //   fontSize: '0.85rem',
+      // },
+      // h6: {
+      //   fontSize: '0.7rem',
+      // },
     },
     breakpoints: {
       values: {

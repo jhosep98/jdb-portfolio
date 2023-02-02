@@ -1,5 +1,6 @@
 export * from './BlockImageAnimation';
 export * from './BoxContent';
+export * from './CardComment';
 export * from './CardSkill';
 export * from './Controller';
 export * from './FadeInLeftWhenVisible';
