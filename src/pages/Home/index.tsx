@@ -43,7 +43,13 @@ export const HomePage: React.FCC = () => {
                   <WrapperText
                     variant="h1"
                     component="h1"
+                    fontWeight={500}
                     textAlign={isMqMd ? 'center' : 'left'}
+                    sx={{
+                      // wordBreak: 'break-all',
+                      letterSpacing: '5px',
+                      fontFamily: 'Ubuntu',
+                    }}
                     text={(
                       <Trans i18nKey="welcome">
                         Hi, you found me!, I&apos;m Jhosep , I&apos;m

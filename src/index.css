@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Poppins';
   overflow-x: hidden;
   min-height: 100vh;
 }

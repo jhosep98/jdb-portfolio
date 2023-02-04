@@ -1,22 +1,10 @@
 import { PaletteMode } from '@mui/material';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { alpha, createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 interface PropsModel {
   mode: PaletteMode;
   primaryColor?: string;
   secondaryColor?: string;
-}
-
-declare module '@mui/material/styles' {
-  // eslint-disable-next-line @typescript-eslint/naming-convention, no-unused-vars
-  interface BreakpointOverrides {
-    xs: true;
-    sm: true;
-    md: true;
-    lg: true;
-    xl: true;
-    xxl: true;
-  }
 }
 
 export const setTheme = ({ mode = 'light' }: PropsModel) => {
@@ -59,7 +47,7 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
       mode,
       primary: {
         main: '#674fee',
-        light: 'rgba(97, 62, 234, 0.1)',
+        light: alpha('#674fee', 0.2),
         contrastText: mode === 'dark' ? '#2E2E31' : '#EFF3F8',
       },
       background: {
@@ -73,45 +61,12 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
         primary: mode === 'dark' ? '#fff' : '#353E6C',
         secondary: mode === 'dark' ? '#fff' : '#B2BEDA',
       },
-      success: {
-        main: '#4EE1C1',
-      },
-      warning: {
-        main: '#FFC43A',
-      },
       divider: '#f4f7fd',
     },
     typography: {
       fontFamily: ['Poppins'].join(','),
-      // h1: {
-      //   fontSize: '3.75rem',
-      //   fontWeight: 600,
-      //   lineHeight: 1.27,
-      // },
-      // h2: {
-      //   fontSize: '3rem',
-      // },
-      // h3: {
-      //   fontSize: '2.25rem',
-      // },
-      // h4: {
-      //   fontSize: '1rem',
-      // },
-      // h5: {
-      //   fontSize: '0.85rem',
-      // },
-      // h6: {
-      //   fontSize: '0.7rem',
-      // },
-    },
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 900,
-        lg: 1200,
-        xl: 1500,
-        xxl: 1920,
+      h1: {
+        fontSize: '4.9983rem',
       },
     },
     shadows: [
