@@ -39,6 +39,7 @@ export const ICONS_PROJECT = {
   whatsapp: 'whatsapp',
   downloadAnimate: 'downloadAnimate',
   comments: 'comments',
+  work: 'work',
 };
 
 export const ICONS_NAME = {
@@ -74,6 +75,7 @@ export const ICONS_NAME = {
   reactQuery: 'logos:react-query-icon',
   reactRouterDom: 'logos:react-router',
   comments: getIconifyName(ICONS_PROJECT.comments),
+  work: 'line-md:document-report',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };
@@ -86,6 +88,9 @@ export const InitializerIcons = () => {
   addCollection({
     prefix: PREFIX_PROJECT,
     icons: {
+      [ICONS_PROJECT.work]: {
+        body: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z"/></svg>',
+      },
       [ICONS_PROJECT.comments]: {
         body: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 8h-1V5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v12a1 1 0 0 0 .62.92A.84.84 0 0 0 3 18a1 1 0 0 0 .71-.29l2.81-2.82H8v1.44a3 3 0 0 0 3 3h6.92l2.37 2.38A1 1 0 0 0 21 22a.84.84 0 0 0 .38-.08A1 1 0 0 0 22 21V11a3 3 0 0 0-3-3ZM8 11v1.89H6.11a1 1 0 0 0-.71.29L4 14.59V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3h-5a3 3 0 0 0-3 3Zm12 7.59l-1-1a1 1 0 0 0-.71-.3H11a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1Z"/></svg>',
       },

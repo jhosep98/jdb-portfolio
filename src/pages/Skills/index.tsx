@@ -1,6 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Icon } from '@iconify/react';
+import { Fab } from '@mui/material';
 import { GridCards } from '@wulperstudio/cms';
+import { useTranslation } from 'react-i18next';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
@@ -97,6 +99,22 @@ export const SkillsPage: React.FCC = () => {
             />
           </GridCards>
         </FadeInWhenVisible>
+
+        <Fab
+          color="primary"
+          size="medium"
+          sx={(theme) => ({
+            position: 'absolute',
+            zIndex: theme.zIndex.fab,
+            right: 40,
+            bottom: 40,
+            display: 'inline-flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          })}
+        >
+          <Icon icon={ICONS_NAME.work} color="#fff" width="24" height="24" />
+        </Fab>
       </ContainerTemplate>
     </BoxContent>
   );
