@@ -23,7 +23,7 @@ export const AboutPage: React.FCC = () => {
         <FadeInWhenVisible>
           <WrapperText
             text={t('about.myResumeParagraph1')}
-            variant="h4"
+            variant="body1"
             component="p"
           />
         </FadeInWhenVisible>

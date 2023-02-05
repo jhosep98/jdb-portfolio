@@ -10,7 +10,7 @@ export const en = {
     titleData: 'Front-end Developer',
     titleMyResume: 'My resume',
     myResumeParagraph1:
-      'Hi, my name is Joseph Davila and I am a self-taught front-end developer with a passion for the web and over 1 year of experience working with technologies such as React, Typescript, Next Js, Storybook, and Figma.',
+      '+1.6 years experience as front-end developer. I’m self-taught, have a passion for the web and working with technologies such as Javascript, React, Typescript, Next Js, Storybook, and Figma.',
     myResumeParagraph2:
       'Currently, I am studying English with Nulinga, an online platform. In October, I will begin studying computer science at the University of Palermo in order to gain a deeper understanding of the fundamentals of computing and continue to grow as a professional in the exciting world of technology.',
     myResumeParagraph3:

@@ -12,8 +12,12 @@ import {
 import { DrawerTemplate } from 'templates';
 import { ICONS_NAME } from 'helpers/icons';
 import { DrawerStateContext } from 'context';
-import { CardComment, Menu } from 'components';
 import { generateRoutes } from 'helpers/generateRoutes';
+import {
+  CardComment,
+  FadeInWhenVisible,
+  Menu,
+} from 'components';
 
 export const AppLayout: React.FC = () => {
   const theme = useTheme();
@@ -89,19 +93,23 @@ export const AppLayout: React.FC = () => {
           }}
           body={(
             <>
-              <CardComment
-                name="Carlos Rivero Bianchi"
-                company="Founder & CEO at GLOBALTECH SCM SOLUTIONS, CorpFounder & CEO at GLOBALTECH SCM SOLUTIONS, Corp"
-                description="Tuvimos la oportunidad de trabajar con Jhosep en nuestro equipo de desarrollo. Es una excelente persona, muy comprometida con los objetivos y resolutiva aceptando cualquier desafio que se le asigna. "
-              />
+              <FadeInWhenVisible>
+                <CardComment
+                  name="Carlos Rivero Bianchi"
+                  company="Founder & CEO at GLOBALTECH SCM SOLUTIONS, CorpFounder & CEO at GLOBALTECH SCM SOLUTIONS, Corp"
+                  description="Tuvimos la oportunidad de trabajar con Jhosep en nuestro equipo de desarrollo. Es una excelente persona, muy comprometida con los objetivos y resolutiva aceptando cualquier desafio que se le asigna. "
+                />
+              </FadeInWhenVisible>
 
               <Divider variant="fullWidth" />
 
-              <CardComment
-                name="Moises Perez"
-                company="React | React Native | Redux | I develop user friendly Web and Mobile apps at Effectus Software"
-                description="Jhosep is a great developer! I loved working with him during our time in Alkemy. I recommend Jhosep for any organization, I'm sure he would be a very valuable asset to the team."
-              />
+              <FadeInWhenVisible>
+                <CardComment
+                  name="Moises Perez"
+                  company="React | React Native | Redux | I develop user friendly Web and Mobile apps at Effectus Software"
+                  description="Jhosep is a great developer! I loved working with him during our time in Alkemy. I recommend Jhosep for any organization, I'm sure he would be a very valuable asset to the team."
+                />
+              </FadeInWhenVisible>
             </>
           )}
         />

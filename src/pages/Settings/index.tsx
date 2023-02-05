@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { InputBoxGroup } from '@wulperstudio/cms';
-import { Box, useTheme, Stack, PaletteMode } from '@mui/material';
+import { useTheme, Stack, PaletteMode } from '@mui/material';
 
 import { Language } from 'interfaces';
 import { ContainerTemplate } from 'templates';
@@ -36,21 +36,12 @@ export const SettingsPage: React.FCC = () => {
       <BoxContent isContainer>
         <ContainerTemplate>
           <Stack component="form" rowGap="25px">
-            <Box>
-              <WrapperText
-                text="Settings"
-                variant="h3"
-                fontWeight="700"
-                sx={{ py: '10px' }}
-              />
-
-              <WrapperText
-                fontWeight="400"
-                color={theme.palette.text.secondary}
-                variant="body1"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit aliquet turpis, ut placerat mauris posuere eu. Vestibulum et leo pellentesque, hendrerit urna in, dignissim nisi."
-              />
-            </Box>
+            <WrapperText
+              text="Settings"
+              variant="h3"
+              fontWeight="700"
+              sx={{ py: '10px' }}
+            />
 
             <WrapperText
               text="Appeareance"

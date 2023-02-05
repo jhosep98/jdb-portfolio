@@ -16,6 +16,7 @@ import {
   TitleSection,
   WrapperText,
   WrapperButton,
+  FadeInWhenVisible,
 } from 'components';
 import { notificationOnSuccess } from 'services';
 
@@ -61,137 +62,158 @@ export const ContactPage: React.FCC = () => {
             [theme.breakpoints.down('md')]: { mt: '2.5rem' },
           }}
         >
-          <WrapperText text={t('contact.subtitle')} textAlign="center" />
+          <FadeInWhenVisible>
+            <WrapperText text={t('contact.subtitle')} textAlign="center" />
+          </FadeInWhenVisible>
 
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            gap="1rem"
-          >
-            <IconButton aria-label="github" href="https://github.com/jhosep98" target="_blank">
-              <Icon
-                icon={ICONS_NAME.github}
-                width="34"
-                height="34"
-                color={theme.palette.text.primary}
-              />
-            </IconButton>
-
-            <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/jhosep-davila/" target="_blank">
-              <Icon
-                icon={ICONS_NAME.linkedin}
-                width="34"
-                height="34"
-                color={theme.palette.text.primary}
-              />
-            </IconButton>
-
-            <IconButton aria-label="email" href="mailto:jhosepdb149@gmail.com">
-              <Icon
-                icon={ICONS_NAME.email}
-                width="34"
-                height="34"
-                color={theme.palette.text.primary}
-              />
-            </IconButton>
-
-            <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=541124004135" target="_blank">
-              <Icon
-                icon={ICONS_NAME.whatsapp}
-                width="34"
-                height="34"
-                color={theme.palette.text.primary}
-              />
-            </IconButton>
-          </Stack>
-
-          <Box>
-            <WrapperText
-              text={t('contact.subtitle2')}
-              textAlign="center"
-              gutterBottom
-              sx={{ mb: '2rem' }}
-            />
-
-            <Box
-              component="form"
-              onSubmit={handleSubmit(onSubmit)}
-              sx={{
-                maxWidth: 600,
-                ml: 'auto',
-                mr: 'auto',
-                '& > div': {
-                  mb: '4rem',
-                },
-              }}
+          <FadeInWhenVisible>
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="center"
+              gap="1rem"
             >
+              <IconButton
+                aria-label="github"
+                href="https://github.com/jhosep98"
+                target="_blank"
+              >
+                <Icon
+                  icon={ICONS_NAME.github}
+                  width="34"
+                  height="34"
+                  color={theme.palette.text.primary}
+                />
+              </IconButton>
+
+              <IconButton
+                aria-label="linkedin"
+                href="https://www.linkedin.com/in/jhosep-davila/"
+                target="_blank"
+              >
+                <Icon
+                  icon={ICONS_NAME.linkedin}
+                  width="34"
+                  height="34"
+                  color={theme.palette.text.primary}
+                />
+              </IconButton>
+
+              <IconButton
+                aria-label="email"
+                href="mailto:jhosepdb149@gmail.com"
+              >
+                <Icon
+                  icon={ICONS_NAME.email}
+                  width="34"
+                  height="34"
+                  color={theme.palette.text.primary}
+                />
+              </IconButton>
+
+              <IconButton
+                aria-label="whatsapp"
+                href="https://api.whatsapp.com/send?phone=541124004135"
+                target="_blank"
+              >
+                <Icon
+                  icon={ICONS_NAME.whatsapp}
+                  width="34"
+                  height="34"
+                  color={theme.palette.text.primary}
+                />
+              </IconButton>
+            </Stack>
+          </FadeInWhenVisible>
+
+          <FadeInWhenVisible>
+            <Box>
+              <WrapperText
+                text={t('contact.subtitle2')}
+                textAlign="center"
+                gutterBottom
+                sx={{ mb: '2rem' }}
+              />
+
               <Box
+                component="form"
+                onSubmit={handleSubmit(onSubmit)}
                 sx={{
+                  maxWidth: 600,
+                  ml: 'auto',
+                  mr: 'auto',
                   '& > div': {
-                    mb: '1rem',
+                    mb: '4rem',
                   },
                 }}
               >
-                <TextFieldController
-                  control={control}
-                  errors={errors.name}
-                  label={t('contact.name.label')}
-                  name="name"
-                  placeholder={t('contact.name.placeholder')}
-                  variant="outlined"
-                  autoComplete="off"
-                  required
-                  rules={{
-                    required: DEFAULT_REQUIRED_MESSAGE,
-                  }}
-                />
-
-                <TextFieldController
-                  control={control}
-                  errors={errors.email}
-                  label={t('contact.email.label')}
-                  variant="outlined"
-                  name="email"
-                  placeholder={t('contact.email.placeholder')}
-                  required
-                  autoComplete="off"
-                  type="email"
-                  rules={{
-                    required: DEFAULT_REQUIRED_MESSAGE,
-                    pattern: {
-                      value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                      message: DEFAULT_EMAIL_MESSAGE,
+                <Box
+                  sx={{
+                    '& > div': {
+                      mb: '1rem',
                     },
                   }}
-                />
+                >
+                  <TextFieldController
+                    control={control}
+                    errors={errors.name}
+                    label={t('contact.name.label')}
+                    name="name"
+                    placeholder={t('contact.name.placeholder')}
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                    rules={{
+                      required: DEFAULT_REQUIRED_MESSAGE,
+                    }}
+                  />
 
-                <TextFieldController
-                  control={control}
-                  errors={errors.message}
-                  label={t('contact.message.label')}
-                  name="message"
-                  placeholder={t('contact.message.placeholder')}
-                  multiline
-                  variant="outlined"
-                  required
-                  sx={{ minHeight: 150 }}
-                  rules={{
-                    required: DEFAULT_REQUIRED_MESSAGE,
-                  }}
-                />
+                  <TextFieldController
+                    control={control}
+                    errors={errors.email}
+                    label={t('contact.email.label')}
+                    variant="outlined"
+                    name="email"
+                    placeholder={t('contact.email.placeholder')}
+                    required
+                    autoComplete="off"
+                    type="email"
+                    rules={{
+                      required: DEFAULT_REQUIRED_MESSAGE,
+                      pattern: {
+                        value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                        message: DEFAULT_EMAIL_MESSAGE,
+                      },
+                    }}
+                  />
+
+                  <TextFieldController
+                    control={control}
+                    errors={errors.message}
+                    label={t('contact.message.label')}
+                    name="message"
+                    placeholder={t('contact.message.placeholder')}
+                    multiline
+                    variant="outlined"
+                    required
+                    sx={{ minHeight: 150 }}
+                    rules={{
+                      required: DEFAULT_REQUIRED_MESSAGE,
+                    }}
+                  />
+                </Box>
+
+                <WrapperButton
+                  type="submit"
+                  sizeVariant="medium"
+                  disabled={!isValid}
+                  fullWidth
+                >
+                  {t('contact.button')}
+                </WrapperButton>
               </Box>
-
-              <WrapperButton
-                type="submit"
-                sizeVariant="medium"
-                disabled={!isValid}
-                fullWidth
-              >
-                {t('contact.button')}
-              </WrapperButton>
             </Box>
-          </Box>
+          </FadeInWhenVisible>
         </Stack>
       </ContainerTemplate>
     </BoxContent>
