@@ -54,8 +54,8 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
         paper: mode === 'dark' ? '#2C2C2E' : '#f4f7fd',
         default: mode === 'dark' ? '#3A3A3C' : '#fff',
       },
-      error: {
-        main: '#F25A5A',
+      secondary: {
+        main: '##EC615B',
       },
       text: {
         primary: mode === 'dark' ? '#fff' : '#353E6C',

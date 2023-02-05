@@ -1,5 +1,9 @@
 export const en = {
-  welcome: "Hi, you found me!, I'm Jhosep, I'm a <2>Front-end</2> developer.",
+  welcome: "Hi, you found me!, I'm Jhosep, I'm a",
+  home: {
+    front: 'Front-end Developer.',
+    ui: 'UI/UX Designer.',
+  },
   about: {
     caption: 'About',
     title: 'Learn more about me',
@@ -32,7 +36,8 @@ export const en = {
       storybook:
         'Storybook is a frontend workshop for building UI components and pages in isolation.',
       next: 'Next.js is a flexible React framework that gives you building blocks to create fast web applications.',
-      reactQuery: 'Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.',
+      reactQuery:
+        'Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.',
       reactRouterDom: 'React Router enables "client side routing".',
     },
   },

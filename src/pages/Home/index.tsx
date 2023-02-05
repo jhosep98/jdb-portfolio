@@ -1,5 +1,6 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import Typed from 'typed.js';
+import { useTranslation } from 'react-i18next';
 import { ContentRowBlock, Hero } from '@wulperstudio/cms';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 
@@ -14,7 +15,26 @@ import GroovyWalkAnimation from 'assets/animations/Blogging.json';
 
 export const HomePage: React.FCC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
+  const spanRef = React.useRef<HTMLSpanElement | null>(null);
   const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
+
+  React.useEffect(() => {
+    const typed = new Typed(spanRef?.current!, {
+      strings: [t('home.front'), t('home.ui')],
+      startDelay: 300,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100,
+      loop: true,
+      showCursor: true,
+      autoInsertCss: true,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <BoxContent isContainer>
@@ -49,17 +69,20 @@ export const HomePage: React.FCC = () => {
                       // wordBreak: 'break-all',
                       letterSpacing: '5px',
                       fontFamily: 'Ubuntu',
+                      '& .typed-cursor': {
+                        color: 'primary.main',
+                      },
                     }}
                     text={(
-                      <Trans i18nKey="welcome">
-                        Hi, you found me!, I&apos;m Jhosep , I&apos;m
+                      <>
+                        {t('welcome')}
                         {' '}
-                        <Box component="strong" sx={{ color: 'primary.main' }}>
-                          Front-end.
-                        </Box>
-                        {' '}
-                        developer
-                      </Trans>
+                        <Box
+                          component="span"
+                          sx={{ color: 'primary.main' }}
+                          ref={spanRef}
+                        />
+                      </>
                     )}
                   />
                 </Box>
