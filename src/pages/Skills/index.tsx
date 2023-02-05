@@ -1,9 +1,16 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { Fab } from '@mui/material';
-import { GridCards } from '@wulperstudio/cms';
 import { useTranslation } from 'react-i18next';
+import { Fab, Stack, Tooltip, useTheme } from '@mui/material';
+import {
+  DrawerV2,
+  GridCards,
+  HeaderFlex,
+  IconButtonComponent,
+  LayoutCrudRight,
+} from '@wulperstudio/cms';
 
+import { useDrawer } from 'hooks';
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
 import {
@@ -16,106 +23,176 @@ import {
 
 export const SkillsPage: React.FCC = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
+  const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'isOpenWorkDrawer'>(['isOpenWorkDrawer']);
+
+  const { isOpenWorkDrawer } = showDrawer;
 
   return (
-    <BoxContent isContainer>
-      <ContainerTemplate>
-        <TitleSection caption={t('skills.caption')} title={t('skills.title')} />
-
-        <FadeInWhenVisible>
-          <WrapperText text={t('skills.mainContent')} variant="body1" />
-        </FadeInWhenVisible>
-
-        <FadeInWhenVisible>
-          <GridCards
-            paddingX="1rem"
-            paddingY="2rem"
-            gap="2rem"
-            sx={{ height: 'auto' }}
-          >
-            <CardSkill
-              title="REACT JS"
-              icon={ICONS_NAME.react}
-              tooltip={t('skills.cards.react')}
+    <LayoutCrudRight
+      RootProps={{
+        sx: {
+          gap: isOpenWorkDrawer ? '10px' : 0,
+        },
+      }}
+      content={(
+        <BoxContent isContainer>
+          <ContainerTemplate>
+            <TitleSection
+              caption={t('skills.caption')}
+              title={t('skills.title')}
             />
 
-            <CardSkill
-              title="HTML"
-              icon={ICONS_NAME.html}
-              tooltip={t('skills.cards.html')}
-            />
+            <FadeInWhenVisible>
+              <WrapperText text={t('skills.mainContent')} variant="body1" />
+            </FadeInWhenVisible>
 
-            <CardSkill
-              title="CSS"
-              icon={ICONS_NAME.css}
-              tooltip={t('skills.cards.css')}
-            />
+            <FadeInWhenVisible>
+              <GridCards
+                paddingX="1rem"
+                paddingY="2rem"
+                gap="2rem"
+                sx={{ height: 'auto' }}
+              >
+                <CardSkill
+                  title="REACT JS"
+                  icon={ICONS_NAME.react}
+                  tooltip={t('skills.cards.react')}
+                />
 
-            <CardSkill
-              title="JAVASCRIPT"
-              icon={ICONS_NAME.javascript}
-              tooltip={t('skills.cards.javascript')}
-            />
+                <CardSkill
+                  title="HTML"
+                  icon={ICONS_NAME.html}
+                  tooltip={t('skills.cards.html')}
+                />
 
-            <CardSkill
-              title="TYPESCRIPT"
-              icon={ICONS_NAME.typescript}
-              tooltip={t('skills.cards.typescript')}
-            />
+                <CardSkill
+                  title="CSS"
+                  icon={ICONS_NAME.css}
+                  tooltip={t('skills.cards.css')}
+                />
 
-            <CardSkill
-              title="NODE JS"
-              icon={ICONS_NAME.node}
-              tooltip={t('skills.cards.node')}
-            />
+                <CardSkill
+                  title="JAVASCRIPT"
+                  icon={ICONS_NAME.javascript}
+                  tooltip={t('skills.cards.javascript')}
+                />
 
-            <CardSkill
-              title="MATERIAL-UI"
-              icon={ICONS_NAME.material}
-              tooltip={t('skills.cards.material')}
-            />
-            <CardSkill
-              title="STORYBOOK"
-              icon={ICONS_NAME.storybook}
-              tooltip={t('skills.cards.storybook')}
-            />
+                <CardSkill
+                  title="TYPESCRIPT"
+                  icon={ICONS_NAME.typescript}
+                  tooltip={t('skills.cards.typescript')}
+                />
 
-            <CardSkill
-              title="REACT-QUERY"
-              icon={ICONS_NAME.reactQuery}
-              tooltip={t('skills.cards.reactQuery')}
-            />
+                <CardSkill
+                  title="NODE JS"
+                  icon={ICONS_NAME.node}
+                  tooltip={t('skills.cards.node')}
+                />
 
-            <CardSkill
-              title="REACT-ROUTER-DOM"
-              icon={ICONS_NAME.reactRouterDom}
-              tooltip={t('skills.cards.reactRouterDom')}
-            />
+                <CardSkill
+                  title="MATERIAL-UI"
+                  icon={ICONS_NAME.material}
+                  tooltip={t('skills.cards.material')}
+                />
+                <CardSkill
+                  title="STORYBOOK"
+                  icon={ICONS_NAME.storybook}
+                  tooltip={t('skills.cards.storybook')}
+                />
 
-            <CardSkill
-              title="NEXT JS"
-              icon={ICONS_NAME.next}
-              tooltip={t('skills.cards.next')}
-            />
-          </GridCards>
-        </FadeInWhenVisible>
+                <CardSkill
+                  title="REACT-QUERY"
+                  icon={ICONS_NAME.reactQuery}
+                  tooltip={t('skills.cards.reactQuery')}
+                />
 
-        <Fab
-          color="primary"
-          size="medium"
-          sx={(theme) => ({
-            position: 'absolute',
-            zIndex: theme.zIndex.fab,
-            right: 40,
-            bottom: 40,
-            display: 'inline-flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          })}
-        >
-          <Icon icon={ICONS_NAME.work} color="#fff" width="24" height="24" />
-        </Fab>
-      </ContainerTemplate>
-    </BoxContent>
+                <CardSkill
+                  title="REACT-ROUTER-DOM"
+                  icon={ICONS_NAME.reactRouterDom}
+                  tooltip={t('skills.cards.reactRouterDom')}
+                />
+
+                <CardSkill
+                  title="NEXT JS"
+                  icon={ICONS_NAME.next}
+                  tooltip={t('skills.cards.next')}
+                />
+              </GridCards>
+            </FadeInWhenVisible>
+
+            <Tooltip title="Work experience" placement="top">
+              <Fab
+                color="primary"
+                size="medium"
+                onClick={() => (isOpenWorkDrawer
+                  ? handleCloseDrawer('isOpenWorkDrawer')
+                  : handleOpenDrawer('isOpenWorkDrawer'))}
+                sx={(theme) => ({
+                  position: 'absolute',
+                  zIndex: theme.zIndex.fab,
+                  right: 40,
+                  bottom: 40,
+                  display: 'inline-flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                })}
+              >
+                <Icon
+                  icon={ICONS_NAME.work}
+                  color="#fff"
+                  width="24"
+                  height="24"
+                />
+              </Fab>
+            </Tooltip>
+          </ContainerTemplate>
+        </BoxContent>
+      )}
+      drawer={(
+        <>
+          {isOpenWorkDrawer && (
+            <DrawerV2
+              open={isOpenWorkDrawer}
+              onClose={() => handleCloseDrawer('isOpenWorkDrawer')}
+              width="375px"
+              // direction="right"
+              // animation
+            >
+              <HeaderFlex
+                position="relative"
+                isBorder
+                containerProps={{
+                  disableGutters: true,
+                }}
+                sx={{
+                  backgroundImage: 'none',
+                  background: 'background.default',
+                }}
+              >
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <WrapperText text="Work Experience:" variant="subtitle1" />
+
+                  <IconButtonComponent
+                    iconProps={{
+                      onClick: () => handleCloseDrawer('isOpenWorkDrawer'),
+                    }}
+                  >
+                    <Icon
+                      icon={ICONS_NAME.close}
+                      color={theme.palette.text.primary}
+                    />
+                  </IconButtonComponent>
+                </Stack>
+              </HeaderFlex>
+            </DrawerV2>
+          )}
+        </>
+      )}
+    />
   );
 };
