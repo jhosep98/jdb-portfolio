@@ -61,4 +61,8 @@ export const en = {
     button: 'Send',
     messageSendEmail: 'Email sent successfully',
   },
+  settings: {
+    title: 'Settings',
+    caption: 'Settings',
+  },
 };

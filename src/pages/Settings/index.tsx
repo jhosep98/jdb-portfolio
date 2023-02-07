@@ -4,15 +4,15 @@ import { InputBoxGroup } from '@wulperstudio/cms';
 import { useTheme, Stack, PaletteMode } from '@mui/material';
 
 import { Language } from 'interfaces';
-import { ContainerTemplate } from 'templates';
 import { useLocalStorage } from 'hooks';
+import { ContainerTemplate } from 'templates';
 import { LanguageContext, ThemeContext } from 'context';
-import { BoxContent, WrapperText } from 'components';
+import { BoxContent, TitleSection, WrapperText } from 'components';
 import { paletteModeArgs, languageModeArgs } from './provider';
 
 export const SettingsPage: React.FCC = () => {
   const theme = useTheme();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { setTheme } = React.useContext(ThemeContext);
   const { setLanguage } = React.useContext(LanguageContext);
   const [themeFromLocalStorage] = useLocalStorage<PaletteMode>(
@@ -35,14 +35,12 @@ export const SettingsPage: React.FCC = () => {
     <>
       <BoxContent isContainer>
         <ContainerTemplate>
-          <Stack component="form" rowGap="25px">
-            <WrapperText
-              text="Settings"
-              variant="h3"
-              fontWeight="700"
-              sx={{ py: '10px' }}
-            />
+          <TitleSection
+            caption={t('settings.caption')}
+            title={t('settings.title')}
+          />
 
+          <Stack component="form" rowGap="25px">
             <WrapperText
               text="Appeareance"
               fontWeight="600"

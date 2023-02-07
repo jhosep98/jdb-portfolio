@@ -64,4 +64,8 @@ export const es = {
     button: 'Enviar',
     messageSendEmail: 'Correo electrónico enviado correctamente',
   },
+  settings: {
+    title: 'Configuraciones',
+    caption: 'COnfiguraciones',
+  },
 };
