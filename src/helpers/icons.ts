@@ -76,6 +76,7 @@ export const ICONS_NAME = {
   reactRouterDom: 'logos:react-router',
   comments: getIconifyName(ICONS_PROJECT.comments),
   work: 'line-md:document-report',
+  workOutline: 'ic:outline-work-outline',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };

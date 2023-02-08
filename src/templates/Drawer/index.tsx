@@ -1,17 +1,24 @@
 import React from 'react';
 import {
   DrawerV2,
+  DrawerVariant,
   HeaderFlex,
   LayoutDrawer,
-  TextForLinesOutput,
 } from '@wulperstudio/cms';
-import { Box, Stack, useTheme } from '@mui/material';
+import { Box, BoxProps, Stack, Typography, useTheme } from '@mui/material';
 
 interface DrawerTemplateModel {
   open: boolean;
   handleClose: () => void;
   body: React.ReactNode;
   footer?: React.ReactNode;
+  variant?: DrawerVariant;
+  direction?: 'left' | 'right' | 'top' | 'bottom';
+  animation?: boolean;
+  contentProps?: Omit<
+    BoxProps,
+    'border' | 'boxShadow' | 'height' | 'width' | 'padding'
+  >;
   contentHeader: {
     title: React.ReactNode;
     icons: React.ReactNode | React.ReactNode[];
@@ -24,22 +31,27 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
   footer,
   handleClose,
   open,
+  animation = true,
+  contentProps,
+  direction = 'left',
+  variant = 'temporary',
 }) => {
   const theme = useTheme();
 
   return (
     <DrawerV2
       open={open}
-      variant="temporary"
+      variant={variant}
       onClose={() => handleClose()}
-      direction="left"
-      animation
+      direction={direction}
+      animation={animation}
       width={375}
       contentProps={{
         sx: {
           borderRadius: 0,
           p: 0,
         },
+        ...contentProps,
       }}
     >
       <LayoutDrawer
@@ -56,15 +68,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
               justifyContent="space-between"
               alignItems="center"
             >
-              <div>
-                <TextForLinesOutput
-                  clines={1}
-                  text={contentHeader.title}
-                  fontSize="18px"
-                  fontWeight="600"
-                  color="text.primary"
-                />
-              </div>
+              <Typography variant="subtitle1" fontWeight={600} color="text.primary">{contentHeader.title}</Typography>
 
               <Stack direction="row" alignItems="center" gap="1rem">
                 {contentHeader.icons}

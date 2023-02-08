@@ -1,18 +1,17 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
-import { Fab, Stack, Tooltip, useTheme } from '@mui/material';
+import { Box, Fab, Tooltip, Typography, useTheme } from '@mui/material';
 import {
-  DrawerV2,
   GridCards,
-  HeaderFlex,
   IconButtonComponent,
   LayoutCrudRight,
+  TimeLineV2,
 } from '@wulperstudio/cms';
 
 import { useDrawer } from 'hooks';
 import { ICONS_NAME } from 'helpers/icons';
-import { ContainerTemplate } from 'templates';
+import { ContainerTemplate, DrawerTemplate } from 'templates';
 import {
   BoxContent,
   CardSkill,
@@ -152,31 +151,20 @@ export const SkillsPage: React.FCC = () => {
       drawer={(
         <>
           {isOpenWorkDrawer && (
-            <DrawerV2
+            <DrawerTemplate
               open={isOpenWorkDrawer}
-              onClose={() => handleCloseDrawer('isOpenWorkDrawer')}
-              width="375px"
-              // direction="right"
-              // animation
-            >
-              <HeaderFlex
-                position="relative"
-                isBorder
-                containerProps={{
-                  disableGutters: true,
-                }}
-                sx={{
-                  backgroundImage: 'none',
-                  background: 'background.default',
-                }}
-              >
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <WrapperText text="Work Experience:" variant="subtitle1" />
-
+              animation={false}
+              direction={undefined}
+              variant="persistent"
+              handleClose={() => handleCloseDrawer('isOpenWorkDrawer')}
+              contentProps={{
+                sx: {
+                  borderRadius: '10px',
+                },
+              }}
+              contentHeader={{
+                title: 'Work Experience',
+                icons: (
                   <IconButtonComponent
                     iconProps={{
                       onClick: () => handleCloseDrawer('isOpenWorkDrawer'),
@@ -187,9 +175,113 @@ export const SkillsPage: React.FCC = () => {
                       color={theme.palette.text.primary}
                     />
                   </IconButtonComponent>
-                </Stack>
-              </HeaderFlex>
-            </DrawerV2>
+                ),
+              }}
+              body={(
+                <Box>
+                  <TimeLineV2
+                    items={[
+                      {
+                        timeLineSeparator: {
+                          icon: ICONS_NAME.workOutline,
+                          colorIcon: '#fff',
+                          timelineDotProps: {
+                            sx: {
+                              backgroundColor: '#6962FD',
+                            },
+                          },
+                        },
+
+                        timeLineContent: {
+                          date: 'Aug 2021 - Present',
+                          content: (
+                            <>
+                              <Typography
+                                variant="body2"
+                                color="text.primary"
+                                fontWeight={700}
+                              >
+                                Wulpers
+                              </Typography>
+
+                              <Typography variant="body2" color="text.primary">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Atque laudantium cupiditate
+                                laborum.
+                              </Typography>
+                            </>
+                          ),
+                        },
+                      },
+                      {
+                        timeLineSeparator: {
+                          icon: ICONS_NAME.workOutline,
+                          colorIcon: '#fff',
+                          timelineDotProps: {
+                            sx: {
+                              backgroundColor: '#0930B7',
+                            },
+                          },
+                        },
+
+                        timeLineContent: {
+                          date: 'May 2021 - Jul 2021',
+                          content: (
+                            <>
+                              <Typography
+                                variant="body2"
+                                color="text.primary"
+                                fontWeight={700}
+                              >
+                                GLOBALTECH SCM SOLUTIONS
+                              </Typography>
+
+                              <Typography variant="body2" color="text.primary">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Atque laudantium cupiditate
+                                laborum.
+                              </Typography>
+                            </>
+                          ),
+                        },
+                      },
+                      {
+                        timeLineSeparator: {
+                          icon: ICONS_NAME.workOutline,
+                          colorIcon: '#fff',
+                          timelineDotProps: {
+                            sx: {
+                              backgroundColor: '#55BCF8',
+                            },
+                          },
+                        },
+
+                        timeLineContent: {
+                          date: 'Mar 2021 - Apr 2021',
+                          content: (
+                            <>
+                              <Typography
+                                variant="body2"
+                                color="text.primary"
+                                fontWeight={700}
+                              >
+                                Alkemy
+                              </Typography>
+
+                              <Typography variant="body2" color="text.primary">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Atque laudantium cupiditate
+                                laborum.
+                              </Typography>
+                            </>
+                          ),
+                        },
+                      },
+                    ]}
+                  />
+                </Box>
+              )}
+            />
           )}
         </>
       )}
