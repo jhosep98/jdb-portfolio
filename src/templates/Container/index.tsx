@@ -14,6 +14,7 @@ export const ContainerTemplate: React.FC<ContainerProps> = ({
       sx={{
         py: '75px',
         height: '100%',
+        overflowY: 'auto',
         [theme.breakpoints.down('md')]: {
           py: '35px',
         },

@@ -6,6 +6,7 @@ import { Box, IconButton, Stack, useMediaQuery, useTheme } from '@mui/material';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
+import { notificationOnSuccess } from 'services';
 import {
   DEFAULT_EMAIL_MESSAGE,
   DEFAULT_REQUIRED_MESSAGE,
@@ -18,7 +19,6 @@ import {
   WrapperButton,
   FadeInWhenVisible,
 } from 'components';
-import { notificationOnSuccess } from 'services';
 
 export type InputSendEmail = {
   name: string;
@@ -142,8 +142,10 @@ export const ContactPage: React.FCC = () => {
                   maxWidth: 600,
                   ml: 'auto',
                   mr: 'auto',
-                  '& > div': {
-                    mb: '4rem',
+                  [theme.breakpoints.down('md')]: {
+                    '&:last-child': {
+                      mb: 0,
+                    },
                   },
                 }}
               >
@@ -152,6 +154,7 @@ export const ContactPage: React.FCC = () => {
                     '& > div': {
                       mb: '1rem',
                     },
+                    pb: '50px',
                   }}
                 >
                   <TextFieldController
@@ -203,14 +206,30 @@ export const ContactPage: React.FCC = () => {
                   />
                 </Box>
 
-                <WrapperButton
-                  type="submit"
-                  sizeVariant="medium"
-                  disabled={!isValid}
-                  fullWidth
+                <Box
+                  sx={{
+                    [theme.breakpoints.down('md')]: {
+                      position: 'fixed',
+                      right: 0,
+                      left: 0,
+                      bottom: 0,
+                      px: '1rem',
+                      py: '1rem',
+                      mb: 0,
+                      backgroundColor: 'background.default',
+                      zIndex: theme.zIndex.modal,
+                    },
+                  }}
                 >
-                  {t('contact.button')}
-                </WrapperButton>
+                  <WrapperButton
+                    type="submit"
+                    sizeVariant="medium"
+                    disabled={!isValid}
+                    fullWidth
+                  >
+                    {t('contact.button')}
+                  </WrapperButton>
+                </Box>
               </Box>
             </Box>
           </FadeInWhenVisible>

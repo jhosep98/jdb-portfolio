@@ -15,9 +15,10 @@ export const BoxContent: React.FCC<BoxContentModel> = ({
     <Box
       component="main"
       sx={{
+        overflowY: 'auto',
+        height: '100%',
         backgroundColor: theme.palette.background.default,
         width: '100%',
-        height: '100%',
         borderRadius: '10px',
         boxShadow: theme.shadows[1],
         position: 'relative',

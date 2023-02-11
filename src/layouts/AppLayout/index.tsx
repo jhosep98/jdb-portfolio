@@ -13,11 +13,7 @@ import { DrawerTemplate } from 'templates';
 import { ICONS_NAME } from 'helpers/icons';
 import { DrawerStateContext } from 'context';
 import { generateRoutes } from 'helpers/generateRoutes';
-import {
-  CardComment,
-  FadeInWhenVisible,
-  Menu,
-} from 'components';
+import { CardComment, FadeInWhenVisible, Menu } from 'components';
 
 export const AppLayout: React.FC = () => {
   const theme = useTheme();
@@ -40,8 +36,15 @@ export const AppLayout: React.FC = () => {
         RootProps={{
           sx: {
             minHeight: '100vh',
+            maxHeight: '100vh',
             backgroundColor: 'background.paper',
             padding: '10px',
+            overflowY: 'auto',
+            gridTemplateRows: '1fr',
+            '& .child__slot': {
+              height: '100%',
+              overflowY: 'auto',
+            },
             [theme.breakpoints.down('md')]: {
               padding: 0,
             },
@@ -51,13 +54,12 @@ export const AppLayout: React.FC = () => {
           sx: {
             position: 'sticky',
             top: 0,
-            overflow: 'unset',
             zIndex: theme.zIndex.appBar,
           },
         }}
         menu={
           isMqMd ? (
-            <HeaderFlex position="sticky" sx={{ backgroundImage: 'unset' }}>
+            <HeaderFlex position="sticky" sx={{ backgroundImage: 'unset' }} isBorder>
               <MenuResponsive
                 handleMenuOpen={handleMenuOpen}
                 openMenu={openMenu}
