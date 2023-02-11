@@ -1,18 +1,20 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { Fab, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { Fab, Grid, IconButton, Stack, Tooltip, useTheme } from '@mui/material';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
 import {
   BoxContent,
   FadeInWhenVisible,
+  ListAbout,
   TitleSection,
   WrapperText,
 } from 'components';
 
 export const AboutPage: React.FCC = () => {
+  const theme = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -20,19 +22,87 @@ export const AboutPage: React.FCC = () => {
       <ContainerTemplate>
         <TitleSection caption={t('about.caption')} title={t('about.title')} />
 
-        <FadeInWhenVisible>
-          <WrapperText
-            text={t('about.myResumeParagraph1')}
-            variant="body1"
-            component="p"
-          />
-        </FadeInWhenVisible>
+        <Stack rowGap="2rem" sx={{ py: '1rem' }}>
+          <FadeInWhenVisible>
+            <WrapperText
+              text={t('about.myResumeParagraph1')}
+              variant="body1"
+              component="p"
+            />
+          </FadeInWhenVisible>
 
-        {/* <Grid item xs={12} md={8}>
-            <FadeInWhenVisible>
-              <ListAbout />
-            </FadeInWhenVisible>
-          </Grid> */}
+          <FadeInWhenVisible>
+            <Grid item xs={12} md={8}>
+              <FadeInWhenVisible>
+                <ListAbout />
+              </FadeInWhenVisible>
+            </Grid>
+          </FadeInWhenVisible>
+
+          <FadeInWhenVisible>
+            <Stack
+              direction="row"
+              justifyContent="space-around"
+              flexWrap="wrap"
+              gap="1rem"
+              sx={{ pt: '2rem' }}
+            >
+              <Stack alignItems="center" justifyContent="center">
+                <IconButton aria-label="github">
+                  <Icon
+                    icon={ICONS_NAME.github}
+                    width="50"
+                    height="50"
+                    color={theme.palette.text.primary}
+                  />
+                </IconButton>
+
+                <WrapperText
+                  text="+50 commits"
+                  fontWeight={600}
+                  variant="h5"
+                  component="span"
+                />
+              </Stack>
+
+              <Stack alignItems="center" justifyContent="center">
+                <IconButton aria-label="github">
+                  <Icon
+                    icon={ICONS_NAME.github}
+                    width="50"
+                    height="50"
+                    color={theme.palette.text.primary}
+                  />
+                </IconButton>
+
+                <WrapperText
+                  text="+50 commits"
+                  fontWeight={600}
+                  variant="h5"
+                  component="span"
+                />
+              </Stack>
+
+              <Stack alignItems="center" justifyContent="center">
+                <IconButton aria-label="github">
+                  <Icon
+                    icon={ICONS_NAME.github}
+                    width="50"
+                    height="50"
+                    color={theme.palette.text.primary}
+                  />
+                </IconButton>
+
+                <WrapperText
+                  text="+50 commits"
+                  fontWeight={600}
+                  variant="h5"
+                  component="span"
+                />
+              </Stack>
+            </Stack>
+          </FadeInWhenVisible>
+        </Stack>
 
         <Tooltip title={t('about.fabTooltip')} placement="top">
           <Fab
