@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
@@ -16,6 +17,22 @@ import {
 export const AboutPage: React.FCC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const [counter, setCounter] = React.useState(0);
+  const targetCount = 50;
+
+  React.useEffect(() => {
+    if (counter === targetCount) {
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      setCounter((prevCounter) => prevCounter + 1);
+    }, 100);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [counter, targetCount]);
 
   return (
     <BoxContent isContainer>
@@ -58,7 +75,7 @@ export const AboutPage: React.FCC = () => {
                 </IconButton>
 
                 <WrapperText
-                  text="+50 commits"
+                  text={`+${counter} commits`}
                   fontWeight={600}
                   variant="h5"
                   component="span"
