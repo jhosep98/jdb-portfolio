@@ -2,37 +2,23 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
-import { Fab, Grid, IconButton, Stack, Tooltip, useTheme } from '@mui/material';
+import { Fab, Grid, Stack, Tooltip } from '@mui/material';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
 import {
   BoxContent,
   FadeInWhenVisible,
+  IconCounter,
   ListAbout,
   TitleSection,
   WrapperText,
 } from 'components';
+import { useAnimateValue } from 'hooks';
 
 export const AboutPage: React.FCC = () => {
-  const theme = useTheme();
   const { t } = useTranslation();
-  const [counter, setCounter] = React.useState(0);
-  const targetCount = 50;
-
-  React.useEffect(() => {
-    if (counter === targetCount) {
-      return;
-    }
-
-    const intervalId = setInterval(() => {
-      setCounter((prevCounter) => prevCounter + 1);
-    }, 100);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [counter, targetCount]);
+  const { value } = useAnimateValue({ start: 0, end: 50, duration: 1000 });
 
   return (
     <BoxContent isContainer>
@@ -64,59 +50,11 @@ export const AboutPage: React.FCC = () => {
               gap="1rem"
               sx={{ pt: '2rem' }}
             >
-              <Stack alignItems="center" justifyContent="center">
-                <IconButton aria-label="github">
-                  <Icon
-                    icon={ICONS_NAME.github}
-                    width="50"
-                    height="50"
-                    color={theme.palette.text.primary}
-                  />
-                </IconButton>
+              <IconCounter counter={value} icon={ICONS_NAME.cake} />
 
-                <WrapperText
-                  text={`+${counter} commits`}
-                  fontWeight={600}
-                  variant="h5"
-                  component="span"
-                />
-              </Stack>
+              <IconCounter counter={value} icon={ICONS_NAME.comments} />
 
-              <Stack alignItems="center" justifyContent="center">
-                <IconButton aria-label="github">
-                  <Icon
-                    icon={ICONS_NAME.github}
-                    width="50"
-                    height="50"
-                    color={theme.palette.text.primary}
-                  />
-                </IconButton>
-
-                <WrapperText
-                  text="+50 commits"
-                  fontWeight={600}
-                  variant="h5"
-                  component="span"
-                />
-              </Stack>
-
-              <Stack alignItems="center" justifyContent="center">
-                <IconButton aria-label="github">
-                  <Icon
-                    icon={ICONS_NAME.github}
-                    width="50"
-                    height="50"
-                    color={theme.palette.text.primary}
-                  />
-                </IconButton>
-
-                <WrapperText
-                  text="+50 commits"
-                  fontWeight={600}
-                  variant="h5"
-                  component="span"
-                />
-              </Stack>
+              <IconCounter counter={value} icon={ICONS_NAME.location} />
             </Stack>
           </FadeInWhenVisible>
         </Stack>

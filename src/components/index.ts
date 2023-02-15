@@ -5,6 +5,7 @@ export * from './CardSkill';
 export * from './Controller';
 export * from './FadeInLeftWhenVisible';
 export * from './FadeInWhenVisible';
+export * from './IconCounter';
 export * from './InputBoxTheme';
 export * from './ListAbout';
 export * from './Menu';
