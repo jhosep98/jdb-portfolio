@@ -50,11 +50,11 @@ export const AboutPage: React.FCC = () => {
               gap="1rem"
               sx={{ pt: '2rem' }}
             >
-              <IconCounter counter={value} icon={ICONS_NAME.cake} />
+              <IconCounter counter={value} icon={ICONS_NAME.commits} />
 
-              <IconCounter counter={value} icon={ICONS_NAME.comments} />
+              <IconCounter counter={value} icon={ICONS_NAME.repository} />
 
-              <IconCounter counter={value} icon={ICONS_NAME.location} />
+              <IconCounter counter={value} icon={ICONS_NAME.pullRequests} />
             </Stack>
           </FadeInWhenVisible>
         </Stack>

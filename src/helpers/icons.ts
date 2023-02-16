@@ -40,6 +40,9 @@ export const ICONS_PROJECT = {
   downloadAnimate: 'downloadAnimate',
   comments: 'comments',
   work: 'work',
+  commits: 'commits',
+  repository: 'repository',
+  pullRequest: 'pullRequest',
 };
 
 export const ICONS_NAME = {
@@ -77,6 +80,9 @@ export const ICONS_NAME = {
   comments: getIconifyName(ICONS_PROJECT.comments),
   work: 'line-md:document-report',
   workOutline: 'ic:outline-work-outline',
+  commits: getIconifyName(ICONS_PROJECT.commits),
+  repository: 'ri:git-repository-line',
+  pullRequests: 'ph:git-pull-request',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };
@@ -89,6 +95,15 @@ export const InitializerIcons = () => {
   addCollection({
     prefix: PREFIX_PROJECT,
     icons: {
+      [ICONS_PROJECT.pullRequest]: {
+        body: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M104 68a36 36 0 1 0-44 35.1v49.8a36 36 0 1 0 16 0v-49.8A36.1 36.1 0 0 0 104 68Zm-56 0a20 20 0 1 1 20 20a20.1 20.1 0 0 1-20-20Zm40 120a20 20 0 1 1-20-20a20.1 20.1 0 0 1 20 20Zm108-35.1v-33a55.5 55.5 0 0 0-16.4-39.6L155.3 56H176a8 8 0 0 0 0-16h-40a8 8 0 0 0-8 8v40a8 8 0 0 0 16 0V67.3l24.3 24.3a40 40 0 0 1 11.7 28.3v33a36 36 0 1 0 16 0Zm-8 55.1a20 20 0 1 1 20-20a20.1 20.1 0 0 1-20 20Z"/></svg>',
+      },
+      [ICONS_PROJECT.repository]: {
+        body: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 21v2.5l-3-2l-3 2V21h-.5A3.5 3.5 0 0 1 3 17.5V5a3 3 0 0 1 3-3h14a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1h-7zm0-2h6v-3H6.5a1.5 1.5 0 0 0 0 3H7v-2h6v2zm6-5V4H6v10.035A3.53 3.53 0 0 1 6.5 14H19zM7 5h2v2H7V5zm0 3h2v2H7V8zm0 3h2v2H7v-2z"/></svg>',
+      },
+      [ICONS_PROJECT.commits]: {
+        body: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q-1.825 0-3.188-1.137Q7.45 14.725 7.1 13H3q-.425 0-.712-.288Q2 12.425 2 12t.288-.713Q2.575 11 3 11h4.1q.35-1.725 1.712-2.863Q10.175 7 12 7q1.825 0 3.188 1.137Q16.55 9.275 16.9 11H21q.425 0 .712.287q.288.288.288.713t-.288.712Q21.425 13 21 13h-4.1q-.35 1.725-1.712 2.863Q13.825 17 12 17Zm0-2q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15Z"/></svg>',
+      },
       [ICONS_PROJECT.work]: {
         body: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z"/></svg>',
       },
