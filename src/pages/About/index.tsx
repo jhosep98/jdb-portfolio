@@ -14,11 +14,14 @@ import {
   TitleSection,
   WrapperText,
 } from 'components';
-import { useAnimateValue } from 'hooks';
+import { useAnimateValue, useGetRepos } from 'hooks';
 
 export const AboutPage: React.FCC = () => {
   const { t } = useTranslation();
+  const { queryRepos } = useGetRepos();
   const { value } = useAnimateValue({ start: 0, end: 50, duration: 1000 });
+
+  console.log('!REPOS: ', queryRepos);
 
   return (
     <BoxContent isContainer>
