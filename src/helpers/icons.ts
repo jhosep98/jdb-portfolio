@@ -80,7 +80,7 @@ export const ICONS_NAME = {
   comments: getIconifyName(ICONS_PROJECT.comments),
   work: 'line-md:document-report',
   workOutline: 'ic:outline-work-outline',
-  commits: getIconifyName(ICONS_PROJECT.commits),
+  commits: 'pajamas:commit',
   repository: 'ri:git-repository-line',
   pullRequests: 'ph:git-pull-request',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
