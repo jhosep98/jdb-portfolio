@@ -1,11 +1,8 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 export const githubApi = axios.create({
-  baseURL: 'https://api.github.com',
+  baseURL: 'https://api.github.com/user/',
   headers: {
-    token: `Bearer ${process.env.GITHUB_TOKEN}`,
+    Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
   },
 });

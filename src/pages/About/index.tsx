@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import { Fab, Grid, Stack, Tooltip } from '@mui/material';
 
+import { useGetRepos } from 'hooks';
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
 import {
@@ -14,14 +15,14 @@ import {
   TitleSection,
   WrapperText,
 } from 'components';
-import { useAnimateValue, useGetRepos } from 'hooks';
 
 export const AboutPage: React.FCC = () => {
   const { t } = useTranslation();
   const { queryRepos } = useGetRepos();
-  const { value } = useAnimateValue({ start: 0, end: 50, duration: 1000 });
 
-  console.log('!REPOS: ', queryRepos);
+  if (queryRepos.isLoading) return <h1>Loading...!</h1>;
+
+  if (queryRepos.isError) return <h1>Error..!</h1>;
 
   return (
     <BoxContent isContainer>
@@ -53,11 +54,20 @@ export const AboutPage: React.FCC = () => {
               gap="1rem"
               sx={{ pt: '2rem' }}
             >
-              <IconCounter counter={value} icon={ICONS_NAME.commits} />
+              <IconCounter
+                counter={queryRepos.data?.length}
+                icon={ICONS_NAME.commits}
+              />
 
-              <IconCounter counter={value} icon={ICONS_NAME.repository} />
+              <IconCounter
+                counter={queryRepos.data?.length}
+                icon={ICONS_NAME.repository}
+              />
 
-              <IconCounter counter={value} icon={ICONS_NAME.pullRequests} />
+              <IconCounter
+                counter={queryRepos.data?.length}
+                icon={ICONS_NAME.pullRequests}
+              />
             </Stack>
           </FadeInWhenVisible>
         </Stack>

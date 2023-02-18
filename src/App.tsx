@@ -1,8 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './language/index';
 import { Language } from 'interfaces';
@@ -19,8 +17,6 @@ import {
 } from 'context';
 
 InitializerIcons();
-
-const queryClient = new QueryClient();
 
 const AppState = ({
   children,
@@ -54,13 +50,10 @@ export const App: React.FC = () => (
   <ThemeStateProvider>
     <SnackbarProvider maxSnack={3}>
       <SnackbarUtilsConfigurator />
-      <QueryClientProvider client={queryClient}>
-        <CssBaseline />
-        <AppState>
-          <ReactQueryDevtools initialIsOpen={false} />
-          <AppRouter />
-        </AppState>
-      </QueryClientProvider>
+      <CssBaseline />
+      <AppState>
+        <AppRouter />
+      </AppState>
     </SnackbarProvider>
   </ThemeStateProvider>
 );

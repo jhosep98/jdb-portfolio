@@ -2,14 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 
 import { githubApi } from 'api/githubApi';
 
-const getUserRepos = async (): Promise<any> => {
-  const data = await githubApi.get<any>('/user/repos');
+const getUserRepos = async () => {
+  const { data } = await githubApi.get('/repos');
 
   return data;
 };
 
 export const useGetRepos = () => {
-  const queryRepos = useQuery(['repos'], getUserRepos);
+  const queryRepos = useQuery({ queryKey: ['repos'], queryFn: getUserRepos });
 
   return {
     queryRepos,
