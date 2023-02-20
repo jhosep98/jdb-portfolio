@@ -15,3 +15,4 @@ export * from './WrapperIcon';
 export * from './WrapperIconButton';
 export * from './WrapperText';
 export * from './WrapperTextField';
+export * from './Loader';
