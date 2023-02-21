@@ -83,6 +83,7 @@ export const ICONS_NAME = {
   commits: 'pajamas:commit',
   repository: 'ri:git-repository-line',
   pullRequests: 'ph:git-pull-request',
+  alert: 'line-md:alert',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };
