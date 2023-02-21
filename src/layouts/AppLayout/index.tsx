@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import { useTranslation } from 'react-i18next';
 import { Divider, useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import {
@@ -17,6 +18,7 @@ import { CardComment, FadeInWhenVisible, Menu } from 'components';
 
 export const AppLayout: React.FC = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -59,7 +61,11 @@ export const AppLayout: React.FC = () => {
         }}
         menu={
           isMqMd ? (
-            <HeaderFlex position="sticky" sx={{ backgroundImage: 'unset' }} isBorder>
+            <HeaderFlex
+              position="sticky"
+              sx={{ backgroundImage: 'unset' }}
+              isBorder
+            >
               <MenuResponsive
                 handleMenuOpen={handleMenuOpen}
                 openMenu={openMenu}
@@ -99,7 +105,7 @@ export const AppLayout: React.FC = () => {
                 <CardComment
                   name="Carlos Rivero Bianchi"
                   company="Founder & CEO at GLOBALTECH SCM SOLUTIONS, CorpFounder & CEO at GLOBALTECH SCM SOLUTIONS, Corp"
-                  description="Tuvimos la oportunidad de trabajar con Jhosep en nuestro equipo de desarrollo. Es una excelente persona, muy comprometida con los objetivos y resolutiva aceptando cualquier desafio que se le asigna. "
+                  description={t('mainDrawer.card_01.description')}
                 />
               </FadeInWhenVisible>
 
@@ -109,7 +115,7 @@ export const AppLayout: React.FC = () => {
                 <CardComment
                   name="Moises Perez"
                   company="React | React Native | Redux | I develop user friendly Web and Mobile apps at Effectus Software"
-                  description="Jhosep is a great developer! I loved working with him during our time in Alkemy. I recommend Jhosep for any organization, I'm sure he would be a very valuable asset to the team."
+                  description={t('mainDrawer.card_02.description')}
                 />
               </FadeInWhenVisible>
             </>

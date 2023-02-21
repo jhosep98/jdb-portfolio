@@ -65,4 +65,14 @@ export const en = {
     title: 'Settings',
     caption: 'Settings',
   },
+  mainDrawer: {
+    card_01: {
+      description:
+        'We had the opportunity to work with Jhosep in our development team. He is an excellent person, very committed to the objectives and resolute in accepting any challenge assigned to him.',
+    },
+    card_02: {
+      description:
+        "Jhosep is a great developer! I loved working with him during our time in Alkemy. I recommend Jhosep for any organization, I'm sure he would be a very valuable asset to the team.",
+    },
+  },
 };

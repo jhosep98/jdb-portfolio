@@ -1,6 +1,5 @@
 export const es = {
-  welcome:
-    'Hola, me encontraste! Soy Jhosep y soy un',
+  welcome: 'Hola, me encontraste! Soy Jhosep y soy un',
   home: {
     front: 'Desarrollador Front-end.',
     ui: 'UI/UX Diseñador.',
@@ -67,5 +66,15 @@ export const es = {
   settings: {
     title: 'Configuraciones',
     caption: 'COnfiguraciones',
+  },
+  mainDrawer: {
+    card_01: {
+      description:
+        'Tuvimos la oportunidad de trabajar con Jhosep en nuestro equipo de desarrollo. Es una excelente persona, muy comprometida con los objetivos y resolutiva aceptando cualquier desafio que se le asigna.',
+    },
+    card_02: {
+      description:
+        'Jhosep es un gran desarrollador. Me encantó trabajar con él durante nuestro tiempo en Alkemy. Recomiendo a Jhosep para cualquier organización, estoy seguro de que sería un activo muy valioso para el equipo.',
+    },
   },
 };
