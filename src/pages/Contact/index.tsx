@@ -217,7 +217,7 @@ export const ContactPage: React.FCC = () => {
                       py: '1rem',
                       mb: 0,
                       backgroundColor: 'background.default',
-                      zIndex: theme.zIndex.modal,
+                      zIndex: theme.zIndex.fab,
                     },
                   }}
                 >

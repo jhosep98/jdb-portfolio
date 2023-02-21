@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist",
-    "dev": "vite --port 3000",
+    "dev": "vite --port 3000 --host",
     "lint:fix-w": "eslint src\\**\\*.{ts,tsx} --fix",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
