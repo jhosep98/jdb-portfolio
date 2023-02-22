@@ -29,7 +29,7 @@ export const AppLayout: React.FC = () => {
 
   const routes = React.useMemo(
     () => generateRoutes(navigate, location, theme, handleDrawerComments),
-    [location, navigate],
+    [location, navigate, theme],
   );
 
   return (
