@@ -1,4 +1,5 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import { Icon } from '@iconify/react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -6,7 +7,7 @@ import { Box, IconButton, Stack, useMediaQuery, useTheme } from '@mui/material';
 
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
-import { notificationOnSuccess } from 'services';
+import { notificationOnError, notificationOnSuccess } from 'services';
 import {
   DEFAULT_EMAIL_MESSAGE,
   DEFAULT_REQUIRED_MESSAGE,
@@ -41,9 +42,21 @@ export const ContactPage: React.FCC = () => {
   });
 
   const onSubmit = (data: InputSendEmail) => {
-    console.log('!!FORM_DATA: ', data);
-    notificationOnSuccess(t('contact.messageSendEmail'));
-    reset();
+    emailjs
+      .send(
+        'gmail',
+        'personal_site_contact',
+        data,
+        'user_DuZ1yXYcXYbrSeIsLDeMX',
+      )
+      .then(() => {
+        notificationOnSuccess(t('contact.messageSendEmail'));
+        reset();
+      })
+      .catch((err) => {
+        notificationOnError(err.text);
+        reset();
+      });
   };
 
   return (
