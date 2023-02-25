@@ -41,6 +41,25 @@ export const es = {
         'Potente gestión de estados asíncrona para TS/JS, React, Solid, Vue y Svelte.',
       reactRouterDom:
         'React Router permite el "enrutamiento del lado del cliente".',
+      figma:
+        'Figma es una herramienta de interfaz de usuario en línea y gratuita para crear, colaborar, crear prototipos y transferir.',
+    },
+    drawer: {
+      title: 'Experiencia laboral',
+      cards: {
+        1: {},
+        2: {},
+        3: {
+          listItem1:
+            'Participé en un programa de formación como desarrollador full stack.',
+          listItem2:
+            'Desarrolle de un sitio web para una organización sin ánimo de lucro en Argentina.',
+          listItem3:
+            'Aprendi de tecnologías como Node, React, Material-UI, Git y GitHub.',
+          listItem4:
+            'Utilize metodologías ágiles como Scrum.',
+        },
+      },
     },
   },
   contact: {

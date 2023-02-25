@@ -126,6 +126,12 @@ export const SkillsPage: React.FCC = () => {
                   icon={ICONS_NAME.next}
                   tooltip={t('skills.cards.next')}
                 />
+
+                <CardSkill
+                  title="FIGMA"
+                  icon={ICONS_NAME.figma}
+                  tooltip={t('skills.cards.figma')}
+                />
               </GridCards>
             </FadeInWhenVisible>
 
@@ -173,7 +179,7 @@ export const SkillsPage: React.FCC = () => {
                 },
               }}
               contentHeader={{
-                title: 'Work Experience',
+                title: t('skills.drawer.title'),
                 icons: (
                   <IconButtonComponent
                     iconProps={{
@@ -272,7 +278,11 @@ export const SkillsPage: React.FCC = () => {
                             <>
                               <Link
                                 href="https://www.alkemy.org/"
-                                sx={{ display: 'block', color: 'text.primary', fontWeight: 700 }}
+                                sx={{
+                                  display: 'block',
+                                  color: 'text.primary',
+                                  fontWeight: 700,
+                                }}
                                 underline="none"
                                 variant="body2"
                                 target="_blank"
@@ -282,15 +292,17 @@ export const SkillsPage: React.FCC = () => {
 
                               <List>
                                 <ListItemSkill
-                                  text="Participated in a training program as a full
-                                    stack developer."
+                                  text={t('skills.drawer.cards.3.listItem1')}
                                 />
-                                <ListItemSkill text="Developed a website for a non-profit organization in Argentina." />
                                 <ListItemSkill
-                                  text="Learning technologies such as
-                                    Node, React, Material-UI, Git, and GitHub."
+                                  text={t('skills.drawer.cards.3.listItem2')}
                                 />
-                                <ListItemSkill text="Use agile methodologies like Scrum." />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.3.listItem3')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.3.listItem4')}
+                                />
                               </List>
                             </>
                           ),

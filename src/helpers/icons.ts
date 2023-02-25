@@ -85,6 +85,7 @@ export const ICONS_NAME = {
   pullRequests: 'ph:git-pull-request',
   alert: 'line-md:alert',
   check: 'ic:outline-check',
+  figma: 'logos:figma',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };
