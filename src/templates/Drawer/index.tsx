@@ -45,7 +45,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
       onClose={() => handleClose()}
       direction={direction}
       animation={animation}
-      width={375}
+      width={420}
       contentProps={{
         sx: {
           borderRadius: 0,
@@ -62,13 +62,25 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
             isBorder
             position="relative"
             backgroundColor={theme.palette.background.default}
+            containerProps={{
+              disableGutters: true,
+            }}
+            sx={{
+              backgroundImage: 'none',
+            }}
           >
             <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
             >
-              <Typography variant="subtitle1" fontWeight={600} color="text.primary">{contentHeader.title}</Typography>
+              <Typography
+                variant="subtitle1"
+                fontWeight={600}
+                color="text.primary"
+              >
+                {contentHeader.title}
+              </Typography>
 
               <Stack direction="row" alignItems="center" gap="1rem">
                 {contentHeader.icons}

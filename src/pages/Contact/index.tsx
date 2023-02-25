@@ -236,7 +236,7 @@ export const ContactPage: React.FCC = () => {
                 >
                   <WrapperButton
                     type="submit"
-                    sizeVariant="medium"
+                    sizeVariant="large"
                     disabled={!isValid}
                     fullWidth
                   >

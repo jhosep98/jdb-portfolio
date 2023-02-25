@@ -9,6 +9,7 @@ export * from './FadeInWhenVisible';
 export * from './IconCounter';
 export * from './InputBoxTheme';
 export * from './ListAbout';
+export * from './ListItemSkill';
 export * from './Loader';
 export * from './Menu';
 export * from './TitleSection';

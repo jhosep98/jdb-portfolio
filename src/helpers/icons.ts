@@ -84,6 +84,7 @@ export const ICONS_NAME = {
   repository: 'ri:git-repository-line',
   pullRequests: 'ph:git-pull-request',
   alert: 'line-md:alert',
+  check: 'ic:outline-check',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };

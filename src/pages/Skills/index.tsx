@@ -1,7 +1,15 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
-import { Box, Fab, Tooltip, Typography, useTheme } from '@mui/material';
+import {
+  Box,
+  Fab,
+  Link,
+  List,
+  Tooltip,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import {
   GridCards,
   IconButtonComponent,
@@ -16,6 +24,7 @@ import {
   BoxContent,
   CardSkill,
   FadeInWhenVisible,
+  ListItemSkill,
   TitleSection,
   WrapperText,
 } from 'components';
@@ -260,19 +269,28 @@ export const SkillsPage: React.FCC = () => {
                           date: 'Mar 2021 - Apr 2021',
                           content: (
                             <>
-                              <Typography
+                              <Link
+                                href="https://www.alkemy.org/"
+                                sx={{ display: 'block', color: 'text.primary', fontWeight: 700 }}
+                                underline="none"
                                 variant="body2"
-                                color="text.primary"
-                                fontWeight={700}
+                                target="_blank"
                               >
                                 Alkemy
-                              </Typography>
+                              </Link>
 
-                              <Typography variant="body2" color="text.primary">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Atque laudantium cupiditate
-                                laborum.
-                              </Typography>
+                              <List>
+                                <ListItemSkill
+                                  text="Participated in a training program as a full
+                                    stack developer."
+                                />
+                                <ListItemSkill text="Developed a website for a non-profit organization in Argentina." />
+                                <ListItemSkill
+                                  text="Learning technologies such as
+                                    Node, React, Material-UI, Git, and GitHub."
+                                />
+                                <ListItemSkill text="Use agile methodologies like Scrum." />
+                              </List>
                             </>
                           ),
                         },
