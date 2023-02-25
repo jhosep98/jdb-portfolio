@@ -166,6 +166,7 @@ export const SkillsPage: React.FCC = () => {
               direction={undefined}
               variant="persistent"
               handleClose={() => handleCloseDrawer('isOpenWorkDrawer')}
+              headerDisableGutters
               contentProps={{
                 sx: {
                   borderRadius: '10px',

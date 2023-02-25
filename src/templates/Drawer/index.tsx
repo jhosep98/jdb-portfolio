@@ -23,6 +23,7 @@ interface DrawerTemplateModel {
     title: React.ReactNode;
     icons: React.ReactNode | React.ReactNode[];
   };
+  headerDisableGutters?: boolean;
 }
 
 export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
@@ -35,6 +36,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
   contentProps,
   direction = 'left',
   variant = 'temporary',
+  headerDisableGutters,
 }) => {
   const theme = useTheme();
 
@@ -63,7 +65,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
             position="relative"
             backgroundColor={theme.palette.background.default}
             containerProps={{
-              disableGutters: true,
+              disableGutters: headerDisableGutters,
             }}
             sx={{
               backgroundImage: 'none',
