@@ -167,6 +167,7 @@ export const SkillsPage: React.FCC = () => {
         <>
           {isOpenWorkDrawer && (
             <DrawerTemplate
+              width={450}
               open={isOpenWorkDrawer}
               animation={false}
               direction={undefined}

@@ -24,6 +24,7 @@ interface DrawerTemplateModel {
     icons: React.ReactNode | React.ReactNode[];
   };
   headerDisableGutters?: boolean;
+  width?: string | number;
 }
 
 export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
@@ -37,6 +38,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
   direction = 'left',
   variant = 'temporary',
   headerDisableGutters,
+  width = 375,
 }) => {
   const theme = useTheme();
 
@@ -47,7 +49,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
       onClose={() => handleClose()}
       direction={direction}
       animation={animation}
-      width={420}
+      width={width}
       contentProps={{
         sx: {
           borderRadius: 0,
