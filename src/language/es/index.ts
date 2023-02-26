@@ -47,7 +47,10 @@ export const es = {
     drawer: {
       title: 'Experiencia laboral',
       cards: {
-        1: {},
+        1: {
+          listItem1:
+            'Desarrollo y mantenimiento de nuestra libreria interna subida a npm y desarrollada con react, typescript y storybook.',
+        },
         2: {},
         3: {
           listItem1:
@@ -56,8 +59,7 @@ export const es = {
             'Desarrolle de un sitio web para una organización sin ánimo de lucro en Argentina.',
           listItem3:
             'Aprendi de tecnologías como Node, React, Material-UI, Git y GitHub.',
-          listItem4:
-            'Utilize metodologías ágiles como Scrum.',
+          listItem4: 'Utilize metodologías ágiles como Scrum.',
         },
       },
     },

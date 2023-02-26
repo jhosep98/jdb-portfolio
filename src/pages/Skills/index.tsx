@@ -213,19 +213,25 @@ export const SkillsPage: React.FCC = () => {
                           date: 'Aug 2021 - Present',
                           content: (
                             <>
-                              <Typography
+                              <Link
+                                href="https://www.alkemy.org/"
+                                sx={{
+                                  display: 'block',
+                                  color: 'text.primary',
+                                  fontWeight: 700,
+                                }}
+                                underline="none"
                                 variant="body2"
-                                color="text.primary"
-                                fontWeight={700}
+                                target="_blank"
                               >
                                 Wulpers
-                              </Typography>
+                              </Link>
 
-                              <Typography variant="body2" color="text.primary">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Atque laudantium cupiditate
-                                laborum.
-                              </Typography>
+                              <List>
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem1')}
+                                />
+                              </List>
                             </>
                           ),
                         },

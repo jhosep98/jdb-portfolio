@@ -39,12 +39,16 @@ export const en = {
       reactQuery:
         'Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.',
       reactRouterDom: 'React Router enables "client side routing".',
-      figma: 'Figma is a free, online UI tool to create, collaborate, prototype, and handoff.',
+      figma:
+        'Figma is a free, online UI tool to create, collaborate, prototype, and handoff.',
     },
     drawer: {
       title: 'Work experience',
       cards: {
-        1: {},
+        1: {
+          listItem1:
+            'Development and maintenance of our internal library uploaded to npm and developed with react, typescript and storybook.',
+        },
         2: {},
         3: {
           listItem1:
@@ -53,8 +57,7 @@ export const en = {
             'Developed a website for a non-profit organization in Argentina.',
           listItem3:
             'Learning technologies such as Node, React, Material-UI, Git, and GitHub.',
-          listItem4:
-            'Use agile methodologies like Scrum.',
+          listItem4: 'Use agile methodologies like Scrum.',
         },
       },
     },
