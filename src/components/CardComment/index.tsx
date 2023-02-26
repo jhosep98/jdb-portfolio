@@ -19,9 +19,8 @@ export const CardComment: React.FCC<CardCommentModel> = ({
   <CardFlexible sx={{ '&:hover': { boxShadow: 'none' } }}>
     <Box sx={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
       <Avatar
-        {...stringAvatar(name)}
         variant="rounded"
-        sx={{ width: 48, height: 48 }}
+        {...stringAvatar(name)}
       />
 
       <Box>
