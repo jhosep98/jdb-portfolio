@@ -1,6 +1,6 @@
 import { InputVariantType } from '@wulperstudio/cms';
 
-import ProfilePhotoMenu from '../assets/profile.jpg';
+import ProfilePhotoMenu from '../assets/logo.png';
 
 interface DrawerConstsModel {
   paddingContainerDrawer: string;
