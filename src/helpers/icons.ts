@@ -86,6 +86,9 @@ export const ICONS_NAME = {
   alert: 'line-md:alert',
   check: 'ic:outline-check',
   figma: 'logos:figma',
+  following: 'fluent-mdl2:follow-user',
+  follower: 'fluent-mdl2:user-followed',
+  githubAnimate: 'line-md:github-loop',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };

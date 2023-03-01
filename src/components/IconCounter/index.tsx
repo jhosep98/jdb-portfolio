@@ -8,9 +8,10 @@ import { WrapperText } from 'components';
 interface IconCounterModel {
   icon: string;
   counter: number;
+  title: string;
 }
 
-export const IconCounter: React.FCC<IconCounterModel> = ({ counter, icon }) => {
+export const IconCounter: React.FCC<IconCounterModel> = ({ counter, icon, title }) => {
   const theme = useTheme();
   const { value } = useAnimateValue({
     start: 0,
@@ -30,7 +31,7 @@ export const IconCounter: React.FCC<IconCounterModel> = ({ counter, icon }) => {
       </IconButton>
 
       <WrapperText
-        text={`+${value} commits`}
+        text={`${value} ${title}`}
         fontWeight={600}
         variant="h5"
         component="span"

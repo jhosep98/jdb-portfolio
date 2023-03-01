@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import { Fab, Grid, Stack, Tooltip } from '@mui/material';
 
-import { useGetRepos } from 'hooks';
+import { useGetUserInfo } from 'hooks';
 import { ICONS_NAME } from 'helpers/icons';
 import { ContainerTemplate } from 'templates';
 import {
@@ -20,7 +20,7 @@ import {
 
 export const AboutPage: React.FCC = () => {
   const { t } = useTranslation();
-  const { queryRepos } = useGetRepos();
+  const { queryUserInfo } = useGetUserInfo();
 
   return (
     <BoxContent isContainer>
@@ -43,11 +43,11 @@ export const AboutPage: React.FCC = () => {
             </Grid>
           </FadeInWhenVisible>
 
-          {queryRepos.isError && <CardAlert />}
+          {queryUserInfo.isError && <CardAlert />}
 
-          {queryRepos.isLoading && <Loader position="absolute" />}
+          {queryUserInfo.isLoading && <Loader position="absolute" />}
 
-          {!queryRepos.isLoading && !queryRepos.isError && (
+          {!queryUserInfo.isLoading && !queryUserInfo.isError && (
             <FadeInWhenVisible>
               <Stack
                 direction="row"
@@ -57,24 +57,48 @@ export const AboutPage: React.FCC = () => {
                 sx={{ pt: '2rem' }}
               >
                 <IconCounter
-                  counter={queryRepos.data?.length}
-                  icon={ICONS_NAME.commits}
+                  counter={queryUserInfo.data?.followers}
+                  icon={ICONS_NAME.following}
+                  title="Followers"
                 />
 
                 <IconCounter
-                  counter={queryRepos.data?.length}
+                  counter={queryUserInfo.data?.public_repos}
                   icon={ICONS_NAME.repository}
+                  title="Public repos"
                 />
 
                 <IconCounter
-                  counter={queryRepos.data?.length}
-                  icon={ICONS_NAME.pullRequests}
+                  counter={queryUserInfo.data?.following}
+                  icon={ICONS_NAME.follower}
+                  title="Following"
                 />
               </Stack>
             </FadeInWhenVisible>
           )}
         </Stack>
-        <Tooltip title={t('about.fabTooltip')} placement="top">
+
+        <Tooltip title="Github Overview" placement="top">
+          <Fab
+            color="primary"
+            size="medium"
+            sx={(theme) => ({
+              position: 'absolute',
+              zIndex: theme.zIndex.fab,
+              right: 40,
+              bottom: 100,
+            })}
+          >
+            <Icon
+              icon={ICONS_NAME.githubAnimate}
+              color="#fff"
+              height="24"
+              width="24"
+            />
+          </Fab>
+        </Tooltip>
+
+        <Tooltip title={t('about.fabTooltip')} placement="bottom">
           <Fab
             color="primary"
             size="medium"
