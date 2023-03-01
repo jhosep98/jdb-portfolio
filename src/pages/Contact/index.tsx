@@ -124,18 +124,6 @@ export const ContactPage: React.FCC = () => {
                 />
               </IconButton>
 
-              <IconButton
-                aria-label="whatsapp"
-                href="https://api.whatsapp.com/send?phone=541124004135"
-                target="_blank"
-              >
-                <Icon
-                  icon={ICONS_NAME.whatsapp}
-                  width="34"
-                  height="34"
-                  color={theme.palette.text.primary}
-                />
-              </IconButton>
             </Stack>
           </FadeInWhenVisible>
 

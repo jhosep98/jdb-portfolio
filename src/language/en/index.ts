@@ -10,7 +10,7 @@ export const en = {
     titleData: 'Front-end Developer',
     titleMyResume: 'My resume',
     myResumeParagraph1:
-      'With over 1.6 years of experience as a front-end developer, I am proficient in technologies such as Javascript, React, Typescript, Next Js, Storybook, and Figma. I am a quick learner and have a passion for the web, always seeking new challenges to improve my skills.',
+      'With over 2 years of experience as a front-end developer, I am proficient in technologies such as Javascript, React, Typescript, Next Js, Storybook, and Figma. I am a quick learner and have a passion for the web, always seeking new challenges to improve my skills.',
     myResumeParagraph2:
       'Currently, I am studying English with Nulinga, an online platform. In October, I will begin studying computer science at the University of Palermo in order to gain a deeper understanding of the fundamentals of computing and continue to grow as a professional in the exciting world of technology.',
     myResumeParagraph3:

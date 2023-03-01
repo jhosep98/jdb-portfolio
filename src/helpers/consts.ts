@@ -1,7 +1,5 @@
 import { InputVariantType } from '@wulperstudio/cms';
 
-import ProfilePhotoMenu from '../assets/logo.png';
-
 interface DrawerConstsModel {
   paddingContainerDrawer: string;
   variantInput: InputVariantType;
@@ -13,7 +11,6 @@ export const consts = {
   boxShadowStyle: 'rgb(0 0 0 / 9%) 0px 3px 12px',
   widthLayout: '50vw',
   avatarImg: 'https://mui.com/static/images/avatar/1.jpg',
-  profilePhotoMenu: ProfilePhotoMenu,
 };
 
 export const DRAWER_CONSTS: DrawerConstsModel = {
