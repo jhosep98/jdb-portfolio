@@ -2,16 +2,27 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
-import { Fab, Grid, Stack, Tooltip, Typography, useTheme } from '@mui/material';
+import {
+  Box,
+  Divider,
+  Fab,
+  Grid,
+  Stack,
+  Tooltip,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import {
   AvatarV2,
+  CardFlexible,
   IconButtonComponent,
   LayoutCrudRight,
+  TextForLinesOutput,
+  TextMultiline,
 } from '@wulperstudio/cms';
 
-import { consts } from 'helpers/consts';
 import { ICONS_NAME } from 'helpers/icons';
-import { useDrawer, useGetUserInfo } from 'hooks';
+import { useDrawer, useGetRepos, useGetUserInfo } from 'hooks';
 import { ContainerTemplate, DrawerTemplate } from 'templates';
 import {
   BoxContent,
@@ -23,10 +34,12 @@ import {
   TitleSection,
   WrapperText,
 } from 'components';
+import dayjs from 'dayjs';
 
 export const AboutPage: React.FCC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const { queryRepos } = useGetRepos();
   const { queryUserInfo } = useGetUserInfo();
   const { handleCloseDrawer, handleOpenDrawer, showDrawer } = useDrawer<'githubOverview'>(['githubOverview']);
 
@@ -184,24 +197,122 @@ export const AboutPage: React.FCC = () => {
                     alignItems="center"
                     spacing={1}
                   >
-                    <AvatarV2 src={consts.backgroundImageRandom} />
+                    <AvatarV2
+                      src={queryUserInfo.data?.avatar_url}
+                      sx={{
+                        '&.MuiAvatar-root': {
+                          width: 90,
+                          height: 90,
+                        },
+                      }}
+                    />
 
                     <Typography
-                      variant="subtitle1"
+                      variant="h6"
                       fontWeight={600}
                       color="text.primary"
                     >
-                      Jose Davila
+                      {queryUserInfo.data?.name}
                     </Typography>
 
                     <Typography
-                      variant="subtitle1"
+                      variant="subtitle2"
                       fontWeight={600}
-                      color="text.primary"
+                      color="text.secondary"
                     >
-                      Lorem ipsum dolor sit amet consectetur.
+                      {queryUserInfo.data?.company}
                     </Typography>
                   </Stack>
+
+                  <TextMultiline
+                    label="Bio"
+                    text={queryUserInfo.data?.bio}
+                    backgroundColor
+                    typographyProps={{ color: 'text.primary' }}
+                  />
+
+                  <Divider />
+
+                  <TextMultiline
+                    label="Location"
+                    text={queryUserInfo.data?.location}
+                    backgroundColor
+                    typographyProps={{ color: 'text.primary' }}
+                  />
+
+                  <Divider />
+
+                  <TextMultiline
+                    label="Created at"
+                    text={dayjs(queryUserInfo.data?.created_at!).format(
+                      'MMMM D, YYYY',
+                    )}
+                    backgroundColor
+                    typographyProps={{ color: 'text.primary' }}
+                  />
+
+                  <Divider />
+
+                  <Typography
+                    variant="subtitle1"
+                    color="primary.main"
+                    fontWeight={600}
+                  >
+                    Repos
+                  </Typography>
+
+                  {queryRepos?.data?.map((repo) => (
+                    <Box key={repo.id}>
+                      <CardFlexible
+                        border={`1px solid ${theme.palette.divider}`}
+                        disabledHover
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '1.5rem',
+                        }}
+                      >
+                        <Box>
+                          <Typography
+                            color="text.primary"
+                            sx={{
+                              '&:first-letter': {
+                                textTransform: 'uppercase',
+                              },
+                            }}
+                          >
+                            {repo.name}
+                          </Typography>
+
+                          <Box>
+                            <TextForLinesOutput
+                              clines={2}
+                              color="text.secondary"
+                              text={repo.description}
+                              variant="body2"
+                            />
+                          </Box>
+                        </Box>
+
+                        <IconButtonComponent
+                          iconProps={{
+                            sx: {
+                              boxShadow: theme.shadows[1],
+                            },
+                            onClick: () => window.open(repo.html_url, '_blank'),
+                          }}
+                        >
+                          <Icon
+                            icon={ICONS_NAME.arrowRight}
+                            color={theme.palette.primary.main}
+                          />
+                        </IconButtonComponent>
+                      </CardFlexible>
+
+                      <Divider />
+                    </Box>
+                  ))}
                 </>
               )}
             />

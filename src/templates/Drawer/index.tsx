@@ -79,7 +79,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
               alignItems="center"
             >
               <Typography
-                variant="subtitle1"
+                variant="h6"
                 fontWeight={600}
                 color="text.primary"
               >

@@ -89,6 +89,7 @@ export const ICONS_NAME = {
   following: 'fluent-mdl2:follow-user',
   follower: 'fluent-mdl2:user-followed',
   githubAnimate: 'line-md:github-loop',
+  arrowRight: 'material-symbols:arrow-right-alt-rounded',
   // back_arrow: getIconifyName(ICONS_PROJECT.location),
   // back_chevron: getIconifyName(ICONS_PROJECT.location),
 };
