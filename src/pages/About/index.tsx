@@ -119,6 +119,9 @@ export const AboutPage: React.FCC = () => {
                 sx={(theme) => ({
                   position: 'absolute',
                   zIndex: theme.zIndex.fab,
+                  [theme.breakpoints.down('md')]: {
+                    right: 16,
+                  },
                   right: 40,
                   bottom: 100,
                 })}
@@ -141,6 +144,9 @@ export const AboutPage: React.FCC = () => {
                 sx={(theme) => ({
                   position: 'absolute',
                   zIndex: theme.zIndex.fab,
+                  [theme.breakpoints.down('md')]: {
+                    right: 16,
+                  },
                   right: 40,
                   bottom: 40,
                 })}
@@ -164,10 +170,10 @@ export const AboutPage: React.FCC = () => {
               animation={false}
               direction={undefined}
               variant="persistent"
-              headerDisableGutters
               contentProps={{
                 sx: {
                   borderRadius: '10px',
+                  padding: 0,
                 },
               }}
               open={githubOverview}
@@ -262,7 +268,7 @@ export const AboutPage: React.FCC = () => {
                   </Typography>
 
                   {queryRepos?.data?.map((repo) => (
-                    <Box key={repo.id}>
+                    <React.Fragment key={repo.id}>
                       <CardFlexible
                         border={`1px solid ${theme.palette.divider}`}
                         disabledHover
@@ -311,7 +317,7 @@ export const AboutPage: React.FCC = () => {
                       </CardFlexible>
 
                       <Divider />
-                    </Box>
+                    </React.Fragment>
                   ))}
                 </>
               )}

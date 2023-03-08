@@ -30,8 +30,8 @@ import {
 } from 'components';
 
 export const SkillsPage: React.FCC = () => {
-  const { t } = useTranslation();
   const theme = useTheme();
+  const { t } = useTranslation();
   const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'isOpenWorkDrawer'>(['isOpenWorkDrawer']);
 
   const { isOpenWorkDrawer } = showDrawer;

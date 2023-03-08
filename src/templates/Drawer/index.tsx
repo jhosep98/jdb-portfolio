@@ -5,7 +5,16 @@ import {
   HeaderFlex,
   LayoutDrawer,
 } from '@wulperstudio/cms';
-import { Box, BoxProps, Stack, Typography, useTheme } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+
+import { useLockedBody } from 'hooks';
 
 interface DrawerTemplateModel {
   open: boolean;
@@ -41,11 +50,14 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
   width = 375,
 }) => {
   const theme = useTheme();
+  const isMqMd = useMediaQuery(theme.breakpoints.down('md'));
+
+  useLockedBody(open, 'root');
 
   return (
     <DrawerV2
       open={open}
-      variant={variant}
+      variant={isMqMd ? 'temporary' : variant}
       onClose={() => handleClose()}
       direction={direction}
       animation={animation}
@@ -78,11 +90,7 @@ export const DrawerTemplate: React.FCC<DrawerTemplateModel> = ({
               justifyContent="space-between"
               alignItems="center"
             >
-              <Typography
-                variant="h6"
-                fontWeight={600}
-                color="text.primary"
-              >
+              <Typography variant="h6" fontWeight={600} color="text.primary">
                 {contentHeader.title}
               </Typography>
 

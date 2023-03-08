@@ -2,7 +2,7 @@ export const es = {
   welcome: 'Hola, me encontraste! Soy Jhosep y soy un',
   home: {
     front: 'Desarrollador Front-end.',
-    ui: 'UI/UX Diseñador.',
+    ui: 'Diseñador UI/UX.',
   },
   about: {
     caption: 'Sobre mi',
