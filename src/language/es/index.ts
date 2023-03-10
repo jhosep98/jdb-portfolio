@@ -49,9 +49,20 @@ export const es = {
       cards: {
         1: {
           listItem1:
-            'Desarrollo y mantenimiento de nuestra libreria interna subida a npm y desarrollada con react, typescript y storybook.',
+            'Desarrollo y mantenimiento de nuestra libreria interna subida a npm "@wulperstudio/cms" y desarrollada con react, typescript y storybook.',
+          listItem2:
+            'Desarrollo de landing pages para presentar nuestros productos internos y desarrolladas con nextjs, con un buen performance y amigables con el SEO para un buen posicionamiento web.',
+          listItem3: 'Desarrollo de aplicaciones que sean progressive web app.',
+          listItem4:
+            'Consumo de Apis a traves graphql, axios y react query en el frontend para implementar login y distantes funcionalidades de cada aplicacion web que se me asignara.',
         },
-        2: {},
+        2: {
+          listItem1:
+            'Migracion a react-native de una aplicacion de escritorio "WMS" que brinda una gestion completa del inventario de almacen.',
+          listItem2: 'Implementacion de metodods http con nestjs.',
+          listItem3: 'Manejo y lectura de datos en SQLServer.',
+          listItem4: 'Implementacion de componentes y funcionalidades en react native para la migracion de la aplicacion "WMS".',
+        },
         3: {
           listItem1:
             'Participé en un programa de formación como desarrollador full stack.',

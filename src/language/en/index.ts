@@ -47,9 +47,21 @@ export const en = {
       cards: {
         1: {
           listItem1:
-            'Development and maintenance of our internal library uploaded to npm and developed with react, typescript and storybook.',
+            'Development and maintenance of our in-house library uploaded to npm "@wulperstudio/cms" and developed with react, typescript and storybook.',
+          listItem2:
+            'Development of landing pages to present our internal products and developed with nextjs, with a good performance and SEO friendly for a good web positioning.',
+          listItem3:
+            'Development of applications that are progressive web app.',
+          listItem4:
+            'Apis consumption through graphql, axios and react query in the frontend to implement login and distant functionalities of each web application that will be assigned to me.',
         },
-        2: {},
+        2: {
+          listItem1:
+            'Migration to react-native of a desktop WMS application that provides complete warehouse inventory management.',
+          listItem2: 'Implementation of http methods with nestjs.',
+          listItem3: 'Data management and reading in SQLServer.',
+          listItem4: 'Implementation of components and functionalities in react native for the migration of the "WMS" application.',
+        },
         3: {
           listItem1:
             'Participated in a training program as a full stack developer.',

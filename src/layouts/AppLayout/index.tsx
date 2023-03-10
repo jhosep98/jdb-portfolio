@@ -37,8 +37,8 @@ export const AppLayout: React.FC = () => {
       <LayoutMenuContent
         RootProps={{
           sx: {
-            minHeight: '100vh',
-            maxHeight: '100vh',
+            minHeight: '100dvh',
+            maxHeight: '100dvh',
             backgroundColor: 'background.paper',
             padding: '10px',
             overflowY: 'auto',

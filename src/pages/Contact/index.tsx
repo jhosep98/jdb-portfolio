@@ -23,7 +23,7 @@ import {
 
 export type InputSendEmail = {
   name: string;
-  email: string;
+  from_name: string;
   message: string;
 };
 
@@ -44,10 +44,10 @@ export const ContactPage: React.FCC = () => {
   const onSubmit = (data: InputSendEmail) => {
     emailjs
       .send(
-        'gmail',
-        'personal_site_contact',
+        'service_baugcpu',
+        'template_fa16uht',
         data,
-        'user_DuZ1yXYcXYbrSeIsLDeMX',
+        'YI-_jgrKhdybnm0pj',
       )
       .then(() => {
         notificationOnSuccess(t('contact.messageSendEmail'));
@@ -174,10 +174,10 @@ export const ContactPage: React.FCC = () => {
 
                   <TextFieldController
                     control={control}
-                    errors={errors.email}
+                    errors={errors.from_name}
                     label={t('contact.email.label')}
                     variant="outlined"
-                    name="email"
+                    name="from_name"
                     placeholder={t('contact.email.placeholder')}
                     required
                     autoComplete="off"

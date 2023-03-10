@@ -66,11 +66,13 @@ export const HomePage: React.FCC = () => {
                     fontWeight={500}
                     textAlign={isMqMd ? 'center' : 'left'}
                     sx={{
-                      // wordBreak: 'break-all',
                       letterSpacing: '5px',
                       fontFamily: 'Ubuntu',
                       '& .typed-cursor': {
                         color: 'primary.main',
+                      },
+                      [theme.breakpoints.down('md')]: {
+                        wordBreak: 'break-all',
                       },
                     }}
                     text={(

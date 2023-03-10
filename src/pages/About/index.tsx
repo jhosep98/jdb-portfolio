@@ -268,56 +268,53 @@ export const AboutPage: React.FCC = () => {
                   </Typography>
 
                   {queryRepos?.data?.map((repo) => (
-                    <React.Fragment key={repo.id}>
-                      <CardFlexible
-                        border={`1px solid ${theme.palette.divider}`}
-                        disabledHover
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          gap: '1.5rem',
-                        }}
-                      >
-                        <Box>
-                          <Typography
-                            color="text.primary"
-                            sx={{
-                              '&:first-letter': {
-                                textTransform: 'uppercase',
-                              },
-                            }}
-                          >
-                            {repo.name}
-                          </Typography>
-
-                          <Box>
-                            <TextForLinesOutput
-                              clines={2}
-                              color="text.secondary"
-                              text={repo.description}
-                              variant="body2"
-                            />
-                          </Box>
-                        </Box>
-
-                        <IconButtonComponent
-                          iconProps={{
-                            sx: {
-                              boxShadow: theme.shadows[1],
+                    <CardFlexible
+                      key={repo.id}
+                      border={`1px solid ${theme.palette.divider}`}
+                      disabledHover
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '1.5rem',
+                      }}
+                    >
+                      <Box>
+                        <Typography
+                          color="text.primary"
+                          sx={{
+                            '&:first-letter': {
+                              textTransform: 'uppercase',
                             },
-                            onClick: () => window.open(repo.html_url, '_blank'),
                           }}
                         >
-                          <Icon
-                            icon={ICONS_NAME.arrowRight}
-                            color={theme.palette.primary.main}
-                          />
-                        </IconButtonComponent>
-                      </CardFlexible>
+                          {repo.name}
+                        </Typography>
 
-                      <Divider />
-                    </React.Fragment>
+                        <Box>
+                          <TextForLinesOutput
+                            clines={2}
+                            color="text.secondary"
+                            text={repo.description}
+                            variant="body2"
+                          />
+                        </Box>
+                      </Box>
+
+                      <IconButtonComponent
+                        iconProps={{
+                          sx: {
+                            boxShadow: theme.shadows[1],
+                          },
+                          onClick: () => window.open(repo.html_url, '_blank'),
+                        }}
+                      >
+                        <Icon
+                          icon={ICONS_NAME.arrowRight}
+                          color={theme.palette.primary.main}
+                        />
+                      </IconButtonComponent>
+                    </CardFlexible>
                   ))}
                 </>
               )}

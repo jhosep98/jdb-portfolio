@@ -7,7 +7,6 @@ import {
   Link,
   List,
   Tooltip,
-  Typography,
   useTheme,
 } from '@mui/material';
 import {
@@ -214,7 +213,7 @@ export const SkillsPage: React.FCC = () => {
                           content: (
                             <>
                               <Link
-                                href="https://www.alkemy.org/"
+                                href="https://www.wulperstudio.com/"
                                 sx={{
                                   display: 'block',
                                   color: 'text.primary',
@@ -230,6 +229,15 @@ export const SkillsPage: React.FCC = () => {
                               <List>
                                 <ListItemSkill
                                   text={t('skills.drawer.cards.1.listItem1')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem2')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem3')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem4')}
                                 />
                               </List>
                             </>
@@ -251,19 +259,34 @@ export const SkillsPage: React.FCC = () => {
                           date: 'May 2021 - Jul 2021',
                           content: (
                             <>
-                              <Typography
+                              <Link
+                                href="https://globaltechsa.com.ar/"
+                                sx={{
+                                  display: 'block',
+                                  color: 'text.primary',
+                                  fontWeight: 700,
+                                }}
+                                underline="none"
                                 variant="body2"
-                                color="text.primary"
-                                fontWeight={700}
+                                target="_blank"
                               >
                                 GLOBALTECH SCM SOLUTIONS
-                              </Typography>
+                              </Link>
 
-                              <Typography variant="body2" color="text.primary">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Atque laudantium cupiditate
-                                laborum.
-                              </Typography>
+                              <List>
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.2.listItem1')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.2.listItem2')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.2.listItem3')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.2.listItem4')}
+                                />
+                              </List>
                             </>
                           ),
                         },
