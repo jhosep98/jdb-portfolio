@@ -1,6 +1,9 @@
 import React from 'react';
-import { useTheme } from '@mui/material';
+import { Icon } from '@iconify/react';
+import { Grid, Link, useTheme } from '@mui/material';
 import { IconsPropsModel, Menu as WSMenu } from '@wulperstudio/cms';
+
+import { ICONS_NAME } from 'helpers/icons';
 
 export interface MenuPropsModel {
   menuList: IconsPropsModel[];
@@ -22,6 +25,7 @@ export const Menu: React.FCC<MenuPropsModel> = ({ menuList }) => {
         alt: 'Jhosep Davila',
         sx: {
           background: theme.palette.primary.main,
+          color: '#fff',
         },
       }}
       customHeader={{
@@ -30,6 +34,27 @@ export const Menu: React.FCC<MenuPropsModel> = ({ menuList }) => {
           width: 90,
         },
       }}
+      footer={(
+        <Link href="https://github.com/jhosep98/jdb-portfolio" target="_blank">
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            rowGap="5px"
+            color="primary.main"
+            sx={{
+              pb: 2,
+            }}
+          >
+            <Icon
+              icon={ICONS_NAME.githubAnimate}
+              color={theme.palette.primary.main}
+              width="36px"
+              height="36px"
+            />
+          </Grid>
+        </Link>
+      )}
     />
   );
 };
