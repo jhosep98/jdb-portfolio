@@ -12,7 +12,7 @@ export const en = {
     myResumeParagraph1:
       'With over 2 years of experience as a front-end developer, I am proficient in technologies such as Javascript, React, Typescript, Next Js, Storybook, and Figma. I am a quick learner and have a passion for the web, always seeking new challenges to improve my skills.',
     myResumeParagraph2:
-      'Currently, I am studying English with Nulinga, an online platform. In October, I will begin studying computer science at the University of Palermo in order to gain a deeper understanding of the fundamentals of computing and continue to grow as a professional in the exciting world of technology.',
+      'In addition to my technical skills, I am also highly creative and passionate about design. I have a keen eye for aesthetics and strive to create visually appealing and user-friendly web applications. I am well-versed in using design tools such as Figma to create wireframes, mockups, and prototypes that bring my ideas to life.',
     myResumeParagraph3:
       'I am from Peru, but I have been living in Buenos Aires, Argentina for over 3 years. In my free time, I enjoy playing soccer, watching anime, and playing computer games.',
     fabTooltip: 'Download CV',
@@ -21,7 +21,7 @@ export const en = {
     caption: 'skills',
     title: 'Technological Skills',
     mainContent:
-      'The main area of my expertise is front end development (client side of the web). HTML, CSS, JS (TypeScript), building small and medium web apps with ReactJS 1+, animations, and coding interactive layouts.',
+      'As a front-end developer, I specialize in the client-side of web development. My primary focus is on developing web applications using HTML, CSS, and JavaScript (including TypeScript). I have experience building small to medium-sized applications using ReactJS 2+, as well as creating animations and coding interactive designs that enhance the user experience.',
     cards: {
       react: 'React is a JavaScript library for building user interfaces.',
       html: 'HTML is the standard markup language for documents designed to be displayed in a web browser.',
@@ -47,29 +47,33 @@ export const en = {
       cards: {
         1: {
           listItem1:
-            'Development and maintenance of our in-house library uploaded to npm "@wulperstudio/cms" and developed with react, typescript and storybook.',
+            'I have contributed to the development and maintenance of an internal library, "@wulperstudio/cms," which is uploaded to npm. The library is built with React, TypeScript, and Storybook and is used for the development of web applications. I have worked on various aspects of the library, including adding new features, fixing bugs, and optimizing performance.',
           listItem2:
-            'Development of landing pages to present our internal products and developed with nextjs, with a good performance and SEO friendly for a good web positioning.',
+            'I have developed landing pages to showcase our internal products. These pages were developed using Next.js, a framework that is known for its excellent performance and SEO-friendly features.',
           listItem3:
-            'Development of applications that are progressive web app.',
+            'I have also worked on the development of applications that are progressive web apps (PWAs).',
           listItem4:
-            'Apis consumption through graphql, axios and react query in the frontend to implement login and distant functionalities of each web application that will be assigned to me.',
+            ' I have experience in consuming APIs through GraphQL, Axios, and React Query in the frontend. I have implemented login functionality and integrated remote features of web applications assigned to me.',
         },
         2: {
           listItem1:
-            'Migration to react-native of a desktop WMS application that provides complete warehouse inventory management.',
-          listItem2: 'Implementation of http methods with nestjs.',
-          listItem3: 'Data management and reading in SQLServer.',
-          listItem4: 'Implementation of components and functionalities in react native for the migration of the "WMS" application.',
+            'Successfully migrated a desktop warehouse management system (WMS) application to React Native, enabling complete inventory management from mobile devices.',
+          listItem2:
+            'Implemented HTTP methods using NestJS, a popular Node.js framework for building scalable and efficient server-side applications.',
+          listItem3:
+            'Demonstrated proficiency in data management and reading in SQLServer, an enterprise-level database management system.',
+          listItem4:
+            'Developed new components and functionalities in React Native to facilitate the migration of the WMS application to mobile devices.',
         },
         3: {
           listItem1:
-            'Participated in a training program as a full stack developer.',
+            'Participated in a full-stack developer training program, expanding skills in Node, React, Material-UI, Git, and GitHub.',
           listItem2:
-            'Developed a website for a non-profit organization in Argentina.',
+            'Designed and developed a responsive website for a non-profit organization in Argentina, utilizing HTML, CSS, and JavaScript to create a professional and user-friendly experience.',
           listItem3:
-            'Learning technologies such as Node, React, Material-UI, Git, and GitHub.',
-          listItem4: 'Use agile methodologies like Scrum.',
+            'Continuously learning new technologies such as Node, React, Material-UI, Git, and GitHub to stay up-to-date with the latest industry trends.',
+          listItem4:
+            'Proficient in agile methodologies such as Scrum, enabling efficient and effective teamwork on development projects.',
         },
       },
     },

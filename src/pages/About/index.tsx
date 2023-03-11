@@ -66,6 +66,12 @@ export const AboutPage: React.FCC = () => {
                   variant="body1"
                   component="p"
                 />
+                <br />
+                <WrapperText
+                  text={t('about.myResumeParagraph2')}
+                  variant="body1"
+                  component="p"
+                />
               </FadeInWhenVisible>
 
               <FadeInWhenVisible>
