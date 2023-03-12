@@ -168,8 +168,8 @@ export const SkillsPage: React.FCC = () => {
             <DrawerTemplate
               width={490}
               open={isOpenWorkDrawer}
-              animation
-              direction="right"
+              animation={false}
+              direction={undefined}
               variant="persistent"
               handleClose={() => handleCloseDrawer('isOpenWorkDrawer')}
               headerDisableGutters

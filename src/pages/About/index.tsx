@@ -173,8 +173,8 @@ export const AboutPage: React.FCC = () => {
           {githubOverview && (
             <DrawerTemplate
               width={450}
-              animation
-              direction="right"
+              animation={false}
+              direction={undefined}
               variant="persistent"
               contentProps={{
                 sx: {
