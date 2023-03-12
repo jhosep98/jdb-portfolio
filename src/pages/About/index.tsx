@@ -145,7 +145,7 @@ export const AboutPage: React.FCC = () => {
               <Fab
                 color="primary"
                 size="medium"
-                href="https://drive.google.com/file/d/1_yIBYUfmO9kV1MLcGgWH7x0BeIps0qE2/view?usp=sharing"
+                href="https://drive.google.com/file/d/1Jl-_WlgT3tLqrwz5LbpjoqlC8OCLBHYv/view?usp=sharing"
                 target="_blank"
                 sx={(theme) => ({
                   position: 'absolute',
