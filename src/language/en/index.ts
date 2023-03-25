@@ -99,7 +99,7 @@ export const en = {
     messageSendEmail: 'Email sent successfully',
   },
   settings: {
-    title: 'Settings',
+    title: 'Configure your preferences',
     caption: 'Settings',
   },
   mainDrawer: {
