@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 interface FadeInWhenVisiblePropsModel {
   children: ReactNode;
+  style?: React.CSSProperties;
 }
 
 const variants = {
@@ -15,6 +16,7 @@ const transition = { duration: 0.9, ease: 'easeInOut' };
 
 export const FadeInWhenVisible = ({
   children,
+  style,
 }: FadeInWhenVisiblePropsModel) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -32,6 +34,7 @@ export const FadeInWhenVisible = ({
       initial="hidden"
       transition={transition}
       variants={variants}
+      style={style}
     >
       {children}
     </motion.div>

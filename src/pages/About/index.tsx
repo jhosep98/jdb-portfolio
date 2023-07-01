@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 import React from 'react';
+import dayjs from 'dayjs';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -21,9 +22,10 @@ import {
   TextMultiline,
 } from '@wulperstudio/cms';
 
+import { consts } from 'helpers/consts';
 import { ICONS_NAME } from 'helpers/icons';
-import { useDrawer, useGetRepos, useGetUserInfo } from 'hooks';
 import { ContainerTemplate, DrawerTemplate } from 'templates';
+import { useDrawer, useGetRepos, useGetUserInfo } from 'hooks';
 import {
   BoxContent,
   CardAlert,
@@ -34,7 +36,6 @@ import {
   TitleSection,
   WrapperText,
 } from 'components';
-import dayjs from 'dayjs';
 
 export const AboutPage: React.FCC = () => {
   const theme = useTheme();
@@ -54,12 +55,18 @@ export const AboutPage: React.FCC = () => {
       }}
       content={(
         <BoxContent isContainer>
-          <ContainerTemplate>
+          <ContainerTemplate
+            sx={{ display: 'grid', gridTemplateRows: 'auto 1fr' }}
+          >
             <TitleSection
               caption={t('about.caption')}
               title={t('about.title')}
             />
-            <Stack rowGap="2rem" sx={{ py: '1rem' }}>
+
+            <Stack
+              rowGap="2rem"
+              sx={{ py: '1rem', height: '-webkit-fill-available' }}
+            >
               <FadeInWhenVisible>
                 <WrapperText
                   text={t('about.myResumeParagraph1')}
@@ -82,18 +89,20 @@ export const AboutPage: React.FCC = () => {
                 </Grid>
               </FadeInWhenVisible>
 
-              {queryUserInfo.isError && <CardAlert />}
+              <FadeInWhenVisible
+                style={{ flex: 1, display: 'grid', placeItems: 'center' }}
+              >
+                {queryUserInfo.isError && <CardAlert />}
 
-              {queryUserInfo.isLoading && <Loader position="absolute" />}
+                {queryUserInfo.isLoading && <Loader position="relative" />}
 
-              {!queryUserInfo.isLoading && !queryUserInfo.isError && (
-                <FadeInWhenVisible>
+                {!queryUserInfo.isLoading && !queryUserInfo.isError && (
                   <Stack
                     direction="row"
                     justifyContent="space-around"
                     flexWrap="wrap"
                     gap="1rem"
-                    sx={{ pt: '2rem' }}
+                    sx={{ pt: '2rem', width: '-webkit-fill-available' }}
                   >
                     <IconCounter
                       counter={queryUserInfo.data?.followers}
@@ -113,8 +122,8 @@ export const AboutPage: React.FCC = () => {
                       title="Following"
                     />
                   </Stack>
-                </FadeInWhenVisible>
-              )}
+                )}
+              </FadeInWhenVisible>
             </Stack>
 
             <Tooltip title="Github Overview" placement="top">
@@ -145,7 +154,7 @@ export const AboutPage: React.FCC = () => {
               <Fab
                 color="primary"
                 size="medium"
-                href="https://drive.google.com/file/d/1Jl-_WlgT3tLqrwz5LbpjoqlC8OCLBHYv/view?usp=sharing"
+                href={consts.cvUrl}
                 target="_blank"
                 sx={(theme) => ({
                   position: 'absolute',
