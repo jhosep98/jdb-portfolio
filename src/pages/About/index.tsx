@@ -211,125 +211,138 @@ export const AboutPage: React.FCC = () => {
               }}
               body={(
                 <>
-                  <Stack
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    spacing={1}
-                  >
-                    <AvatarV2
-                      src={queryUserInfo.data?.avatar_url}
-                      sx={{
-                        '&.MuiAvatar-root': {
-                          width: 90,
-                          height: 90,
-                        },
-                      }}
-                    />
+                  {queryRepos.isError && queryUserInfo.isError && <CardAlert />}
 
-                    <Typography
-                      variant="h6"
-                      fontWeight={600}
-                      color="text.primary"
-                    >
-                      {queryUserInfo.data?.name}
-                    </Typography>
+                  {queryRepos.isLoading && queryUserInfo.isLoading && (
+                    <Loader />
+                  )}
 
-                    <Typography
-                      variant="subtitle2"
-                      fontWeight={600}
-                      color="text.secondary"
-                    >
-                      {queryUserInfo.data?.company}
-                    </Typography>
-                  </Stack>
-
-                  <TextMultiline
-                    label="Bio"
-                    text={queryUserInfo.data?.bio}
-                    backgroundColor
-                    typographyProps={{ color: 'text.primary' }}
-                  />
-
-                  <Divider />
-
-                  <TextMultiline
-                    label="Location"
-                    text={queryUserInfo.data?.location}
-                    backgroundColor
-                    typographyProps={{ color: 'text.primary' }}
-                  />
-
-                  <Divider />
-
-                  <TextMultiline
-                    label="Created at"
-                    text={dayjs(queryUserInfo.data?.created_at!).format(
-                      'MMMM D, YYYY',
-                    )}
-                    backgroundColor
-                    typographyProps={{ color: 'text.primary' }}
-                  />
-
-                  <Divider />
-
-                  <Typography
-                    variant="subtitle1"
-                    color="primary.main"
-                    fontWeight={600}
-                  >
-                    Repos
-                  </Typography>
-
-                  {queryRepos?.data?.map((repo) => (
-                    <CardFlexible
-                      key={repo.id}
-                      border={`1px solid ${theme.palette.divider}`}
-                      disabledHover
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '1.5rem',
-                      }}
-                    >
-                      <Box>
-                        <Typography
-                          color="text.primary"
+                  {!(
+                    (queryRepos.isError && queryUserInfo.isError)
+                    || (queryRepos.isLoading && queryUserInfo.isLoading)
+                  ) && (
+                    <>
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="center"
+                        spacing={1}
+                      >
+                        <AvatarV2
+                          src={queryUserInfo.data?.avatar_url}
                           sx={{
-                            '&:first-letter': {
-                              textTransform: 'uppercase',
+                            '&.MuiAvatar-root': {
+                              width: 90,
+                              height: 90,
                             },
                           }}
+                        />
+
+                        <Typography
+                          variant="h6"
+                          fontWeight={600}
+                          color="text.primary"
                         >
-                          {repo.name}
+                          {queryUserInfo.data?.name}
                         </Typography>
 
-                        <Box>
-                          <TextForLinesOutput
-                            clines={2}
-                            color="text.secondary"
-                            text={repo.description}
-                            variant="body2"
-                          />
-                        </Box>
-                      </Box>
+                        <Typography
+                          variant="subtitle2"
+                          fontWeight={600}
+                          color="text.secondary"
+                        >
+                          {queryUserInfo.data?.company}
+                        </Typography>
+                      </Stack>
 
-                      <IconButtonComponent
-                        iconProps={{
-                          sx: {
-                            boxShadow: theme.shadows[1],
-                          },
-                          onClick: () => window.open(repo.html_url, '_blank'),
-                        }}
+                      <TextMultiline
+                        label="Bio"
+                        text={queryUserInfo.data?.bio}
+                        backgroundColor
+                        typographyProps={{ color: 'text.primary' }}
+                      />
+
+                      <Divider />
+
+                      <TextMultiline
+                        label="Location"
+                        text={queryUserInfo.data?.location}
+                        backgroundColor
+                        typographyProps={{ color: 'text.primary' }}
+                      />
+
+                      <Divider />
+
+                      <TextMultiline
+                        label="Created at"
+                        text={dayjs(queryUserInfo.data?.created_at!).format(
+                          'MMMM D, YYYY',
+                        )}
+                        backgroundColor
+                        typographyProps={{ color: 'text.primary' }}
+                      />
+
+                      <Divider />
+
+                      <Typography
+                        variant="subtitle1"
+                        color="primary.main"
+                        fontWeight={600}
                       >
-                        <Icon
-                          icon={ICONS_NAME.arrowRight}
-                          color={theme.palette.primary.main}
-                        />
-                      </IconButtonComponent>
-                    </CardFlexible>
-                  ))}
+                        Repos
+                      </Typography>
+
+                      {queryRepos?.data?.map((repo) => (
+                        <CardFlexible
+                          key={repo.id}
+                          border={`1px solid ${theme.palette.divider}`}
+                          disabledHover
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            gap: '1.5rem',
+                          }}
+                        >
+                          <Box>
+                            <Typography
+                              color="text.primary"
+                              sx={{
+                                '&:first-letter': {
+                                  textTransform: 'uppercase',
+                                },
+                              }}
+                            >
+                              {repo.name}
+                            </Typography>
+
+                            <Box>
+                              <TextForLinesOutput
+                                clines={2}
+                                color="text.secondary"
+                                text={repo.description}
+                                variant="body2"
+                              />
+                            </Box>
+                          </Box>
+
+                          <IconButtonComponent
+                            iconProps={{
+                              sx: {
+                                boxShadow: theme.shadows[1],
+                              },
+                              onClick: () => window.open(repo.html_url, '_blank'),
+                            }}
+                          >
+                            <Icon
+                              icon={ICONS_NAME.arrowRight}
+                              color={theme.palette.primary.main}
+                            />
+                          </IconButtonComponent>
+                        </CardFlexible>
+                      ))}
+                    </>
+                  )}
                 </>
               )}
             />
