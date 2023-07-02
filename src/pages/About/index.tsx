@@ -352,3 +352,5 @@ export const AboutPage: React.FCC = () => {
     />
   );
 };
+
+export default AboutPage;

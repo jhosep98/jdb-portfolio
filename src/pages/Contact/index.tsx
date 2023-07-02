@@ -239,3 +239,5 @@ export const ContactPage: React.FCC = () => {
     </BoxContent>
   );
 };
+
+export default ContactPage;

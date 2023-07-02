@@ -35,7 +35,12 @@ export const Menu: React.FCC<MenuPropsModel> = ({ menuList }) => {
         },
       }}
       footer={(
-        <Link href="https://github.com/jhosep98/jdb-portfolio" target="_blank">
+        <Link
+          href="https://github.com/jhosep98/jdb-portfolio"
+          aria-label="Rad more about source code for this project"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <Grid
             container
             direction="column"

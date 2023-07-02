@@ -96,3 +96,5 @@ export const HomePage: React.FCC = () => {
     </BoxContent>
   );
 };
+
+export default HomePage;

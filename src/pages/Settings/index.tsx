@@ -76,3 +76,5 @@ export const SettingsPage: React.FCC = () => {
     </>
   );
 };
+
+export default SettingsPage;

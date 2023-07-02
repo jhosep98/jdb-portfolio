@@ -349,3 +349,5 @@ export const SkillsPage: React.FCC = () => {
     />
   );
 };
+
+export default SkillsPage;
