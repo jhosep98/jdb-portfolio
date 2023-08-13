@@ -42,7 +42,8 @@ export const AboutPage: React.FCC = () => {
   const { t } = useTranslation();
   const { queryRepos } = useGetRepos();
   const { queryUserInfo } = useGetUserInfo();
-  const { handleCloseDrawer, handleOpenDrawer, showDrawer } = useDrawer<'githubOverview'>(['githubOverview']);
+  const { handleCloseDrawer, handleOpenDrawer, showDrawer } =
+    useDrawer<'githubOverview'>(['githubOverview']);
 
   const { githubOverview } = showDrawer;
 
@@ -53,7 +54,7 @@ export const AboutPage: React.FCC = () => {
           gap: githubOverview ? '10px' : 0,
         },
       }}
-      content={(
+      content={
         <BoxContent isContainer>
           <ContainerTemplate
             sx={{ display: 'grid', gridTemplateRows: 'auto 1fr' }}
@@ -176,8 +177,8 @@ export const AboutPage: React.FCC = () => {
             </Tooltip>
           </ContainerTemplate>
         </BoxContent>
-      )}
-      drawer={(
+      }
+      drawer={
         <>
           {githubOverview && (
             <DrawerTemplate
@@ -209,7 +210,7 @@ export const AboutPage: React.FCC = () => {
                   </>
                 ),
               }}
-              body={(
+              body={
                 <>
                   {queryRepos.isError && queryUserInfo.isError && <CardAlert />}
 
@@ -218,8 +219,8 @@ export const AboutPage: React.FCC = () => {
                   )}
 
                   {!(
-                    (queryRepos.isError && queryUserInfo.isError)
-                    || (queryRepos.isLoading && queryUserInfo.isLoading)
+                    (queryRepos.isError && queryUserInfo.isError) ||
+                    (queryRepos.isLoading && queryUserInfo.isLoading)
                   ) && (
                     <>
                       <Stack
@@ -276,7 +277,7 @@ export const AboutPage: React.FCC = () => {
                       <TextMultiline
                         label="Created at"
                         text={dayjs(queryUserInfo.data?.created_at!).format(
-                          'MMMM D, YYYY',
+                          'MMMM D, YYYY'
                         )}
                         backgroundColor
                         typographyProps={{ color: 'text.primary' }}
@@ -292,63 +293,67 @@ export const AboutPage: React.FCC = () => {
                         Repos
                       </Typography>
 
-                      {queryRepos?.data?.map((repo) => (
-                        <CardFlexible
-                          key={repo.id}
-                          border={`1px solid ${theme.palette.divider}`}
-                          disabledHover
-                          sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            gap: '1.5rem',
-                          }}
-                        >
-                          <Box>
-                            <Typography
-                              color="text.primary"
-                              sx={{
-                                '&:first-letter': {
-                                  textTransform: 'uppercase',
-                                },
-                              }}
-                            >
-                              {repo.name}
-                            </Typography>
-
-                            <Box>
-                              <TextForLinesOutput
-                                clines={2}
-                                color="text.secondary"
-                                text={repo.description}
-                                variant="body2"
-                              />
-                            </Box>
-                          </Box>
-
-                          <IconButtonComponent
-                            iconProps={{
-                              sx: {
-                                boxShadow: theme.shadows[1],
-                              },
-                              onClick: () => window.open(repo.html_url, '_blank'),
+                      <Stack gap="1rem">
+                        {queryRepos?.data?.map((repo) => (
+                          <CardFlexible
+                            key={repo.id}
+                            border={`1px solid ${theme.palette.divider}`}
+                            disabledHover
+                            sx={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'space-between',
+                              gap: '1.5rem',
+                              minHeight: 'auto',
                             }}
                           >
-                            <Icon
-                              icon={ICONS_NAME.arrowRight}
-                              color={theme.palette.primary.main}
-                            />
-                          </IconButtonComponent>
-                        </CardFlexible>
-                      ))}
+                            <Box>
+                              <Typography
+                                color="text.primary"
+                                sx={{
+                                  '&:first-letter': {
+                                    textTransform: 'uppercase',
+                                  },
+                                }}
+                              >
+                                {repo.name}
+                              </Typography>
+
+                              <Box>
+                                <TextForLinesOutput
+                                  clines={2}
+                                  color="text.secondary"
+                                  text={repo.description}
+                                  variant="body2"
+                                />
+                              </Box>
+                            </Box>
+
+                            <IconButtonComponent
+                              iconProps={{
+                                sx: {
+                                  boxShadow: theme.shadows[1],
+                                },
+                                onClick: () =>
+                                  window.open(repo.html_url, '_blank'),
+                              }}
+                            >
+                              <Icon
+                                icon={ICONS_NAME.arrowRight}
+                                color={theme.palette.primary.main}
+                              />
+                            </IconButtonComponent>
+                          </CardFlexible>
+                        ))}
+                      </Stack>
                     </>
                   )}
                 </>
-              )}
+              }
             />
           )}
         </>
-      )}
+      }
     />
   );
 };
