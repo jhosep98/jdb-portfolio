@@ -11,7 +11,7 @@ export const consts = {
   boxShadowStyle: 'rgb(0 0 0 / 9%) 0px 3px 12px',
   widthLayout: '50vw',
   avatarImg: 'https://mui.com/static/images/avatar/1.jpg',
-  cvUrl: 'https://drive.google.com/file/d/1XnApWWGUBl7tWHUhxn1WH8OMdml2E8eu/view?usp=sharing',
+  cvUrl: 'https://drive.google.com/file/d/1t3Vztfg8lpv2ggKi7Bv9WxUzkoPNNI5n/view?usp=sharing',
 };
 
 export const DRAWER_CONSTS: DrawerConstsModel = {
