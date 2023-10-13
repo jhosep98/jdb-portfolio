@@ -1,14 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import { useTranslation } from 'react-i18next';
-import {
-  Box,
-  Fab,
-  Link,
-  List,
-  Tooltip,
-  useTheme,
-} from '@mui/material';
+import { Box, Fab, Link, List, Tooltip, useTheme } from '@mui/material';
 import {
   GridCards,
   IconButtonComponent,
@@ -31,7 +24,8 @@ import {
 export const SkillsPage: React.FCC = () => {
   const theme = useTheme();
   const { t } = useTranslation();
-  const { showDrawer, handleCloseDrawer, handleOpenDrawer } = useDrawer<'isOpenWorkDrawer'>(['isOpenWorkDrawer']);
+  const { showDrawer, handleCloseDrawer, handleOpenDrawer } =
+    useDrawer<'isOpenWorkDrawer'>(['isOpenWorkDrawer']);
 
   const { isOpenWorkDrawer } = showDrawer;
 
@@ -42,7 +36,7 @@ export const SkillsPage: React.FCC = () => {
           gap: isOpenWorkDrawer ? '10px' : 0,
         },
       }}
-      content={(
+      content={
         <BoxContent isContainer>
           <ContainerTemplate>
             <TitleSection
@@ -138,9 +132,11 @@ export const SkillsPage: React.FCC = () => {
               <Fab
                 color="primary"
                 size="medium"
-                onClick={() => (isOpenWorkDrawer
-                  ? handleCloseDrawer('isOpenWorkDrawer')
-                  : handleOpenDrawer('isOpenWorkDrawer'))}
+                onClick={() =>
+                  isOpenWorkDrawer
+                    ? handleCloseDrawer('isOpenWorkDrawer')
+                    : handleOpenDrawer('isOpenWorkDrawer')
+                }
                 sx={(theme) => ({
                   position: 'absolute',
                   zIndex: theme.zIndex.fab,
@@ -161,8 +157,8 @@ export const SkillsPage: React.FCC = () => {
             </Tooltip>
           </ContainerTemplate>
         </BoxContent>
-      )}
-      drawer={(
+      }
+      drawer={
         <>
           {isOpenWorkDrawer && (
             <DrawerTemplate
@@ -193,10 +189,52 @@ export const SkillsPage: React.FCC = () => {
                   </IconButtonComponent>
                 ),
               }}
-              body={(
+              body={
                 <Box>
                   <TimeLineV2
                     items={[
+                      {
+                        timeLineSeparator: {
+                          icon: ICONS_NAME.workOutline,
+                          colorIcon: '#fff',
+                          timelineDotProps: {
+                            sx: {
+                              backgroundColor: '#d1e500',
+                            },
+                          },
+                        },
+
+                        timeLineContent: {
+                          date: 'Jul 2023 - Present',
+                          content: (
+                            <>
+                              <Link
+                                href="https://www.coderhouse.com/"
+                                sx={{
+                                  display: 'block',
+                                  color: 'text.primary',
+                                  fontWeight: 700,
+                                }}
+                                underline="none"
+                                variant="body2"
+                                target="_blank"
+                              >
+                                [Tutor ReactJS] CoderHouse
+                              </Link>
+
+                              <List>
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.0.listItem1')}
+                                />
+
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.0.listItem2')}
+                                />
+                              </List>
+                            </>
+                          ),
+                        },
+                      },
                       {
                         timeLineSeparator: {
                           icon: ICONS_NAME.workOutline,
@@ -223,7 +261,7 @@ export const SkillsPage: React.FCC = () => {
                                 variant="body2"
                                 target="_blank"
                               >
-                                Wulpers
+                                [Front-end Developer] Wulpers
                               </Link>
 
                               <List>
@@ -270,7 +308,7 @@ export const SkillsPage: React.FCC = () => {
                                 variant="body2"
                                 target="_blank"
                               >
-                                GLOBALTECH SCM SOLUTIONS
+                                [Full Stack Developer] GLOBALTECH SCM SOLUTIONS GLOBALTECH SCM SOLUTIONS
                               </Link>
 
                               <List>
@@ -317,7 +355,7 @@ export const SkillsPage: React.FCC = () => {
                                 variant="body2"
                                 target="_blank"
                               >
-                                Alkemy
+                                [Full Stack Developer] Alkemy
                               </Link>
 
                               <List>
@@ -341,11 +379,11 @@ export const SkillsPage: React.FCC = () => {
                     ]}
                   />
                 </Box>
-              )}
+              }
             />
           )}
         </>
-      )}
+      }
     />
   );
 };

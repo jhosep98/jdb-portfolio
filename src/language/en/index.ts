@@ -45,6 +45,10 @@ export const en = {
     drawer: {
       title: 'Work experience',
       cards: {
+        0: {
+          listItem1: 'Correction of pre-deliveries of assigned students.',
+          listItem2: 'Actively participate in sum examples, support the teacher and answer live queries via chat.'
+        },
         1: {
           listItem1:
             'I have contributed to the development and maintenance of an internal library, "@wulperstudio/cms," which is uploaded to npm. The library is built with React, TypeScript, and Storybook and is used for the development of web applications. I have worked on various aspects of the library, including adding new features, fixing bugs, and optimizing performance.',

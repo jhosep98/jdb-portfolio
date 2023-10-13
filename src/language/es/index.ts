@@ -47,6 +47,10 @@ export const es = {
     drawer: {
       title: 'Experiencia laboral',
       cards: {
+        0: {
+          listItem1: 'Corrección de preentregas de alumnos asignados.',
+          listItem2: 'Participe activamente en los ejemplos de suma, apoye al profesor y responda a las preguntas en directo a través del chat.'
+        },
         1: {
           listItem1:
             'He contribuido al desarrollo y mantenimiento de una libreria interna, "@wulperstudio/cms", que esta publicada en npm. La libreria está construida con React, TypeScript y Storybook y se utiliza para el desarrollo de aplicaciones web. He trabajado en varios aspectos de la libreria, incluyendo la adición de nuevas características, la corrección de errores y la optimización del rendimiento.',
