@@ -1,8 +1,8 @@
 export const en = {
   welcome: "Hi, you found me!, I'm Jhosep, I'm a",
   home: {
-    front: 'Front-end Developer.',
-    ui: 'UI/UX Designer.',
+    front: 'Front-end Developer',
+    ui: 'UI/UX Designer',
   },
   about: {
     caption: 'About',
