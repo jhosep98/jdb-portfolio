@@ -53,7 +53,7 @@ export const SettingsPage: React.FCC = () => {
 
             <InputBoxGroup
               {...paletteModeArgs}
-              onChange={(value) => handleChange(value.name)}
+              onChange={(value) => handleChange(value?.name || "light")}
               defaultValue={
                 themeFromLocalStorage === 'light'
                   ? paletteModeArgs.options[0]
@@ -63,7 +63,7 @@ export const SettingsPage: React.FCC = () => {
 
             <InputBoxGroup
               {...languageModeArgs}
-              onChange={(value) => handleChangeLanguage(value.name)}
+              onChange={(value) => handleChangeLanguage(value?.name || "en")}
               defaultValue={
                 languageFromLocalStorage === 'en'
                   ? languageModeArgs.options[0]
