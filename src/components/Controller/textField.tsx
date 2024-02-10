@@ -60,7 +60,7 @@ export const TextFieldController = ({
           error={!!errors}
           label={label}
           placeholder={placeholder}
-          messageError={errors?.message}
+          errorMessage={errors?.message}
           value={field?.value ?? defaultValue}
           onChange={(e) => {
             field.onChange(e);
