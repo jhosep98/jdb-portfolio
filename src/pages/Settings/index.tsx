@@ -17,11 +17,11 @@ export const SettingsPage: React.FCC = () => {
   const { setLanguage } = React.useContext(LanguageContext);
   const [themeFromLocalStorage] = useLocalStorage<PaletteMode>(
     'theme',
-    'light',
+    'light'
   );
   const [languageFromLocalStorage] = useLocalStorage<Language>(
     'language',
-    'en',
+    'en'
   );
 
   const handleChange = (theme: PaletteMode) => setTheme(theme);
@@ -53,8 +53,9 @@ export const SettingsPage: React.FCC = () => {
 
             <InputBoxGroup
               {...paletteModeArgs}
-              onChange={(value) => handleChange(value?.name || "light")}
-              defaultValue={
+              borderColor={theme.palette.divider}
+              onChange={(value) => handleChange(value?.name || 'light')}
+              value={
                 themeFromLocalStorage === 'light'
                   ? paletteModeArgs.options[0]
                   : paletteModeArgs.options[1]
@@ -63,8 +64,9 @@ export const SettingsPage: React.FCC = () => {
 
             <InputBoxGroup
               {...languageModeArgs}
-              onChange={(value) => handleChangeLanguage(value?.name || "en")}
-              defaultValue={
+              borderColor={theme.palette.divider}
+              onChange={(value) => handleChangeLanguage(value?.name || 'en')}
+              value={
                 languageFromLocalStorage === 'en'
                   ? languageModeArgs.options[0]
                   : languageModeArgs.options[1]
