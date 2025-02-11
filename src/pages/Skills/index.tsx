@@ -199,6 +199,50 @@ export const SkillsPage: React.FCC = () => {
                           colorIcon: '#fff',
                           timelineDotProps: {
                             sx: {
+                              backgroundColor: '#6962FD',
+                            },
+                          },
+                        },
+
+                        timeLineContent: {
+                          date: 'Aug 2021 - Present',
+                          content: (
+                            <>
+                              <Link
+                                href="https://www.wulperstudio.com/"
+                                sx={{
+                                  display: 'block',
+                                  color: 'text.primary',
+                                  fontWeight: 700,
+                                }}
+                                underline="none"
+                                variant="body2"
+                                target="_blank"
+                              >
+                                [Front-end Developer] Wulpers
+                              </Link>
+
+                              <List>
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem1')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem2')}
+                                />
+                                <ListItemSkill
+                                  text={t('skills.drawer.cards.1.listItem3')}
+                                />
+                              </List>
+                            </>
+                          ),
+                        },
+                      },
+                      {
+                        timeLineSeparator: {
+                          icon: ICONS_NAME.workOutline,
+                          colorIcon: '#fff',
+                          timelineDotProps: {
+                            sx: {
                               backgroundColor: '#d1e500',
                             },
                           },
@@ -241,53 +285,6 @@ export const SkillsPage: React.FCC = () => {
                           colorIcon: '#fff',
                           timelineDotProps: {
                             sx: {
-                              backgroundColor: '#6962FD',
-                            },
-                          },
-                        },
-
-                        timeLineContent: {
-                          date: 'Aug 2021 - Present',
-                          content: (
-                            <>
-                              <Link
-                                href="https://www.wulperstudio.com/"
-                                sx={{
-                                  display: 'block',
-                                  color: 'text.primary',
-                                  fontWeight: 700,
-                                }}
-                                underline="none"
-                                variant="body2"
-                                target="_blank"
-                              >
-                                [Front-end Developer] Wulpers
-                              </Link>
-
-                              <List>
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.1.listItem1')}
-                                />
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.1.listItem2')}
-                                />
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.1.listItem3')}
-                                />
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.1.listItem4')}
-                                />
-                              </List>
-                            </>
-                          ),
-                        },
-                      },
-                      {
-                        timeLineSeparator: {
-                          icon: ICONS_NAME.workOutline,
-                          colorIcon: '#fff',
-                          timelineDotProps: {
-                            sx: {
                               backgroundColor: '#0930B7',
                             },
                           },
@@ -308,7 +305,8 @@ export const SkillsPage: React.FCC = () => {
                                 variant="body2"
                                 target="_blank"
                               >
-                                [Full Stack Developer] GLOBALTECH SCM SOLUTIONS GLOBALTECH SCM SOLUTIONS
+                                [Full Stack Developer] GLOBALTECH SCM SOLUTIONS
+                                GLOBALTECH SCM SOLUTIONS
                               </Link>
 
                               <List>
@@ -320,9 +318,6 @@ export const SkillsPage: React.FCC = () => {
                                 />
                                 <ListItemSkill
                                   text={t('skills.drawer.cards.2.listItem3')}
-                                />
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.2.listItem4')}
                                 />
                               </List>
                             </>
@@ -367,9 +362,6 @@ export const SkillsPage: React.FCC = () => {
                                 />
                                 <ListItemSkill
                                   text={t('skills.drawer.cards.3.listItem3')}
-                                />
-                                <ListItemSkill
-                                  text={t('skills.drawer.cards.3.listItem4')}
                                 />
                               </List>
                             </>

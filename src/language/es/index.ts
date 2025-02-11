@@ -10,11 +10,11 @@ export const es = {
     titleData: 'Front-end Developer',
     titleMyResume: 'Mi resumen',
     myResumeParagraph1:
-      'Con más de 2 años de experiencia como desarrollador front-end, domino tecnologías como Javascript, React, Typescript, Next Js, Storybook y Figma. Aprendo rápido y tengo pasión por la web, siempre buscando nuevos retos para mejorar mis habilidades.',
+      'Apasionado de la tecnología y el desarrollo web, con 3 años de experiencia construyendo interfaces optimizadas y escalables. Me centro en el rendimiento, la reutilización de componentes y la experiencia del usuario.',
     myResumeParagraph2:
-      'Además de mis habilidades técnicas, también soy muy creativo y me apasiona el diseño. Tengo un buen ojo para la estética y me esfuerzo por crear aplicaciones web visualmente atractivas y fáciles de usar. Estoy bien versado en el uso de herramientas de diseño como Figma para crear wireframes, maquetas y prototipos que traen mis ideas a la vida.',
+      'Siempre en busca de nuevos retos y oportunidades para seguir aprendiendo y aportando valor.',
     myResumeParagraph3:
-      'Soy de Perú, pero he estado viviendo en Buenos Aires, Argentina por más de 3 años. En mi tiempo libre, disfruto jugando al fútbol, viendo anime y jugando videojuegos.',
+      'Tech Stack: React, TypeScript, Next.js, Node.js, Storybook, MUI, GraphQL, Apollo Server, Monorepos.',
     fabTooltip: 'Descargar CV',
   },
   skills: {
@@ -47,39 +47,33 @@ export const es = {
     drawer: {
       title: 'Experiencia laboral',
       cards: {
-        0: {
-          listItem1: 'Corrección de preentregas de alumnos asignados.',
-          listItem2: 'Participe activamente en los ejemplos de suma, apoye al profesor y responda a las preguntas en directo a través del chat.'
-        },
-        1: {
+        '0': {
           listItem1:
-            'He contribuido al desarrollo y mantenimiento de una libreria interna, "@wulperstudio/cms", que esta publicada en npm. La libreria está construida con React, TypeScript y Storybook y se utiliza para el desarrollo de aplicaciones web. He trabajado en varios aspectos de la libreria, incluyendo la adición de nuevas características, la corrección de errores y la optimización del rendimiento.',
+            'Revisé y di retroalimentación sobre las entregas previas de los estudiantes, asegurando la calidad del código y las mejores prácticas.',
           listItem2:
-            'He desarrollado páginas estaticas para mostrar nuestros productos internos. Estas páginas se desarrollaron con Next.js, un framework conocido por su excelente rendimiento y sus caracteristicas de SEO.',
-          listItem3:
-            'También he trabajado en el desarrollo de aplicaciones web para que sean del tipo aplicaciones web progresivas (PWA).',
-          listItem4:
-            'Tengo experiencia en el consumo de APIs a través de GraphQL, Axios y React Query en el frontend. He implementado funcionalidades de login e integrado funcionalidades remotas de aplicaciones web que me han sido asignadas.',
+            'Asistí activamente en las sesiones en vivo ofreciendo soporte en tiempo real, aclarando conceptos y respondiendo a las preguntas de los estudiantes a través del chat.',
         },
-        2: {
+        '1': {
           listItem1:
-            'Migración con éxito de una aplicación de sistema de gestión de almacenes (WMS) de escritorio a React Native, lo que permite una gestión completa del inventario desde dispositivos móviles.',
+            'Desarrollé una biblioteca de componentes usando Storybook y MUI.',
           listItem2:
-            'Implementación de métodos HTTP con NestJS, un popular marco Node.js para crear aplicaciones de servidor escalables y eficientes.',
+            'Construí landing pages con Next.js, optimizando el SEO, el rendimiento y la capacidad de respuesta.',
           listItem3:
-            'Gestión y lectura de datos en SQLServer, un sistema de gestión de bases de datos de nivel empresarial.',
-          listItem4:
-            'Desarrolló nuevos componentes y funcionalidades en React Native para facilitar la migración de la aplicación WMS a dispositivos móviles.',
+            'Integré módulos de la plataforma CRM usando GraphQL, Apollo Server y Axios en un entorno de monorepositorio.',
         },
-        3: {
+        '2': {
           listItem1:
-            'Participé en un programa de formación para desarrolladores full-stack, ampliando habilidades en Node, React, Material-UI, Git y GitHub.',
+            'Migración de un Sistema de Gestión de Almacenes (WMS) de escritorio a React Native, permitiendo una gestión de inventario fluida a través de dispositivos móviles y mejorando la eficiencia operativa.',
           listItem2:
-            'Diseñó y desarrolló un sitio web responsivo para una organización sin fines de lucro en Argentina, utilizando HTML, CSS y JavaScript para crear una experiencia profesional y fácil de usar.',
+            'Desarrollé y optimicé una API RESTful usando NestJS, diseñando endpoints escalables para manejar las operaciones de inventario y almacén. Integré SQL Server como la base de datos, asegurando una gestión y recuperación de datos eficiente.',
+        },
+        '3': {
+          listItem1:
+            'Diseñé y desarrollé un sitio web totalmente responsivo para una organización sin fines de lucro en Argentina, usando HTML, CSS y JavaScript para ofrecer una experiencia profesional y fácil de usar.',
+          listItem2:
+            'Expando continuamente mi experiencia técnica aprendiendo y aplicando Node.js, React, Material-UI, Git y GitHub, manteniéndome al día con las últimas tendencias y mejores prácticas de la industria.',
           listItem3:
-            'Aprendizaje continuo de nuevas tecnologías como Node, React, Material-UI, Git y GitHub para mantenerme actualizado con las últimas tendencias de la industria.',
-          listItem4:
-            'Competente en metodologías ágiles como Scrum, permitiendo un trabajo en equipo eficiente y eficaz en los proyectos de desarrollo.',
+            'Experiencia en metodologías Agile, particularmente Scrum, asegurando una colaboración eficiente y flujos de trabajo de desarrollo optimizados.',
         },
       },
     },

@@ -10,9 +10,9 @@ export const en = {
     titleData: 'Front-end Developer',
     titleMyResume: 'My resume',
     myResumeParagraph1:
-      'With over 2 years of experience as a front-end developer, I am proficient in technologies such as Javascript, React, Typescript, Next Js, Storybook, and Figma. I am a quick learner and have a passion for the web, always seeking new challenges to improve my skills.',
+      'Passionate about technology and web development, with 3 years of experience building optimized and scalable interfaces. My focus is on performance, component reusability, and user experience.',
     myResumeParagraph2:
-      'In addition to my technical skills, I am also highly creative and passionate about design. I have a keen eye for aesthetics and strive to create visually appealing and user-friendly web applications. I am well-versed in using design tools such as Figma to create wireframes, mockups, and prototypes that bring my ideas to life.',
+      'Always looking for new challenges and opportunities to keep learning and adding value.',
     myResumeParagraph3:
       'I am from Peru, but I have been living in Buenos Aires, Argentina for over 3 years. In my free time, I enjoy playing soccer, watching anime, and playing computer games.',
     fabTooltip: 'Download CV',
@@ -46,38 +46,31 @@ export const en = {
       title: 'Work experience',
       cards: {
         0: {
-          listItem1: 'Correction of pre-deliveries of assigned students.',
-          listItem2: 'Actively participate in sum examples, support the teacher and answer live queries via chat.'
+          listItem1:
+            'Reviewed and provided feedback on student pre-deliveries, ensuring code quality and best practices.',
+          listItem2:
+            'Actively assisted in live sessions by offering real-time support, clarifying concepts, and answering student queries via chat.',
         },
         1: {
-          listItem1:
-            'I have contributed to the development and maintenance of an internal library, "@wulperstudio/cms," which is uploaded to npm. The library is built with React, TypeScript, and Storybook and is used for the development of web applications. I have worked on various aspects of the library, including adding new features, fixing bugs, and optimizing performance.',
+          listItem1: 'Developed component library using Storybook and MUI.',
           listItem2:
-            'I have developed landing pages to showcase our internal products. These pages were developed using Next.js, a framework that is known for its excellent performance and SEO-friendly features.',
+            'Built landing pages with Next.js, optimizing SEO, performance, and responsiveness.',
           listItem3:
-            'I have also worked on the development of applications that are progressive web apps (PWAs).',
-          listItem4:
-            ' I have experience in consuming APIs through GraphQL, Axios, and React Query in the frontend. I have implemented login functionality and integrated remote features of web applications assigned to me.',
+            ' Integrated CRM platform modules using GraphQL, Apollo Server, and Axios in a monorepo environment.',
         },
         2: {
           listItem1:
-            'Successfully migrated a desktop warehouse management system (WMS) application to React Native, enabling complete inventory management from mobile devices.',
+            'Migration of a desktop Warehouse Management System (WMS) to React Native, enabling seamless inventory management via mobile devices and improving operational efficiency.',
           listItem2:
-            'Implemented HTTP methods using NestJS, a popular Node.js framework for building scalable and efficient server-side applications.',
-          listItem3:
-            'Demonstrated proficiency in data management and reading in SQLServer, an enterprise-level database management system.',
-          listItem4:
-            'Developed new components and functionalities in React Native to facilitate the migration of the WMS application to mobile devices.',
+            'Developed and optimized a RESTful API using NestJS, designing scalable endpoints to handle inventory and warehouse operations. Integrated SQL Server as the database, ensuring efficient data management and retrieval.',
         },
         3: {
           listItem1:
-            'Participated in a full-stack developer training program, expanding skills in Node, React, Material-UI, Git, and GitHub.',
+            'Designed and developed a fully responsive website for a non-profit organization in Argentina, using HTML, CSS, and JavaScript to deliver a professional and user-friendly experience.',
           listItem2:
-            'Designed and developed a responsive website for a non-profit organization in Argentina, utilizing HTML, CSS, and JavaScript to create a professional and user-friendly experience.',
+            'Continuously expanding technical expertise by learning and applying Node.js, React, Material-UI, Git, and GitHub, staying up to date with the latest industry trends and best practices.',
           listItem3:
-            'Continuously learning new technologies such as Node, React, Material-UI, Git, and GitHub to stay up-to-date with the latest industry trends.',
-          listItem4:
-            'Proficient in agile methodologies such as Scrum, enabling efficient and effective teamwork on development projects.',
+            'Experienced in Agile methodologies, particularly Scrum, ensuring efficient collaboration and streamlined development workflows.',
         },
       },
     },
