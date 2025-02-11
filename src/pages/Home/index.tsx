@@ -1,6 +1,6 @@
 import React from 'react';
 import Typed from 'typed.js';
-import { CTAWidget } from '@wulperstudio/cta';
+// import { CTAWidget } from '@wulperstudio/cta';
 import { useTranslation } from 'react-i18next';
 import { ContentRowBlock, Hero } from '@wulperstudio/cms';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
@@ -96,7 +96,7 @@ export const HomePage: React.FCC = () => {
         </Hero>
       </BoxContent>
 
-      <CTAWidget cta_preference="43ced3b1-2509-47fe-9170-5281019879f6" />
+      {/* <CTAWidget cta_preference="43ced3b1-2509-47fe-9170-5281019879f6" /> */}
     </>
   );
 };
