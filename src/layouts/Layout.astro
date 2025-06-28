@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/montserrat";
+import montserratWoff2 from "@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2?url";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={montserratWoff2}
+      crossorigin="anonymous"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jhosep Davila — Web Developer</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
