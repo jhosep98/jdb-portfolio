@@ -5,7 +5,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules", "dist", "build", "public", ".astro", ".vercel"],
+    "ignore": [
+      "node_modules",
+      "dist",
+      "build",
+      "public",
+      ".astro",
+      ".vercel",
+      "src/assets"
+    ],
     "include": [
       "**/*.ts",
       "**/*.js",

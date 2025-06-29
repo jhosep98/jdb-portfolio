@@ -1,10 +1,33 @@
 ---
 import '../styles/global.css'
-import '@fontsource-variable/montserrat'
-import montserratWoff2 from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2?url'
+import '@fontsource-variable/geist-mono'
+import geistMonoWoff2 from '@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url'
 ---
 
-<!doctype html>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,7 +37,7 @@ import montserratWoff2 from '@fontsource-variable/montserrat/files/montserrat-la
       rel="preload"
       as="font"
       type="font/woff2"
-      href={montserratWoff2}
+      href={geistMonoWoff2}
       crossorigin="anonymous"
     />
     <meta name="generator" content={Astro.generator} />

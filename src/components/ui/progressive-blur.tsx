@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { motion, type HTMLMotionProps } from 'motion/react'
+import { type HTMLMotionProps, motion } from 'motion/react'
 
 export const GRADIENT_ANGLES = {
   top: 0,

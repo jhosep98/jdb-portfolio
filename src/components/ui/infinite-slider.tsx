@@ -1,11 +1,11 @@
-import * as React from 'react'
 import { cn } from '@/lib/utils'
 import {
-  useMotionValue,
+  type AnimationPlaybackControlsWithThen,
   animate,
   motion,
-  type AnimationPlaybackControlsWithThen,
+  useMotionValue,
 } from 'motion/react'
+import * as React from 'react'
 import useMeasure from 'react-use-measure'
 
 export type InfiniteSliderProps = {
