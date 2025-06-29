@@ -1,6 +1,10 @@
 ---
-import { HeroSection } from '@/components/hero-section'
-import Layout from '../layouts/Layout.astro'
+import { HeroSection } from "@/components/hero-section";
+import Layout from "@/layouts/Layout.astro";
+import { ContentSection } from "@/components/content-1";
+import { LogoCloud } from "@/components/logo-cloud";
+import { WallOfLoveSection } from "@/components/testimonials";
+import { FooterSection } from "@/components/footer";
 ---
 
 <Layout>
@@ -18,4 +22,8 @@ import Layout from '../layouts/Layout.astro'
     ]}
     lang="en"
   />
+  <LogoCloud client:load />
+  <ContentSection />
+  <WallOfLoveSection />
+  <FooterSection />
 </Layout>
