@@ -2,10 +2,10 @@ import { Logo } from '@/components/logo'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import type { Language } from '@/types'
 import { Menu, X } from 'lucide-react'
 import * as React from 'react'
 import { LanguageToggle } from './language-toggle'
-import type { Language } from '@/types'
 
 export type MenuItem = {
   name: string
@@ -40,7 +40,11 @@ export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
         >
           <div className='relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4'>
             <div className='flex w-full justify-between lg:w-auto'>
-              <a href={lang === 'es' ? '/es' : '/'} aria-label='home' className='flex items-center space-x-2'>
+              <a
+                href={lang === 'es' ? '/es' : '/'}
+                aria-label='home'
+                className='flex items-center space-x-2'
+              >
                 <Logo />
               </a>
 
