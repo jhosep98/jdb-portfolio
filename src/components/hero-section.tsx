@@ -3,10 +3,11 @@ import { ImageAnimation } from '@/components/image-animation'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
-import { ArrowRight, ChevronRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import type { Variants } from 'motion'
 import type * as React from 'react'
-import { HeroHeader } from './header'
+import { HeroHeader, type MenuItem } from './header'
+import type { Language } from '@/types'
 
 const transitionVariants: {
   item?: Variants
@@ -30,9 +31,27 @@ const transitionVariants: {
   },
 }
 
-export const HeroSection: React.FC = () => (
+interface HeroSectionProps {
+  title: string
+  tag: string
+  description: string
+  labelFirstButton: string
+  labelSecondButton: string
+  menuItems: MenuItem[]
+  lang: Language
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({
+  title,
+  tag,
+  description,
+  labelFirstButton,
+  labelSecondButton,
+  menuItems,
+  lang,
+}) => (
   <>
-    <HeroHeader />
+    <HeroHeader menuItems={menuItems} lang={lang} />
 
     <div className='overflow-hidden'>
       <div
@@ -46,44 +65,6 @@ export const HeroSection: React.FC = () => (
 
       <section>
         <div className='relative pt-24 md:pt-36'>
-          {/* <AnimatedGroup
-            variants={{
-              container: {
-                visible: {
-                  transition: {
-                    delayChildren: 1,
-                  },
-                },
-              },
-              item: {
-                hidden: {
-                  opacity: 0,
-                  y: 20,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    type: 'spring',
-                    bounce: 0.3,
-                    duration: 2,
-                  },
-                },
-              },
-            }}
-            className='absolute inset-0 -z-20'
-          >
-            <img
-              src='https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120'
-              alt='background'
-              className='absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block'
-              width='3276'
-              height='4095'
-              decoding='async'
-              loading='lazy'
-            />
-          </AnimatedGroup> */}
-
           <div className='absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]' />
           <div className='mx-auto max-w-7xl px-6'>
             <div className='text-center sm:mx-auto lg:mr-auto lg:mt-0'>
@@ -92,9 +73,7 @@ export const HeroSection: React.FC = () => (
                   href='#link'
                   className='hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950'
                 >
-                  <span className='text-foreground text-sm'>
-                    👋 It's Jhosep, Your Full Stack Developer!
-                  </span>
+                  <span className='text-foreground text-sm'>👋 {tag}</span>
 
                   <span className='dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700' />
 
@@ -115,10 +94,11 @@ export const HeroSection: React.FC = () => (
                 preset='fade-in-blur'
                 speedSegment={0.3}
                 as='h1'
-                className='mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]'
+                className='mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] max-w-4xl font-semibold text-center mx-auto'
               >
-                I'm here to help you build your next project!
+                {title}
               </TextEffect>
+
               <TextEffect
                 per='line'
                 preset='fade-in-blur'
@@ -127,9 +107,7 @@ export const HeroSection: React.FC = () => (
                 as='p'
                 className='mx-auto mt-8 max-w-2xl text-balance text-lg'
               >
-                Since 2018, I've helped 50+ founders across SaaS, AI, healthcare, e-commerce,
-                dating, and more create web & apps that secure funding, convert users, and drive
-                growth.
+                {description}
               </TextEffect>
 
               <AnimatedGroup
@@ -148,7 +126,7 @@ export const HeroSection: React.FC = () => (
               >
                 <Button key={1} asChild size='lg' className='rounded-xl px-5 text-base'>
                   <a href='#link'>
-                    <span className='text-nowrap'>See more</span>
+                    <span className='text-nowrap'>{labelFirstButton}</span>
                     <ArrowRight className='size-4' />
                   </a>
                 </Button>
@@ -161,7 +139,7 @@ export const HeroSection: React.FC = () => (
                   className='h-10.5 rounded-xl px-5'
                 >
                   <a href='#link'>
-                    <span className='text-nowrap'>Book a call</span>
+                    <span className='text-nowrap'>{labelSecondButton}</span>
                     <ArrowRight className='size-4' />
                   </a>
                 </Button>
@@ -182,7 +160,7 @@ export const HeroSection: React.FC = () => (
               ...transitionVariants,
             }}
           >
-            <div className='relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20'>
+            <div className='relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20'>
               <div
                 aria-hidden
                 className='bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%'

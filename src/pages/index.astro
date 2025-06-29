@@ -1,16 +1,21 @@
 ---
-import About from '../components/About.astro'
-import Contact from '../components/Contact.astro'
-import Hero from '../components/Hero.astro'
-import Projects from '../components/Projects.astro'
-import Skills from '../components/Skills.astro'
+import { HeroSection } from '@/components/hero-section'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <Hero />
-  <About />
-  <Skills />
-  <Projects />
-  <Contact />
+  <HeroSection
+    client:load
+    title="I'm here to help you build your next project!"
+    tag="It's Jhosep, Your Full Stack Developer!"
+    description="Since 2018, I've helped 50+ founders across SaaS, AI, healthcare, e-commerce, dating, and more create web & apps that secure funding, convert users, and drive growth."
+    labelFirstButton="See more"
+    labelSecondButton="Book a call"
+    menuItems={[
+      { name: "About", href: "#about" },
+      { name: "Skills", href: "#skills" },
+      { name: "Contact", href: "#contact" },
+    ]}
+    lang="en"
+  />
 </Layout>

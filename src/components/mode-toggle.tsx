@@ -8,7 +8,7 @@ import {
 import { Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 
-export function ModeToggle() {
+export const ModeToggle = () => {
   const [theme, setThemeState] = React.useState<'theme-light' | 'dark' | 'system'>('theme-light')
 
   React.useEffect(() => {

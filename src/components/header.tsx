@@ -4,14 +4,20 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import * as React from 'react'
+import { LanguageToggle } from './language-toggle'
+import type { Language } from '@/types'
 
-const menuItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Contact', href: '#contact' },
-]
+export type MenuItem = {
+  name: string
+  href: string
+}
 
-export const HeroHeader = () => {
+interface HeaderProps {
+  menuItems: MenuItem[]
+  lang: Language
+}
+
+export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
   const [menuState, setMenuState] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
 
@@ -34,7 +40,7 @@ export const HeroHeader = () => {
         >
           <div className='relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4'>
             <div className='flex w-full justify-between lg:w-auto'>
-              <a href='/' aria-label='home' className='flex items-center space-x-2'>
+              <a href={lang === 'es' ? '/es' : '/'} aria-label='home' className='flex items-center space-x-2'>
                 <Logo />
               </a>
 
@@ -88,6 +94,8 @@ export const HeroHeader = () => {
                 </Button>
 
                 <ModeToggle />
+
+                <LanguageToggle />
               </div>
             </div>
           </div>
