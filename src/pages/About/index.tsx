@@ -103,7 +103,7 @@ export const AboutPage: React.FCC = () => {
                     justifyContent="space-around"
                     flexWrap="wrap"
                     gap="1rem"
-                    sx={{ pt: '2rem', width: '-webkit-fill-available' }}
+                    sx={{ pt: '2rem', width: '100%', gap: '1rem' }}
                   >
                     <IconCounter
                       counter={queryUserInfo.data?.followers}

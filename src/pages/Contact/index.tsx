@@ -44,10 +44,10 @@ export const ContactPage: React.FCC = () => {
   const onSubmit = (data: InputSendEmail) => {
     emailjs
       .send(
-        'service_baugcpu',
-        'template_fa16uht',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         data,
-        'YI-_jgrKhdybnm0pj',
+        import.meta.env.VITE_EMAILJS_USER_ID,
       )
       .then(() => {
         notificationOnSuccess(t('contact.messageSendEmail'));
