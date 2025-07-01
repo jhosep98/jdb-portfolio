@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils'
 import type { Language } from '@/types'
 import { Menu, X } from 'lucide-react'
 import * as React from 'react'
-import { LanguageToggle } from './language-toggle'
 
 export type MenuItem = {
   name: string
@@ -31,7 +30,7 @@ export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
 
   return (
     <header>
-      <nav data-state={menuState && 'active'} className='fixed z-20 w-full px-2'>
+      <nav data-state={menuState && 'active'} className='fixed z-50 w-full px-2'>
         <div
           className={cn(
             'mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12',
@@ -98,8 +97,6 @@ export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
                 </Button>
 
                 <ModeToggle />
-
-                <LanguageToggle />
               </div>
             </div>
           </div>
