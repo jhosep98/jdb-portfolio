@@ -3,7 +3,7 @@ import { Download, Mail, MapPin, Phone } from 'lucide-react'
 import type * as React from 'react'
 import { Button } from './ui/button'
 
-export const ContentSection: React.FC = () => (
+export const AboutSection: React.FC = () => (
   <section className='py-16 md:py-32'>
     <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16'>
       <h2 className='relative z-10 max-w-xl text-4xl font-medium lg:text-5xl'>About me</h2>

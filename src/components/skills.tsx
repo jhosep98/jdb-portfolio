@@ -2,7 +2,7 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import type * as React from 'react'
 
-export const LogoCloud: React.FC = () => (
+export const SkillsSection: React.FC = () => (
   <section className='bg-background overflow-hidden py-16'>
     <div className='group relative m-auto max-w-7xl px-6'>
       <div className='flex flex-col items-center md:flex-row'>

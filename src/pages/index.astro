@@ -1,10 +1,13 @@
 ---
-import { ContentSection } from '@/components/content-1'
-import { FooterSection } from '@/components/footer'
-import { HeroSection } from '@/components/hero-section'
-import { LogoCloud } from '@/components/logo-cloud'
-import { WallOfLoveSection } from '@/components/testimonials'
-import Layout from '@/layouts/Layout.astro'
+import { AboutSection } from "@/components/about";
+import { ContactSection } from "@/components/contact";
+import { FooterSection } from "@/components/footer";
+import { HeroSection } from "@/components/hero";
+import { ProjectsSection } from "@/components/projects";
+import { SkillsSection } from "@/components/skills";
+import { TestimonialsSection } from "@/components/testimonials";
+import { ExperienceSection } from "@/components/experience";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
@@ -22,8 +25,19 @@ import Layout from '@/layouts/Layout.astro'
     ]}
     lang="en"
   />
-  <LogoCloud client:load />
-  <ContentSection />
-  <WallOfLoveSection />
+  <SkillsSection client:load />
+  <AboutSection client:load />
+  <ProjectsSection />
+  <ContactSection />
+  <ExperienceSection
+    client:load
+    data={[
+      {
+        title: "Experience",
+        content: "Experience",
+      },
+    ]}
+  />
+  <TestimonialsSection />
   <FooterSection />
 </Layout>
