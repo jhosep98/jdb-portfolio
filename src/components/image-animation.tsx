@@ -1,10 +1,12 @@
+import { cn } from '@/lib/utils'
 import { useLottie } from 'lottie-react'
 
 interface ImageAnimationProps<T> {
   src: T
+  className?: string
 }
 
-export const ImageAnimation = <T,>({ src }: ImageAnimationProps<T>) => {
+export const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) => {
   const options = {
     animationData: src,
     loop: true,
@@ -13,5 +15,5 @@ export const ImageAnimation = <T,>({ src }: ImageAnimationProps<T>) => {
 
   const { View } = useLottie(options)
 
-  return <div className='flex h-full w-full flex-col'>{View}</div>
+  return <div className={cn('flex h-full w-full flex-col', className)}>{View}</div>
 }

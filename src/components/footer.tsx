@@ -22,6 +22,10 @@ const links = [
     title: 'Testimonials',
     href: '#testimonials',
   },
+  {
+    title: 'Contact',
+    href: '#contact',
+  },
 ]
 
 export const FooterSection: React.FC = () => (

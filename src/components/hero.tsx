@@ -1,5 +1,3 @@
-import blogging from '@/assets/blogging.json'
-import { ImageAnimation } from '@/components/image-animation'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
