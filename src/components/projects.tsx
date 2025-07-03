@@ -5,61 +5,22 @@ import { ChevronRight } from 'lucide-react'
 import type * as React from 'react'
 
 export const ProjectsSection: React.FC = () => (
-  <section>
-    <div className='py-32'>
-      <div className='mx-auto max-w-5xl px-6'>
-        <div className='text-center'>
-          <h2 className='text-balance text-3xl font-semibold md:text-4xl'>
-            Integrate with your favorite tools
-          </h2>
-          <p className='text-muted-foreground mt-6'>
-            Connect seamlessly with popular platforms and services to enhance your workflow.
-          </p>
-        </div>
+  <section id='projects' className='py-16 md:py-32'>
+    <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16'>
+      <div>
+        <h2 className='relative mb-5 pb-5 text-balance text-3xl font-semibold md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'>
+          Projects
+        </h2>
+      </div>
 
-        <div className='mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
-          <IntegrationCard
-            title='Google Gemini'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <Gemini />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title='Replit'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <Replit />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title='Magic UI'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <MagicUI />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title='VSCodium'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <VSCodium />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title='MediaWiki'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <MediaWiki />
-          </IntegrationCard>
-
-          <IntegrationCard
-            title='Google PaLM'
-            description='Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.'
-          >
-            <GooglePaLM />
-          </IntegrationCard>
-        </div>
+      <div className='mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
+        <IntegrationCard
+          title='easy-turnos'
+          description='Easy-turnos application to manage turnos.'
+          link='https://github.com/jhosep98/easy-turnos'
+        >
+          <Gemini />
+        </IntegrationCard>
       </div>
     </div>
   </section>
@@ -70,7 +31,7 @@ const IntegrationCard: React.FC<{
   description: string
   children: React.ReactNode
   link?: string
-}> = ({ title, description, children, link = 'https://github.com/meschacirung/cnblocks' }) => (
+}> = ({ title, description, children, link }) => (
   <Card className='p-6'>
     <div className='relative'>
       <div className='*:size-10'>{children}</div>

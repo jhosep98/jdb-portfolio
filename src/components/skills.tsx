@@ -58,7 +58,7 @@ const SKILLS = [
 ]
 
 export const SkillsSection: React.FC = () => (
-  <section className='bg-background overflow-hidden py-16'>
+  <section id='skills' className='overflow-hidden py-16 md:py-32'>
     <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16'>
       <div>
         <h2 className='relative mb-5 pb-5 text-balance text-3xl font-semibold md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'>
@@ -72,11 +72,13 @@ export const SkillsSection: React.FC = () => (
             {SKILLS.map((skill) => (
               <div className='flex' key={skill.name}>
                 <img
-                  className='mx-auto h-12 w-fit'
+                  className='w-fit h-14 aspect-[3/2] object-contain mix-blend-color-burn mx-auto'
                   src={skill.icon}
                   alt={skill.name}
-                  height='48'
+                  height='24'
                   width='auto'
+                  loading='lazy'
+                  decoding='async'
                 />
               </div>
             ))}

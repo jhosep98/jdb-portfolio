@@ -3,8 +3,14 @@ import { ChevronRight } from 'lucide-react'
 import type * as React from 'react'
 
 export const ContactSection: React.FC = () => (
-  <section className='py-16 md:py-32'>
-    <div className='mx-auto max-w-5xl px-6'>
+  <section id='contact' className='py-16 md:py-32'>
+    <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16'>
+      <div>
+        <h2 className='relative mb-5 pb-5 text-balance text-3xl font-semibold md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'>
+          Contact
+        </h2>
+      </div>
+
       <div className='grid gap-6 md:grid-cols-2 md:gap-12'>
         <h2 className='text-4xl font-medium'>
           The Lyra ecosystem brings together our models, products and platforms.

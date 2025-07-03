@@ -20,14 +20,15 @@ import Layout from '@/layouts/Layout.astro'
     menuItems={[
       { name: "About", href: "#about" },
       { name: "Skills", href: "#skills" },
-      { name: "Contact", href: "#contact" },
+      { name: "Projects", href: "#projects" },
+      { name: "Experience", href: "#experience" },
+      { name: "Testimonials", href: "#testimonials" },
     ]}
     lang="en"
   />
   <AboutSection />
   <SkillsSection client:load />
   <ProjectsSection />
-  <ContactSection />
   <ExperienceSection
     client:load
     data={[
@@ -37,6 +38,7 @@ import Layout from '@/layouts/Layout.astro'
       },
     ]}
   />
-  <TestimonialsSection />
+  <TestimonialsSection client:load />
+  <ContactSection />
   <FooterSection />
 </Layout>
