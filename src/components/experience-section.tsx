@@ -10,7 +10,7 @@ export const ExperienceSection: React.FC = () => (
           <>
             <h3 className='text-lg font-semibold mb-2'>[Full Stack Developer] Alkemy</h3>
 
-            <ul className='list-disc pl-6 space-y-2 text-sm'>
+            <ul className='list-disc pl-6 space-y-2 text-sm text-muted-foreground'>
               <li>
                 Designed and developed a fully responsive website for a non-profit organization in
                 Argentina, using HTML, CSS, and JavaScript to deliver a professional and
@@ -37,7 +37,7 @@ export const ExperienceSection: React.FC = () => (
               [Full Stack Developer] GLOBALTECH SCM SOLUTIONS GLOBALTECH SCM SOLUTIONS
             </h3>
 
-            <ul className='list-disc pl-6 space-y-2 text-sm'>
+            <ul className='list-disc pl-6 space-y-2 text-sm text-muted-foreground'>
               <li>
                 Migration of a desktop Warehouse Management System (WMS) to React Native, enabling
                 seamless inventory management via mobile devices and improving operational
@@ -58,7 +58,7 @@ export const ExperienceSection: React.FC = () => (
           <>
             <h3 className='text-lg font-semibold mb-2'>[Tutor ReactJS] CoderHouse</h3>
 
-            <ul className='list-disc pl-6 space-y-2 text-sm'>
+            <ul className='list-disc pl-6 space-y-2 text-sm text-muted-foreground'>
               <li>
                 Reviewed and provided feedback on student pre-deliveries, ensuring code quality and
                 best practices.
@@ -77,7 +77,7 @@ export const ExperienceSection: React.FC = () => (
           <>
             <h3 className='text-lg font-semibold mb-2'>[Front-end Developer] Wulpers</h3>
 
-            <ul className='list-disc pl-6 space-y-2 text-sm'>
+            <ul className='list-disc pl-6 space-y-2 text-sm text-muted-foreground'>
               <li>Developed component library using Storybook and MUI.</li>
               <li>
                 Built landing pages with Next.js, optimizing SEO, performance, and responsiveness.

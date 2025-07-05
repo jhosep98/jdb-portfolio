@@ -66,7 +66,7 @@ export const TestimonialsSection: React.FC = () => (
                     </span>
 
                     <blockquote className='mt-3'>
-                      <p className='text-gray-700 dark:text-gray-300'>{quote}</p>
+                      <p className='text-muted-foreground'>{quote}</p>
                     </blockquote>
                   </div>
                 </CardContent>

@@ -1,4 +1,3 @@
-import { Gemini, GooglePaLM, MagicUI, MediaWiki, Replit, VSCodium } from '@/components/logos'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ChevronRight } from 'lucide-react'
@@ -16,10 +15,50 @@ export const ProjectsSection: React.FC = () => (
       <div className='mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
         <IntegrationCard
           title='easy-turnos'
-          description='Easy-turnos application to manage turnos.'
+          description='Easy-turnos application to manage appointments.'
           link='https://github.com/jhosep98/easy-turnos'
         >
-          <Gemini />
+          <img
+            src='https://res.cloudinary.com/diusjfaoe/image/upload/v1751422646/jmdev-studio/nestjs_wookat.svg'
+            alt='easy-turnos'
+            width='120'
+            height='120'
+            loading='lazy'
+            decoding='async'
+            className='object-contain'
+          />
+        </IntegrationCard>
+
+        <IntegrationCard
+          title='jdb-portfolio'
+          description='Web portfolio showing my self-taught projects and my contact details.Easy-turnos application to manage appointments.'
+          link='https://github.com/jhosep98/jdb-portfolio'
+        >
+          <img
+            src='https://res.cloudinary.com/diusjfaoe/image/upload/v1725495136/jmdev-studio/astro_zisnli.svg'
+            alt='jdb-portfolio'
+            width='120'
+            height='120'
+            loading='lazy'
+            decoding='async'
+            className='object-contain'
+          />
+        </IntegrationCard>
+
+        <IntegrationCard
+          title='alkemy-backend-challenge'
+          description='API to create, edit, delete and consult all the posts stored in the database.'
+          link='https://github.com/jhosep98/alkemy-backend-challenge'
+        >
+          <img
+            src='https://res.cloudinary.com/diusjfaoe/image/upload/v1725495136/jmdev-studio/nodejs_yyrshc.svg'
+            alt='alkemy-backend-challenge'
+            width='120'
+            height='120'
+            loading='lazy'
+            decoding='async'
+            className='object-contain'
+          />
         </IntegrationCard>
       </div>
     </div>
@@ -42,8 +81,8 @@ const IntegrationCard: React.FC<{
       </div>
 
       <div className='flex gap-3 border-t border-dashed pt-6'>
-        <Button asChild variant='secondary' size='sm' className='gap-1 pr-2 shadow-none'>
-          <a href={link}>
+        <Button asChild size='sm' className='gap-1 pr-2 shadow-none'>
+          <a href={link} target='_blank' rel='noopener noreferrer' aria-label='Learn More'>
             Learn More
             <ChevronRight className='ml-0 !size-3.5 opacity-50' />
           </a>

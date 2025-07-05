@@ -72,15 +72,11 @@ export const AboutSection: React.FC = () => {
             <div className='pt-6'>
               <div className='grid grid-cols-2 gap-2'>
                 <div className='space-y-4'>
-                  <div className='bg-linear-to-r from-zinc-950 to-zinc-600 bg-clip-text text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800'>
-                    {userData.followers}
-                  </div>
+                  <div className='text-5xl font-bold'>{userData.followers}</div>
                   <p>Followers</p>
                 </div>
                 <div className='space-y-4'>
-                  <div className='bg-linear-to-r from-zinc-950 to-zinc-600 bg-clip-text text-5xl font-bold text-transparent dark:from-white dark:to-zinc-800'>
-                    {userData.public_repos}
-                  </div>
+                  <div className='text-5xl font-bold'>{userData.public_repos}</div>
                   <p>Powered Apps</p>
                 </div>
               </div>
