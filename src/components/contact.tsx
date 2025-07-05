@@ -14,15 +14,15 @@ export const ContactSection: React.FC = () => (
         </h2>
       </div>
 
-      <div className='grid gap-6 md:grid-cols-2 md:gap-12 items-center'>
+      <div className='grid gap-6 md:grid-cols-2 md:gap-8 items-center'>
         <div className='relative overflow-hidden'>
-          <div
+          {/* <div
             aria-hidden
             className='bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%'
-          />
-          <div className='inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1'>
-            <ImageAnimation src={blogging} />
-          </div>
+          /> */}
+          {/* <div className='inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1'> */}
+          <ImageAnimation src={blogging} />
+          {/* </div> */}
         </div>
 
         <Card className='py-8 px-4'>
@@ -32,7 +32,7 @@ export const ContactSection: React.FC = () => (
 
           <CardContent>
             <div className='grid gap-6'>
-              <div className='my-2 flex flex-wrap justify-center gap-6 text-sm'>
+              <div className='flex flex-wrap justify-center gap-6 text-sm'>
                 <a
                   href='https://www.linkedin.com/in/jhosep-davila/'
                   target='_blank'

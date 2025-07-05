@@ -6,7 +6,7 @@ interface TimelineEntry {
   content: React.ReactNode
 }
 
-export const ExperienceSection: React.FC<{ data: TimelineEntry[] }> = ({ data }) => {
+export const Experience: React.FC<{ data: TimelineEntry[] }> = ({ data }) => {
   const ref = React.useRef<HTMLDivElement>(null)
   const containerRef = React.useRef<HTMLDivElement>(null)
   const [height, setHeight] = React.useState(0)
@@ -43,7 +43,7 @@ export const ExperienceSection: React.FC<{ data: TimelineEntry[] }> = ({ data })
                   <div className='h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center'>
                     <div className='h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2' />
                   </div>
-                  <h3 className='hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 '>
+                  <h3 className='hidden md:block text-xl md:pl-20 md:text-2xl font-bold text-neutral-500 dark:text-neutral-500 '>
                     {item.title}
                   </h3>
                 </div>
@@ -68,7 +68,7 @@ export const ExperienceSection: React.FC<{ data: TimelineEntry[] }> = ({ data })
                   height: heightTransform,
                   opacity: opacityTransform,
                 }}
-                className='absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full'
+                className='absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-primary via-violet-900 to-transparent from-[0%] via-[10%] rounded-full'
               />
             </div>
           </div>

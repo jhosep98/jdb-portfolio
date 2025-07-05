@@ -130,6 +130,7 @@ export const ContactForm: React.FC = () => {
           size='lg'
           ref={buttonRef}
           disabled={form.formState.isSubmitting || !form.formState.isValid}
+          aria-label='Send Message'
         >
           Send Message
         </Button>

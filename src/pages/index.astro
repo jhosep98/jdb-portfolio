@@ -1,7 +1,7 @@
 ---
 import { AboutSection } from '@/components/about'
 import { ContactSection } from '@/components/contact'
-import { ExperienceSection } from '@/components/experience'
+import { ExperienceSection } from '@/components/experience-section'
 import { FooterSection } from '@/components/footer'
 import { HeroSection } from '@/components/hero'
 import { ProjectsSection } from '@/components/projects'
@@ -29,16 +29,8 @@ import Layout from '@/layouts/Layout.astro'
   <AboutSection />
   <SkillsSection client:load />
   <ProjectsSection />
-  <ExperienceSection
-    client:load
-    data={[
-      {
-        title: "Experience",
-        content: "Experience",
-      },
-    ]}
-  />
-  <TestimonialsSection client:load />
+  <ExperienceSection client:only />
   <ContactSection client:only />
+  <TestimonialsSection client:load />
   <FooterSection />
 </Layout>
