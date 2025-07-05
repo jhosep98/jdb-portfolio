@@ -40,7 +40,7 @@ export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
           <div className='relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4'>
             <div className='flex w-full justify-between lg:w-auto'>
               <a
-                href={lang === 'es' ? '/es' : '/'}
+                href="/"
                 aria-label='home'
                 className='flex items-center space-x-2'
               >
@@ -91,7 +91,7 @@ export const HeroHeader: React.FC<HeaderProps> = ({ menuItems, lang }) => {
 
               <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit'>
                 <Button asChild variant='outline' size='sm'>
-                  <a href='/'>
+                  <a href='#contact'>
                     <span>Let's talk</span>
                   </a>
                 </Button>
