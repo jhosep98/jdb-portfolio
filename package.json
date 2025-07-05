@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/react": "4.3.0",
+    "@astrojs/sitemap": "3.4.1",
     "@fontsource-variable/open-sans": "5.2.6",
     "@hookform/resolvers": "5.1.1",
     "@radix-ui/react-avatar": "1.1.10",

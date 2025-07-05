@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jdb-portfolio.vercel.app/sitemap-index.xml
