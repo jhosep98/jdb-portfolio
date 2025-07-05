@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: "Geist Mono", "sans-serif";
+  --font-sans: "Open Sans", "sans-serif";
 }
 
 @theme inline {

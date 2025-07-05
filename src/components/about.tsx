@@ -29,8 +29,8 @@ export const AboutSection: React.FC = () => {
                 decoding='async'
               />
 
-              <span className='text-center font-semibold text-xl mt-2'>{userData.name}</span>
-              <span className='text-center text-primary font-semibold'>Full Stack Developer</span>
+              <span className='text-center mt-2'>{userData.name}</span>
+              <span className='text-center text-xl font-semibold'>Full Stack Developer</span>
             </CardHeader>
 
             <CardContent className='space-y-4 px-12'>

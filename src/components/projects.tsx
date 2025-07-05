@@ -82,8 +82,13 @@ const IntegrationCard: React.FC<{
 
       <div className='flex gap-3 border-t border-dashed pt-6'>
         <Button asChild size='sm' className='gap-1 pr-2 shadow-none'>
-          <a href={link} target='_blank' rel='noopener noreferrer' aria-label='Learn More'>
-            Learn More
+          <a
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`View ${title} project repository`}
+          >
+            View project repository
             <ChevronRight className='ml-0 !size-3.5 opacity-50' />
           </a>
         </Button>

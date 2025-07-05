@@ -5,12 +5,12 @@
       "name": "jdb-portfolio",
       "dependencies": {
         "@astrojs/react": "4.3.0",
-        "@fontsource-variable/geist-mono": "5.2.6",
+        "@fontsource-variable/open-sans": "5.2.6",
         "@hookform/resolvers": "5.1.1",
         "@radix-ui/react-avatar": "1.1.10",
         "@radix-ui/react-dropdown-menu": "2.1.15",
         "@radix-ui/react-label": "2.1.7",
-        "@radix-ui/react-separator": "^1.1.7",
+        "@radix-ui/react-separator": "1.1.7",
         "@radix-ui/react-slot": "1.2.3",
         "@tailwindcss/vite": "4.1.11",
         "@types/react": "19.1.8",
@@ -171,7 +171,7 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
 
-    "@fontsource-variable/geist-mono": ["@fontsource-variable/geist-mono@5.2.6", "", {}, "sha512-vw6T9JGTrYJ980bn7W8iTPhe2jVK5ifunVs7xh9dfTVArjDSkJs03JjeZrH5LKEpGABLXSlSlNU57HRm4tmFMg=="],
+    "@fontsource-variable/open-sans": ["@fontsource-variable/open-sans@5.2.6", "", {}, "sha512-O596UvQZ7KkR8yDJWIP8UZZoqs0DHpYsrL0Szml0/EkrJ35HcMIM3bJ3sSAIAjWsBSqKgzV2HJEIuhvxBd1iog=="],
 
     "@hookform/resolvers": ["@hookform/resolvers@5.1.1", "", { "dependencies": { "@standard-schema/utils": "^0.3.0" }, "peerDependencies": { "react-hook-form": "^7.55.0" } }, "sha512-J/NVING3LMAEvexJkyTLjruSm7aOFx7QX21pzkiJfMoNG0wl5aFEjLTl7ay7IQb9EWY6AkrBy7tHL2Alijpdcg=="],
 
