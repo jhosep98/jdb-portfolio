@@ -2,18 +2,29 @@
   "name": "jdb-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Jhosep Davila",
+  "description": "My personal portfolio",
+  "homepage": "https://jdb-portfolio.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhosep98/jdb-portfolio.git"
+  },
+  "packageManager": "bun@1.2.5",
+  "keywords": ["portfolio", "astro", "react", "tailwindcss", "vercel"],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "pnpm exec biome format --write",
-    "lint": "pnpm exec biome lint --write",
-    "check": "pnpm exec biome check --write"
+    "format": "exec biome format --write",
+    "lint": "exec biome lint --write",
+    "check": "exec biome check --write"
   },
   "dependencies": {
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.4.1",
+    "@astrojs/vercel": "8.2.1",
     "@fontsource-variable/open-sans": "5.2.6",
     "@hookform/resolvers": "5.1.1",
     "@radix-ui/react-avatar": "1.1.10",
