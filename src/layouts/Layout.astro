@@ -1,8 +1,21 @@
 ---
-import '@fontsource-variable/open-sans'
-import openSansWoff2 from '@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url'
-import '../styles/global.css'
-import { HeroHeader } from '@/components/header'
+// Fonts
+import "@fontsource-variable/open-sans";
+import openSansWoff2 from "@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url";
+
+// Styles
+import "../styles/global.css";
+
+// Components
+import { HeroHeader } from "@/components/header";
+
+// Props
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <script is:inline>
@@ -35,11 +48,12 @@ import { HeroHeader } from '@/components/header'
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Jhosep Davila — Web Developer</title>
+    <title>{title}</title>
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta
       name="description"
-      content="Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."
+      content={description ||
+        "Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."}
     />
     <meta name="author" content="Jhosep Davila" />
     <meta
@@ -48,10 +62,11 @@ import { HeroHeader } from '@/components/header'
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#030014" />
-    <meta name="og:title" content="Jhosep Davila — Web Developer" />
+    <meta name="og:title" content={title} />
     <meta
       name="og:description"
-      content="Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."
+      content={description ||
+        "Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."}
     />
     <meta name="og:type" content="website" />
     <meta name="og:url" content="https://jdb-portfolio.vercel.app/" />
@@ -60,10 +75,11 @@ import { HeroHeader } from '@/components/header'
       content="https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jhosep Davila — Web Developer" />
+    <meta name="twitter:title" content={title} />
     <meta
       name="twitter:description"
-      content="Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."
+      content={description ||
+        "Jhosep Davila is a web developer with a passion for creating beautiful and functional websites."}
     />
     <meta
       name="twitter:image"
