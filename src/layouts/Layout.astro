@@ -1,21 +1,21 @@
 ---
 // Fonts
-import "@fontsource-variable/open-sans";
-import openSansWoff2 from "@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url";
+import '@fontsource-variable/open-sans'
+import openSansWoff2 from '@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url'
 
 // Styles
-import "../styles/global.css";
+import '../styles/global.css'
 
 // Components
-import { HeroHeader } from "@/components/header";
+import { HeroHeader } from '@/components/header'
 
 // Props
 interface Props {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
-const { title, description } = Astro.props;
+const { title, description } = Astro.props
 ---
 
 <script is:inline>
@@ -100,15 +100,13 @@ const { title, description } = Astro.props;
     <main>
       <slot />
     </main>
-  </body>
+  </body><style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+  </style>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    scroll-behavior: smooth;
-  }
-</style>
