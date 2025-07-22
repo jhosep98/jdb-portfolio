@@ -2,6 +2,7 @@
 import '@fontsource-variable/open-sans'
 import openSansWoff2 from '@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url'
 import '../styles/global.css'
+import { HeroHeader } from '@/components/header'
 ---
 
 <script is:inline>
@@ -54,7 +55,10 @@ import '../styles/global.css'
     />
     <meta name="og:type" content="website" />
     <meta name="og:url" content="https://jdb-portfolio.vercel.app/" />
-    <meta name="og:image" content="https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png" />
+    <meta
+      name="og:image"
+      content="https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Jhosep Davila — Web Developer" />
     <meta
@@ -75,7 +79,11 @@ import '../styles/global.css'
   </head>
 
   <body class="bg-background text-foreground">
-    <slot />
+    <HeroHeader client:only />
+
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 

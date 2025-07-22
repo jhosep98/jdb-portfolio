@@ -15,5 +15,14 @@ export const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) =
 
   const { View } = useLottie(options)
 
-  return <div className={cn('flex h-full w-full flex-col', className)}>{View}</div>
+  return (
+    <div
+      className={cn(
+        'flex h-full w-full flex-col drop-shadow-xl drop-shadow-zinc-950/15 dark:drop-shadow-zinc-950/5 py-8',
+        className,
+      )}
+    >
+      {View}
+    </div>
+  )
 }

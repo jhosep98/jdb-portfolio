@@ -1,35 +1,8 @@
 ---
-import { AboutSection } from '@/components/about'
-import { ContactSection } from '@/components/contact'
-import { ExperienceSection } from '@/components/experience-section'
-import { FooterSection } from '@/components/footer'
 import { HeroSection } from '@/components/hero'
-import { ProjectsSection } from '@/components/projects'
-import { SkillsSection } from '@/components/skills'
-import { TestimonialsSection } from '@/components/testimonials'
 import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
-  <HeroSection
-    client:load
-    title="I'm here to help you build your next project!"
-    tag="It's Jhosep, Your Full Stack Developer!"
-    labelFirstButton="See more"
-    labelSecondButton="Book a call"
-    menuItems={[
-      { name: "About", href: "#about" },
-      { name: "Skills", href: "#skills" },
-      { name: "Projects", href: "#projects" },
-      { name: "Experience", href: "#experience" },
-      { name: "Testimonials", href: "#testimonials" },
-    ]}
-  />
-  <AboutSection />
-  <SkillsSection client:load />
-  <ProjectsSection />
-  <ExperienceSection client:only />
-  <ContactSection client:only />
-  <TestimonialsSection client:load />
-  <FooterSection />
+  <HeroSection client:load />
 </Layout>
