@@ -1,11 +1,7 @@
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
-import { ArrowRight } from 'lucide-react'
 import type { Variants } from 'motion'
 import type * as React from 'react'
-import { HeroHeader, type MenuItem } from './header'
-import { HeroHighlight } from './ui/hero-highlight'
 import blogging from '@/assets/blogging.json'
 import { ImageAnimation } from '@/components/image-animation'
 
@@ -35,11 +31,11 @@ export const HeroSection: React.FC = () => (
   <>
     {/* <HeroHighlight containerClassName="min-h-screen flex items-center justify-center"> */}
     <div className='min-h-screen flex items-center justify-center'>
-      <div className='mx-auto max-w-6xl px-6 lg:px-12 pt-14 md:pt-0'>
-        <section className='overflow-hidden grid gap-12 md:gap-6 md:grid-cols-2 items-center'>
+      <div className='mx-auto max-w-6xl px-6 lg:px-12 pt-14 lg:pt-0'>
+        <section className='overflow-hidden grid gap-12 lg:gap-6 lg:grid-cols-2 items-center'>
           <div>
             <AnimatedGroup variants={transitionVariants}>
-              <span className='hover:bg-background dark:hover:border-t-border bg-muted group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 pr-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 mx-auto md:mx-0'>
+              <span className='hover:bg-background dark:hover:border-t-border bg-muted group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 pr-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 mx-auto lg:mx-0'>
                 <span className='text-foreground text-sm'>👋 It's Jhosep, I'm Web Developer!</span>
               </span>
             </AnimatedGroup>
@@ -48,7 +44,7 @@ export const HeroSection: React.FC = () => (
               preset='fade-in-blur'
               speedSegment={0.3}
               as='h1'
-              className='mt-8 text-balance text-center md:text-left text-6xl md:text-7xl font-semibold tracking-tight'
+              className='mt-8 text-center lg:text-left text-6xl lg:text-7xl font-semibold tracking-tight'
             >
               I'm here to help you build your next project!
             </TextEffect>
@@ -65,7 +61,7 @@ export const HeroSection: React.FC = () => (
                 },
                 ...transitionVariants,
               }}
-              className='mt-8 md:mt-12 flex items-center justify-center md:justify-start'
+              className='mt-8 lg:mt-12 flex items-center justify-center lg:justify-start'
             >
               <div className='flex flex-wrap justify-center gap-6'>
                 <a

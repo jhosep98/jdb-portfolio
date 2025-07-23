@@ -8,6 +8,7 @@ import '../styles/global.css'
 
 // Components
 import { HeroHeader } from '@/components/header'
+import { cn } from '@/lib/utils'
 
 // Props
 interface Props {
@@ -16,6 +17,14 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+
+// Menu
+const ITEMS = [
+  { name: 'About', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Contact', href: '/contact' },
+]
 ---
 
 <script is:inline>
@@ -95,7 +104,25 @@ const { title, description } = Astro.props
   </head>
 
   <body class="bg-background text-foreground">
-    <HeroHeader client:only />
+    <HeroHeader client:only>
+      {
+        ITEMS.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={cn(
+                "text-muted-foreground hover:text-accent-foreground block duration-150",
+                {
+                  "text-accent-foreground": Astro.url.pathname === item.href,
+                }
+              )}
+            >
+              <span>{item.name}</span>
+            </a>
+          </li>
+        ))
+      }
+    </HeroHeader>
 
     <main>
       <slot />
