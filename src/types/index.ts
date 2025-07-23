@@ -20,6 +20,7 @@ export interface GithubRepo {
   name: string
   stargazers_count: number
   html_url: string
+  description: string
 }
 
 export interface GithubStarsResponse {

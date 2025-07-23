@@ -1,10 +1,11 @@
 import type { GithubUser } from '../types'
 
-export const useGetInfoUser = async () => {
+export const useGetInfoUser = async (): Promise<GithubUser> => {
   try {
     const response = await fetch('https://api.github.com/user', {
       headers: {
         Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github.v3+json',
       },
     })
 
