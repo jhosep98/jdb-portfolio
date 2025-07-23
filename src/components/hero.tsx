@@ -4,6 +4,7 @@ import type { Variants } from 'motion'
 import type * as React from 'react'
 import blogging from '@/assets/blogging.json'
 import { ImageAnimation } from '@/components/image-animation'
+import { HeroHighlight } from './ui/hero-highlight'
 
 const transitionVariants: {
   item?: Variants
@@ -29,8 +30,8 @@ const transitionVariants: {
 
 export const HeroSection: React.FC = () => (
   <>
-    {/* <HeroHighlight containerClassName="min-h-screen flex items-center justify-center"> */}
-    <div className='min-h-screen flex items-center justify-center'>
+    <HeroHighlight containerClassName='min-h-screen flex items-center justify-center'>
+      {/* <div className='min-h-screen flex items-center justify-center'> */}
       <div className='mx-auto max-w-6xl px-6 lg:px-12 pt-14 lg:pt-0'>
         <section className='overflow-hidden grid gap-12 lg:gap-6 lg:grid-cols-2 items-center'>
           <div>
@@ -224,7 +225,7 @@ export const HeroSection: React.FC = () => (
           </AnimatedGroup> */}
         </section>
       </div>
-    </div>
-    {/* </HeroHighlight> */}
+      {/* </div> */}
+    </HeroHighlight>
   </>
 )

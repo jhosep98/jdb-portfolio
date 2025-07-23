@@ -58,7 +58,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ children }) => {
 
               <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit'>
                 <Button asChild variant='outline'>
-                  <a href='#contact'>
+                  <a href={import.meta.env.PUBLIC_CALENDLY_EVENT} target='_blank' rel='noreferrer'>
                     <span>Let's talk</span>
                   </a>
                 </Button>

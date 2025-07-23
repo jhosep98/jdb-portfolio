@@ -59,14 +59,14 @@ export const TestimonialsSection: React.FC = () => (
                   </Avatar>
 
                   <div>
-                    <h3 className='font-medium'>{name}</h3>
+                    <h3 className='font-bold text-lg'>{name}</h3>
 
                     <span className='text-muted-foreground block text-sm tracking-wide'>
                       {role}
                     </span>
 
                     <blockquote className='mt-3'>
-                      <p className='text-muted-foreground'>{quote}</p>
+                      <p className=''>{quote}</p>
                     </blockquote>
                   </div>
                 </CardContent>
