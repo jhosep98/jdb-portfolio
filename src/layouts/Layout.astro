@@ -106,24 +106,24 @@ const ITEMS = [
 
   <body class="bg-background text-foreground">
     <HeroHeader client:load>
-      {
-        ITEMS.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              aria-label={item.name}
-              class={cn(
-                "text-muted-foreground hover:text-accent-foreground block duration-150",
-                {
-                  "text-accent-foreground": Astro.url.pathname === item.href,
-                }
-              )}
-            >
-              <span>{item.name}</span>
-            </a>
-          </li>
-        ))
-      }
+      <ul class="space-y-6 text-sm md:space-y-0 md:flex md:gap-8 md:text-base'">
+        {
+          ITEMS.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-label={item.name}
+                class={cn("hover:text-primary block duration-150", {
+                  "text-primary font-semibold":
+                    Astro.url.pathname === item.href,
+                })}
+              >
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </HeroHeader>
 
     <main>

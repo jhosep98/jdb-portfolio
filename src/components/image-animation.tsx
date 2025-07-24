@@ -12,6 +12,8 @@ export const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) =
     loop: true,
     autoplay: true,
     'aria-label': 'Person working with laptop',
+    role: 'img',
+    title: 'Person working with laptop',
   }
 
   const { View } = useLottie(options)

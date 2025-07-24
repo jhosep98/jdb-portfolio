@@ -19,7 +19,7 @@ export const IntegrationCard: React.FC<{
       </div>
 
       <div className='flex gap-3 border-t border-dashed pt-6'>
-        <Button asChild size='sm' className='gap-1 pr-2 shadow-none'>
+        <Button asChild size='sm' className='gap-1 pr-2 shadow-none dark:text-white'>
           <a
             href={link}
             target='_blank'

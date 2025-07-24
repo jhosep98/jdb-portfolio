@@ -104,6 +104,7 @@ export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => 
                 href='https://drive.google.com/file/d/1yLeOcPG89UfBBuff4Ba-jqeL6B3n_5Jj/view?usp=sharing'
                 target='_blank'
                 rel='noreferrer'
+                className='dark:text-white'
               >
                 <Download />
                 Download CV

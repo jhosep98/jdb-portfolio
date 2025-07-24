@@ -26,7 +26,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ children }) => {
       <nav data-state={menuState && 'active'} className='fixed z-50 w-full px-2'>
         <div
           className={cn(
-            'mx-auto mt-4 px-6 transition-all duration-300 lg:px-12 bg-background/50 max-w-4xl rounded-xl border backdrop-blur-lg',
+            'mx-auto mt-4 px-6 transition-all duration-300 lg:px-12 bg-card max-w-4xl rounded-xl border backdrop-blur-lg',
             isScrolled && '',
           )}
         >
@@ -47,14 +47,10 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ children }) => {
               </button>
             </div>
 
-            <div className='absolute inset-0 m-auto hidden size-fit lg:block'>
-              <ul className='flex gap-8 text-sm'>{children}</ul>
-            </div>
+            <div className='absolute inset-0 m-auto hidden size-fit lg:block'>{children}</div>
 
             <div className='bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent'>
-              <div className='lg:hidden'>
-                <ul className='space-y-6 text-base'>{children}</ul>
-              </div>
+              <div className='lg:hidden'>{children}</div>
 
               <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit'>
                 <Button asChild variant='outline'>
