@@ -168,29 +168,6 @@ export const HeroSection: React.FC = () => (
                   </svg>
                 </a>
               </div>
-              {/* <Button key={1} asChild size="lg" className="rounded-xl px-5">
-                  <a href="#about">
-                    <span className="text-nowrap">See more</span>
-                    <ArrowRight className="size-4" />
-                  </a>
-                </Button>
-
-                <Button
-                  key={2}
-                  asChild
-                  size="lg"
-                  variant="ghost"
-                  className="h-10.5 rounded-xl px-5"
-                >
-                  <a
-                    href={import.meta.env.PUBLIC_CALENDLY_EVENT}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className="text-nowrap">Book a call</span>
-                    <ArrowRight className="size-4" />
-                  </a>
-                </Button> */}
             </AnimatedGroup>
           </div>
 
@@ -199,33 +176,8 @@ export const HeroSection: React.FC = () => (
               <ImageAnimation src={blogging} />
             </div>
           </AnimatedGroup>
-
-          {/* <AnimatedGroup
-            variants={{
-              container: {
-                visible: {
-                  transition: {
-                    staggerChildren: 0.05,
-                    delayChildren: 0.75,
-                  },
-                },
-              },
-              ...transitionVariants,
-            }}
-          >
-            <div className='relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20'>
-              <div
-                aria-hidden
-                className='bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%'
-              />
-              <div className='inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1'>
-                <ImageAnimation src={blogging} />
-              </div>
-            </div>
-          </AnimatedGroup> */}
         </section>
       </div>
-      {/* </div> */}
     </HeroHighlight>
   </>
 )

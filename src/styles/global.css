@@ -9,7 +9,7 @@
   animation-duration: 0.5s;
 }
 
-::view-transition-old(root) {
+/* ::view-transition-old(root) {
   animation: slide-out-to-left 0.5s forwards;
 }
 
@@ -33,7 +33,7 @@
   to {
     transform: translateX(0);
   }
-}
+} */
 
 @custom-variant dark (&:is(.dark *));
 
