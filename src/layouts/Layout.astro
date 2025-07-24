@@ -9,7 +9,6 @@ import '../styles/global.css'
 // Components
 import { HeroHeader } from '@/components/header'
 import { cn } from '@/lib/utils'
-import { HeroHighlight } from '@/components/ui/hero-highlight'
 
 // Props
 interface Props {
@@ -106,7 +105,7 @@ const ITEMS = [
   </head>
 
   <body class="bg-background text-foreground">
-    <HeroHeader client:only>
+    <HeroHeader client:load>
       {
         ITEMS.map((item) => (
           <li>
