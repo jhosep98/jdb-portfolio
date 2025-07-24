@@ -30,9 +30,9 @@ const transitionVariants: {
 
 export const HeroSection: React.FC = () => (
   <>
-    <HeroHighlight containerClassName='min-h-screen flex items-center justify-center'>
+    <HeroHighlight containerClassName='md:min-h-screen flex items-center justify-center'>
       {/* <div className='min-h-screen flex items-center justify-center'> */}
-      <div className='mx-auto max-w-6xl px-6 lg:px-12 pt-14 lg:pt-0'>
+      <div className='mx-auto max-w-6xl px-6 lg:px-12 pt-26 lg:pt-0'>
         <section className='overflow-hidden grid gap-12 lg:gap-6 lg:grid-cols-2 items-center'>
           <div>
             <AnimatedGroup variants={transitionVariants}>

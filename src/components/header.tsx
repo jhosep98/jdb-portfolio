@@ -52,14 +52,14 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ children }) => {
             <div className='bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent'>
               <div className='lg:hidden'>{children}</div>
 
-              <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit'>
+              <div className='flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit md:flex-row-reverse'>
+                <ModeToggle />
+
                 <Button asChild variant='outline'>
                   <a href={import.meta.env.PUBLIC_CALENDLY_EVENT} target='_blank' rel='noreferrer'>
                     <span>Let's talk</span>
                   </a>
                 </Button>
-
-                <ModeToggle />
               </div>
             </div>
           </div>

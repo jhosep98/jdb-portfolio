@@ -39,7 +39,7 @@ const chunkArray = (array: Testimonial[], chunkSize: number): Testimonial[][] =>
 const testimonialChunks = chunkArray(testimonials, Math.ceil(testimonials.length / 3))
 
 export const TestimonialsSection: React.FC = () => (
-  <section id='testimonials' className='py-16 md:py-32'>
+  <section id='testimonials' className='pt-26 pb-4 md:pt-32'>
     <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16'>
       <div>
         <h2 className='relative mb-5 pb-5 text-balance text-3xl font-semibold md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'>
