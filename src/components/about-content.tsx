@@ -101,7 +101,7 @@ export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => 
           <div className='pt-6'>
             <Button asChild>
               <a
-                href='https://drive.google.com/file/d/1yLeOcPG89UfBBuff4Ba-jqeL6B3n_5Jj/view?usp=sharing'
+                href='https://drive.google.com/file/d/1Eq2WyCgkm0ighmIZcHp8PUEINVO20TfR/view?usp=sharing'
                 target='_blank'
                 rel='noreferrer'
                 className='dark:text-white'
