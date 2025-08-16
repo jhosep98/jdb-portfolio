@@ -1,9 +1,9 @@
+import blogging from '@/assets/blogging.json'
+import { ImageAnimation } from '@/components/image-animation'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { TextEffect } from '@/components/ui/text-effect'
 import type { Variants } from 'motion'
 import type * as React from 'react'
-import blogging from '@/assets/blogging.json'
-import { ImageAnimation } from '@/components/image-animation'
 import { HeroHighlight } from './ui/hero-highlight'
 
 const transitionVariants: {

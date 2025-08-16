@@ -1,15 +1,50 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Download, Mail, MapPin, Phone } from 'lucide-react'
-import * as React from 'react'
-import { Button } from './ui/button'
+import { getGithubUser } from '@/hooks/getGithubUser'
 import type { GithubUser } from '@/types'
+import { useQuery } from '@tanstack/react-query'
+import { AlertTriangle, Download, Mail, MapPin, Phone } from 'lucide-react'
+import type * as React from 'react'
+import { Loader } from './loader'
+import { Button } from './ui/button'
 
-interface AboutCOntentProps {
-  fetchUserData: Promise<GithubUser>
+interface AboutContentProps {
+  token: string
 }
 
-export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => {
-  const userData = React.use(fetchUserData)
+export const AboutContent: React.FC<AboutContentProps> = ({ token }) => {
+  const {
+    data: userData,
+    error,
+    isError,
+    isPending,
+  } = useQuery<GithubUser>({
+    queryKey: ['userData'],
+    queryFn: async () => await getGithubUser({ token }),
+  })
+
+  if (isPending) {
+    return (
+      <div
+        className='flex min-h-[200px] flex-col items-center justify-center rounded-md border border-border bg-muted/40 p-4 text-muted-foreground [&>div>div>div]:bg-primary '
+        aria-live='polite'
+      >
+        <Loader />
+        <span className='mt-2 text-sm'>Loading data...</span>
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <div
+        className='flex items-center justify-center rounded-md border border-destructive bg-destructive/10 p-4 text-destructive'
+        role='alert'
+      >
+        <AlertTriangle className='mr-2 size-5' />
+        <span className='text-sm'>Error: {error.message}</span>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -26,7 +61,7 @@ export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => 
               decoding='async'
             />
 
-            <span className='text-center mt-2'>{userData.name}</span>
+            <span className='text-center mt-2'>{userData?.name}</span>
             <span className='text-center text-xl font-semibold'>Full Stack Developer</span>
           </CardHeader>
 
@@ -69,11 +104,11 @@ export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => 
           <div className='pt-6'>
             <div className='grid grid-cols-2 gap-2'>
               <div className='space-y-4'>
-                <div className='text-5xl font-bold'>{userData.followers}</div>
+                <div className='text-5xl font-bold'>{userData?.followers}</div>
                 <p>Followers</p>
               </div>
               <div className='space-y-4'>
-                <div className='text-5xl font-bold'>{userData.public_repos}</div>
+                <div className='text-5xl font-bold'>{userData?.public_repos}</div>
                 <p>Powered Apps</p>
               </div>
             </div>
@@ -101,7 +136,7 @@ export const AboutContent: React.FC<AboutCOntentProps> = ({ fetchUserData }) => 
           <div className='pt-6'>
             <Button asChild>
               <a
-                href='https://drive.google.com/file/d/1Eq2WyCgkm0ighmIZcHp8PUEINVO20TfR/view?usp=sharing'
+                href='https://drive.google.com/file/d/131gAgzG2qMzx5M2OyyK8Z2GkZGhOBkfO/view?usp=sharing'
                 target='_blank'
                 rel='noreferrer'
                 className='dark:text-white'

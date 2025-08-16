@@ -1,11 +1,13 @@
 ---
 import { AboutSection } from '@/components/about'
 import Layout from '@/layouts/Layout.astro'
+
+const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN
 ---
 
 <Layout
   title="About Me"
   description="Learn more about Jhosep Davila, a web developer with a passion for creating beautiful and functional websites."
 >
-  <AboutSection />
+  <AboutSection token={GITHUB_TOKEN} client:load />
 </Layout>

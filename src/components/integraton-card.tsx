@@ -1,7 +1,7 @@
-import type * as React from 'react'
-import { Card } from './ui/card'
-import { Button } from './ui/button'
 import { ChevronRight } from 'lucide-react'
+import type * as React from 'react'
+import { Button } from './ui/button'
+import { Card } from './ui/card'
 
 export const IntegrationCard: React.FC<{
   title: string
