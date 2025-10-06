@@ -1,40 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-group(*) {
-  animation-duration: 0.5s;
-}
-
-/* ::view-transition-old(root) {
-  animation: slide-out-to-left 0.5s forwards;
-}
-
-::view-transition-new(root) {
-  animation: slide-in-from-right 0.5s forwards;
-}
-
-@keyframes slide-out-to-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slide-in-from-right {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-} */
-
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -158,12 +124,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/**
-primary: "oklch(0.4501 0.2375 284.07)"
-secondary: "oklch(0.6679 0.1735 25.36)"
-background-dark: "oklch(0.0962 0.0562 285.05)"
-background-light: "oklch(0.9816 0.0026 106.45)"
-foreground-dark: "oklch(0.9626 0.020359 298.1966)"
-foreground-light: "oklch(0.2514 0.0949 286.81)"
-**/

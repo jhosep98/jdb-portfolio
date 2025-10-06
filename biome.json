@@ -1,48 +1,33 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "node_modules",
-      "dist",
-      "build",
-      "public",
-      ".astro",
-      ".vercel",
-      "src/assets"
-    ],
-    "include": [
-      "**/*.ts",
-      "**/*.js",
-      "**/*.json",
-      "**/*.tsx",
-      "**/*.astro",
-      "**/*.mjs",
-      "**/*.css"
-    ]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedVariables": "warn"
-      },
-      "style": {
-        "useFragmentSyntax": "warn"
-      }
-    }
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80,
-    "ignore": []
+    "lineWidth": 80
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
   },
   "javascript": {
     "formatter": {
@@ -50,8 +35,14 @@
       "jsxQuoteStyle": "single",
       "quoteStyle": "single",
       "lineWidth": 100,
-      "semicolons": "asNeeded",
-      "trailingCommas": "all"
+      "semicolons": "asNeeded"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
     }
   }
 }

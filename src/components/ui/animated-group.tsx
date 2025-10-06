@@ -1,4 +1,6 @@
-import { type Variants, motion } from 'motion/react'
+'use client'
+import { ReactNode } from 'react'
+import { motion, Variants } from 'motion/react'
 import * as React from 'react'
 
 export type PresetType =
@@ -14,7 +16,7 @@ export type PresetType =
   | 'swing'
 
 export type AnimatedGroupProps = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   variants?: {
     container?: Variants
@@ -117,7 +119,6 @@ function AnimatedGroup({
     () => motion.create(as as keyof React.JSX.IntrinsicElements),
     [as],
   )
-
   const MotionChild = React.useMemo(
     () => motion.create(asChild as keyof React.JSX.IntrinsicElements),
     [asChild],
@@ -131,7 +132,7 @@ function AnimatedGroup({
       className={className}
     >
       {React.Children.map(children, (child, index) => (
-        <MotionChild key={`${index + 1}`} variants={itemVariants}>
+        <MotionChild key={index} variants={itemVariants}>
           {child}
         </MotionChild>
       ))}
