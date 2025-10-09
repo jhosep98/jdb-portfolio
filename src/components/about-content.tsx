@@ -32,7 +32,6 @@ async function fetchGithubUser(): Promise<ResponseGithubUserType | null> {
         Authorization: `Bearer ${GITHUB_TOKEN}`,
         Accept: 'application/vnd.github.v3+json',
       },
-      cache: 'no-store', // or 'force-cache' with revalidate
     })
 
     if (!response.ok) {
