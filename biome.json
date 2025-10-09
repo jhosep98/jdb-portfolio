@@ -7,7 +7,14 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": [
+      "**",
+      "!src/assets/blogging.json",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build"
+    ]
   },
   "formatter": {
     "enabled": true,

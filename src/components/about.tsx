@@ -1,11 +1,7 @@
-import type { Metadata } from 'next'
-import AboutContent from '@/components/about-content'
+import type * as React from 'react'
+import AboutContent from './about-content'
 
-export const metadata: Metadata = {
-  title: 'About me - Jhosep Davila',
-}
-
-export default function AboutPage() {
+const About: React.FC = () => {
   return (
     <section id='about' className='pt-26 pb-4 md:pt-44'>
       <div className='mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 min-h-[420px]'>
@@ -20,3 +16,5 @@ export default function AboutPage() {
     </section>
   )
 }
+
+export default About

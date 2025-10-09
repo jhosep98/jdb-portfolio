@@ -2,7 +2,7 @@
 
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import * as React from 'react'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
 
@@ -14,7 +14,7 @@ const menuItems = [
   { name: 'Testimonials', href: '/testimonials' },
 ]
 
-const Header = () => {
+const Header: React.FC = () => {
   const [menuState, setMenuState] = React.useState(false)
 
   return (

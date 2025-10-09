@@ -1,7 +1,7 @@
 import type { Variants } from 'motion'
 import type * as React from 'react'
 import blogging from '@/assets/blogging.json'
-import { ImageAnimation } from '@/components/image-animation'
+import ImageAnimation from '@/components/image-animation'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { TextEffect } from '@/components/ui/text-effect'
 import { HeroHighlight } from './ui/hero-highlight'
@@ -28,7 +28,7 @@ const transitionVariants: {
   },
 }
 
-export const Hero: React.FC = () => (
+const Hero: React.FC = () => (
   <HeroHighlight containerClassName='min-h-screen flex items-center justify-center'>
     {/* <div className='min-h-screen flex items-center justify-center'> */}
     <div className='mx-auto max-w-6xl pt-32 lg:pt-0 px-4 lg:px-6'>
@@ -179,3 +179,5 @@ export const Hero: React.FC = () => (
     </div>
   </HeroHighlight>
 )
+
+export default Hero

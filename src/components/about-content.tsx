@@ -1,0 +1,171 @@
+import { Download, Mail, MapPin, Phone } from 'lucide-react'
+import Image from 'next/image'
+import type * as React from 'react'
+import { GITHUB_API_URL } from '@/lib/constants'
+import type { ResponseGithubUserType } from '@/lib/types'
+import { Button } from './ui/button'
+import { Card, CardContent, CardHeader } from './ui/card'
+
+const DEFAULT_USER_DATA = {
+  avatar_url: '/default-avatar.png',
+  name: 'Jhosep Davila',
+  followers: 0,
+  public_repos: 0,
+}
+
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+
+async function fetchGithubUser(): Promise<ResponseGithubUserType | null> {
+  try {
+    if (!GITHUB_TOKEN) {
+      console.error(
+        'GitHub token is not available. Please set the GITHUB_TOKEN environment variable.',
+      )
+      return {
+        success: false,
+        error: 'Configuration error: GitHub token is missing.',
+      }
+    }
+
+    const response = await fetch(GITHUB_API_URL || '', {
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+      cache: 'no-store', // or 'force-cache' with revalidate
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({
+        message: `Request failed with status ${response.status}`,
+      }))
+
+      return {
+        success: false,
+        error: errorData.message || `Failed to fetch user data (${response.status})`,
+      }
+    }
+
+    const data = await response.json()
+
+    return {
+      success: true,
+      data,
+    }
+  } catch (error) {
+    console.error('Unexpected error fetching GitHub user:', error)
+    return {
+      success: false,
+      error: 'An unexpected error occurred while fetching user data.',
+    }
+  }
+}
+
+const AboutContent: React.FC = async () => {
+  const result = await fetchGithubUser()
+
+  const user = result?.success ? result.data : DEFAULT_USER_DATA
+
+  return (
+    <div className='grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24'>
+      <Card className='py-12'>
+        <CardHeader className='mb-4'>
+          <Image
+            src={user?.avatar_url ?? DEFAULT_USER_DATA.avatar_url}
+            className='rounded-full inline-block w-28 h-28 mx-auto object-cover object-top'
+            alt='Jhosep Davila'
+            width={378}
+            height={410}
+          />
+
+          <span className='text-center mt-2'>{user?.name}</span>
+          <span className='text-center text-xl font-semibold'>Full Stack Developer</span>
+        </CardHeader>
+
+        <CardContent className='space-y-4 px-12'>
+          <a
+            href='mailto:jhosepdb14@gmail.com'
+            className='flex items-center gap-4 text-sm px-4 py-2 rounded-xl border hover:bg-accent hover:text-foreground'
+          >
+            <span>
+              <Mail className='size-4' />
+            </span>
+            jhosepdb14@gmail.com
+          </a>
+
+          <a
+            href='tel:+5491124004135'
+            className='flex items-center gap-4 text-sm px-4 py-2 rounded-xl border hover:bg-accent hover:text-foreground'
+          >
+            <span>
+              <Phone className='size-4' />
+            </span>
+            +54 9 1124004135
+          </a>
+
+          <span className='flex items-center gap-4 text-sm px-4 py-2 rounded-xl border hover:bg-accent hover:text-foreground cursor-pointer'>
+            <span>
+              <MapPin className='size-4' />
+            </span>
+            Buenos Aires, Argentina
+          </span>
+        </CardContent>
+      </Card>
+
+      <div className='relative space-y-4'>
+        <p className='text-muted-foreground'>
+          With a passion for technology and web development ignited in 2021, I bring three years of
+          hands-on experience in crafting optimized and scalable user interfaces.
+        </p>
+
+        <div className='pt-6'>
+          <div className='grid grid-cols-2 gap-2'>
+            <div className='space-y-4'>
+              <div className='text-5xl font-bold'>{user?.followers}</div>
+              <p>Followers</p>
+            </div>
+            <div className='space-y-4'>
+              <div className='text-5xl font-bold'>{user?.public_repos}</div>
+              <p>Powered Apps</p>
+            </div>
+          </div>
+        </div>
+
+        <div className='pt-6'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            <div>
+              <span className='text-muted-foreground text-sm block'>Specialization</span>
+              <span>Full Stack Developer</span>
+            </div>
+
+            <div>
+              <span className='text-muted-foreground text-sm block'>Experience Level</span>
+              <span>Semi-Senior</span>
+            </div>
+
+            <div>
+              <span className='text-muted-foreground text-sm block'>Languages</span>
+              <span>Spanish, English</span>
+            </div>
+          </div>
+        </div>
+
+        <div className='pt-6'>
+          <Button asChild>
+            <a
+              href='https://drive.google.com/file/d/131gAgzG2qMzx5M2OyyK8Z2GkZGhOBkfO/view?usp=sharing'
+              target='_blank'
+              rel='noreferrer noopener'
+              className='dark:text-white'
+            >
+              <Download />
+              Download CV
+            </a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default AboutContent

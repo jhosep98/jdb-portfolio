@@ -8,7 +8,7 @@ interface ImageAnimationProps<T> {
   className?: string
 }
 
-export const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) => {
+const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) => {
   const options = {
     animationData: src,
     loop: true,
@@ -31,3 +31,5 @@ export const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) =
     </div>
   )
 }
+
+export default ImageAnimation
