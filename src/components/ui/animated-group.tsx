@@ -1,6 +1,6 @@
 'use client'
-import { ReactNode } from 'react'
-import { motion, Variants } from 'motion/react'
+import { motion, type Variants } from 'motion/react'
+import type { ReactNode } from 'react'
 import * as React from 'react'
 
 export type PresetType =
@@ -132,7 +132,7 @@ function AnimatedGroup({
       className={className}
     >
       {React.Children.map(children, (child, index) => (
-        <MotionChild key={index} variants={itemVariants}>
+        <MotionChild key={`${index + 1}`} variants={itemVariants}>
           {child}
         </MotionChild>
       ))}
