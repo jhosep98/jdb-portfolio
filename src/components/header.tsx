@@ -2,9 +2,11 @@
 
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 const menuItems = [
   { name: 'About', href: '/about' },
@@ -15,11 +17,12 @@ const menuItems = [
 ]
 
 const Header: React.FC = () => {
+  const path = usePathname()
   const [menuState, setMenuState] = React.useState(false)
 
   return (
     <header>
-      <nav data-state={menuState && 'active'} className='fixed z-20 w-full px-4 lg:px-6'>
+      <nav data-state={menuState && 'active'} className='fixed z-50 w-full px-4 lg:px-6'>
         <div className='bg-background/50 max-w-6xl rounded-2xl border backdrop-blur-lg px-6 mx-auto mt-12'>
           <div className='relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4'>
             <div className='flex w-full justify-between lg:w-auto'>
@@ -44,7 +47,12 @@ const Header: React.FC = () => {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className='text-muted-foreground hover:text-accent-foreground block duration-150'
+                      className={cn(
+                        'text-muted-foreground hover:text-accent-foreground block duration-150',
+                        {
+                          'text-primary hover:text-primary': path === item.href,
+                        },
+                      )}
                     >
                       <span>{item.name}</span>
                     </Link>
