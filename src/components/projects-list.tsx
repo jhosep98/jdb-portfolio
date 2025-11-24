@@ -4,12 +4,12 @@ import IntegrationCard from './integration-card'
 
 const REPOS = [
   {
-    title: 'jmdevstudio-library',
+    title: 'JM Folio',
     description:
-      'A modern React component library built with TypeScript, Tailwind CSS, and Radix UI primitives. This library provides a collection of reusable, accessible, and customizable UI components for React applications.',
-    link: 'https://github.com/jhosep98/jmdevstudio-library',
+      'JM Folio is a portfolio tracker application for managing investment positions across stocks, crypto, cash, and ETFs.',
+    link: 'https://github.com/jhosep98/jmfolio',
     image:
-      'https://res.cloudinary.com/diusjfaoe/image/upload/v1751422647/jmdev-studio/storybook-icon_wnhh7f.svg',
+      'https://res.cloudinary.com/diusjfaoe/image/upload/v1725495136/jmdev-studio/nextjs_uzrc3s.svg',
     alt: 'storybook-icon',
   },
   {

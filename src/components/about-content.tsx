@@ -152,7 +152,7 @@ const AboutContent: React.FC = async () => {
         <div className='pt-6'>
           <Button asChild>
             <a
-              href='https://drive.google.com/file/d/131gAgzG2qMzx5M2OyyK8Z2GkZGhOBkfO/view?usp=sharing'
+              href='https://drive.google.com/file/d/10kfJB-a3biJ-UFpnTTSBkOUsZbfp1RYF/view?usp=sharing'
               target='_blank'
               rel='noreferrer noopener'
               className='dark:text-white'
