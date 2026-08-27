@@ -13,6 +13,8 @@ const DEFAULT_USER_DATA = {
   public_repos: 0,
 }
 
+const EXPERIENCE_START_YEAR = 2021
+
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
 async function fetchGithubUser(): Promise<ResponseGithubUserType | null> {
@@ -64,6 +66,7 @@ const AboutContent: React.FC = async () => {
   const result = await fetchGithubUser()
 
   const user = result?.success ? result.data : DEFAULT_USER_DATA
+  const yearsOfExperience = new Date().getFullYear() - EXPERIENCE_START_YEAR
 
   return (
     <div className='grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24'>
@@ -113,8 +116,9 @@ const AboutContent: React.FC = async () => {
 
       <div className='relative space-y-4'>
         <p className='text-muted-foreground'>
-          With a passion for technology and web development ignited in 2021, I bring three years of
-          hands-on experience in crafting optimized and scalable user interfaces.
+          With a passion for technology and web development ignited in {EXPERIENCE_START_YEAR}, I
+          bring {yearsOfExperience} year{yearsOfExperience === 1 ? '' : 's'} of hands-on experience
+          in crafting optimized and scalable user interfaces.
         </p>
 
         <div className='pt-6'>
@@ -133,17 +137,19 @@ const AboutContent: React.FC = async () => {
         <div className='pt-6'>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
             <div>
-              <span className='text-muted-foreground text-sm block'>Specialization</span>
+              <span className='text-muted-foreground font-mono text-sm block'>Specialization</span>
               <span>Full Stack Developer</span>
             </div>
 
             <div>
-              <span className='text-muted-foreground text-sm block'>Experience Level</span>
+              <span className='text-muted-foreground font-mono text-sm block'>
+                Experience Level
+              </span>
               <span>Semi-Senior</span>
             </div>
 
             <div>
-              <span className='text-muted-foreground text-sm block'>Languages</span>
+              <span className='text-muted-foreground font-mono text-sm block'>Languages</span>
               <span>Spanish, English</span>
             </div>
           </div>

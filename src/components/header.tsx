@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
 import Logo from '@/components/logo'
+import ThemeToggle from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -77,12 +78,16 @@ const Header: React.FC = () => {
                 </ul>
               </div>
 
-              <div className='flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit'>
-                <Button asChild variant='outline'>
-                  <Link href={process.env.NEXT_PUBLIC_CALENDLY_EVENT ?? '/'} target='_blank'>
-                    <span>Let's talk</span>
-                  </Link>
-                </Button>
+              <div className='flex w-full flex-col items-center gap-3 sm:w-fit sm:flex-row'>
+                <ThemeToggle />
+
+                <div className='flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit'>
+                  <Button asChild variant='outline'>
+                    <Link href={process.env.NEXT_PUBLIC_CALENDLY_EVENT ?? '/'} target='_blank'>
+                      <span>Let's talk</span>
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

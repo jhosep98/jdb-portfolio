@@ -119,6 +119,7 @@ const AnimationComponent: React.FC<{
       <motion.span className='inline-block whitespace-pre'>
         {segment.split('').map((char, charIndex) => (
           <motion.span
+            // biome-ignore lint/suspicious/noArrayIndexKey: chars come from a fixed, re-split string each render — order is stable
             key={`char-${charIndex + 1}`}
             aria-hidden='true'
             variants={variants}
@@ -211,11 +212,11 @@ export function TextEffect({
   const baseDuration = 0.3 / speedSegment
 
   const customStagger = hasTransition(variants?.container?.visible ?? {})
-    ? (variants?.container?.visible as TargetAndTransition).transition?.staggerChildren
+    ? (variants?.container?.visible as TargetAndTransition)?.transition?.staggerChildren
     : undefined
 
   const customDelay = hasTransition(variants?.container?.visible ?? {})
-    ? (variants?.container?.visible as TargetAndTransition).transition?.delayChildren
+    ? (variants?.container?.visible as TargetAndTransition)?.transition?.delayChildren
     : undefined
 
   const computedVariants = {
@@ -250,6 +251,7 @@ export function TextEffect({
           {per !== 'line' ? <span className='sr-only'>{children}</span> : null}
           {segments.map((segment, index) => (
             <AnimationComponent
+              // biome-ignore lint/suspicious/noArrayIndexKey: segments come from a fixed, re-split string each render — order is stable
               key={`${per}-${index}-${segment}`}
               segment={segment}
               variants={computedVariants.item}

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist_Mono, Open_Sans } from 'next/font/google'
 import Header from '@/components/header'
 import { ThemeProvider } from '@/providers/theme-provider'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const openSans = Open_Sans({
+  variable: '--font-open-sans',
   subsets: ['latin'],
 })
 
@@ -15,10 +15,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Jhosep Davila — Web Developer',
-  description: "I'm web developer with a passion for creating beautiful and functional websites.",
+  title: 'Jhosep Davila — Full Stack Developer',
+  description:
+    "I'm a full stack developer with a passion for creating beautiful and functional websites.",
   authors: [{ name: 'Jhosep Davila' }],
-  keywords: ['Jhosep Davila', 'Web Developer', 'Portfolio', 'Frontend Developer'],
+  keywords: ['Jhosep Davila', 'Full Stack Developer', 'Portfolio', 'Frontend Developer'],
   robots: {
     index: true,
     follow: true,
@@ -28,9 +29,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Jhosep Davila — Web Developer',
-    description: "I'm web developer with a passion for creating beautiful and functional websites.",
-    siteName: 'Jhosep Davila — Web Developer',
+    title: 'Jhosep Davila — Full Stack Developer',
+    description:
+      "I'm a full stack developer with a passion for creating beautiful and functional websites.",
+    siteName: 'Jhosep Davila — Full Stack Developer',
     locale: 'en',
     type: 'website',
     url: 'https://jdb-portfolio.vercel.app/',
@@ -39,20 +41,21 @@ export const metadata: Metadata = {
         url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
         width: 1200,
         height: 630,
-        alt: 'Jhosep Davila — Web Developer',
+        alt: 'Jhosep Davila — Full Stack Developer',
       },
     ],
   },
   twitter: {
-    title: 'Jhosep Davila — Web Developer',
-    description: "I'm web developer with a passion for creating beautiful and functional websites.",
+    title: 'Jhosep Davila — Full Stack Developer',
+    description:
+      "I'm a full stack developer with a passion for creating beautiful and functional websites.",
     card: 'summary_large_image',
     images: [
       {
         url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
         width: 1200,
         height: 630,
-        alt: 'Jhosep Davila — Web Developer',
+        alt: 'Jhosep Davila — Full Stack Developer',
       },
     ],
   },
@@ -65,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${openSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

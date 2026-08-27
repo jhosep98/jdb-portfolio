@@ -34,7 +34,7 @@ const ExperienceContainer: React.FC = () => (
         content: (
           <>
             <h3 className='text-lg font-semibold mb-2'>
-              [Full Stack Developer] GLOBALTECH SCM SOLUTIONS GLOBALTECH SCM SOLUTIONS
+              [Full Stack Developer] GLOBALTECH SCM SOLUTIONS
             </h3>
 
             <ul className='list-disc pl-6 space-y-2 text-sm text-muted-foreground'>

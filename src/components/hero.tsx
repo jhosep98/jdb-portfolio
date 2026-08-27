@@ -36,7 +36,9 @@ const Hero: React.FC = () => (
         <div>
           <AnimatedGroup variants={transitionVariants}>
             <span className='hover:bg-background dark:hover:border-t-border bg-muted group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 pr-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 mx-auto lg:mx-0'>
-              <span className='text-foreground text-sm'>👋 It's Jhosep, I'm Web Developer!</span>
+              <span className='text-foreground text-sm'>
+                It's Jhosep, I'm a Full Stack Developer!
+              </span>
             </span>
           </AnimatedGroup>
 
@@ -44,7 +46,7 @@ const Hero: React.FC = () => (
             preset='fade-in-blur'
             speedSegment={0.3}
             as='h1'
-            className='mt-8 text-center lg:text-left text-6xl lg:text-7xl font-semibold tracking-tight'
+            className='mt-8 text-center lg:text-left text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight'
           >
             I'm here to help you build your next project!
           </TextEffect>

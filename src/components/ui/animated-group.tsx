@@ -132,6 +132,7 @@ function AnimatedGroup({
       className={className}
     >
       {React.Children.map(children, (child, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: children are a fixed, static list passed by the caller — order is stable
         <MotionChild key={`${index + 1}`} variants={itemVariants}>
           {child}
         </MotionChild>

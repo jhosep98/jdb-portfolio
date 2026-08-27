@@ -48,10 +48,10 @@ const Testimonials: React.FC = () => (
       </div>
 
       <div className='mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3'>
-        {testimonialChunks.map((chunk, chunkIndex) => (
-          <div key={`chunk-${chunkIndex + 1}`} className='space-y-3'>
-            {chunk.map(({ name, role, quote, image }, index) => (
-              <Card key={`testimonial-${index + 1}`}>
+        {testimonialChunks.map((chunk) => (
+          <div key={chunk.map(({ name }) => name).join('-')} className='space-y-3'>
+            {chunk.map(({ name, role, quote, image }) => (
+              <Card key={name}>
                 <CardContent className='grid grid-cols-[auto_1fr] gap-3 pt-6'>
                   <Avatar className='size-9'>
                     <AvatarImage alt={name} src={image} loading='lazy' width='120' height='120' />
