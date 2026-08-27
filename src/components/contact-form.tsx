@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import confetti from 'canvas-confetti'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? 'service_baugcpu',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? 'template_fa16uht',
         data,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_USER_ID },
       )
 
       if (response.status === 200) {

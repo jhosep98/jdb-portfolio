@@ -1,25 +1,14 @@
 'use client'
 
-import { useLottie } from 'lottie-react'
+import { Lottie } from 'lottie-react'
 import { cn } from '@/lib/utils'
 
-interface ImageAnimationProps<T> {
-  src: T
+interface ImageAnimationProps {
+  src: string | object
   className?: string
 }
 
-const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) => {
-  const options = {
-    animationData: src,
-    loop: true,
-    autoplay: true,
-    'aria-label': 'Person working with laptop',
-    role: 'img',
-    title: 'Person working with laptop',
-  }
-
-  const { View } = useLottie(options)
-
+const ImageAnimation = ({ src, className }: ImageAnimationProps) => {
   return (
     <div
       className={cn(
@@ -27,7 +16,15 @@ const ImageAnimation = <T,>({ src, className }: ImageAnimationProps<T>) => {
         className,
       )}
     >
-      {View}
+      <Lottie
+        src={src}
+        loop
+        autoplay
+        className='h-full w-full'
+        aria-label='Person working with laptop'
+        role='img'
+        title='Person working with laptop'
+      />
     </div>
   )
 }
