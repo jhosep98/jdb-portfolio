@@ -1,6 +1,5 @@
-import { ChevronRight } from 'lucide-react'
+import { ArrowUpRight, ChevronRight } from 'lucide-react'
 import type * as React from 'react'
-import { Button } from './ui/button'
 import { Card } from './ui/card'
 
 interface IntegrationCardProps {
@@ -8,6 +7,8 @@ interface IntegrationCardProps {
   description: string
   children: React.ReactNode
   link?: string
+  stack?: string[]
+  viewLabel: string
 }
 
 const IntegrationCard: React.FC<IntegrationCardProps> = ({
@@ -15,30 +16,45 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({
   description,
   title,
   link,
+  stack,
+  viewLabel,
 }) => (
-  <Card className='p-6'>
-    <div className='relative'>
-      <div className='*:size-10'>{children}</div>
-
-      <div className='space-y-2 py-6'>
-        <h3 className='text-base font-medium'>{title}</h3>
-        <p className='text-muted-foreground line-clamp-2 text-sm'>{description}</p>
+  <Card className='gap-0 p-6 transition-colors hover:border-primary/40'>
+    <a
+      href={link}
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label={`${viewLabel}: ${title}`}
+      className='flex h-full flex-col'
+    >
+      <div className='flex items-start justify-between gap-4'>
+        <div className='*:size-10'>{children}</div>
+        <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />
       </div>
 
-      <div className='flex gap-3 border-t border-dashed pt-6'>
-        <Button asChild size='sm' className='gap-1 pr-2 shadow-none dark:text-white'>
-          <a
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label={`View ${title} project repository`}
-          >
-            View project repository
-            <ChevronRight className='ml-0 !size-3.5 opacity-50' />
-          </a>
-        </Button>
+      <div className='mt-6 space-y-2.5'>
+        <h3 className='text-xl font-semibold tracking-tight'>{title}</h3>
+        <p className='line-clamp-2 text-sm text-muted-foreground'>{description}</p>
       </div>
-    </div>
+
+      {stack && stack.length > 0 && (
+        <ul className='mt-6 mb-6 flex flex-wrap gap-2'>
+          {stack.map((tech) => (
+            <li
+              key={tech}
+              className='rounded-full border px-2.5 py-1 font-mono text-[10px] tracking-[0.12em] text-muted-foreground uppercase'
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className='mt-auto flex min-h-11 items-center gap-2 border-t border-dashed pt-5 text-sm font-medium text-primary'>
+        {viewLabel}
+        <ChevronRight className='size-3.5' />
+      </div>
+    </a>
   </Card>
 )
 

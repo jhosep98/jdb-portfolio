@@ -19,22 +19,21 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { APP_TEXTS } from '@/lib/constants'
-
-const FormSchema = z.object({
-  email: z.string().email({
-    message: APP_TEXTS.form.validation.email,
-  }),
-  subject: z.string().min(2, {
-    message: APP_TEXTS.form.validation.subject,
-  }),
-  message: z.string().min(2, {
-    message: APP_TEXTS.form.validation.message,
-  }),
-})
+import { useLocale } from '@/providers/locale-provider'
 
 const ContactForm: React.FC = () => {
+  const { locale, t } = useLocale()
   const buttonRef = React.useRef<HTMLButtonElement>(null)
+
+  const FormSchema = React.useMemo(
+    () =>
+      z.object({
+        email: z.string().email({ message: t.form.validation.email }),
+        subject: z.string().min(2, { message: t.form.validation.subject }),
+        message: z.string().min(2, { message: t.form.validation.message }),
+      }),
+    [t],
+  )
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -44,6 +43,12 @@ const ContactForm: React.FC = () => {
       message: '',
     },
   })
+
+  // Errors already on screen keep their old wording until validation runs again.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: re-validate only when the locale flips.
+  React.useEffect(() => {
+    if (Object.keys(form.formState.errors).length > 0) form.trigger()
+  }, [locale])
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
@@ -55,12 +60,12 @@ const ContactForm: React.FC = () => {
       )
 
       if (response.status === 200) {
-        toast.success(APP_TEXTS.contact.success)
+        toast.success(t.form.success)
         onSuccessConfetti()
         form.reset()
       }
     } catch (_err) {
-      toast.error(APP_TEXTS.contact.error)
+      toast.error(t.form.error)
       form.reset()
     }
   }
@@ -89,9 +94,9 @@ const ContactForm: React.FC = () => {
           name='email'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t.form.emailLabel}</FormLabel>
               <FormControl>
-                <Input placeholder={APP_TEXTS.form.email} {...field} />
+                <Input placeholder={t.form.emailPlaceholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,9 +108,9 @@ const ContactForm: React.FC = () => {
           name='subject'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>{t.form.subjectLabel}</FormLabel>
               <FormControl>
-                <Input placeholder={APP_TEXTS.form.subject} {...field} />
+                <Input placeholder={t.form.subjectPlaceholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -117,9 +122,9 @@ const ContactForm: React.FC = () => {
           name='message'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{t.form.messageLabel}</FormLabel>
               <FormControl>
-                <Textarea placeholder={APP_TEXTS.form.message} rows={4} {...field} />
+                <Textarea placeholder={t.form.messagePlaceholder} rows={4} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -132,9 +137,9 @@ const ContactForm: React.FC = () => {
           size='lg'
           ref={buttonRef}
           disabled={form.formState.isSubmitting || !form.formState.isValid}
-          aria-label='Send Message'
+          aria-label={t.form.submit}
         >
-          Send Message
+          {t.form.submit}
         </Button>
       </form>
     </Form>

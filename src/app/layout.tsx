@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Geist_Mono, Open_Sans } from 'next/font/google'
+import { cookies } from 'next/headers'
+import Footer from '@/components/footer'
 import Header from '@/components/header'
+import { DEFAULT_LOCALE, isLocale, LOCALE_COOKIE } from '@/lib/i18n/translations'
+import { LocaleProvider } from '@/providers/locale-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import './globals.css'
 
@@ -61,27 +65,34 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const cookieStore = await cookies()
+  const stored = cookieStore.get(LOCALE_COOKIE)?.value
+  const locale = isLocale(stored) ? stored : DEFAULT_LOCALE
+
   return (
     <html
-      lang='en'
+      lang={locale}
       className={`${openSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <body className='antialiased'>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-        </ThemeProvider>
+        <LocaleProvider initialLocale={locale}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </LocaleProvider>
       </body>
     </html>
   )

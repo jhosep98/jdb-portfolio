@@ -5,10 +5,11 @@ import { cn } from '@/lib/utils'
 
 interface ImageAnimationProps {
   src: string | object
+  label: string
   className?: string
 }
 
-const ImageAnimation = ({ src, className }: ImageAnimationProps) => {
+const ImageAnimation = ({ src, label, className }: ImageAnimationProps) => {
   return (
     <div
       className={cn(
@@ -21,9 +22,9 @@ const ImageAnimation = ({ src, className }: ImageAnimationProps) => {
         loop
         autoplay
         className='h-full w-full'
-        aria-label='Person working with laptop'
+        aria-label={label}
         role='img'
-        title='Person working with laptop'
+        title={label}
       />
     </div>
   )

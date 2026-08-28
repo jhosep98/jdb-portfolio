@@ -4,8 +4,10 @@ import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 import { Button } from '@/components/ui/button'
+import { useLocale } from '@/providers/locale-provider'
 
 const ThemeToggle: React.FC = () => {
+  const { t } = useLocale()
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
@@ -19,7 +21,7 @@ const ThemeToggle: React.FC = () => {
       variant='outline'
       size='icon'
       className='rounded-md'
-      aria-label='Toggle theme'
+      aria-label={t.a11y.toggleTheme}
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       {mounted ? (

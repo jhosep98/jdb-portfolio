@@ -1,5 +1,5 @@
-import ExperienceContainer from '@/components/experience-container'
+import Experience from '@/components/experience'
 
 export default function ExperiencePage() {
-  return <ExperienceContainer />
+  return <Experience />
 }
