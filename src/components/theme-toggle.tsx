@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
       type='button'
       variant='outline'
       size='icon'
-      className='rounded-md'
+      className='rounded-md cursor-pointer'
       aria-label={t.a11y.toggleTheme}
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >

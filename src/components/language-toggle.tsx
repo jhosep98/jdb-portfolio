@@ -20,7 +20,7 @@ const LanguageToggle: React.FC = () => {
           aria-label={LOCALE_LABELS[loc]}
           onClick={() => setLocale(loc)}
           className={cn(
-            'flex h-full min-w-11 items-center justify-center rounded-[5px] px-2 text-muted-foreground transition-colors lg:min-w-8',
+            'flex h-full min-w-11 items-center justify-center rounded-[5px] px-2 text-muted-foreground transition-colors lg:min-w-8 cursor-pointer',
             locale === loc && 'bg-muted text-foreground',
           )}
         >
