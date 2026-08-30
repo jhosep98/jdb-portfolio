@@ -31,7 +31,7 @@ const Experience: React.FC = () => {
 
   return (
     <section id='experience' className='scroll-mt-12 pt-32'>
-      <div className='mx-auto max-w-5xl space-y-14 px-6'>
+      <div className='mx-auto max-w-6xl space-y-12 px-6'>
         <SectionHeading index={2} section='experience' />
 
         <div className='w-full' ref={containerRef}>

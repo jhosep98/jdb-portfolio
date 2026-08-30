@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className='mt-32 border-t bg-card/50'>
-      <div className='mx-auto max-w-5xl px-6 py-12'>
+      <div className='mx-auto max-w-6xl px-6 py-12'>
         <div className='grid gap-10 sm:grid-cols-[1.5fr_1fr_1fr]'>
           <div className='space-y-3'>
             <Logo />

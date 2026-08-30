@@ -39,7 +39,7 @@ const initials = (name: string) =>
 
 const Testimonials: React.FC = () => (
   <section id='testimonials' className='scroll-mt-12 pt-32'>
-    <div className='mx-auto max-w-5xl space-y-12 px-6'>
+    <div className='mx-auto max-w-6xl space-y-12 px-6'>
       <SectionHeading index={4} section='testimonials' />
 
       <div className='grid gap-6 sm:grid-cols-2'>
