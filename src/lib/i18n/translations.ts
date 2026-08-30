@@ -32,6 +32,8 @@ export interface ProjectEntry {
   title: string
   description: string
   stack: string[]
+  /** Repo is private — hide the "View repository" CTA and show a private-project label instead. */
+  private?: boolean
 }
 
 const en = {
@@ -52,6 +54,8 @@ const en = {
     toggleTheme: 'Toggle theme',
     language: 'Language',
     heroIllustration: 'Person working with a laptop',
+    playAnimation: 'Play animation',
+    pauseAnimation: 'Pause animation',
   },
   sections: {
     about: { eyebrow: 'About', title: 'About me' },
@@ -61,22 +65,23 @@ const en = {
     contact: { eyebrow: 'Contact', title: "Let's build something" },
   },
   hero: {
-    badge: 'Buenos Aires, AR — Full Stack Developer',
-    title: "I'm here to help you build your next project!",
-    description:
-      'Crafting optimized, scalable interfaces — from component libraries and Next.js landing pages to CRM modules over GraphQL.',
+    badge: 'Buenos Aires, Argentina — Frontend Engineer',
+    title: 'Building fast, scalable web experiences.',
+    description: 'Frontend Engineer specializing in React, TypeScript, and Next.js.',
     secondaryCta: 'See selected work',
   },
   about: {
-    role: 'Full Stack Developer',
+    role: 'Frontend Engineer',
     location: 'Buenos Aires, Argentina',
-    bio: (startYear: number, years: number) =>
-      `With a passion for technology and web development ignited in ${startYear}, I bring ${years} year${years === 1 ? '' : 's'} of hands-on experience in crafting optimized and scalable user interfaces.`,
+    bio: (startYear: number, years: number) => [
+      `I've been building for the web since ${startYear}, with ${years} years of hands-on experience developing modern web applications with React, TypeScript, and Next.js.`,
+      'I turn designs and product requirements into production-ready interfaces, with a focus on performance, maintainability, and user experience.',
+    ],
     metadata: {
       specialization: 'Specialization',
-      specializationValue: 'Full Stack Developer',
+      specializationValue: 'Frontend Engineering',
       experienceLevel: 'Experience Level',
-      experienceLevelValue: 'Semi-Senior',
+      experienceLevelValue: 'Mid-Level',
       languages: 'Languages',
       languagesValue: 'Spanish, English',
     },
@@ -88,21 +93,23 @@ const en = {
       {
         date: 'Aug 2021',
         company: 'Wulpers',
-        role: 'Front-end Developer',
+        role: 'Frontend Engineer',
         current: true,
         bullets: [
-          'Developed component library using Storybook and MUI.',
-          'Built landing pages with Next.js, optimizing SEO, performance, and responsiveness.',
-          'Integrated CRM platform modules using GraphQL, Apollo Server, and Axios in a monorepo environment.',
+          'Designed and built scalable frontend systems using React, TypeScript, Next.js, and reusable component architectures.',
+          'Built an LLM-driven automation pipeline with n8n to generate production-ready client websites, reducing project turnaround from weeks to days.',
+          'Developed SEO-focused Next.js landing pages achieving 90+ Lighthouse scores across performance, accessibility, and best practices.',
+          'Built data-driven features with GraphQL and TanStack Query within a Turborepo monorepo, improving frontend performance and maintainability.',
+          'Partnered with design and backend teams to deliver responsive, production-ready interfaces from Figma.',
         ],
       },
       {
-        date: 'Jul — Dec 2023',
-        company: 'CoderHouse',
-        role: 'Tutor ReactJS',
+        date: 'Jul — Sep 2023',
+        company: 'Coderhouse',
+        role: 'ReactJS Teaching Assistant',
         bullets: [
-          'Reviewed and provided feedback on student pre-deliveries, ensuring code quality and best practices.',
-          'Actively assisted in live sessions by offering real-time support, clarifying concepts, and answering student queries via chat.',
+          'Mentored 30+ students in React, covering functional components, custom hooks, state management, and frontend patterns.',
+          'Led code reviews and debugging sessions, providing feedback on code quality, architecture, and rendering performance.',
         ],
       },
       {
@@ -110,8 +117,8 @@ const en = {
         company: 'GlobalTech SCM Solutions',
         role: 'Full Stack Developer',
         bullets: [
-          'Migration of a desktop Warehouse Management System (WMS) to React Native, enabling seamless inventory management via mobile devices and improving operational efficiency.',
-          'Developed and optimized a RESTful API using NestJS, designing scalable endpoints to handle inventory and warehouse operations. Integrated SQL Server as the database, ensuring efficient data management and retrieval.',
+          'Developed a React Native mobile application to modernize a Warehouse Management System, enabling real-time inventory management from mobile devices.',
+          'Built RESTful APIs with NestJS and SQL Server to support inventory and warehouse operations.',
         ],
       },
       {
@@ -119,35 +126,53 @@ const en = {
         company: 'Alkemy',
         role: 'Full Stack Developer',
         bullets: [
-          'Designed and developed a fully responsive website for a non-profit organization in Argentina, using HTML, CSS, and JavaScript to deliver a professional and user-friendly experience.',
-          'Continuously expanding technical expertise by learning and applying Node.js, React, Material-UI, Git, and GitHub, staying up to date with the latest industry trends and best practices.',
-          'Experienced in Agile methodologies, particularly Scrum, ensuring efficient collaboration and streamlined development workflows.',
+          'Developed a responsive website for a non-profit organization using HTML, CSS, and JavaScript.',
+          'Worked in an Agile/Scrum environment while expanding experience with React, Node.js, Material UI, Git, and GitHub.',
         ],
       },
     ] satisfies TimelineEntry[],
   },
   projects: {
     viewRepository: 'View repository',
+    privateLabel: 'Private project',
     items: [
+      {
+        key: 'webbuilder',
+        title: 'WebBuilder',
+        private: true,
+        description:
+          'An AI-powered component system for generating branded, production-ready landing pages from a shared codebase. Built with React, TypeScript, Tailwind CSS, GraphQL, TanStack Query, n8n, Turborepo, and Bun.',
+        stack: [
+          'React',
+          'TypeScript',
+          'Next.js',
+          'Tailwind CSS',
+          'GraphQL',
+          'TanStack Query',
+          'n8n',
+          'AI',
+          'Turborepo',
+        ],
+      },
       {
         key: 'omnivest-ai',
         title: 'OmniVest AI',
         description:
-          'OmniVest AI is a personal finance ecosystem and trading journal designed to consolidate your portfolio, track derivatives trading, and leverage AI automation for smart financial insights.',
-        stack: ['TypeScript', 'AI', 'Fintech'],
+          'A personal finance and trading ecosystem for portfolio tracking, derivatives journaling, and AI-powered financial workflows.',
+        stack: ['TypeScript', 'AI'],
       },
       {
         key: 'jdb-portfolio',
         title: 'jdb-portfolio',
         description:
-          "A modern, responsive personal portfolio website built with NextJS, React, and TailwindCSS. This portfolio showcases Jhosep Davila's work as a Full Stack Developer with interactive animations and a clean, professional design.",
-        stack: ['Next.js', 'Tailwind', 'Motion'],
+          'A modern personal portfolio built with Next.js, React, and Tailwind CSS, designed to showcase frontend engineering work through interactive motion and a clean, responsive interface.',
+        stack: ['Next.js', 'React', 'Tailwind CSS', 'Motion'],
       },
     ] satisfies ProjectEntry[],
   },
   contact: {
     description:
-      "Open to front-end and full-stack work. Book a slot and we talk it through, or drop me a line and I'll get back to you.",
+      'Open to Frontend Engineer opportunities and selected freelance projects. Let’s talk about what you’re building.',
     bookACall: 'Book a call',
     callDuration: '30 min — Calendly',
   },
@@ -169,7 +194,7 @@ const en = {
   },
   footer: {
     tagline:
-      'Full Stack Developer building clean, performant interfaces from Buenos Aires, Argentina.',
+      'Frontend Engineer based in Buenos Aires, Argentina, specializing in React, TypeScript, and Next.js.',
     sections: 'Sections',
     elsewhere: 'Elsewhere',
   },
@@ -195,6 +220,8 @@ const es: typeof en = {
     toggleTheme: 'Cambiar tema',
     language: 'Idioma',
     heroIllustration: 'Persona trabajando con una laptop',
+    playAnimation: 'Reproducir animación',
+    pauseAnimation: 'Pausar animación',
   },
   sections: {
     about: { eyebrow: 'Sobre mí', title: 'Sobre mí' },
@@ -204,22 +231,23 @@ const es: typeof en = {
     contact: { eyebrow: 'Contacto', title: 'Construyamos algo' },
   },
   hero: {
-    badge: 'Buenos Aires, AR — Desarrollador Full Stack',
-    title: '¡Estoy para ayudarte a construir tu próximo proyecto!',
-    description:
-      'Construyo interfaces optimizadas y escalables — desde librerías de componentes y landing pages con Next.js hasta módulos de CRM sobre GraphQL.',
+    badge: 'Buenos Aires, Argentina — Frontend Engineer',
+    title: 'Construyo experiencias web rápidas y escalables.',
+    description: 'Frontend Engineer especializado en React, TypeScript y Next.js.',
     secondaryCta: 'Ver proyectos destacados',
   },
   about: {
-    role: 'Desarrollador Full Stack',
+    role: 'Frontend Engineer',
     location: 'Buenos Aires, Argentina',
-    bio: (startYear: number, years: number) =>
-      `Con una pasión por la tecnología y el desarrollo web que nació en ${startYear}, aporto ${years} año${years === 1 ? '' : 's'} de experiencia práctica creando interfaces de usuario optimizadas y escalables.`,
+    bio: (startYear: number, years: number) => [
+      `Desde ${startYear} trabajo en el desarrollo de aplicaciones web, con ${years} años de experiencia práctica utilizando React, TypeScript y Next.js.`,
+      'Transformo diseños y requisitos de producto en interfaces listas para producción, con foco en rendimiento, mantenibilidad y experiencia de usuario.',
+    ],
     metadata: {
       specialization: 'Especialización',
-      specializationValue: 'Desarrollador Full Stack',
+      specializationValue: 'Frontend Engineering',
       experienceLevel: 'Nivel de experiencia',
-      experienceLevelValue: 'Semi-Senior',
+      experienceLevelValue: 'Mid-Level',
       languages: 'Idiomas',
       languagesValue: 'Español, Inglés',
     },
@@ -231,21 +259,23 @@ const es: typeof en = {
       {
         date: 'Ago 2021',
         company: 'Wulpers',
-        role: 'Desarrollador Front-end',
+        role: 'Frontend Engineer',
         current: true,
         bullets: [
-          'Desarrollé una librería de componentes usando Storybook y MUI.',
-          'Construí landing pages con Next.js, optimizando SEO, performance y responsividad.',
-          'Integré módulos de una plataforma CRM usando GraphQL, Apollo Server y Axios en un entorno monorepo.',
+          'Diseñé y desarrollé sistemas frontend escalables utilizando React, TypeScript, Next.js y arquitecturas de componentes reutilizables.',
+          'Construí un pipeline de automatización basado en LLMs con n8n para generar sitios web de clientes listos para producción, reduciendo los tiempos de desarrollo de semanas a días.',
+          'Desarrollé landing pages optimizadas para SEO con Next.js, alcanzando puntuaciones superiores a 90 en Lighthouse en rendimiento, accesibilidad y buenas prácticas.',
+          'Desarrollé funcionalidades basadas en datos con GraphQL y TanStack Query dentro de un monorepo con Turborepo, mejorando el rendimiento y la mantenibilidad del frontend.',
+          'Trabajé junto a los equipos de diseño y backend para convertir diseños de Figma en interfaces responsivas y listas para producción.',
         ],
       },
       {
-        date: 'Jul — Dic 2023',
-        company: 'CoderHouse',
-        role: 'Tutor ReactJS',
+        date: 'Jul — Sep 2023',
+        company: 'Coderhouse',
+        role: 'Tutor de ReactJS',
         bullets: [
-          'Revisé y di feedback sobre las pre-entregas de los estudiantes, asegurando calidad de código y buenas prácticas.',
-          'Asistí activamente en clases en vivo, brindando soporte en tiempo real, aclarando conceptos y respondiendo consultas por chat.',
+          'Acompañé a más de 30 estudiantes en el aprendizaje de React, incluyendo componentes funcionales, custom hooks, manejo de estado y patrones de frontend.',
+          'Realicé revisiones de código y sesiones de debugging, brindando feedback sobre calidad, arquitectura y rendimiento de los componentes.',
         ],
       },
       {
@@ -253,8 +283,8 @@ const es: typeof en = {
         company: 'GlobalTech SCM Solutions',
         role: 'Desarrollador Full Stack',
         bullets: [
-          'Migración de un sistema de gestión de almacenes (WMS) de escritorio a React Native, habilitando la gestión de inventario desde dispositivos móviles y mejorando la eficiencia operativa.',
-          'Desarrollé y optimicé una API RESTful con NestJS, diseñando endpoints escalables para operaciones de inventario y almacén. Integré SQL Server como base de datos, asegurando una gestión y recuperación de datos eficiente.',
+          'Desarrollé una aplicación móvil con React Native para modernizar un sistema de gestión de almacenes (WMS), permitiendo gestionar el inventario en tiempo real desde dispositivos móviles.',
+          'Desarrollé APIs RESTful con NestJS y SQL Server para soportar operaciones de inventario y gestión de almacenes.',
         ],
       },
       {
@@ -262,35 +292,53 @@ const es: typeof en = {
         company: 'Alkemy',
         role: 'Desarrollador Full Stack',
         bullets: [
-          'Diseñé y desarrollé un sitio web totalmente responsive para una organización sin fines de lucro en Argentina, usando HTML, CSS y JavaScript para lograr una experiencia profesional y amigable.',
-          'Amplié continuamente mi experiencia técnica aprendiendo y aplicando Node.js, React, Material-UI, Git y GitHub, manteniéndome al día con las últimas tendencias y buenas prácticas de la industria.',
-          'Experiencia con metodologías ágiles, particularmente Scrum, asegurando una colaboración eficiente y flujos de trabajo optimizados.',
+          'Desarrollé un sitio web responsivo para una organización sin fines de lucro utilizando HTML, CSS y JavaScript.',
+          'Trabajé bajo metodologías ágiles, principalmente Scrum, mientras ampliaba mi experiencia con React, Node.js, Material UI, Git y GitHub.',
         ],
       },
     ] satisfies TimelineEntry[],
   },
   projects: {
     viewRepository: 'Ver repositorio',
+    privateLabel: 'Proyecto privado',
     items: [
+      {
+        key: 'webbuilder',
+        title: 'WebBuilder',
+        private: true,
+        description:
+          'Un sistema de componentes potenciado por IA para generar landing pages de marca listas para producción a partir de un código base compartido. Construido con React, TypeScript, Tailwind CSS, GraphQL, TanStack Query, n8n, Turborepo y Bun.',
+        stack: [
+          'React',
+          'TypeScript',
+          'Next.js',
+          'Tailwind CSS',
+          'GraphQL',
+          'TanStack Query',
+          'n8n',
+          'AI',
+          'Turborepo',
+        ],
+      },
       {
         key: 'omnivest-ai',
         title: 'OmniVest AI',
         description:
-          'OmniVest AI es un ecosistema de finanzas personales y diario de trading pensado para consolidar tu portfolio, hacer seguimiento de operaciones con derivados y aprovechar automatización con IA para obtener insights financieros inteligentes.',
+          'Un ecosistema de finanzas personales y diario de trading para gestionar portfolios, registrar operaciones con derivados y automatizar flujos de trabajo financieros con IA.',
         stack: ['TypeScript', 'AI', 'Fintech'],
       },
       {
         key: 'jdb-portfolio',
         title: 'jdb-portfolio',
         description:
-          'Un sitio de portfolio personal moderno y responsive construido con NextJS, React y TailwindCSS. Este portfolio muestra el trabajo de Jhosep Davila como Desarrollador Full Stack, con animaciones interactivas y un diseño limpio y profesional.',
-        stack: ['Next.js', 'Tailwind', 'Motion'],
+          'Un portfolio personal moderno construido con Next.js, React y Tailwind CSS, diseñado para mostrar proyectos de frontend mediante animaciones interactivas y una interfaz limpia y responsiva.',
+        stack: ['Next.js', 'React', 'Tailwind CSS', 'Motion'],
       },
     ] satisfies ProjectEntry[],
   },
   contact: {
     description:
-      'Disponible para trabajos de front-end y full-stack. Reservá un horario y lo charlamos, o escribime y te respondo a la brevedad.',
+      'Disponible para oportunidades como Frontend Engineer y proyectos freelance seleccionados. Hablemos sobre lo que estás construyendo.',
     bookACall: 'Agendar una llamada',
     callDuration: '30 min — Calendly',
   },
@@ -312,7 +360,7 @@ const es: typeof en = {
   },
   footer: {
     tagline:
-      'Desarrollador Full Stack construyendo interfaces limpias y performantes desde Buenos Aires, Argentina.',
+      'Frontend Engineer especializado en React, TypeScript y Next.js, construyendo aplicaciones web rápidas, escalables y mantenibles desde Buenos Aires, Argentina.',
     sections: 'Secciones',
     elsewhere: 'Más enlaces',
   },

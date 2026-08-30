@@ -71,9 +71,13 @@ const AboutContentView: React.FC<AboutContentViewProps> = ({ avatarUrl, name }) 
       </Card>
 
       <div className='relative space-y-8'>
-        <p className='text-lg leading-relaxed text-pretty'>
-          {t.about.bio(EXPERIENCE_START_YEAR, yearsOfExperience)}
-        </p>
+        <div className='space-y-4'>
+          {t.about.bio(EXPERIENCE_START_YEAR, yearsOfExperience).map((paragraph) => (
+            <p key={paragraph} className='text-lg leading-relaxed text-pretty'>
+              {paragraph}
+            </p>
+          ))}
+        </div>
 
         <dl className='border-b border-dashed'>
           {metadata.map(({ label, value }) => (

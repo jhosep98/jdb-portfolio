@@ -19,11 +19,21 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Jhosep Davila — Full Stack Developer',
+  title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
   description:
-    "I'm a full stack developer with a passion for creating beautiful and functional websites.",
+    'Frontend Engineer based in Buenos Aires, Argentina, specializing in React, TypeScript, and Next.js. Building fast, scalable, and maintainable web applications.',
   authors: [{ name: 'Jhosep Davila' }],
-  keywords: ['Jhosep Davila', 'Full Stack Developer', 'Portfolio', 'Frontend Developer'],
+  keywords: [
+    'Jhosep Davila',
+    'Frontend Engineer',
+    'Frontend Developer',
+    'React Developer',
+    'React',
+    'TypeScript',
+    'Next.js',
+    'Web Development',
+    'Buenos Aires',
+  ],
   robots: {
     index: true,
     follow: true,
@@ -33,11 +43,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Jhosep Davila — Full Stack Developer',
+    title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
     description:
-      "I'm a full stack developer with a passion for creating beautiful and functional websites.",
-    siteName: 'Jhosep Davila — Full Stack Developer',
-    locale: 'en',
+      'Frontend Engineer specializing in React, TypeScript, and Next.js. Building fast, scalable, and maintainable web applications.',
+    siteName: 'Jhosep Davila — Frontend Engineer',
+    locale: 'en_US',
     type: 'website',
     url: 'https://jdb-portfolio.vercel.app/',
     images: [
@@ -45,21 +55,20 @@ export const metadata: Metadata = {
         url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
         width: 1200,
         height: 630,
-        alt: 'Jhosep Davila — Full Stack Developer',
+        alt: 'Jhosep Davila — Frontend Engineer',
       },
     ],
   },
   twitter: {
-    title: 'Jhosep Davila — Full Stack Developer',
-    description:
-      "I'm a full stack developer with a passion for creating beautiful and functional websites.",
+    title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
+    description: 'Frontend Engineer specializing in React, TypeScript, and Next.js.',
     card: 'summary_large_image',
     images: [
       {
         url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
         width: 1200,
         height: 630,
-        alt: 'Jhosep Davila — Full Stack Developer',
+        alt: 'Jhosep Davila — Frontend Engineer',
       },
     ],
   },
