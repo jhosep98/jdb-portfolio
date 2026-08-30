@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         <section className='grid items-center gap-12 overflow-hidden lg:grid-cols-2 lg:gap-6'>
           <div>
             <span className='hero-in bg-card flex w-fit max-w-full items-start gap-2.5 rounded-2xl border py-2 pr-3.5 pl-3 sm:items-center sm:rounded-full sm:py-1.5'>
-              <span className='mt-[5px] size-1.5 shrink-0 rounded-full bg-primary sm:mt-0' />
+              <span className='mt-1.25 size-1.5 shrink-0 rounded-full bg-primary sm:mt-0' />
               <span className='font-mono text-[11px] leading-[1.6] tracking-[0.12em] text-muted-foreground uppercase sm:leading-none sm:tracking-[0.16em]'>
                 {t.hero.badge}
               </span>

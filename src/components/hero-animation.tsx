@@ -4,9 +4,6 @@ import dynamic from 'next/dynamic'
 import * as React from 'react'
 import { useLocale } from '@/providers/locale-provider'
 
-// lottie-web is ~100 KB of JS and the animation JSON is ~2 MB — keep both out of
-// the initial load. The chunk is fetched only once the illustration nears the
-// viewport, so it never competes with the hero's LCP.
 const ImageAnimation = dynamic(() => import('@/components/image-animation'), {
   ssr: false,
 })
@@ -37,7 +34,7 @@ const HeroAnimation: React.FC = () => {
   }, [])
 
   return (
-    <div ref={ref} className='relative aspect-[16/9] w-full overflow-hidden'>
+    <div ref={ref} className='relative aspect-video w-full overflow-hidden'>
       {visible && (
         <ImageAnimation
           src={ANIMATION_SRC}
