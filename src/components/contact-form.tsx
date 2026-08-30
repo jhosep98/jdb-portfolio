@@ -21,6 +21,12 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useLocale } from '@/providers/locale-provider'
 
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+const TO_NAME = 'Jhosep'
+
 const ContactForm: React.FC = () => {
   const { locale, t } = useLocale()
   const buttonRef = React.useRef<HTMLButtonElement>(null)
@@ -28,7 +34,7 @@ const ContactForm: React.FC = () => {
   const FormSchema = React.useMemo(
     () =>
       z.object({
-        email: z.string().email({ message: t.form.validation.email }),
+        email: z.email({ message: t.form.validation.email }),
         subject: z.string().min(2, { message: t.form.validation.subject }),
         message: z.string().min(2, { message: t.form.validation.message }),
       }),
@@ -44,20 +50,30 @@ const ContactForm: React.FC = () => {
     },
   })
 
-  // Errors already on screen keep their old wording until validation runs again.
   // biome-ignore lint/correctness/useExhaustiveDependencies: re-validate only when the locale flips.
   React.useEffect(() => {
     if (Object.keys(form.formState.errors).length > 0) form.trigger()
   }, [locale])
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast.error(t.form.error)
+      return
+    }
+
     try {
-      const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? 'service_baugcpu',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? 'template_fa16uht',
-        data,
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_USER_ID },
-      )
+      const templateParams = {
+        from_name: data.email,
+        to_name: TO_NAME,
+        subject: data.subject,
+        message: data.message,
+        reply_to: data.email,
+        email: data.email,
+      }
+
+      const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
 
       if (response.status === 200) {
         toast.success(t.form.success)
