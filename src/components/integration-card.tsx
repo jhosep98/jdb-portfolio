@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronRight } from 'lucide-react'
+import { ArrowUpRight, ChevronRight, Lock } from 'lucide-react'
 import type * as React from 'react'
 import { Card } from './ui/card'
 
@@ -9,6 +9,8 @@ interface IntegrationCardProps {
   link?: string
   stack?: string[]
   viewLabel: string
+  isPrivate?: boolean
+  privateLabel?: string
 }
 
 const IntegrationCard: React.FC<IntegrationCardProps> = ({
@@ -18,18 +20,20 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({
   link,
   stack,
   viewLabel,
-}) => (
-  <Card className='gap-0 p-6 transition-colors hover:border-primary/40'>
-    <a
-      href={link}
-      target='_blank'
-      rel='noopener noreferrer'
-      aria-label={`${viewLabel}: ${title}`}
-      className='flex h-full flex-col'
-    >
+  isPrivate = false,
+  privateLabel,
+}) => {
+  const asLink = !isPrivate && Boolean(link)
+
+  const body = (
+    <>
       <div className='flex items-start justify-between gap-4'>
         <div className='*:size-10'>{children}</div>
-        <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />
+        {asLink ? (
+          <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />
+        ) : (
+          <Lock className='size-4 shrink-0 text-muted-foreground' />
+        )}
       </div>
 
       <div className='mt-6 space-y-2.5'>
@@ -50,12 +54,37 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({
         </ul>
       )}
 
-      <div className='mt-auto flex min-h-11 items-center gap-2 border-t border-dashed pt-5 text-sm font-medium text-primary'>
-        {viewLabel}
-        <ChevronRight className='size-3.5' />
-      </div>
-    </a>
-  </Card>
-)
+      {asLink ? (
+        <div className='mt-auto flex min-h-11 items-center gap-2 border-t border-dashed pt-5 text-sm font-medium text-primary'>
+          {viewLabel}
+          <ChevronRight className='size-3.5' />
+        </div>
+      ) : (
+        <div className='mt-auto flex min-h-11 items-center gap-2 border-t border-dashed pt-5 text-sm font-medium text-muted-foreground'>
+          <Lock className='size-3.5' />
+          {privateLabel ?? 'Private project'}
+        </div>
+      )}
+    </>
+  )
+
+  return (
+    <Card className={asLink ? 'gap-0 p-6 transition-colors hover:border-primary/40' : 'gap-0 p-6'}>
+      {asLink ? (
+        <a
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={`${viewLabel}: ${title}`}
+          className='flex h-full flex-col'
+        >
+          {body}
+        </a>
+      ) : (
+        <div className='flex h-full flex-col'>{body}</div>
+      )}
+    </Card>
+  )
+}
 
 export default IntegrationCard

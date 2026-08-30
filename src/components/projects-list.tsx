@@ -5,7 +5,7 @@ import type * as React from 'react'
 import { useLocale } from '@/providers/locale-provider'
 import IntegrationCard from './integration-card'
 
-const PROJECT_ASSETS: Record<string, { link: string; image: string; alt: string }> = {
+const PROJECT_ASSETS: Record<string, { link?: string; image: string; alt: string }> = {
   'omnivest-ai': {
     link: 'https://github.com/jhosep98/omnivest-ai',
     image:
@@ -17,6 +17,12 @@ const PROJECT_ASSETS: Record<string, { link: string; image: string; alt: string 
     image:
       'https://res.cloudinary.com/diusjfaoe/image/upload/v1725495136/jmdev-studio/nextjs_uzrc3s.svg',
     alt: 'nextjs',
+  },
+  webbuilder: {
+    // Private repo — no public link. isjustaweb.com is not live yet either.
+    image:
+      'https://res.cloudinary.com/diusjfaoe/image/upload/v1725495138/jmdev-studio/typescript_mabr0s.svg',
+    alt: 'typescript',
   },
 }
 
@@ -38,6 +44,8 @@ const ProjectsList: React.FC = () => {
             link={assets.link}
             stack={project.stack}
             viewLabel={t.projects.viewRepository}
+            isPrivate={project.private}
+            privateLabel={t.projects.privateLabel}
           >
             <Image
               src={assets.image}
