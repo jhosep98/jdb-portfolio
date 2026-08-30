@@ -96,7 +96,7 @@ const AboutContentView: React.FC<AboutContentViewProps> = ({ avatarUrl, name }) 
         <div>
           <Button asChild>
             <a
-              href='https://drive.google.com/file/d/1qTStT34CbdA4mRyVcdLEUId7GPfnTyo4/view?usp=sharing'
+              href='https://drive.google.com/file/d/1efrVYi1iEizoL6HbYDwRs9y1RklI-4ur/view?usp=sharing'
               target='_blank'
               rel='noreferrer noopener'
             >
