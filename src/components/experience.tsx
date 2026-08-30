@@ -1,7 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'motion/react'
-import * as React from 'react'
+import type * as React from 'react'
 import SectionHeading from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 import { useLocale } from '@/providers/locale-provider'
@@ -9,33 +8,14 @@ import { useLocale } from '@/providers/locale-provider'
 const Experience: React.FC = () => {
   const { t } = useLocale()
   const data = t.experience.items
-  const ref = React.useRef<HTMLDivElement>(null)
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const [height, setHeight] = React.useState(0)
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: re-measure when the translated bullets change the rail height.
-  React.useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect()
-      setHeight(rect.height)
-    }
-  }, [data])
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start 10%', 'end 50%'],
-  })
-
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height])
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
   return (
     <section id='experience' className='scroll-mt-12 pt-32'>
       <div className='mx-auto max-w-6xl space-y-12 px-6'>
         <SectionHeading index={2} section='experience' />
 
-        <div className='w-full' ref={containerRef}>
-          <div ref={ref} className='relative space-y-10 md:space-y-20'>
+        <div className='w-full'>
+          <div className='relative space-y-10 md:space-y-20'>
             {data.map((item) => (
               <div key={`${item.company}-${item.date}`} className='flex justify-start md:gap-10'>
                 <div className='sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full'>
@@ -80,19 +60,10 @@ const Experience: React.FC = () => {
               </div>
             ))}
 
-            <div
-              style={{
-                height: `${height}px`,
-              }}
-              className='absolute left-8 top-0 w-[2px] overflow-hidden bg-gradient-to-b from-transparent from-[0%] via-border to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]'
-            >
-              <motion.div
-                style={{
-                  height: heightTransform,
-                  opacity: opacityTransform,
-                }}
-                className='absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-primary to-transparent from-[0%] rounded-full'
-              />
+            <div className='absolute inset-y-0 left-8 w-[2px] overflow-hidden bg-gradient-to-b from-transparent from-[0%] via-border to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]'>
+              {/* Fills as the section scrolls past — CSS scroll-driven timeline,
+                  no JS. Browsers without support keep the static rail. */}
+              <div className='exp-rail-fill absolute inset-x-0 top-0 h-full w-[2px] rounded-full bg-gradient-to-t from-primary from-[0%] to-transparent' />
             </div>
           </div>
         </div>

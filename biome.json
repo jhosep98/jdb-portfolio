@@ -9,7 +9,7 @@
     "ignoreUnknown": true,
     "includes": [
       "**",
-      "!src/assets/blogging.json",
+      "!public/hero-animation.json",
       "!node_modules",
       "!.next",
       "!dist",

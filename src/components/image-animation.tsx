@@ -12,7 +12,8 @@ import { useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 interface ImageAnimationProps {
-  src: string | object
+  /** Path or URL to the Lottie JSON — kept out of the JS bundle and fetched at runtime. */
+  src: string
   label: string
   playLabel: string
   pauseLabel: string

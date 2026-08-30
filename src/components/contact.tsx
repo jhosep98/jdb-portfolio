@@ -1,18 +1,26 @@
 'use client'
 
 import { ArrowUpRight, Mail } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import type * as React from 'react'
 import { Toaster } from 'sonner'
-import ContactForm from '@/components/contact-form'
 import SectionHeading from '@/components/section-heading'
 import { GitHubIcon, LinkedInIcon } from '@/components/social-icons'
 import { Card, CardContent } from '@/components/ui/card'
 import { useLocale } from '@/providers/locale-provider'
 
+// react-hook-form + zod + @emailjs together are ~90 KB of the initial bundle for
+// a form that sits below every other section. Split it into its own chunk and
+// hold a matching-height skeleton so nothing shifts when it swaps in.
+const ContactForm = dynamic(() => import('@/components/contact-form'), {
+  ssr: false,
+  loading: () => <div className='min-h-[416px] animate-pulse rounded-md bg-muted/40' />,
+})
+
 const CHANNELS = [
   {
-    label: 'jhosepdb14@gmail.com',
-    href: 'mailto:jhosepdb14@gmail.com',
+    label: 'jhosepdb149@gmail.com',
+    href: 'mailto:jhosepdb149@gmail.com',
     icon: Mail,
     external: false,
   },

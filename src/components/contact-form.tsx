@@ -2,7 +2,6 @@
 
 import emailjs from '@emailjs/browser'
 import { zodResolver } from '@hookform/resolvers/zod'
-import confetti from 'canvas-confetti'
 import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -93,6 +92,9 @@ const ContactForm: React.FC = () => {
 
     const x = rect.left + rect.width / 2
     const y = rect.top + rect.height / 2
+
+    // Loaded on demand so the ~6 KB library stays out of the initial bundle.
+    const { default: confetti } = await import('canvas-confetti')
 
     await confetti({
       origin: {

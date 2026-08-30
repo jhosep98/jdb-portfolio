@@ -125,3 +125,84 @@
     @apply bg-background text-foreground;
   }
 }
+
+/*
+ * Hero title entrance. Animates only blur + transform (never opacity), so the
+ * text is painted on the first frame — the LCP element is never hidden waiting
+ * on JS or a keyframe.
+ */
+@keyframes hero-title-in {
+  from {
+    filter: blur(10px);
+    transform: translateY(10px);
+  }
+  to {
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.hero-title-in {
+  animation: hero-title-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* Supporting hero content — smaller than the <h1>, so the fade never owns LCP. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-in {
+  animation: hero-in 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-in,
+  .hero-in {
+    animation: none;
+  }
+}
+
+/*
+ * Experience timeline rail. Fill grows from the top as the section passes
+ * through the viewport, driven by the CSS scroll timeline — no JS, no
+ * animation library. Unsupported browsers keep the rail at full height.
+ */
+.exp-rail-fill {
+  transform-origin: top;
+}
+
+@keyframes exp-rail-fill {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .exp-rail-fill {
+    transform: scaleY(0);
+    animation: exp-rail-fill linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 55%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-rail-fill {
+    animation: none;
+    transform: scaleY(1);
+  }
+}
