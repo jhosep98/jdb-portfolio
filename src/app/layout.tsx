@@ -99,7 +99,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
           </ThemeProvider>
         </LocaleProvider>
