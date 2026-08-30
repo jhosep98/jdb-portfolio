@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jdb-portfolio.vercel.app'),
   title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
   description:
     'Frontend Engineer based in Buenos Aires, Argentina, specializing in React, TypeScript, and Next.js. Building fast, scalable, and maintainable web applications.',
@@ -52,9 +53,9 @@ export const metadata: Metadata = {
     url: 'https://jdb-portfolio.vercel.app/',
     images: [
       {
-        url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
-        width: 1200,
-        height: 630,
+        url: '/seo/openGraph.png',
+        width: 1440,
+        height: 790,
         alt: 'Jhosep Davila — Frontend Engineer',
       },
     ],
@@ -65,9 +66,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://res.cloudinary.com/diusjfaoe/image/upload/v1751752720/jmdev-studio/Screenshot_20250705_185810_tp3teu.png',
-        width: 1200,
-        height: 630,
+        url: '/seo/openGraph.png',
+        width: 1440,
+        height: 790,
         alt: 'Jhosep Davila — Frontend Engineer',
       },
     ],
