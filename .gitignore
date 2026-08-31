@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.*
+
+# pnpm 11 auto-generates this placeholder locally; this is a single-package repo
+# and an empty `pnpm-workspace.yaml` breaks pnpm 9 on Vercel ("packages field missing")
+pnpm-workspace.yaml
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
