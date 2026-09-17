@@ -184,38 +184,8 @@
   }
 }
 
-/*
- * Experience timeline rail. Fill grows from the top as the section passes
- * through the viewport, driven by the CSS scroll timeline — no JS, no
- * animation library. Unsupported browsers keep the rail at full height.
- */
+/* Experience timeline rail. Progress is updated with requestAnimationFrame. */
 .exp-rail-fill {
   transform-origin: top;
-}
-
-@keyframes exp-rail-fill {
-  from {
-    transform: scaleY(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleY(1);
-    opacity: 1;
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .exp-rail-fill {
-    transform: scaleY(0);
-    animation: exp-rail-fill linear both;
-    animation-timeline: view();
-    animation-range: cover 0% cover 55%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .exp-rail-fill {
-    animation: none;
-    transform: scaleY(1);
-  }
+  will-change: transform, opacity;
 }
