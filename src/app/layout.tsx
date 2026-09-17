@@ -3,7 +3,9 @@ import { Geist_Mono, Open_Sans } from 'next/font/google'
 import { cookies } from 'next/headers'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import { DEFAULT_LOCALE, isLocale, LOCALE_COOKIE } from '@/lib/i18n/translations'
+import { SITE_URL } from '@/lib/constants'
+import { DEFAULT_LOCALE, isLocale, LOCALE_COOKIE, translations } from '@/lib/i18n/translations'
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME } from '@/lib/seo'
 import { LocaleProvider } from '@/providers/locale-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import './globals.css'
@@ -19,11 +21,17 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jdb-portfolio.vercel.app'),
-  title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
-  description:
-    'Frontend Engineer based in Buenos Aires, Argentina, specializing in React, TypeScript, and Next.js. Building fast, scalable, and maintainable web applications.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: '%s | Jhosep Davila',
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
   authors: [{ name: 'Jhosep Davila' }],
+  creator: 'Jhosep Davila',
+  publisher: 'Jhosep Davila',
+  category: 'technology',
   keywords: [
     'Jhosep Davila',
     'Frontend Engineer',
@@ -43,14 +51,16 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
-    description:
-      'Frontend Engineer specializing in React, TypeScript, and Next.js. Building fast, scalable, and maintainable web applications.',
-    siteName: 'Jhosep Davila — Frontend Engineer',
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    siteName: SITE_NAME,
     locale: 'en_US',
     type: 'website',
-    url: 'https://jdb-portfolio.vercel.app/',
+    url: '/',
     images: [
       {
         url: '/seo/openGraph.png',
@@ -61,8 +71,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Jhosep Davila — Frontend Engineer | React, TypeScript & Next.js',
-    description: 'Frontend Engineer specializing in React, TypeScript, and Next.js.',
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     card: 'summary_large_image',
     images: [
       {
@@ -83,6 +93,7 @@ export default async function RootLayout({
   const cookieStore = await cookies()
   const stored = cookieStore.get(LOCALE_COOKIE)?.value
   const locale = isLocale(stored) ? stored : DEFAULT_LOCALE
+  const t = translations[locale]
 
   return (
     <html
@@ -91,6 +102,12 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className='antialiased'>
+        <a
+          href='#main-content'
+          className='sr-only fixed top-4 left-4 z-[100] rounded-md bg-background px-4 py-3 font-medium shadow-lg focus:not-sr-only'
+        >
+          {t.a11y.skipToContent}
+        </a>
         <LocaleProvider initialLocale={locale}>
           <ThemeProvider
             attribute='class'
@@ -99,7 +116,9 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            <main>{children}</main>
+            <main id='main-content' tabIndex={-1}>
+              {children}
+            </main>
             <Footer />
           </ThemeProvider>
         </LocaleProvider>

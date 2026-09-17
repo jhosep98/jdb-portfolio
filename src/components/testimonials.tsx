@@ -37,34 +37,42 @@ const initials = (name: string) =>
     .map((word) => word[0])
     .join('')
 
-const Testimonials: React.FC = () => (
-  <section id='testimonials' className='scroll-mt-12 pt-32'>
+interface TestimonialsProps {
+  headingLevel?: 'h1' | 'h2'
+}
+
+const Testimonials: React.FC<TestimonialsProps> = ({ headingLevel = 'h2' }) => (
+  <section id='testimonials' aria-labelledby='testimonials-heading' className='scroll-mt-12 pt-32'>
     <div className='mx-auto max-w-6xl space-y-12 px-6'>
-      <SectionHeading index={4} section='testimonials' />
+      <SectionHeading index={4} section='testimonials' level={headingLevel} />
 
-      <div className='grid gap-6 sm:grid-cols-2'>
+      <ul className='grid gap-6 sm:grid-cols-2'>
         {testimonials.map(({ name, role, quote, image }) => (
-          <Card key={name} className='p-7'>
-            <CardContent className='flex h-full flex-col gap-5 p-0'>
-              <Quote className='size-6 shrink-0 text-primary' />
+          <li key={name}>
+            <Card className='h-full p-7'>
+              <CardContent className='flex h-full flex-col gap-5 p-0'>
+                <Quote aria-hidden='true' className='size-6 shrink-0 text-primary' />
 
-              <blockquote className='text-pretty'>{quote}</blockquote>
+                <blockquote className='text-pretty'>{quote}</blockquote>
 
-              <div className='mt-auto flex items-center gap-3 border-t border-dashed pt-5'>
-                <Avatar className='size-9 shrink-0'>
-                  <AvatarImage alt={name} src={image} loading='lazy' width='120' height='120' />
-                  <AvatarFallback className='font-mono text-xs'>{initials(name)}</AvatarFallback>
-                </Avatar>
+                <div className='mt-auto flex items-center gap-3 border-t border-dashed pt-5'>
+                  <Avatar className='size-9 shrink-0'>
+                    <AvatarImage alt={name} src={image} loading='lazy' width='120' height='120' />
+                    <AvatarFallback className='font-mono text-xs'>{initials(name)}</AvatarFallback>
+                  </Avatar>
 
-                <div className='min-w-0'>
-                  <p className='text-[15px] font-semibold'>{name}</p>
-                  <p className='line-clamp-2 text-xs leading-snug text-muted-foreground'>{role}</p>
+                  <div className='min-w-0'>
+                    <p className='text-[15px] font-semibold'>{name}</p>
+                    <p className='line-clamp-2 text-xs leading-snug text-muted-foreground'>
+                      {role}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 )

@@ -7,11 +7,13 @@ import { useLocale } from '@/providers/locale-provider'
 interface SectionHeadingProps {
   index: number
   section: SectionKey
+  level?: 'h1' | 'h2'
 }
 
-const SectionHeading: React.FC<SectionHeadingProps> = ({ index, section }) => {
+const SectionHeading: React.FC<SectionHeadingProps> = ({ index, section, level = 'h2' }) => {
   const { t } = useLocale()
   const { eyebrow, title } = t.sections[section]
+  const Heading = level
 
   return (
     <div>
@@ -20,9 +22,12 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ index, section }) => {
         {String(index).padStart(2, '0')} — {eyebrow}
       </div>
 
-      <h2 className='relative mt-4 mb-5 pb-5 text-balance text-3xl font-semibold tracking-tight md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'>
+      <Heading
+        id={`${section}-heading`}
+        className='relative mt-4 mb-5 pb-5 text-balance text-3xl font-semibold tracking-tight md:text-4xl after:content-[""] after:absolute after:block after:w-12 after:h-1 after:bg-primary after:left-0 after:bottom-0'
+      >
         {title}
-      </h2>
+      </Heading>
     </div>
   )
 }

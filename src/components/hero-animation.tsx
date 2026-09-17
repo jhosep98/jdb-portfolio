@@ -19,18 +19,24 @@ const HeroAnimation: React.FC = () => {
     const el = ref.current
     if (!el) return
 
+    let revealTimeout: ReturnType<typeof setTimeout> | undefined
+
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {
-          setVisible(true)
+          // Keep the Lottie runtime out of the critical rendering path.
+          revealTimeout = setTimeout(() => setVisible(true), 500)
           io.disconnect()
         }
       },
-      { rootMargin: '300px' },
+      { rootMargin: '0px' },
     )
 
     io.observe(el)
-    return () => io.disconnect()
+    return () => {
+      io.disconnect()
+      if (revealTimeout) clearTimeout(revealTimeout)
+    }
   }, [])
 
   return (

@@ -6,6 +6,7 @@ import type * as React from 'react'
 import HeroAnimation from '@/components/hero-animation'
 import { GitHubIcon, LinkedInIcon } from '@/components/social-icons'
 import { Button } from '@/components/ui/button'
+import { PROFILE } from '@/lib/constants'
 import { useLocale } from '@/providers/locale-provider'
 import { HeroHighlight } from './ui/hero-highlight'
 
@@ -20,7 +21,7 @@ const Hero: React.FC = () => {
   return (
     <HeroHighlight containerClassName='flex min-h-screen items-center justify-center pt-36 pb-20 lg:pt-32 lg:pb-16'>
       <div className='mx-auto max-w-6xl px-6'>
-        <section className='grid items-center gap-12 overflow-hidden lg:grid-cols-2 lg:gap-6'>
+        <div className='grid items-center gap-12 overflow-hidden lg:grid-cols-2 lg:gap-6'>
           <div>
             <span className='hero-in bg-card flex w-fit max-w-full items-start gap-2.5 rounded-2xl border py-2 pr-3.5 pl-3 sm:items-center sm:rounded-full sm:py-1.5'>
               <span className='mt-1.25 size-1.5 shrink-0 rounded-full bg-primary sm:mt-0' />
@@ -29,7 +30,10 @@ const Hero: React.FC = () => {
               </span>
             </span>
 
-            <h1 className='hero-title-in mt-6 text-4xl font-semibold tracking-tight text-balance sm:mt-8 sm:text-5xl lg:text-7xl'>
+            <h1
+              id='hero-heading'
+              className='mt-6 text-4xl font-semibold tracking-tight text-balance sm:mt-8 sm:text-5xl lg:text-7xl'
+            >
               {t.hero.title}
             </h1>
 
@@ -52,7 +56,7 @@ const Hero: React.FC = () => {
 
             <div className='hero-in mt-7 flex flex-wrap items-center gap-5 [animation-delay:280ms] sm:mt-8'>
               <a
-                href='https://www.linkedin.com/in/jhosep-davila/'
+                href={PROFILE.linkedIn}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='LinkedIn'
@@ -62,7 +66,7 @@ const Hero: React.FC = () => {
               </a>
 
               <a
-                href='https://github.com/jhosep98'
+                href={PROFILE.github}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='GitHub'
@@ -74,10 +78,10 @@ const Hero: React.FC = () => {
               <span className='hidden h-4 w-px bg-border sm:block' />
 
               <a
-                href='mailto:jhosepdb149@gmail.com'
+                href={`mailto:${PROFILE.email}`}
                 className='hidden font-mono text-xs tracking-[0.04em] text-muted-foreground hover:text-primary sm:block'
               >
-                jhosepdb149@gmail.com
+                {PROFILE.email}
               </a>
             </div>
           </div>
@@ -85,7 +89,7 @@ const Hero: React.FC = () => {
           <div className='hero-in [animation-delay:160ms]'>
             <HeroAnimation />
           </div>
-        </section>
+        </div>
       </div>
     </HeroHighlight>
   )

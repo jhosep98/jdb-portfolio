@@ -42,6 +42,8 @@ const ContactForm: React.FC = () => {
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    mode: 'onChange',
+    reValidateMode: 'onChange',
     defaultValues: {
       email: '',
       subject: '',
@@ -78,17 +80,18 @@ const ContactForm: React.FC = () => {
         toast.success(t.form.success)
         onSuccessConfetti()
         form.reset()
+      } else {
+        toast.error(t.form.error)
       }
     } catch (_err) {
       toast.error(t.form.error)
-      form.reset()
     }
   }
 
   async function onSuccessConfetti() {
     const rect = buttonRef.current?.getBoundingClientRect()
 
-    if (!rect) return
+    if (!rect || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const x = rect.left + rect.width / 2
     const y = rect.top + rect.height / 2
@@ -106,7 +109,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8' autoComplete='off'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
         <FormField
           control={form.control}
           name='email'
@@ -114,7 +117,13 @@ const ContactForm: React.FC = () => {
             <FormItem>
               <FormLabel>{t.form.emailLabel}</FormLabel>
               <FormControl>
-                <Input placeholder={t.form.emailPlaceholder} {...field} />
+                <Input
+                  type='email'
+                  inputMode='email'
+                  autoComplete='email'
+                  placeholder={t.form.emailPlaceholder}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -128,7 +137,7 @@ const ContactForm: React.FC = () => {
             <FormItem>
               <FormLabel>{t.form.subjectLabel}</FormLabel>
               <FormControl>
-                <Input placeholder={t.form.subjectPlaceholder} {...field} />
+                <Input autoComplete='off' placeholder={t.form.subjectPlaceholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -155,6 +164,7 @@ const ContactForm: React.FC = () => {
           size='lg'
           ref={buttonRef}
           disabled={form.formState.isSubmitting || !form.formState.isValid}
+          aria-busy={form.formState.isSubmitting}
           aria-label={t.form.submit}
         >
           {t.form.submit}

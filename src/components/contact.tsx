@@ -2,11 +2,12 @@
 
 import { ArrowUpRight, Mail } from 'lucide-react'
 import dynamic from 'next/dynamic'
-import type * as React from 'react'
+import * as React from 'react'
 import { Toaster } from 'sonner'
 import SectionHeading from '@/components/section-heading'
 import { GitHubIcon, LinkedInIcon } from '@/components/social-icons'
 import { Card, CardContent } from '@/components/ui/card'
+import { PROFILE } from '@/lib/constants'
 import { useLocale } from '@/providers/locale-provider'
 
 // react-hook-form + zod + @emailjs together are ~90 KB of the initial bundle for
@@ -14,37 +15,63 @@ import { useLocale } from '@/providers/locale-provider'
 // hold a matching-height skeleton so nothing shifts when it swaps in.
 const ContactForm = dynamic(() => import('@/components/contact-form'), {
   ssr: false,
-  loading: () => <div className='min-h-[416px] animate-pulse rounded-md bg-muted/40' />,
+  loading: () => (
+    <div aria-hidden='true' className='min-h-[416px] animate-pulse rounded-md bg-muted/40' />
+  ),
 })
 
 const CHANNELS = [
   {
-    label: 'jhosepdb149@gmail.com',
-    href: 'mailto:jhosepdb149@gmail.com',
+    label: PROFILE.email,
+    href: `mailto:${PROFILE.email}`,
     icon: Mail,
     external: false,
   },
   {
     label: 'in/jhosep-davila',
-    href: 'https://www.linkedin.com/in/jhosep-davila/',
+    href: PROFILE.linkedIn,
     icon: LinkedInIcon,
     external: true,
   },
   {
     label: 'github.com/jhosep98',
-    href: 'https://github.com/jhosep98',
+    href: PROFILE.github,
     icon: GitHubIcon,
     external: true,
   },
 ]
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  headingLevel?: 'h1' | 'h2'
+}
+
+const Contact: React.FC<ContactProps> = ({ headingLevel = 'h2' }) => {
   const { t } = useLocale()
+  const formContainerRef = React.useRef<HTMLDivElement>(null)
+  const [showForm, setShowForm] = React.useState(false)
+
+  React.useEffect(() => {
+    const element = formContainerRef.current
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowForm(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '400px' },
+    )
+
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id='contact' className='scroll-mt-12 pt-32'>
+    <section id='contact' aria-labelledby='contact-heading' className='scroll-mt-12 pt-32'>
       <div className='mx-auto max-w-6xl space-y-12 px-6'>
-        <SectionHeading index={5} section='contact' />
+        <SectionHeading index={5} section='contact' level={headingLevel} />
 
         <div className='grid items-start gap-10 lg:grid-cols-2 lg:gap-12'>
           <div className='space-y-7'>
@@ -65,26 +92,36 @@ const Contact: React.FC = () => {
               <ArrowUpRight className='size-4 shrink-0 text-primary' />
             </a>
 
-            <div className='flex flex-col'>
+            <ul>
               {CHANNELS.map(({ label, href, icon: Icon, external }) => (
-                <a
-                  key={label}
-                  href={href}
-                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className='flex min-h-11 items-center gap-3.5 text-sm hover:text-primary'
-                >
-                  <Icon className='size-4 shrink-0 text-muted-foreground' />
-                  {label}
-                </a>
+                <li key={label}>
+                  <a
+                    href={href}
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className='flex min-h-11 items-center gap-3.5 text-sm hover:text-primary'
+                  >
+                    <Icon aria-hidden='true' className='size-4 shrink-0 text-muted-foreground' />
+                    {label}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          <Card className='p-7'>
-            <CardContent className='p-0'>
-              <ContactForm />
-            </CardContent>
-          </Card>
+          <div ref={formContainerRef}>
+            <Card className='p-7'>
+              <CardContent className='p-0'>
+                {showForm ? (
+                  <ContactForm />
+                ) : (
+                  <div
+                    aria-hidden='true'
+                    className='min-h-[416px] animate-pulse rounded-md bg-muted/40'
+                  />
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
 

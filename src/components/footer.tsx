@@ -3,14 +3,15 @@
 import Link from 'next/link'
 import type * as React from 'react'
 import Logo from '@/components/logo'
+import { PROFILE } from '@/lib/constants'
 import { useLocale } from '@/providers/locale-provider'
 
 const SECTION_ANCHORS = ['about', 'experience', 'work', 'testimonials', 'contact'] as const
 
 const EXTERNAL_LINKS = [
-  { name: 'GitHub', href: 'https://github.com/jhosep98' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/jhosep-davila/' },
-  { name: 'Email', href: 'mailto:jhosepdb14@gmail.com' },
+  { name: 'GitHub', href: PROFILE.github, external: true },
+  { name: 'LinkedIn', href: PROFILE.linkedIn, external: true },
+  { name: 'Email', href: `mailto:${PROFILE.email}`, external: false },
 ]
 
 const STACK = 'Next.js · TailwindCSS · TypeScript'
@@ -28,7 +29,7 @@ const Footer: React.FC = () => {
             <p className='max-w-xs text-sm text-muted-foreground'>{t.footer.tagline}</p>
           </div>
 
-          <div className='space-y-3'>
+          <nav aria-label={t.footer.sections} className='space-y-3'>
             <span className='block font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase'>
               {t.footer.sections}
             </span>
@@ -44,9 +45,9 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className='space-y-3'>
+          <nav aria-label={t.footer.elsewhere} className='space-y-3'>
             <span className='block font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase'>
               {t.footer.elsewhere}
             </span>
@@ -55,8 +56,7 @@ const Footer: React.FC = () => {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
+                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className='flex min-h-11 items-center text-muted-foreground duration-150 hover:text-accent-foreground sm:min-h-0'
                   >
                     {item.name}
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className='mt-12 flex flex-col gap-2 border-t border-dashed pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between'>

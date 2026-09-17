@@ -22,18 +22,17 @@ export const HeroHighlight = ({
   className?: string
   containerClassName?: string
 }) => {
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLDivElement>) {
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLElement>) {
     const { left, top } = currentTarget.getBoundingClientRect()
     currentTarget.style.setProperty('--hero-x', `${clientX - left}px`)
     currentTarget.style.setProperty('--hero-y', `${clientY - top}px`)
   }
 
   return (
-    <div
+    <section
+      aria-labelledby='hero-heading'
       className={cn('group relative flex w-full items-center justify-center', containerClassName)}
       onMouseMove={handleMouseMove}
-      aria-label='background dots'
-      role='img'
     >
       <div
         className='pointer-events-none absolute inset-0 dark:hidden'
@@ -61,6 +60,6 @@ export const HeroHighlight = ({
       />
 
       <div className={cn('relative z-20', className)}>{children}</div>
-    </div>
+    </section>
   )
 }

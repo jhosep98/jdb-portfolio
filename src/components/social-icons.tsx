@@ -6,8 +6,8 @@ export const LinkedInIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => 
     width='1em'
     height='1em'
     viewBox='0 0 24 24'
-    role='img'
-    aria-label='LinkedIn'
+    aria-hidden='true'
+    focusable='false'
     {...props}
   >
     <path
@@ -26,8 +26,9 @@ export const GitHubIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       width='1em'
       height='1em'
       viewBox='0 0 24 24'
-      role='img'
-      aria-label='GitHub'
+      aria-hidden='true'
+      focusable='false'
+      data-animated-icon='true'
       {...props}
     >
       <mask id={maskId} width='24' height='24' x='0' y='0'>

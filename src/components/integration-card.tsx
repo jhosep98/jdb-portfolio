@@ -4,8 +4,10 @@ import { Card } from './ui/card'
 
 interface IntegrationCardProps {
   title: string
+  headingLevel?: 'h2' | 'h3'
   description: string
-  children: React.ReactNode
+  children?: React.ReactNode
+  preview?: React.ReactNode
   link?: string
   stack?: string[]
   viewLabel: string
@@ -17,27 +19,41 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({
   children,
   description,
   title,
+  headingLevel = 'h3',
   link,
   stack,
   viewLabel,
   isPrivate = false,
   privateLabel,
+  preview,
 }) => {
   const asLink = !isPrivate && Boolean(link)
+  const Heading = headingLevel
 
   const body = (
     <>
-      <div className='flex items-start justify-between gap-4'>
-        <div className='*:size-10'>{children}</div>
-        {asLink ? (
-          <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />
-        ) : (
-          <Lock className='size-4 shrink-0 text-muted-foreground' />
-        )}
-      </div>
+      {preview ? (
+        <div className='relative -mx-6 -mt-6 mb-6 overflow-hidden border-b'>
+          {preview}
+          {asLink && (
+            <span className='absolute top-3 right-3 rounded-full border bg-background/85 p-2 shadow-sm backdrop-blur-sm'>
+              <ArrowUpRight className='size-4 text-foreground' />
+            </span>
+          )}
+        </div>
+      ) : (
+        <div className='flex items-start justify-between gap-4'>
+          <div className='*:size-10'>{children}</div>
+          {asLink ? (
+            <ArrowUpRight className='size-4 shrink-0 text-muted-foreground' />
+          ) : (
+            <Lock className='size-4 shrink-0 text-muted-foreground' />
+          )}
+        </div>
+      )}
 
-      <div className='mt-6 space-y-2.5'>
-        <h3 className='text-xl font-semibold tracking-tight'>{title}</h3>
+      <div className={preview ? 'space-y-2.5' : 'mt-6 space-y-2.5'}>
+        <Heading className='text-xl font-semibold tracking-tight'>{title}</Heading>
         <p className='line-clamp-2 text-sm text-muted-foreground'>{description}</p>
       </div>
 
@@ -69,15 +85,13 @@ const IntegrationCard: React.FC<IntegrationCardProps> = ({
   )
 
   return (
-    <Card className={asLink ? 'gap-0 p-6 transition-colors hover:border-primary/40' : 'gap-0 p-6'}>
+    <Card
+      className={`${preview ? 'overflow-hidden' : ''} ${
+        asLink ? 'gap-0 p-6 transition-colors hover:border-primary/40' : 'gap-0 p-6'
+      }`}
+    >
       {asLink ? (
-        <a
-          href={link}
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label={`${viewLabel}: ${title}`}
-          className='flex h-full flex-col'
-        >
+        <a href={link} target='_blank' rel='noopener noreferrer' className='flex h-full flex-col'>
           {body}
         </a>
       ) : (

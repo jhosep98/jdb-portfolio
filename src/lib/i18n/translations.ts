@@ -48,11 +48,13 @@ const en = {
     letsTalk: "Let's talk",
   },
   a11y: {
+    skipToContent: 'Skip to main content',
     home: 'Home',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     toggleTheme: 'Toggle theme',
     language: 'Language',
+    primaryNavigation: 'Primary navigation',
     heroIllustration: 'Person working with a laptop',
     playAnimation: 'Play animation',
     pauseAnimation: 'Pause animation',
@@ -133,8 +135,9 @@ const en = {
     ] satisfies TimelineEntry[],
   },
   projects: {
-    viewRepository: 'View repository',
+    viewRepository: 'View project',
     privateLabel: 'Private project',
+    previewLabel: (title: string) => `${title} landing page preview`,
     items: [
       {
         key: 'webbuilder',
@@ -162,11 +165,18 @@ const en = {
         stack: ['TypeScript', 'AI'],
       },
       {
-        key: 'jdb-portfolio',
-        title: 'jdb-portfolio',
+        key: 'jmdev-studio',
+        title: 'JMDev Studio',
         description:
-          'A modern personal portfolio built with Next.js, React, and Tailwind CSS, designed to showcase frontend engineering work through interactive motion and a clean, responsive interface.',
-        stack: ['Next.js', 'React', 'Tailwind CSS', 'Motion'],
+          'A digital product studio website presenting custom web and mobile development, AI automation, software modernization, and SEO services.',
+        stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      },
+      {
+        key: 'kayana-cacao',
+        title: 'Kayana',
+        description:
+          'A product-focused website for premium cacao and specialty coffee sourced from the Peruvian Amazon, highlighting origin, quality, and sustainable production.',
+        stack: ['Astro', 'React', 'TypeScript', 'Tailwind CSS'],
       },
     ] satisfies ProjectEntry[],
   },
@@ -214,11 +224,13 @@ const es: typeof en = {
     letsTalk: 'Hablemos',
   },
   a11y: {
+    skipToContent: 'Saltar al contenido principal',
     home: 'Inicio',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
     toggleTheme: 'Cambiar tema',
     language: 'Idioma',
+    primaryNavigation: 'Navegación principal',
     heroIllustration: 'Persona trabajando con una laptop',
     playAnimation: 'Reproducir animación',
     pauseAnimation: 'Pausar animación',
@@ -299,8 +311,9 @@ const es: typeof en = {
     ] satisfies TimelineEntry[],
   },
   projects: {
-    viewRepository: 'Ver repositorio',
+    viewRepository: 'Ver proyecto',
     privateLabel: 'Proyecto privado',
+    previewLabel: (title: string) => `Vista previa de la landing page de ${title}`,
     items: [
       {
         key: 'webbuilder',
@@ -328,11 +341,18 @@ const es: typeof en = {
         stack: ['TypeScript', 'AI', 'Fintech'],
       },
       {
-        key: 'jdb-portfolio',
-        title: 'jdb-portfolio',
+        key: 'jmdev-studio',
+        title: 'JMDev Studio',
         description:
-          'Un portfolio personal moderno construido con Next.js, React y Tailwind CSS, diseñado para mostrar proyectos de frontend mediante animaciones interactivas y una interfaz limpia y responsiva.',
-        stack: ['Next.js', 'React', 'Tailwind CSS', 'Motion'],
+          'El sitio web de un estudio de productos digitales que presenta servicios de desarrollo web y móvil, automatización con IA, modernización de software y SEO.',
+        stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      },
+      {
+        key: 'kayana-cacao',
+        title: 'Kayana',
+        description:
+          'Un sitio web enfocado en cacao premium y café de especialidad de la Amazonía peruana, que destaca su origen, calidad y producción sostenible.',
+        stack: ['Astro', 'React', 'TypeScript', 'Tailwind CSS'],
       },
     ] satisfies ProjectEntry[],
   },

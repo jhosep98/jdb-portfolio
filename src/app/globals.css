@@ -54,7 +54,7 @@
   --card-foreground: oklch(30% 0.02 260);
   --popover: oklch(96% 0.002 260);
   --popover-foreground: oklch(30% 0.02 260);
-  --primary: oklch(60% 0.15 20);
+  --primary: oklch(52% 0.15 20);
   --primary-foreground: oklch(98.5% 0 0);
   --secondary: oklch(90% 0.003 260);
   --secondary-foreground: oklch(30% 0.02 260);
@@ -62,7 +62,7 @@
   --muted-foreground: oklch(50% 0.015 260);
   --accent: oklch(96.7% 0.001 286.375);
   --accent-foreground: oklch(50% 0.015 260);
-  --destructive: oklch(60% 0.15 20);
+  --destructive: oklch(52% 0.15 20);
   --destructive-foreground: oklch(98.5% 0 0);
   --border: oklch(88% 0.004 260);
   --input: oklch(94% 0.003 260);
@@ -89,16 +89,16 @@
   --card-foreground: oklch(85% 0.01 250);
   --popover: oklch(16.5% 0.015 260);
   --popover-foreground: oklch(90% 0 0);
-  --primary: oklch(60% 0.15 20);
-  --primary-foreground: oklch(98.5% 0 0);
+  --primary: oklch(70% 0.13 20);
+  --primary-foreground: oklch(14.5% 0.015 260);
   --secondary: oklch(25% 0.01 260);
   --secondary-foreground: oklch(90% 0 0);
   --muted: oklch(30% 0.01 260);
   --muted-foreground: oklch(70% 0.01 250);
   --accent: oklch(21% 0.006 285.885);
   --accent-foreground: oklch(90% 0 0);
-  --destructive: oklch(50% 0.15 20);
-  --destructive-foreground: oklch(90% 0 0);
+  --destructive: oklch(70% 0.13 20);
+  --destructive-foreground: oklch(14.5% 0.015 260);
   --border: oklch(38% 0.018 260);
   --input: oklch(25% 0.01 260);
   --ring: oklch(65% 0.15 260);
@@ -123,6 +123,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  :where(a, button):not([data-slot="button"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
   }
 }
 
@@ -168,6 +173,14 @@
   .hero-title-in,
   .hero-in {
     animation: none;
+  }
+
+  [data-animated-icon] animate {
+    display: none;
+  }
+
+  [data-animated-icon] [stroke-dashoffset] {
+    stroke-dashoffset: 0;
   }
 }
 

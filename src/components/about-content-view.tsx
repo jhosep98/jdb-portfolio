@@ -5,6 +5,7 @@ import Image from 'next/image'
 import type * as React from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { PROFILE } from '@/lib/constants'
 import { useLocale } from '@/providers/locale-provider'
 
 const EXPERIENCE_START_YEAR = 2021
@@ -40,33 +41,35 @@ const AboutContentView: React.FC<AboutContentViewProps> = ({ avatarUrl, name }) 
           <span className='text-center text-xl font-semibold'>{t.about.role}</span>
         </CardHeader>
 
-        <CardContent className='space-y-4 px-6 lg:px-12'>
-          <a
-            href='mailto:jhosepdb14@gmail.com'
-            className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm hover:bg-accent hover:text-foreground'
-          >
-            <span>
-              <Mail className='size-4' />
-            </span>
-            jhosepdb14@gmail.com
-          </a>
+        <CardContent className='px-6 lg:px-12'>
+          <address className='space-y-4 not-italic'>
+            <a
+              href={`mailto:${PROFILE.email}`}
+              className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm hover:bg-accent hover:text-foreground'
+            >
+              <span>
+                <Mail className='size-4' />
+              </span>
+              {PROFILE.email}
+            </a>
 
-          <a
-            href='tel:+5491124004135'
-            className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm hover:bg-accent hover:text-foreground'
-          >
-            <span>
-              <Phone className='size-4' />
-            </span>
-            +54 9 1124004135
-          </a>
+            <a
+              href='tel:+5491124004135'
+              className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm hover:bg-accent hover:text-foreground'
+            >
+              <span>
+                <Phone className='size-4' />
+              </span>
+              +54 9 1124004135
+            </a>
 
-          <span className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm'>
-            <span>
-              <MapPin className='size-4' />
+            <span className='flex min-h-11 items-center gap-4 rounded-xl border px-4 py-2 text-sm'>
+              <span>
+                <MapPin className='size-4' />
+              </span>
+              {t.about.location}
             </span>
-            {t.about.location}
-          </span>
+          </address>
         </CardContent>
       </Card>
 

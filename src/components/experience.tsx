@@ -5,19 +5,27 @@ import SectionHeading from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 import { useLocale } from '@/providers/locale-provider'
 
-const Experience: React.FC = () => {
+interface ExperienceProps {
+  headingLevel?: 'h1' | 'h2'
+}
+
+const Experience: React.FC<ExperienceProps> = ({ headingLevel = 'h2' }) => {
   const { t } = useLocale()
   const data = t.experience.items
+  const ItemHeading = headingLevel === 'h1' ? 'h2' : 'h3'
 
   return (
-    <section id='experience' className='scroll-mt-12 pt-32'>
+    <section id='experience' aria-labelledby='experience-heading' className='scroll-mt-12 pt-32'>
       <div className='mx-auto max-w-6xl space-y-12 px-6'>
-        <SectionHeading index={2} section='experience' />
+        <SectionHeading index={2} section='experience' level={headingLevel} />
 
         <div className='w-full'>
           <div className='relative space-y-10 md:space-y-20'>
             {data.map((item) => (
-              <div key={`${item.company}-${item.date}`} className='flex justify-start md:gap-10'>
+              <article
+                key={`${item.company}-${item.date}`}
+                className='flex justify-start md:gap-10'
+              >
                 <div className='sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full'>
                   <div className='absolute left-3 flex size-10 items-center justify-center rounded-full'>
                     <div
@@ -38,7 +46,7 @@ const Experience: React.FC = () => {
                   </span>
 
                   <div className='flex flex-wrap items-center gap-3 mb-1'>
-                    <h3 className='text-xl font-semibold'>{item.company}</h3>
+                    <ItemHeading className='text-xl font-semibold'>{item.company}</ItemHeading>
                     {item.current && (
                       <span className='inline-flex items-center gap-1.5 rounded-full border border-primary/35 bg-primary/15 px-2.5 py-0.5 font-mono text-[10px] tracking-[0.14em] text-primary uppercase'>
                         <span className='size-1.5 rounded-full bg-primary' />
@@ -57,7 +65,7 @@ const Experience: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </article>
             ))}
 
             <div className='absolute inset-y-0 left-8 w-[2px] overflow-hidden bg-gradient-to-b from-transparent from-[0%] via-border to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]'>
